@@ -1,0 +1,18 @@
+project:
+  name: rag-agent-system
+  log_level: INFO
+
+paths:
+  faiss_index: data/tinystories.faiss
+  chunks: data/tinystories_chunks.json
+
+retrieval:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  normalize_embeddings: true
+  top_k: 3
+
+generation:
+  model_name: Qwen/Qwen2.5-1.5B-Instruct
+  max_new_tokens: 256
+  temperature: 0.2
+

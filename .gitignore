@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build and coverage
+build/
+dist/
+.coverage
+htmlcov/
+
+# Local model/cache artifacts
+.cache/
+models/
+
+# Generated retrieval artifacts (keep placeholders only)
+data/*.faiss
+data/chunks.json
+data/*_chunks.json
+data/*.bak
+data/*.tmp
+data/*.npy
+.ipynb_checkpoints/
+

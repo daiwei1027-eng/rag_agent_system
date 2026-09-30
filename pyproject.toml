@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-agent-system"
+version = "0.1.0"
+description = "An engineering-first RAG baseline built after the Hugging Face notebook playground."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "faiss-cpu>=1.8,<2",
+  "numpy>=1.26,<3",
+  "pyyaml>=6.0,<7",
+  "sentence-transformers>=3.0,<4",
+  "torch>=2.2",
+  "transformers>=4.45,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9",
+  "ruff>=0.7,<1",
+]
+
+[project.scripts]
+rag-query = "rag_agent_system.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
