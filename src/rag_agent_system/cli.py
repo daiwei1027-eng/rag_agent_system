@@ -17,6 +17,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Query the local Day 18 RAG baseline.")
     parser.add_argument("--question", "-q", help="Question to answer; prompts if omitted.")
     parser.add_argument("--config", default="configs/default.yaml", help="YAML config path.")
+    parser.add_argument(
+        "--additional-instruction",
+        default=None,
+        help="Optional answer preferences, such as language or length.",
+    )
     return parser
 
 
@@ -46,7 +51,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
 
     try:
-        result = pipeline.query(question)
+        result = pipeline.query(
+            question,
+            additional_instruction=args.additional_instruction,
+        )
     except NotImplementedError as exc:
         LOGGER.error("%s", exc)
         return 2
@@ -55,4 +63,3 @@ def main(argv: Sequence[str] | None = None) -> int:
     for source in result.sources:
         print(f"[{source.rank}] chunk_id={source.chunk.chunk_id} score={source.score:.4f}")
     return 0
-

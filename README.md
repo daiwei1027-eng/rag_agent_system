@@ -10,8 +10,8 @@ Question -> Retriever -> Top-k chunks -> Context -> Prompt -> LLM -> Answer + So
 ```
 
 The project provides the package layout, configuration, shared types, logging, CLI entry
-point, tests, and implementation contracts. The core RAG logic is deliberately left as
-hands-on work.
+point and tests. The core components were implemented as hands-on exercises;
+the end-to-end baseline now returns an answer and retrieved sources.
 
 ## Project layout
 
@@ -57,8 +57,8 @@ this scaffold and are ignored by Git.
 
 ## Run
 
-Current milestone (2026-09-30): retrieval works with 10,417 vectors and 384 dimensions.
-The full RAG pipeline is still an exercise, not a completed application.
+Current milestone (2026-10-02): the end-to-end RAG baseline works with 10,417
+vectors and 384 dimensions. This is a learning baseline, not a production-ready service.
 
 ```powershell
 python scripts/check_retrieval.py
@@ -70,35 +70,41 @@ The current loader expects sequential IndexFlatIP labels and an explicit
 `metadata.faiss_id` to `chunk_id` mapping. Counts and dimensions alone cannot
 verify that text and vectors came from the same indexing run.
 
-Existing tests report 2 passed and 2 intentionally skipped. They do not yet
-cover the retriever's core behavior. See `docs/learning-log/2026-09-30.md`.
-
-After completing the TODOs below:
+Run a question relevant to the TinyStories corpus:
 
 ```powershell
-python scripts/run_rag.py --question "What is KV cache?"
+python scripts/run_rag.py --question "Who found a needle and asked her mother to sew a button?"
 ```
 
 or, after editable installation:
 
 ```powershell
-rag-query --question "What is KV cache?"
+rag-query --question "Who found the needle?" --additional-instruction "Answer briefly in Chinese."
 ```
 
-## Hands-on TODOs
+## Tests
 
-Complete these in order:
+```powershell
+python -m pytest -q
+```
+
+Context and prompt tests check formatting and default/custom instructions. Pipeline
+tests use fakes to check argument propagation and answer/source preservation.
+`tests/test_generator.py` is a real-model integration test: it may download weights
+and requires enough memory. The old skipped exercise placeholders were removed
+after their assertions were implemented in `tests/test_pipeline.py`.
+
+## Follow-up work
 
 1. `FaissRetriever.retrieve` is implemented and smoke-tested; add model-free tests
    for input validation, ID mapping and ranked results.
-2. `ContextBuilder.build`: join retrieved chunks into a bounded, traceable context.
-3. `PromptBuilder.build`: construct a grounded prompt with explicit source usage rules.
-4. `HuggingFaceGenerator.generate`: load/call the Hugging Face model and decode output.
-5. `RAGPipeline.query`: connect retrieval, context, prompt, generation, and sources.
-6. Remove the skip markers in `tests/test_rag_todos.py` and write at least two meaningful
-   assertions yourself.
+2. Enforce a context/token budget that reserves space for generated tokens.
+3. Evaluate answer citations: the CLI lists retrieved sources, but the model may
+   omit inline citations. Listed sources are not proof of sentence-level attribution.
+4. Verify dependency ranges against the tested environment before a clean install.
+5. Add retrieval/answer evaluation and broader failure-case coverage.
 
-Search for `TODO(DAY18)` to find every intended exercise point.
+See `docs/learning-log/2026-10-02.md` for the completed milestone.
 
 ## Definition of done
 
@@ -106,4 +112,3 @@ Search for `TODO(DAY18)` to find every intended exercise point.
 - A real question returns an answer plus ranked sources.
 - No core RAG logic lives only in a notebook.
 - Missing artifacts or invalid configuration fail with clear messages.
-

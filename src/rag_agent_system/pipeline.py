@@ -14,7 +14,13 @@ class ContextBuilderProtocol(Protocol):
 
 
 class PromptBuilderProtocol(Protocol):
-    def build(self, question: str, context: str) -> str: ...
+    def build(
+        self,
+        question: str,
+        context: str,
+        *,
+        additional_instruction: str | None = None,
+    ) -> str: ...
 
 
 class Generator(Protocol):
@@ -39,12 +45,25 @@ class RAGPipeline:
         self.generator = generator
         self.top_k = top_k
 
-    def query(self, question: str) -> RAGResult:
-        """Answer a question and return the evidence used.
+    def query(
+            self,
+            question: str,
+            *,
+            additional_instruction: str | None = None,) -> RAGResult:
+        if not isinstance(question, str):
+            raise TypeError("question must be a string.")
 
-        TODO(DAY18): validate the question and connect retrieve -> context -> prompt ->
-        generate. Return an immutable ``RAGResult`` with the retrieved sources.
-        """
+        question = question.strip()
+        if not question:
+            raise ValueError("question cannot be empty.")
 
-        raise NotImplementedError("TODO(DAY18): implement RAGPipeline.query")
+        chunks=self.retriever.retrieve(question, top_k=self.top_k)
+        context=self.context_builder.build(chunks)
+        prompt = self.prompt_builder.build(
+            question,
+            context,
+            additional_instruction=additional_instruction,
+        )
+        answer=self.generator.generate(prompt)
+        return RAGResult(question=question, answer=answer,sources=tuple(chunks))
 

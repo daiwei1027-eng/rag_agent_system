@@ -1,17 +1,24 @@
 """Retrieved-context assembly contract."""
-
 from rag_agent_system.models import RetrievedChunk
 
-
 class ContextBuilder:
-    """Build bounded, source-labelled context from ranked chunks."""
-
+    """Build source-labelled context from ranked chunks."""
     def build(self, chunks: list[RetrievedChunk]) -> str:
         """Convert retrieved chunks into the context passed to the prompt.
 
-        TODO(DAY18): choose a stable source label format, join chunks in rank order,
-        and enforce a defensible character/token budget without losing traceability.
+        Preserve the supplied retrieval order and source labels.
+        TODO: enforce a character/token budget without losing traceability.
         """
 
-        raise NotImplementedError("TODO(DAY18): implement ContextBuilder.build")
-
+        output:list[str]=[]
+        for result in chunks:
+            rank = result.rank
+            chunk_id=result.chunk.chunk_id
+            source=result.chunk.source
+            if not source:
+                source="Unknown"
+            text=result.chunk.text
+            inf_block=(f"rank:{rank},source:{source},chunk_id:{chunk_id}\n"
+                       f"{text}")
+            output.append(inf_block)
+        return "\n\n".join(output)
