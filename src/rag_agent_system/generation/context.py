@@ -11,14 +11,14 @@ class ContextBuilder:
         """
 
         output:list[str]=[]
-        for result in chunks:
+        for position,result in enumerate(chunks,start=1):
             rank = result.rank
             chunk_id=result.chunk.chunk_id
             source=result.chunk.source
             if not source:
                 source="Unknown"
             text=result.chunk.text
-            inf_block=(f"rank:{rank},source:{source},chunk_id:{chunk_id}\n"
+            inf_block=(f"position:{position},rank:{rank},source:{source},chunk_id:{chunk_id}\n"
                        f"{text}")
             output.append(inf_block)
         return "\n\n".join(output)

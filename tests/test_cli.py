@@ -1,7 +1,10 @@
 """Check CLI preference forwarding without loading retrieval or model resources."""
 
 import pytest
-
+from rag_agent_system.retrieval import (
+    CrossEncoderReranker,
+    FaissRetriever,
+)
 from rag_agent_system import cli
 from rag_agent_system.models import RAGResult
 
@@ -19,7 +22,11 @@ def test_cli_forwards_additional_instruction(monkeypatch, capsys, instruction):
             return RAGResult(question=question, answer="Lily.", sources=())
 
     for name in (
-        "FaissRetriever", "ContextBuilder", "PromptBuilder", "HuggingFaceGenerator"
+            "FaissRetriever",
+            "CrossEncoderReranker",
+            "ContextBuilder",
+            "PromptBuilder",
+            "HuggingFaceGenerator",
     ):
         monkeypatch.setattr(cli, name, lambda *args, **kwargs: object())
     monkeypatch.setattr(cli, "RAGPipeline", FakePipeline)

@@ -21,7 +21,7 @@ def test_build_preserves_content_and_source() -> None:
     # 正文、来源、chunk ID 和引用编号是否都被保留？
 
     expected = (
-        "rank:1,source:tinystories,chunk_id:story-a\n"
+        "position:1,rank:1,source:tinystories,chunk_id:story-a\n"
         "Lily found a needle."
     )
     assert context == expected,"Context should be preserved"

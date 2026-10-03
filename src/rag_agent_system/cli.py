@@ -8,8 +8,10 @@ from rag_agent_system.config import load_config
 from rag_agent_system.generation import ContextBuilder, HuggingFaceGenerator, PromptBuilder
 from rag_agent_system.logging_config import configure_logging
 from rag_agent_system.pipeline import RAGPipeline
-from rag_agent_system.retrieval import FaissRetriever
-
+from rag_agent_system.retrieval import (
+    CrossEncoderReranker,
+    FaissRetriever,
+)
 LOGGER = logging.getLogger(__name__)
 
 
@@ -31,6 +33,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     configure_logging(config.log_level)
 
     question = args.question or input("Question: ").strip()
+    reranker=None
+    if config.reranker.enabled:
+        reranker=CrossEncoderReranker(model_name=config.reranker.model_name,
+                                      max_length=config.reranker.max_length,
+                                      batch_size=config.reranker.batch_size)
+
     pipeline = RAGPipeline(
         retriever=FaissRetriever(
             index_path=config.paths.faiss_index,
@@ -40,6 +48,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 config.retrieval.normalize_embeddings
             ),
         ),
+        reranker=reranker,
+        rerank_top_k=config.reranker.top_k,
+        context_top_k=config.context.top_k,
         context_builder=ContextBuilder(),
         prompt_builder=PromptBuilder(),
         generator=HuggingFaceGenerator(
@@ -60,6 +71,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 2
 
     print(f"\nAnswer:\n{result.answer}\n\nSources:")
-    for source in result.sources:
-        print(f"[{source.rank}] chunk_id={source.chunk.chunk_id} score={source.score:.4f}")
+    for position,source in enumerate(result.sources,start=1):
+        print(f"Original Rank{source.rank}Original Score {source.score}\n"
+              f"Chunk_id:{source.chunk.chunk_id},Position:{position}\n"
+              f"Text:{source.chunk.text}\n")
+        if source.rerank_score is not None:
+            print(f"Rerank Rank{source.rerank_rank}Rerank Score {source.rerank_score}\n")
     return 0

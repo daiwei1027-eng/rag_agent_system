@@ -21,6 +21,8 @@ class RetrievedChunk:
     chunk: DocumentChunk
     score: float
     rank: int
+    rerank_score:float|None=None
+    rerank_rank:int|None=None
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,4 +32,4 @@ class RAGResult:
     question: str
     answer: str
     sources: tuple[RetrievedChunk, ...]
-
+    retrieved_candidates: tuple[RetrievedChunk, ...] = ()

@@ -19,7 +19,7 @@ class PathConfig:
 class RetrievalConfig:
     embedding_model: str
     normalize_embeddings: bool
-    top_k: int = 3
+    top_k: int = 20
 
 
 @dataclass(frozen=True, slots=True)
@@ -27,7 +27,18 @@ class GenerationConfig:
     model_name: str
     max_new_tokens: int = 256
     temperature: float = 0.2
+@dataclass(frozen=True, slots=True)
+class RerankerConfig:
+    enabled: bool
+    model_name: str
+    top_k: int = 5
+    max_length: int = 512
+    batch_size: int = 8
 
+
+@dataclass(frozen=True, slots=True)
+class ContextConfig:
+    top_k: int = 5
 
 @dataclass(frozen=True, slots=True)
 class AppConfig:
@@ -36,14 +47,28 @@ class AppConfig:
     paths: PathConfig
     retrieval: RetrievalConfig
     generation: GenerationConfig
-
+    reranker: RerankerConfig
+    context: ContextConfig
 
 def _section(raw: dict[str, Any], name: str) -> dict[str, Any]:
     value = raw.get(name)
     if not isinstance(value, dict):
         raise ValueError(f"Configuration section '{name}' must be a mapping.")
     return value
+def _positive_int(
+    section: dict[str, Any],
+    key: str,
+    default: int,
+    section_name: str,
+) -> int:
+    value = section.get(key, default)
 
+    if type(value) is not int or value <= 0:
+        raise ValueError(
+            f"{section_name}.{key} must be a positive integer."
+        )
+
+    return value
 
 def load_config(path: str | Path | None = None) -> AppConfig:
     """Load and minimally validate project configuration from YAML."""
@@ -62,24 +87,45 @@ def load_config(path: str | Path | None = None) -> AppConfig:
     paths = _section(raw, "paths")
     retrieval = _section(raw, "retrieval")
     generation = _section(raw, "generation")
+    reranker= _section(raw, "reranker")
+    context = _section(raw, "context")
 
-    top_k = int(retrieval.get("top_k", 3))
+    top_k = _positive_int(retrieval, "top_k", 20, "retrieval")
+    rerank_top_k = _positive_int(reranker, "top_k", 5, "reranker")
+    max_length = _positive_int(reranker, "max_length", 512, "reranker")
+    batch_size = _positive_int(reranker, "batch_size", 8, "reranker")
+    context_top_k = _positive_int(context, "top_k", 5, "context")
 
-    if top_k < 1:
-        raise ValueError(
-            "retrieval.top_k must be at least 1."
-        )
-
-    normalize_embeddings = retrieval.get(
-        "normalize_embeddings"
-    )
-
+    normalize_embeddings = retrieval.get("normalize_embeddings")
     if not isinstance(normalize_embeddings, bool):
         raise ValueError(
-            "retrieval.normalize_embeddings "
-            "must be true or false."
+            "retrieval.normalize_embeddings must be true or false."
         )
 
+    enabled = reranker.get("enabled")
+    if not isinstance(enabled, bool):
+        raise ValueError("reranker.enabled must be true or false.")
+
+    model_name = reranker.get("model_name", "")
+    if not isinstance(model_name, str):
+        raise ValueError("reranker.model_name must be a string.")
+
+    model_name = model_name.strip()
+    if enabled and not model_name:
+        raise ValueError(
+            "reranker.model_name must be set when reranker is enabled."
+        )
+
+    if context_top_k > top_k:
+        raise ValueError(
+            "context.top_k must not exceed retrieval.top_k."
+        )
+
+    if enabled and not context_top_k <= rerank_top_k <= top_k:
+        raise ValueError(
+            "When reranker is enabled, require: "
+            "context.top_k <= reranker.top_k <= retrieval.top_k."
+        )
     return AppConfig(
         name=str(
             project.get("name", "rag-agent-system")
@@ -114,5 +160,15 @@ def load_config(path: str | Path | None = None) -> AppConfig:
             temperature=float(
                 generation.get("temperature", 0.2)
             ),
+        ),
+        reranker=RerankerConfig(
+            enabled=enabled,
+            model_name=model_name,
+            top_k=rerank_top_k,
+            max_length=max_length,
+            batch_size=batch_size,
+        ),
+        context=ContextConfig(
+            top_k=context_top_k,
         ),
     )

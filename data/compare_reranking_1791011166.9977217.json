@@ -1,0 +1,739 @@
+{
+  "question": "Who found a needle and asked her mother to sew a button?",
+  "config": {
+    "Temperature": 0,
+    "Retrieved_top_k": 20,
+    "Rerank_top_k": 5,
+    "Context_top_k": 5,
+    "tokenizer and generation model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "Reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "Retriever": "sentence-transformers/all-MiniLM-L6-v2",
+    "Max_Length": 512,
+    "Batch_size": 8,
+    "Normalize_embeddings": true,
+    "max_new_tokens": 256,
+    "Faiss_Index_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\tinystories.faiss",
+    "Data_Chunks_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\tinystories_chunks.json"
+  },
+  "retrieved_candidates": [
+    {
+      "With_Rerank_Query_candidates": [
+        {
+          "chunk": {
+            "chunk_id": "0",
+            "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 0
+            }
+          },
+          "score": 0.7131327986717224,
+          "rank": 1,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "2732",
+            "text": " needle to do it, but she didn't know where to get one. One day, she found a magical needle in her garden. She was so excited! She picked up the needle and held it gently. She still wasn't sure what to do with it, so she showed it to her parents.\n\nHer parents thought it was a great idea! They brought out some colorful threads and showed her how to use the needle. The princess started to stitch the colors together. She wasn't so gentle at first and poked her finger, but she kept trying.\n\nFinally, the princess finished, and put the needle down. She had made a",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 2732
+            }
+          },
+          "score": 0.6842125654220581,
+          "rank": 2,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8983",
+            "text": " sound.\n\nOne day she asked her mum if she could find a special needle to make the bell even better. Mum said yes and gave her an easy needle to use. Sally was so happy!\n\nShe ran to the bell and started to fumble with the needle. Of course, it was tricky and Sally couldn't quite get it in the right place. \n\nBut Mum came and sat with Sally, helping her hands stay steady as she carefully placed the needle inside the bell. \n\nAt last, she made the needle stay. Sally rang the bell and was delighted to hear its louder, clearer sound ringing out of her room. She had done",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8983
+            }
+          },
+          "score": 0.6156147718429565,
+          "rank": 3,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8117",
+            "text": " shiny. Lisa knew she shouldn't touch it, so she decided to ask an adult for help.\n\nShe went to an old man and asked, \"Please, could you help me?\" The old man smiled and said, \"Yes, I can help. What do you need?\" Lisa told him about the needel, and the old man recommended she tell her mummy. \n\nSo Lisa ran home and found her mummy. She told her all about the needle she had seen and her mummy said, \"That's not a plaything, Lisa! You must never touch one of those.\" Her mummy recommended she stay away from",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8117
+            }
+          },
+          "score": 0.568048357963562,
+          "rank": 4,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "7101",
+            "text": ". She became very excited and started to laugh.\n\nShe grabbed her mommyâ€™s sewing box and found a needle and some thread. She was determined to fix the stitch by herself! She tried very hard to do it, but she was only three and couldnâ€™t manage it.\n\nSophie got very impatient, so she called for help. Her mommy came and saw Sophie trying to sew the stitch. She smiled at her and said â€œSophie, let me help youâ€.\n\nSophie smiled, thankful that her mommy was there to help. She watched as her mommy skillfully stitched the hole. When she was",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 7101
+            }
+          },
+          "score": 0.5676668286323547,
+          "rank": 5,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "5606",
+            "text": ". She was very good at using the needle to stitch things together. \n\nOne day, the girl wanted to make something special. She got some colorful fabric and sat down to sew. She tried her best to make something nice. She worked for a long time.\n\nWhen she was done, she had made a beautiful quilt! Everyone was so happy with it. All the colors looked lively and the stitches were neat and strong.\n\nThe little girl was very proud. She said to everyone, \"Look what I made! Isn't it great?\" \n\nEveryone cheered. They said, \"Wow! You are very good at improving things with your needle",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 5606
+            }
+          },
+          "score": 0.5664460062980652,
+          "rank": 6,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8162",
+            "text": " it was too late.\"Look, Mommy!\" exclaimed three-year-old Jenny. She had found a strange knot in the garden of her home.\n\n\"That looks strange,\" said Mommy.\n\nJenny decided to replace the knot with something else. She started looking around.\n\nSuddenly, Jenny found a loud buzzer. She picked it up and quickly put it in the place of the knot.\n\nMommy shook her head, but said nothing.\n\nJenny smiled as the buzzer made a loud noise. But then, it wouldn't stop!\n\nMommy shouted, \"What did you do?\"\n\nUnfortunately, the buzzer just kept getting louder and",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8162
+            }
+          },
+          "score": 0.5616012811660767,
+          "rank": 7,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8982",
+            "text": " were dressed in all the colors she had seen earlier! Some were spinning, and some were dancing. \n\nThe little girl smiled, wide, and broke into applause. The crowd clapped back, and it was the noisiest, brightest thing she had ever seen.Once there was a tiny little girl called Sally. She had lots of toys like dolls and teddies, but her favourite toy was a little bell. Sally loved to make it ring and listen to its sweet sound.\n\nOne day she asked her mum if she could find a special needle to make the bell even better. Mum said yes and gave her an easy needle to",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8982
+            }
+          },
+          "score": 0.5506291389465332,
+          "rank": 8,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "1284",
+            "text": "Once upon a time, there was a boy named Timmy. Timmy loved to play outside and explore. One day, he saw a garage that he had never seen before. He wanted to go inside and see what was there. His mom said, \"Be careful, Timmy. Don't slip on anything.\"\n\nTimmy went inside the garage and saw lots of tools and machines. He was so excited to look at everything. But then, he saw a big, red button. He asked his mom what it was for, but she didn't know. Timmy wanted to press it, but his mom said, \"No,",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 1284
+            }
+          },
+          "score": 0.5505988597869873,
+          "rank": 9,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "5605",
+            "text": " and said, \"Thank you mummy!\"\n\nThe mummy said, \"You're welcome my love. Now go to sleep - it is time for bed.\"\n\nThe mummy and the baby hugged one more time, and then the baby fell asleep. He was so sleepy and happy, with a big smile on his face. \n\nThe End.Once upon a time there was a little girl. She loved to make things. She especially liked to make things with her needle and thread. She was very good at using the needle to stitch things together. \n\nOne day, the girl wanted to make something special. She got some colorful fabric and",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 5605
+            }
+          },
+          "score": 0.5473583936691284,
+          "rank": 10,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8925",
+            "text": " At the base of the tree was an old metal box with a buckle. Sally was curious so she opened the buckle and looked inside the box.\n\nInside the box, Sally found something that looked harmless. She reached inside and grabbed it. It turned out to be a shiny tool that she could use to work.\n\nSally was very excited and couldn't wait to use the tool. She used it to build things and transform the world around her. She was very proud of the hard work she had done. \n\nBut Sally soon realized that wherever she had gotten the tool, it was not a harmless thing. In fact, it had been lying",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8925
+            }
+          },
+          "score": 0.5438594818115234,
+          "rank": 11,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "277",
+            "text": " to take a closer look and curiously stepped inside.\n\nShe was amazed to discover that the hollow tree was filled with twinkling lights which displayed colourful images. She gasped in delight and called out to her mum, who had been walking just behind Anna.\n\n\"Mummy! Come and look!\" Anna exclaimed, stretching her arm out to point to the beautiful display. \n\nMummy smiled, \"Oh Anna, you have found a magical tree!\"Once upon a time there was an orange needle called Frank. He had been in the same spot for years and he was getting bored. He wanted to explore, but he didn't know how to.\n\n",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 277
+            }
+          },
+          "score": 0.5366328358650208,
+          "rank": 12,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8163",
+            "text": " a loud noise. But then, it wouldn't stop!\n\nMommy shouted, \"What did you do?\"\n\nUnfortunately, the buzzer just kept getting louder and louder. Eventually, Mommy had to take it away and put the knot back in its place.\n\nAnd Jenny learned her lesson - not to replace things without asking first!Once upon a time there was a little boy named Carl. He was very hungry and wanted something to eat. He looked around the house and saw a big envelope on the table. He thought maybe the envelope had something special inside, so he opened it up.\n\nWhat he found inside was a measuring tape. He",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8163
+            }
+          },
+          "score": 0.5355809926986694,
+          "rank": 13,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "7168",
+            "text": ". She put the tap inside and then filled the hole back up. She called it \"burying the tap\". \n\nThe little girl was very proud of herself. She had buried the tap all by herself, and it was so perfect. She had kept it safe and nobody else could have it. She ran back home to tell her mommy and daddy all about it.\n\nThe next day, the girl went back to the spot where she had buried the tap. To her surprise, the tap was gone. Where could it have gone? She looked and looked but couldn't find it anywhere. She was very sad, but then realized that this",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 7168
+            }
+          },
+          "score": 0.534093976020813,
+          "rank": 14,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "375",
+            "text": " help,\" Dad said.\n\nBen started feeling around the logs and pushing them to see which was the perfect log for Dad. At last, Ben found the perfect log and gave it to Dad.\n\nDad was so happy. He thanked Ben for his help. Together they took the log home.Once upon a time, there lived a young girl. Her name was Molly and she was three years old. Molly's mummy was so proud of her daughter.\n\nOne day, Molly was feeling a bit wild. She wanted to do something daring. So, she asked her Mum, \"Mummy, can I wear a skirt?\"\n\nMummy thought",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 375
+            }
+          },
+          "score": 0.5316838026046753,
+          "rank": 15,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "1955",
+            "text": " the scissors. It hurt a lot and it bled.\n\n\"Ow, ow, ow!\" Anna cried. \"I cut my thumb! It hurts!\"\n\nTom heard her cry and ran to her. He saw her thumb and the blood. He felt sorry for her, but he also felt disgusted. He did not like blood. It made him feel sick.\n\n\"Anna, don't cry. Let me see your thumb,\" Tom said. He took her hand and looked at the cut. It was not very big, but it was deep. He knew he had to help her. He remembered what his mom told him to do when",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 1955
+            }
+          },
+          "score": 0.5301216840744019,
+          "rank": 16,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "2872",
+            "text": "Mummy said that the bracelet was very special, and Jenny should give it away to someone special. So Jenny thought about all the special people in her life and decided to give the bracelet to her best friend.\n\nThe next day Jenny was so excited and put the bracelet into a special bag for her friend. Her friend was so happy and excited when Jenny gave her the bracelet. They both said it was so special, and they each wore it proudly, day and night.Once upon a time, there were two sister called Jane and Sue. Jane's dress was very dull and plain, but Sue had the most beautiful dress. It was the",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 2872
+            }
+          },
+          "score": 0.5300328135490417,
+          "rank": 17,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "3496",
+            "text": " grinned and replied, \"I'm playing with the napkin.\"\n\n\"Oh, let me see!\" her mom said.\n\nMary handed the napkin to her mom and she hung it on her finger. It looked funny hanging there.\n\n\"It looks like a hairy little monster!\" her mom laughed.\n\nThey both laughed and hugged each other. Mary hugged the napkin and hung it on her finger again. She giggled when she pretended it was talking. Mary and her mom were having so much fun together.Once upon a time there was a little girl who loved to explore. One day she found a bookshelf and wanted to find out what was inside",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 3496
+            }
+          },
+          "score": 0.5296921730041504,
+          "rank": 18,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "3700",
+            "text": " it was for. He tugged and untied the rope, but nothing happened.\n\nThe little boy continued down the path, wondering what the rope could have been for. Suddenly, he heard a loud noise coming from behind him. He looked back, and was amazed to see a magical bridge connecting the two sides of the path.\n\nThe bridge was held together by the rope the little boy had untied earlier. He was so excited and proud that his curiosity had solved the mystery. He tied the rope back together and happily crossed the bridge. From then on, he remembered to always be curious!One day, there was a vendor in town",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 3700
+            }
+          },
+          "score": 0.5288029909133911,
+          "rank": 19,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8926",
+            "text": " work she had done. \n\nBut Sally soon realized that wherever she had gotten the tool, it was not a harmless thing. In fact, it had been lying in wait for her, and now it was doing a different kind of work. \n\nSo Sally quickly put the tool back in the box with the buckle and hid it away under the tree. She knew that she needed to be careful when exploring, and she never wanted to come across the mysterious tool again.Once upon a time, there was a little boy called Bob. He was three years old and was very curious about the world around him.\n\nOne sunny day, Bob was walking",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8926
+            }
+          },
+          "score": 0.5270287394523621,
+          "rank": 20,
+          "rerank_score": null,
+          "rerank_rank": null
+        }
+      ],
+      "Without_Rerank_Query_candidates": [
+        {
+          "chunk": {
+            "chunk_id": "0",
+            "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 0
+            }
+          },
+          "score": 0.7131327986717224,
+          "rank": 1,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "2732",
+            "text": " needle to do it, but she didn't know where to get one. One day, she found a magical needle in her garden. She was so excited! She picked up the needle and held it gently. She still wasn't sure what to do with it, so she showed it to her parents.\n\nHer parents thought it was a great idea! They brought out some colorful threads and showed her how to use the needle. The princess started to stitch the colors together. She wasn't so gentle at first and poked her finger, but she kept trying.\n\nFinally, the princess finished, and put the needle down. She had made a",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 2732
+            }
+          },
+          "score": 0.6842125654220581,
+          "rank": 2,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8983",
+            "text": " sound.\n\nOne day she asked her mum if she could find a special needle to make the bell even better. Mum said yes and gave her an easy needle to use. Sally was so happy!\n\nShe ran to the bell and started to fumble with the needle. Of course, it was tricky and Sally couldn't quite get it in the right place. \n\nBut Mum came and sat with Sally, helping her hands stay steady as she carefully placed the needle inside the bell. \n\nAt last, she made the needle stay. Sally rang the bell and was delighted to hear its louder, clearer sound ringing out of her room. She had done",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8983
+            }
+          },
+          "score": 0.6156147718429565,
+          "rank": 3,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8117",
+            "text": " shiny. Lisa knew she shouldn't touch it, so she decided to ask an adult for help.\n\nShe went to an old man and asked, \"Please, could you help me?\" The old man smiled and said, \"Yes, I can help. What do you need?\" Lisa told him about the needel, and the old man recommended she tell her mummy. \n\nSo Lisa ran home and found her mummy. She told her all about the needle she had seen and her mummy said, \"That's not a plaything, Lisa! You must never touch one of those.\" Her mummy recommended she stay away from",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8117
+            }
+          },
+          "score": 0.568048357963562,
+          "rank": 4,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "7101",
+            "text": ". She became very excited and started to laugh.\n\nShe grabbed her mommyâ€™s sewing box and found a needle and some thread. She was determined to fix the stitch by herself! She tried very hard to do it, but she was only three and couldnâ€™t manage it.\n\nSophie got very impatient, so she called for help. Her mommy came and saw Sophie trying to sew the stitch. She smiled at her and said â€œSophie, let me help youâ€.\n\nSophie smiled, thankful that her mommy was there to help. She watched as her mommy skillfully stitched the hole. When she was",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 7101
+            }
+          },
+          "score": 0.5676668286323547,
+          "rank": 5,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "5606",
+            "text": ". She was very good at using the needle to stitch things together. \n\nOne day, the girl wanted to make something special. She got some colorful fabric and sat down to sew. She tried her best to make something nice. She worked for a long time.\n\nWhen she was done, she had made a beautiful quilt! Everyone was so happy with it. All the colors looked lively and the stitches were neat and strong.\n\nThe little girl was very proud. She said to everyone, \"Look what I made! Isn't it great?\" \n\nEveryone cheered. They said, \"Wow! You are very good at improving things with your needle",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 5606
+            }
+          },
+          "score": 0.5664460062980652,
+          "rank": 6,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8162",
+            "text": " it was too late.\"Look, Mommy!\" exclaimed three-year-old Jenny. She had found a strange knot in the garden of her home.\n\n\"That looks strange,\" said Mommy.\n\nJenny decided to replace the knot with something else. She started looking around.\n\nSuddenly, Jenny found a loud buzzer. She picked it up and quickly put it in the place of the knot.\n\nMommy shook her head, but said nothing.\n\nJenny smiled as the buzzer made a loud noise. But then, it wouldn't stop!\n\nMommy shouted, \"What did you do?\"\n\nUnfortunately, the buzzer just kept getting louder and",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8162
+            }
+          },
+          "score": 0.5616012811660767,
+          "rank": 7,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8982",
+            "text": " were dressed in all the colors she had seen earlier! Some were spinning, and some were dancing. \n\nThe little girl smiled, wide, and broke into applause. The crowd clapped back, and it was the noisiest, brightest thing she had ever seen.Once there was a tiny little girl called Sally. She had lots of toys like dolls and teddies, but her favourite toy was a little bell. Sally loved to make it ring and listen to its sweet sound.\n\nOne day she asked her mum if she could find a special needle to make the bell even better. Mum said yes and gave her an easy needle to",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8982
+            }
+          },
+          "score": 0.5506291389465332,
+          "rank": 8,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "1284",
+            "text": "Once upon a time, there was a boy named Timmy. Timmy loved to play outside and explore. One day, he saw a garage that he had never seen before. He wanted to go inside and see what was there. His mom said, \"Be careful, Timmy. Don't slip on anything.\"\n\nTimmy went inside the garage and saw lots of tools and machines. He was so excited to look at everything. But then, he saw a big, red button. He asked his mom what it was for, but she didn't know. Timmy wanted to press it, but his mom said, \"No,",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 1284
+            }
+          },
+          "score": 0.5505988597869873,
+          "rank": 9,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "5605",
+            "text": " and said, \"Thank you mummy!\"\n\nThe mummy said, \"You're welcome my love. Now go to sleep - it is time for bed.\"\n\nThe mummy and the baby hugged one more time, and then the baby fell asleep. He was so sleepy and happy, with a big smile on his face. \n\nThe End.Once upon a time there was a little girl. She loved to make things. She especially liked to make things with her needle and thread. She was very good at using the needle to stitch things together. \n\nOne day, the girl wanted to make something special. She got some colorful fabric and",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 5605
+            }
+          },
+          "score": 0.5473583936691284,
+          "rank": 10,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8925",
+            "text": " At the base of the tree was an old metal box with a buckle. Sally was curious so she opened the buckle and looked inside the box.\n\nInside the box, Sally found something that looked harmless. She reached inside and grabbed it. It turned out to be a shiny tool that she could use to work.\n\nSally was very excited and couldn't wait to use the tool. She used it to build things and transform the world around her. She was very proud of the hard work she had done. \n\nBut Sally soon realized that wherever she had gotten the tool, it was not a harmless thing. In fact, it had been lying",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8925
+            }
+          },
+          "score": 0.5438594818115234,
+          "rank": 11,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "277",
+            "text": " to take a closer look and curiously stepped inside.\n\nShe was amazed to discover that the hollow tree was filled with twinkling lights which displayed colourful images. She gasped in delight and called out to her mum, who had been walking just behind Anna.\n\n\"Mummy! Come and look!\" Anna exclaimed, stretching her arm out to point to the beautiful display. \n\nMummy smiled, \"Oh Anna, you have found a magical tree!\"Once upon a time there was an orange needle called Frank. He had been in the same spot for years and he was getting bored. He wanted to explore, but he didn't know how to.\n\n",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 277
+            }
+          },
+          "score": 0.5366328358650208,
+          "rank": 12,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8163",
+            "text": " a loud noise. But then, it wouldn't stop!\n\nMommy shouted, \"What did you do?\"\n\nUnfortunately, the buzzer just kept getting louder and louder. Eventually, Mommy had to take it away and put the knot back in its place.\n\nAnd Jenny learned her lesson - not to replace things without asking first!Once upon a time there was a little boy named Carl. He was very hungry and wanted something to eat. He looked around the house and saw a big envelope on the table. He thought maybe the envelope had something special inside, so he opened it up.\n\nWhat he found inside was a measuring tape. He",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8163
+            }
+          },
+          "score": 0.5355809926986694,
+          "rank": 13,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "7168",
+            "text": ". She put the tap inside and then filled the hole back up. She called it \"burying the tap\". \n\nThe little girl was very proud of herself. She had buried the tap all by herself, and it was so perfect. She had kept it safe and nobody else could have it. She ran back home to tell her mommy and daddy all about it.\n\nThe next day, the girl went back to the spot where she had buried the tap. To her surprise, the tap was gone. Where could it have gone? She looked and looked but couldn't find it anywhere. She was very sad, but then realized that this",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 7168
+            }
+          },
+          "score": 0.534093976020813,
+          "rank": 14,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "375",
+            "text": " help,\" Dad said.\n\nBen started feeling around the logs and pushing them to see which was the perfect log for Dad. At last, Ben found the perfect log and gave it to Dad.\n\nDad was so happy. He thanked Ben for his help. Together they took the log home.Once upon a time, there lived a young girl. Her name was Molly and she was three years old. Molly's mummy was so proud of her daughter.\n\nOne day, Molly was feeling a bit wild. She wanted to do something daring. So, she asked her Mum, \"Mummy, can I wear a skirt?\"\n\nMummy thought",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 375
+            }
+          },
+          "score": 0.5316838026046753,
+          "rank": 15,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "1955",
+            "text": " the scissors. It hurt a lot and it bled.\n\n\"Ow, ow, ow!\" Anna cried. \"I cut my thumb! It hurts!\"\n\nTom heard her cry and ran to her. He saw her thumb and the blood. He felt sorry for her, but he also felt disgusted. He did not like blood. It made him feel sick.\n\n\"Anna, don't cry. Let me see your thumb,\" Tom said. He took her hand and looked at the cut. It was not very big, but it was deep. He knew he had to help her. He remembered what his mom told him to do when",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 1955
+            }
+          },
+          "score": 0.5301216840744019,
+          "rank": 16,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "2872",
+            "text": "Mummy said that the bracelet was very special, and Jenny should give it away to someone special. So Jenny thought about all the special people in her life and decided to give the bracelet to her best friend.\n\nThe next day Jenny was so excited and put the bracelet into a special bag for her friend. Her friend was so happy and excited when Jenny gave her the bracelet. They both said it was so special, and they each wore it proudly, day and night.Once upon a time, there were two sister called Jane and Sue. Jane's dress was very dull and plain, but Sue had the most beautiful dress. It was the",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 2872
+            }
+          },
+          "score": 0.5300328135490417,
+          "rank": 17,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "3496",
+            "text": " grinned and replied, \"I'm playing with the napkin.\"\n\n\"Oh, let me see!\" her mom said.\n\nMary handed the napkin to her mom and she hung it on her finger. It looked funny hanging there.\n\n\"It looks like a hairy little monster!\" her mom laughed.\n\nThey both laughed and hugged each other. Mary hugged the napkin and hung it on her finger again. She giggled when she pretended it was talking. Mary and her mom were having so much fun together.Once upon a time there was a little girl who loved to explore. One day she found a bookshelf and wanted to find out what was inside",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 3496
+            }
+          },
+          "score": 0.5296921730041504,
+          "rank": 18,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "3700",
+            "text": " it was for. He tugged and untied the rope, but nothing happened.\n\nThe little boy continued down the path, wondering what the rope could have been for. Suddenly, he heard a loud noise coming from behind him. He looked back, and was amazed to see a magical bridge connecting the two sides of the path.\n\nThe bridge was held together by the rope the little boy had untied earlier. He was so excited and proud that his curiosity had solved the mystery. He tied the rope back together and happily crossed the bridge. From then on, he remembered to always be curious!One day, there was a vendor in town",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 3700
+            }
+          },
+          "score": 0.5288029909133911,
+          "rank": 19,
+          "rerank_score": null,
+          "rerank_rank": null
+        },
+        {
+          "chunk": {
+            "chunk_id": "8926",
+            "text": " work she had done. \n\nBut Sally soon realized that wherever she had gotten the tool, it was not a harmless thing. In fact, it had been lying in wait for her, and now it was doing a different kind of work. \n\nSo Sally quickly put the tool back in the box with the buckle and hid it away under the tree. She knew that she needed to be careful when exploring, and she never wanted to come across the mysterious tool again.Once upon a time, there was a little boy called Bob. He was three years old and was very curious about the world around him.\n\nOne sunny day, Bob was walking",
+            "source": "tinystories",
+            "metadata": {
+              "faiss_id": 8926
+            }
+          },
+          "score": 0.5270287394523621,
+          "rank": 20,
+          "rerank_score": null,
+          "rerank_rank": null
+        }
+      ]
+    }
+  ],
+  "without_reranker": {
+    "answer": "The little girl named Lily found a needle and asked her mom to sew a button on her shirt.",
+    "query_seconds": 6.841905117034912,
+    "sources": [
+      {
+        "chunk": {
+          "chunk_id": "0",
+          "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 0
+          }
+        },
+        "score": 0.7131327986717224,
+        "rank": 1,
+        "rerank_score": null,
+        "rerank_rank": null
+      },
+      {
+        "chunk": {
+          "chunk_id": "2732",
+          "text": " needle to do it, but she didn't know where to get one. One day, she found a magical needle in her garden. She was so excited! She picked up the needle and held it gently. She still wasn't sure what to do with it, so she showed it to her parents.\n\nHer parents thought it was a great idea! They brought out some colorful threads and showed her how to use the needle. The princess started to stitch the colors together. She wasn't so gentle at first and poked her finger, but she kept trying.\n\nFinally, the princess finished, and put the needle down. She had made a",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 2732
+          }
+        },
+        "score": 0.6842125654220581,
+        "rank": 2,
+        "rerank_score": null,
+        "rerank_rank": null
+      },
+      {
+        "chunk": {
+          "chunk_id": "8983",
+          "text": " sound.\n\nOne day she asked her mum if she could find a special needle to make the bell even better. Mum said yes and gave her an easy needle to use. Sally was so happy!\n\nShe ran to the bell and started to fumble with the needle. Of course, it was tricky and Sally couldn't quite get it in the right place. \n\nBut Mum came and sat with Sally, helping her hands stay steady as she carefully placed the needle inside the bell. \n\nAt last, she made the needle stay. Sally rang the bell and was delighted to hear its louder, clearer sound ringing out of her room. She had done",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 8983
+          }
+        },
+        "score": 0.6156147718429565,
+        "rank": 3,
+        "rerank_score": null,
+        "rerank_rank": null
+      },
+      {
+        "chunk": {
+          "chunk_id": "8117",
+          "text": " shiny. Lisa knew she shouldn't touch it, so she decided to ask an adult for help.\n\nShe went to an old man and asked, \"Please, could you help me?\" The old man smiled and said, \"Yes, I can help. What do you need?\" Lisa told him about the needel, and the old man recommended she tell her mummy. \n\nSo Lisa ran home and found her mummy. She told her all about the needle she had seen and her mummy said, \"That's not a plaything, Lisa! You must never touch one of those.\" Her mummy recommended she stay away from",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 8117
+          }
+        },
+        "score": 0.568048357963562,
+        "rank": 4,
+        "rerank_score": null,
+        "rerank_rank": null
+      },
+      {
+        "chunk": {
+          "chunk_id": "7101",
+          "text": ". She became very excited and started to laugh.\n\nShe grabbed her mommyâ€™s sewing box and found a needle and some thread. She was determined to fix the stitch by herself! She tried very hard to do it, but she was only three and couldnâ€™t manage it.\n\nSophie got very impatient, so she called for help. Her mommy came and saw Sophie trying to sew the stitch. She smiled at her and said â€œSophie, let me help youâ€.\n\nSophie smiled, thankful that her mommy was there to help. She watched as her mommy skillfully stitched the hole. When she was",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 7101
+          }
+        },
+        "score": 0.5676668286323547,
+        "rank": 5,
+        "rerank_score": null,
+        "rerank_rank": null
+      }
+    ]
+  },
+  "with_reranker": {
+    "answer": "Lily found a needle and asked her mom to sew a button on her shirt.",
+    "query_seconds": 4.701825380325317,
+    "sources": [
+      {
+        "chunk": {
+          "chunk_id": "0",
+          "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 0
+          }
+        },
+        "score": 0.7131327986717224,
+        "rank": 1,
+        "rerank_score": 7.256026268005371,
+        "rerank_rank": 1
+      },
+      {
+        "chunk": {
+          "chunk_id": "7101",
+          "text": ". She became very excited and started to laugh.\n\nShe grabbed her mommyâ€™s sewing box and found a needle and some thread. She was determined to fix the stitch by herself! She tried very hard to do it, but she was only three and couldnâ€™t manage it.\n\nSophie got very impatient, so she called for help. Her mommy came and saw Sophie trying to sew the stitch. She smiled at her and said â€œSophie, let me help youâ€.\n\nSophie smiled, thankful that her mommy was there to help. She watched as her mommy skillfully stitched the hole. When she was",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 7101
+          }
+        },
+        "score": 0.5676668286323547,
+        "rank": 5,
+        "rerank_score": 3.2142581939697266,
+        "rerank_rank": 2
+      },
+      {
+        "chunk": {
+          "chunk_id": "2732",
+          "text": " needle to do it, but she didn't know where to get one. One day, she found a magical needle in her garden. She was so excited! She picked up the needle and held it gently. She still wasn't sure what to do with it, so she showed it to her parents.\n\nHer parents thought it was a great idea! They brought out some colorful threads and showed her how to use the needle. The princess started to stitch the colors together. She wasn't so gentle at first and poked her finger, but she kept trying.\n\nFinally, the princess finished, and put the needle down. She had made a",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 2732
+          }
+        },
+        "score": 0.6842125654220581,
+        "rank": 2,
+        "rerank_score": 0.5427707433700562,
+        "rerank_rank": 3
+      },
+      {
+        "chunk": {
+          "chunk_id": "8983",
+          "text": " sound.\n\nOne day she asked her mum if she could find a special needle to make the bell even better. Mum said yes and gave her an easy needle to use. Sally was so happy!\n\nShe ran to the bell and started to fumble with the needle. Of course, it was tricky and Sally couldn't quite get it in the right place. \n\nBut Mum came and sat with Sally, helping her hands stay steady as she carefully placed the needle inside the bell. \n\nAt last, she made the needle stay. Sally rang the bell and was delighted to hear its louder, clearer sound ringing out of her room. She had done",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 8983
+          }
+        },
+        "score": 0.6156147718429565,
+        "rank": 3,
+        "rerank_score": -1.0718649625778198,
+        "rerank_rank": 4
+      },
+      {
+        "chunk": {
+          "chunk_id": "5606",
+          "text": ". She was very good at using the needle to stitch things together. \n\nOne day, the girl wanted to make something special. She got some colorful fabric and sat down to sew. She tried her best to make something nice. She worked for a long time.\n\nWhen she was done, she had made a beautiful quilt! Everyone was so happy with it. All the colors looked lively and the stitches were neat and strong.\n\nThe little girl was very proud. She said to everyone, \"Look what I made! Isn't it great?\" \n\nEveryone cheered. They said, \"Wow! You are very good at improving things with your needle",
+          "source": "tinystories",
+          "metadata": {
+            "faiss_id": 5606
+          }
+        },
+        "score": 0.5664460062980652,
+        "rank": 6,
+        "rerank_score": -4.364076137542725,
+        "rerank_rank": 5
+      }
+    ]
+  },
+  "timing_scope": "Query includes first model loading; excludes original FAISS retrieval."
+}
