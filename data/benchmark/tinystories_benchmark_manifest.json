@@ -1,0 +1,51 @@
+{
+  "version": "day21-stage1-v1.2",
+  "created_date": "2026-10-05",
+  "question_count": 45,
+  "answerable_count": 40,
+  "unanswerable_count": 5,
+  "split": "unsplit",
+  "annotation_status_counts": {
+    "reviewed": 45
+  },
+  "corpus_chunk_count": 10417,
+  "generation_evaluated": false,
+  "files": [
+    {
+      "path": "data\\tinystories_chunks.json",
+      "sha256": "79c755c56d0c05482e8c497f503173c91b46e124216c6f44b91a7c505bd0b5eb"
+    },
+    {
+      "path": "data\\evaluation\\tinystories_queries_draft.jsonl",
+      "sha256": "d177f5fdd23fc350f4a5b1556a6c4cdb1c60cc59c6d77166b2b00c7be5567404"
+    },
+    {
+      "path": "docs\\learning-log\\2026-10-05.md",
+      "sha256": "6f5c2332ce026040553e0e07a338351f129b943cb504c39b4fce4f728cb87a7b"
+    }
+  ],
+  "dataset_sha256": "9a32ae2cc858007084b0bc79e002850ea15c355259d09f788e530e08badf2acf",
+  "normalizations": [
+    "q005: ,category -> category in copied dataset only.",
+    "q001-q040: preserve source_annotation_status; reviewed follows Day20 learning log.",
+    "q041-q045: assistant-checked story-scoped negative controls; user confirmed review completion on 2026-10-05.",
+    "Removed unverified story_group labels; no dataset split has been performed.",
+    "Removed inherited experimental config and index metadata from the dataset deliverable."
+  ],
+  "limitations": [
+    "40 known-answer source-derived cases; not a sample of real user traffic.",
+    "No held-out test split or joint multi-chunk evidence cases.",
+    "Positive relevance labels may remain incomplete.",
+    "Negative controls have narrower story scope and may be easier than natural unanswerable queries.",
+    "No new retrieval or generation metrics have been produced."
+  ],
+  "revision_history": [
+    {
+      "date": "2026-10-05",
+      "previous_version": "day21-stage1-v1.1",
+      "previous_dataset_sha256": "99a33e3090690b3077139f26f20e56246bd2280d9b44b4c80a55e1ffd11ff223",
+      "change": "User confirmed review completion; q041-q045 review status updated. No question, answer or evidence changes. No experiment executed.",
+      "review_evidence": "复核完毕"
+    }
+  ]
+}

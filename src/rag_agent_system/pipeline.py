@@ -112,5 +112,8 @@ class RAGPipeline:
             answer=answer,
             sources=tuple(chunks),
             retrieved_candidates=tuple(candidates),
+            ranked_chunks=tuple(ranked),
+            context_text=context,
+            prompt_text=prompt,
         )
 

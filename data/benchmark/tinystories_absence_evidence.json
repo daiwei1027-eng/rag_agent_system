@@ -1,0 +1,140 @@
+[
+  {
+    "query_id": "q041",
+    "story_chunk_ids": [
+      "0",
+      "1"
+    ],
+    "story_text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other. After they finished, Lily thanked her mom for sharing the needle and fixing her shirt. They both felt happy because they had shared and worked together.",
+    "review_reason": "The complete story describes finding, sharing and using the needle, but never identifies its manufacturer or model.",
+    "search_keywords": [
+      "needle",
+      "room",
+      "button"
+    ],
+    "full_corpus_keyword_match_ids": [
+      "0"
+    ],
+    "full_corpus_keyword_matches": [
+      {
+        "chunk_id": "0",
+        "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other"
+      }
+    ],
+    "limitation": "Keyword search is not an exhaustive semantic search. The negative label concerns the complete specified story; other stories are not evidence for it."
+  },
+  {
+    "query_id": "q042",
+    "story_chunk_ids": [
+      "9249",
+      "9250",
+      "9251"
+    ],
+    "story_text": "Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird and wanted to help. The cat took the bird to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird's wing felt better and it could fly again. The bird was happy and grateful to the cat and the owl. From that day on, the bird sang even more beautifully than before.",
+    "review_reason": "The complete story says 'some medicine' and describes recovery; no medicine name or dose is supplied.",
+    "search_keywords": [
+      "bird",
+      "owl",
+      "medicine"
+    ],
+    "full_corpus_keyword_match_ids": [
+      "9250"
+    ],
+    "full_corpus_keyword_matches": [
+      {
+        "chunk_id": "9250",
+        "text": " saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird and wanted to help. The cat took the bird to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird's wing felt better and it could fly again. The bird was happy and grateful to the cat and the owl. From that day on, the bird sang even more beautifully than before.Once upon a time, there was a little boy named Timmy. Timmy liked"
+      }
+    ],
+    "limitation": "Keyword search is not an exhaustive semantic search. The negative label concerns the complete specified story; other stories are not evidence for it."
+  },
+  {
+    "query_id": "q043",
+    "story_chunk_ids": [
+      "3499",
+      "3500",
+      "3501"
+    ],
+    "story_text": "Once there was a wealthy family with three kids. Two of them were in university, but the youngest one was only three. He wanted to go to university too!\n\nOne day, the three university students decided to take the youngest one with them on a fun day out. As they drove to the university, the little kid cheered with joy. \n\nWhen they arrived, the little kid wanted to explore everywhere. He ran around and screamed with excitement!\n\nThe university students showed him all the places and got him some ice cream. He was having so much fun!\n\nAt the end of the day, the family drove home and the little kid felt so happy. He dreamed of one day going to university too.",
+    "review_reason": "The complete story describes a university visit, but supplies neither a university name nor a street address.",
+    "search_keywords": [
+      "wealthy",
+      "youngest",
+      "university"
+    ],
+    "full_corpus_keyword_match_ids": [
+      "3499",
+      "3500"
+    ],
+    "full_corpus_keyword_matches": [
+      {
+        "chunk_id": "3499",
+        "text": ", this is our game\". \n\nJake did not know what to do, so he decided to just sit down and watch. But as he was sitting, his ball slipped out of his hands. It rolled over to the kids playing jazz. \n\nThe kids stopped and were surprised. They asked Jake if he wanted to join them. As the day went on, Jake got better and better at playing jazz with his new friends. He had a really fun day. In the end, Jake was really happy he did not stay home.Once there was a wealthy family with three kids. Two of them were in university, but the youngest one was"
+      },
+      {
+        "chunk_id": "3500",
+        "text": " Jake was really happy he did not stay home.Once there was a wealthy family with three kids. Two of them were in university, but the youngest one was only three. He wanted to go to university too!\n\nOne day, the three university students decided to take the youngest one with them on a fun day out. As they drove to the university, the little kid cheered with joy. \n\nWhen they arrived, the little kid wanted to explore everywhere. He ran around and screamed with excitement!\n\nThe university students showed him all the places and got him some ice cream. He was having so much fun!\n\nAt the end of the day,"
+      }
+    ],
+    "limitation": "Keyword search is not an exhaustive semantic search. The negative label concerns the complete specified story; other stories are not evidence for it."
+  },
+  {
+    "query_id": "q044",
+    "story_chunk_ids": [
+      "5248",
+      "5249",
+      "5250"
+    ],
+    "story_text": "Once upon a time, there was a boy named Timmy. Timmy loved to play with his huge drum. He would bang on it all day long and laugh when he made loud noises. \n\nOne day, Timmy's friend Billy came over to play. Billy saw Timmy's drum and said, \"Wow, that's a big drum!\" Timmy said, \"Yes, it's huge! Do you want to play with it?\" \n\nBilly nodded his head and started to bang on the drum. Timmy laughed and said, \"You're really good at playing the drum, Billy!\" Billy smiled and said, \"Thanks, Timmy. I like playing with your drum.\" \n\nFrom that day on, Timmy and Billy played together every day. They would bang on the drum and laugh together. They were the best of friends and they loved playing music together. The end.",
+    "review_reason": "The complete story describes a huge drum and the children playing it, without a manufacturer or model number.",
+    "search_keywords": [
+      "Timmy",
+      "Billy",
+      "drum"
+    ],
+    "full_corpus_keyword_match_ids": [
+      "5249",
+      "5250"
+    ],
+    "full_corpus_keyword_matches": [
+      {
+        "chunk_id": "5249",
+        "text": "my loved to play with his huge drum. He would bang on it all day long and laugh when he made loud noises. \n\nOne day, Timmy's friend Billy came over to play. Billy saw Timmy's drum and said, \"Wow, that's a big drum!\" Timmy said, \"Yes, it's huge! Do you want to play with it?\" \n\nBilly nodded his head and started to bang on the drum. Timmy laughed and said, \"You're really good at playing the drum, Billy!\" Billy smiled and said, \"Thanks, Timmy. I like playing with your drum.\" \n\nFrom that"
+      },
+      {
+        "chunk_id": "5250",
+        "text": "You're really good at playing the drum, Billy!\" Billy smiled and said, \"Thanks, Timmy. I like playing with your drum.\" \n\nFrom that day on, Timmy and Billy played together every day. They would bang on the drum and laugh together. They were the best of friends and they loved playing music together. The end.Once upon a time, there was a little bunny. The bunny liked to hop all around the garden. One day, the bunny saw a big sunflower. It was so tall! The bunny hopped over to the sunflower and looked up at it. \n\nSuddenly, the bunny heard"
+      }
+    ],
+    "limitation": "Keyword search is not an exhaustive semantic search. The negative label concerns the complete specified story; other stories are not evidence for it."
+  },
+  {
+    "query_id": "q045",
+    "story_chunk_ids": [
+      "2500",
+      "2501"
+    ],
+    "story_text": "Once upon a time, there were two friends: Jack and Jill. Jack had a brilliant idea. He wanted to make something special using clay.\n\nHe asked Jill for help to match the pieces of clay together. She was happy to join in and the two began to make something exciting.\n\nWith Jill's help, shapes and designs began to appear from the clay. Hours passed, and eventually the friends had made something really fantastic. It was a beautiful clay castle.\n\nThey stood back to admire their work. Jill said it was brilliant, and Jack was very proud.\n\nThe castle was the perfect match for their creativity! They both knew it was something special. The end.",
+    "review_reason": "The complete story describes making a clay castle, but gives no weight or quantity of clay.",
+    "search_keywords": [
+      "Jack",
+      "Jill",
+      "clay"
+    ],
+    "full_corpus_keyword_match_ids": [
+      "2500",
+      "2501"
+    ],
+    "full_corpus_keyword_matches": [
+      {
+        "chunk_id": "2500",
+        "text": " get wider. Soon, it was as tall and wide as a big tree.\n\nNext, it started to get stronger. It started to shine brightly and look more important. Finally, it started to make noise. Suddenly it was loud and happy.\n\nThe thing had started as small and modest. But now it was huge and strong.Once upon a time, there were two friends: Jack and Jill. Jack had a brilliant idea. He wanted to make something special using clay.\n\nHe asked Jill for help to match the pieces of clay together. She was happy to join in and the two began to make something exciting.\n\nWith Jill's help,"
+      },
+      {
+        "chunk_id": "2501",
+        "text": " asked Jill for help to match the pieces of clay together. She was happy to join in and the two began to make something exciting.\n\nWith Jill's help, shapes and designs began to appear from the clay. Hours passed, and eventually the friends had made something really fantastic. It was a beautiful clay castle.\n\nThey stood back to admire their work. Jill said it was brilliant, and Jack was very proud.\n\nThe castle was the perfect match for their creativity! They both knew it was something special. The end.Maddy and her mom were at the store. Maddy was excited. She saw cereal boxes with fun pictures on them and"
+      }
+    ],
+    "limitation": "Keyword search is not an exhaustive semantic search. The negative label concerns the complete specified story; other stories are not evidence for it."
+  }
+]

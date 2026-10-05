@@ -85,3 +85,6 @@ def test_pipeline() -> None:
     assert result.question == "Who found the needle?","Result doesn't receive the question correctly"
     assert result.answer == "Lily found the needle."
     assert result.sources == tuple(retriever.results)
+    assert result.ranked_chunks == tuple(retriever.results)
+    assert result.context_text == "TEST_CONTEXT"
+    assert result.prompt_text == generator.received_prompt

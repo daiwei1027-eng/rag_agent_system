@@ -33,3 +33,6 @@ class RAGResult:
     answer: str
     sources: tuple[RetrievedChunk, ...]
     retrieved_candidates: tuple[RetrievedChunk, ...] = ()
+    ranked_chunks: tuple[RetrievedChunk, ...] = ()
+    context_text: str = ""
+    prompt_text: str = ""
