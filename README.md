@@ -1,9 +1,9 @@
-# RAG Agent System — Day 18
+# RAG Agent System
 
 This repository marks the transition from a notebook-driven Hugging Face playground to
 an engineering-first Retrieval-Augmented Generation (RAG) project.
 
-The Day 18 target is intentionally small:
+The Day 18 RAG baseline follows this flow:
 
 ```text
 Question -> Retriever -> Top-k chunks -> Context -> Prompt -> LLM -> Answer + Sources
@@ -13,6 +13,10 @@ The project provides the package layout, configuration, shared types, logging, C
 point and tests. The core components were implemented as hands-on exercises;
 the end-to-end baseline now returns an answer and retrieved sources.
 
+Day 22 adds a standalone Tool Calling demo with handwritten schemas, a tool registry,
+argument validation and structured execution observations. The demo uses simulated
+tool calls; model-driven tool selection and the Agent loop are follow-up work.
+
 ## Project layout
 
 ```text
@@ -21,11 +25,13 @@ the end-to-end baseline now returns an answer and retrieved sources.
 ├── data/                       # Copy Day 17 artifacts here; do not commit them
 ├── notebooks/                  # Analysis clients only, never core business logic
 ├── scripts/run_rag.py          # Development entry point
+├── scripts/tool_calling_demo.py # Day 22 tool execution demo
 ├── src/rag_agent_system/
 │   ├── ingestion/
 │   ├── retrieval/
 │   ├── generation/
 │   ├── evaluation/
+│   ├── tools/                  # Schemas, validation, registry and tool functions
 │   ├── cli.py
 │   ├── config.py
 │   ├── logging_config.py
@@ -57,7 +63,7 @@ this scaffold and are ignored by Git.
 
 ## Run
 
-Current milestone (2026-10-02): the end-to-end RAG baseline works with 10,417
+RAG baseline milestone (2026-10-02): the end-to-end RAG baseline works with 10,417
 vectors and 384 dimensions. This is a learning baseline, not a production-ready service.
 
 ```powershell
@@ -94,7 +100,128 @@ tests use fakes to check argument propagation and answer/source preservation.
 and requires enough memory. The old skipped exercise placeholders were removed
 after their assertions were implemented in `tests/test_pipeline.py`.
 
-## Follow-up work
+## Day 22 — Tool Calling（2026-10-06）
+
+完整学习记录与排错过程见 [Day 22 学习日志](docs/learning-log/2026-10-06.md)。
+
+### 目标与执行流程
+
+手写三个工具的 schema、registry 和参数校验器，验证程序如何执行工具并返回 observation。
+模型负责生成工具调用请求，真正执行 Python 函数的是应用程序。
+
+```text
+模型生成 tool call（本次用手写请求模拟）
+    ↓
+校验请求格式 → 在 registry 中查找工具 → 按 schema 校验 arguments
+    ↓
+handler(**arguments) 执行 Python 函数
+    ↓
+返回成功结果或失败 observation
+    ↓
+后续阶段：将 observation 放回模型输入，让模型继续回答
+```
+
+当前 Demo 打印请求列表和 observation 列表，没有调用 LLM，也没有实现模型读取结果后的循环。
+
+### 工具与接口
+
+| schema 名称 | 模型提供的参数 | 执行结果 |
+|---|---|---|
+| `calculator` | `operation`、`a`、`b` | 加、减、乘、除的结果；除零报错 |
+| `search_documents` | `query`、`top_k` | 包含 `chunk_id`、`text`、`source`、`score` 的字典列表 |
+| `time` | `timezone` | 带 UTC 偏移的 ISO 8601 当前时间字符串 |
+
+- `operation` 允许 `add`、`subtract`、`multiply`、`divide`。
+- `query` 声明 `minLength: 1`；`top_k` 为整数，范围为 1–10，边界值合法。
+- `timezone` 允许 `UTC` 和 `Asia/Shanghai`。当前用固定 UTC+8 表示上海当前时间。
+- 三个 schema 都声明必填参数并禁止额外参数。
+- 时间适配函数把模型参数 `timezone` 转换为函数参数 `timezone_name`。
+- 搜索适配函数绑定程序提供的 `retriever`；模型不能通过参数指定检索器。
+
+搜索工具调用 `retriever.retrieve(query, top_k=top_k)`，将数据类转换为普通字典。
+Demo 中的 `FakeRetriever` 返回一条预设文档，不执行真实 FAISS 检索。
+请求 `top_k=3` 不保证返回三条；没有命中时返回 `[]`。
+
+### 实现位置
+
+| 文件 | 职责 |
+|---|---|
+| `src/rag_agent_system/tools/schemas.py` | 工具名称、描述与参数的 JSON Schema 声明 |
+| `src/rag_agent_system/tools/validation.py` | 必填字段、额外字段、类型、枚举、长度和数值范围校验 |
+| `src/rag_agent_system/tools/registry.py` | 注册工具、导出 schemas、查找并执行工具、包装 observation |
+| `src/rag_agent_system/tools/calculator_tool.py` | 四则运算与除零检查 |
+| `src/rag_agent_system/tools/time_tool.py` | 获取两个受支持时区的当前时间 |
+| `src/rag_agent_system/tools/search_docments.py` | 检索接口包装与结果转换；文件名沿用当前拼写 |
+| `scripts/tool_calling_demo.py` | 注册三个工具并演示四次调用 |
+
+`register()` 拒绝重复工具名和不可调用的 handler，注册时不执行函数。
+`execute()` 先检查请求格式和参数，再执行工具，错误向外抛出。
+`execute_safe()` 捕获 `TypeError`、`ValueError`，转换成失败 observation；其他异常继续向外抛出。
+
+内部请求格式如下，尚未绑定某个模型供应商的工具调用协议：
+
+```json
+{
+  "id": "call_003",
+  "name": "calculator",
+  "arguments": {"operation": "multiply", "a": 12, "b": 8}
+}
+```
+
+成功与失败的 observation 格式：
+
+```json
+{
+  "tool_call_id": "call_003",
+  "name": "calculator",
+  "ok": true,
+  "result": 96
+}
+```
+
+```json
+{
+  "tool_call_id": "call_004",
+  "name": "calculator",
+  "ok": false,
+  "error": {"type": "ValueError", "message": "Please provide a nonzero b"}
+}
+```
+
+### 运行与验收
+
+从项目根目录运行；先按 Setup 完成可编辑安装，使脚本能够导入 `rag_agent_system`：
+
+```powershell
+python scripts/tool_calling_demo.py
+```
+
+Demo 不需要模型权重、API Key 或检索数据文件。输出顺序为：搜索成功、UTC 时间成功、
+乘法结果 `96`、除零失败。时间值随运行变化；最后一次失败不会中断整个演示。
+请求与 observation 通过 `id` / `tool_call_id` 对应；当前没有持久化日志。
+
+今天的专项测试命令：
+
+```powershell
+python -m pytest tests/test_schemas.py tests/test_calculator.py tests/test_time_tool.py tests/test_search_documents.py tests/test_tool_registry.py -q
+```
+
+2026-10-06 复核结果为 **52 passed**：参数校验 17、calculator 7、time 3、搜索包装 2、registry 23。
+覆盖零值、布尔值类型、枚举、长度、范围边界、必填与额外字段、重复注册、未知工具、
+校验失败时不执行 handler、时间偏移与当前时间区间、检索参数传递、请求格式及成功/失败 observation。
+本次运行另有一条 pytest 缓存写入权限警告，不影响测试通过；没有运行全项目或真实模型测试。
+
+### 当前边界与后续任务
+
+1. 手写校验器只支持本次 schema 使用的规则，并非完整 JSON Schema 实现；当前枚举检查仅在字符串分支执行。
+2. 当前长度、范围检查先于字段类型检查，错误类型输入可能先触发 Python 自身的异常。
+   后续应将类型检查前置，并补充 `query=123`、`top_k="3"` 等案例验证错误信息。
+3. `minLength: 1` 不排除纯空白查询；假检索器也不会拒绝它。后续在查询业务边界补充空白校验。
+4. 注册时约定传入合法 schema，尚未检查 schema 本身，也未验证 handler 参数签名与 schema 一致。
+5. 尚未限制非有限数字、结果大小或执行时间；`execute_safe()` 不是执行隔离或完整故障恢复机制。
+6. 后续接入真实检索器和模型生成的 tool call，再将 observation 返回模型，增加循环终止条件。
+
+## RAG baseline follow-up work
 
 1. `FaissRetriever.retrieve` is implemented and smoke-tested; add model-free tests
    for input validation, ID mapping and ranked results.
