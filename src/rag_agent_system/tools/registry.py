@@ -1,6 +1,7 @@
 from typing import Any, Callable
 from rag_agent_system.tools.validation import validate_arguments
-
+import math
+from concurrent.futures import ThreadPoolExecutor
 class ToolRegistry:
     def __init__(self) -> None:
         self._tools: dict[str, dict[str, Any]] = {}
@@ -54,16 +55,53 @@ class ToolRegistry:
         }
         return target
 
-    def execute_safe(self, tool_call: dict[str, Any]) -> dict[str, Any]:
-        try :
-            return self.execute(tool_call)
-        except (TypeError, ValueError) as exc:
-            return {
-                "tool_call_id": tool_call.get("id") if isinstance(tool_call, dict) else None,
-                "name": tool_call.get("name") if isinstance(tool_call, dict) else None,
-                "ok": False,
-                "error": {
-                    "type": type(exc).__name__,
-                    "message": str(exc),
-                },
-            }
+    def execute_safe(self, tool_call: dict[str, Any],*,timeout_seconds:float|None=None) -> dict[str, Any]:
+        if timeout_seconds is None:
+            try :
+                return self.execute(tool_call)
+            except Exception as exc:
+                return {
+                    "tool_call_id": tool_call.get("id") if isinstance(tool_call, dict) else None,
+                    "name": tool_call.get("name") if isinstance(tool_call, dict) else None,
+                    "ok": False,
+                    "error": {
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                    },
+                }
+
+
+        else:
+            if type(timeout_seconds) not in (float, int):
+                raise TypeError("timeout_seconds must be a number")
+            if not math.isfinite(timeout_seconds):
+                raise ValueError("timeout_seconds cannot be NaN or infinity")
+            if timeout_seconds <= 0:
+                raise ValueError("timeout_seconds must be a positive number")
+            executor = ThreadPoolExecutor(max_workers=1)
+            try:
+                future = executor.submit(self.execute, tool_call)
+                return future.result(timeout=timeout_seconds)
+
+            except TimeoutError:
+                return {
+                    "tool_call_id": tool_call.get("id") if isinstance(tool_call, dict) else None,
+                    "name": tool_call.get("name") if isinstance(tool_call, dict) else None,
+                    "ok": False,
+                    "error": {
+                        "type": "TimeoutError",
+                        "message": "tool execution timed out",
+                    },
+                }
+            except Exception as exc:
+                return {
+                    "tool_call_id": tool_call.get("id") if isinstance(tool_call, dict) else None,
+                    "name": tool_call.get("name") if isinstance(tool_call, dict) else None,
+                    "ok": False,
+                    "error": {
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                    },
+                }
+            finally:
+                executor.shutdown(wait=False, cancel_futures=True)
