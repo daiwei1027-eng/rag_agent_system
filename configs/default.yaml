@@ -25,3 +25,7 @@ generation:
   model_name: Qwen/Qwen2.5-1.5B-Instruct
   max_new_tokens: 256
   temperature: 0.2
+
+agent:
+  model_name: Qwen/Qwen2.5-1.5B-Instruct
+  max_new_tokens: 256

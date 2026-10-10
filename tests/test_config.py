@@ -25,6 +25,10 @@ def valid_config():
             "max_new_tokens": 256,
             "temperature": 0.2,
         },
+        "agent": {
+            "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+            "max_new_tokens": 256,
+        },
         "reranker": {
             "enabled": True,
             "model_name": "cross-encoder/ms-marco-MiniLM-L6-v2",
@@ -64,6 +68,31 @@ def test_load_valid_config(valid_config, write_config):
     assert config.retrieval.top_k==20, "retrieval.top_k not match"
     assert config.reranker.top_k == 5, "reranker.top_k not match"
     assert config.context.top_k == 5, "context.top_k not match"
+    assert config.agent.model_name == "Qwen/Qwen2.5-1.5B-Instruct"
+    assert config.agent.max_new_tokens == 256
+
+
+def test_legacy_config_without_agent_reuses_generation(valid_config, write_config):
+    valid_config.pop("agent")
+    valid_config["generation"]["max_new_tokens"] = 128
+
+    config = load_config(write_config(valid_config))
+
+    assert config.agent.model_name == config.generation.model_name
+    assert config.agent.max_new_tokens == 128
+
+
+@pytest.mark.parametrize(
+    "field, value, error",
+    [
+        ("model_name", "   ", "agent.model_name"),
+        ("max_new_tokens", True, "agent.max_new_tokens"),
+    ],
+)
+def test_reject_invalid_agent_config(valid_config, write_config, field, value, error):
+    valid_config["agent"][field] = value
+    with pytest.raises(ValueError, match=error):
+        load_config(write_config(valid_config))
 
 @pytest.mark.parametrize("value", [0, -1, "5", True])
 def test_reject_invalid_reranker_top_k(

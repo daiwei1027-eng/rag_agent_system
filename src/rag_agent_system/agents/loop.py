@@ -1,10 +1,10 @@
 from typing import Any, Protocol
-from rag_agent_system.tools.calculator_tool import calculator
-from rag_agent_system.tools.schemas import CALCULATOR_SCHEMA
 from rag_agent_system.tools.registry import ToolRegistry
 import json
-from copy import deepcopy
+from rag_agent_system.agents.models import AgentResult
 import math
+
+
 class LLMClient(Protocol):
     def chat(
         self,
@@ -22,7 +22,7 @@ class Agent:
         max_steps: int = 5,
         *,
         tool_timeout_seconds: float | None = None,
-        max_repeated_calls: int = 2
+        max_repeated_calls: int = 2,
     ) -> None:
         if type(max_steps) is not int:
             raise TypeError("max_steps should be an integer")
@@ -44,7 +44,7 @@ class Agent:
             raise ValueError("max_repeated_calls should be positive")
         self.tool_timeout_seconds = tool_timeout_seconds
         self.max_repeated_calls = max_repeated_calls
-    def run(self, question: str) -> dict[str, Any]:
+    def run(self, question: str) -> AgentResult:
         if not isinstance(question, str):
             raise TypeError("question should be a string")
         if not question.strip():
@@ -53,16 +53,98 @@ class Agent:
         messages = [
             {"role": "user", "content": question},
         ]
-        schemas=self.registry.get_schemas()
-        last_call_signature=None
-        repeated_calls=0
+        schemas = self.registry.get_schemas()
+        last_call_signature = None
+        repeated_calls = 0
         for step in range(self.max_steps):
-            response = self.llm.chat(messages, schemas)
+            try:
+                response = self.llm.chat(messages, schemas)
+            except ValueError as e:
+                return {
+                    "status": "model_error",
+                    "answer": "",
+                    "trace": messages,
+                    "error": str(e),
+                }
+            if not isinstance(response, dict):
+                return {
+                    "status": "model_error",
+                    "answer": "",
+                    "trace": messages,
+                    "error": "Response is not a dict",
+                }
+            if response.get("role") != "assistant":
+                return {
+                    "status": "model_error",
+                    "answer": "",
+                    "trace": messages,
+                    "error": "Role is not 'assistant'",
+                }
             messages.append(response)
-            if not response.get("tool_calls"):
-                return response
+            tool_calls = response.get("tool_calls")
+            if tool_calls is not None and not isinstance(tool_calls, list):
+                return {
+                    "status": "model_error",
+                    "answer": "",
+                    "trace": messages,
+                    "error": "tool_calls is not a list",
+                }
+            if not tool_calls:
+                content = response.get("content")
+                if not isinstance(content, str) or not content.strip():
+                    return {
+                        "status": "model_error",
+                        "answer": "",
+                        "trace": messages,
+                        "error": "Content must be a non-empty string without tool calls",
+                    }
+                return {
+                    "status": "completed",
+                    "answer": content,
+                    "trace": messages,
+                    "error": None,
+                }
 
-            for tool_call in response["tool_calls"]:
+            for tool_call in tool_calls:
+                if not isinstance(tool_call, dict):
+                    return {
+                        "status": "model_error",
+                        "answer": "",
+                        "trace": messages,
+                        "error": "Tool call is not dict"
+                    }
+                for field in ("id", "name", "arguments"):
+                    if field not in tool_call:
+                        return {
+                            "status": "model_error",
+                            "answer": "",
+                            "trace": messages,
+                            "error": f"{field} Missing"
+                        }
+                if not isinstance(tool_call["arguments"], dict):
+                    return {
+                        "status": "model_error",
+                        "answer": "",
+                        "trace": messages,
+                        "error": "ID->str,name->str,arguments->dict"
+                    }
+                if not (
+                        isinstance(tool_call["name"], str)
+                        and isinstance(tool_call["id"], str)
+                ):
+                    return {
+                        "status": "model_error",
+                        "answer": "",
+                        "trace": messages,
+                        "error": "ID->str,name->str,arguments->dict"
+                    }
+                if not (tool_call["id"].strip() and tool_call["name"].strip()):
+                    return {
+                        "status": "model_error",
+                        "answer": "",
+                        "trace": messages,
+                        "error": "ID or name is empty"
+                    }
                 signature = (
                     tool_call["name"],
                     json.dumps(tool_call["arguments"], sort_keys=True, ensure_ascii=False),
@@ -76,8 +158,9 @@ class Agent:
                 if repeated_calls > self.max_repeated_calls:
                     return {
                         "status": "repeated_tool_call",
-                        "answer": "工具调用连续重复，已停止，任务尚未完成。",
-                        "steps": step + 1,
+                        "answer": "",
+                        "trace": messages,
+                        "error": "重复工具调用达到上限",
                     }
                 observation = self.registry.execute_safe(
                     tool_call,
@@ -91,6 +174,7 @@ class Agent:
 
         return {
             "status": "max_steps_reached",
-            "answer": "已达到最大模型调用轮数，任务尚未完成。",
-            "steps": self.max_steps,
+            "answer": "",
+            "trace": messages,
+            "error": "抵达最大步数",
         }

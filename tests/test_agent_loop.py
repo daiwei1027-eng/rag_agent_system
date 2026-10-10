@@ -34,6 +34,15 @@ def tool_response(*calls):
     return {"role": "assistant", "content": None, "tool_calls": list(calls)}
 
 
+def assert_completed_result(result, fake, final_response):
+    assert result == {
+        "status": "completed",
+        "answer": final_response["content"],
+        "trace": [*fake.message_history[-1], final_response],
+        "error": None,
+    }
+
+
 @pytest.fixture
 def recorded_registry():
     calls = []
@@ -84,7 +93,12 @@ def test_agent_returns_answer_after_tool_observation(
         assert "result" not in observation
         assert observation["error"]["type"] == "ValueError"
         assert error_message in observation["error"]["message"]
-    assert result == final_response
+    assert_completed_result(result, fake, final_response)
+    assert [message["role"] for message in result["trace"]] == [
+        "user", "assistant", "tool", "assistant",
+    ]
+    assert json.loads(result["trace"][2]["content"]) == observation
+
 
 
 @pytest.mark.parametrize(
@@ -137,7 +151,7 @@ def test_agent_handles_multiple_tool_calls_in_one_turn(
         assert calls == [first_args, second_args]
     assert second["ok"] is True
     assert second["result"] == 100
-    assert result == final_response
+    assert_completed_result(result, fake, final_response)
 
 
 @pytest.mark.parametrize(
@@ -217,7 +231,7 @@ def test_agent_recovers_after_tool_failure(
         assert error_message in failed["error"]["message"]
     assert succeeded["ok"] is True
     assert succeeded["result"] == expected_result
-    assert result == final_response
+    assert_completed_result(result, fake, final_response)
     # 校验失败不进入 handler；执行异常则进入两次。
     expected_calls = [recovery_args] if handler_calls == 1 else [first_args, recovery_args]
     assert calls == expected_calls
@@ -233,11 +247,14 @@ def test_agent_stops_at_max_steps(recorded_registry):
 
     result = Agent(llm=fake, registry=registry, max_steps=1).run("Please the result of 12*8")
 
-    assert result == {
-        "status": "max_steps_reached",
-        "answer": "已达到最大模型调用轮数，任务尚未完成。",
-        "steps": 1,
-    }
+    assert set(result) == {"status", "answer", "trace", "error"}
+    assert result["status"] == "max_steps_reached"
+    assert result["answer"] == ""
+    assert result["error"]
+    assert [message["role"] for message in result["trace"]] == [
+        "user", "assistant", "tool",
+    ]
+    assert json.loads(result["trace"][2]["content"])["result"] == 96
     assert calls == [arguments]
     assert fake.call_count == 1
 
@@ -249,9 +266,52 @@ def test_agent_returns_direct_answer_at_max_steps_1(recorded_registry):
 
     result = Agent(llm=fake, registry=registry, max_steps=1).run("Please the result of 12*8")
 
-    assert result == answer
+    assert_completed_result(result, fake, answer)
     assert calls == []
     assert fake.call_count == 1
+
+
+@pytest.mark.parametrize(
+    "response",
+    [
+        pytest.param("not a message", id="non-dict-response"),
+        pytest.param({"role": "assistant", "content": "   "}, id="blank-answer"),
+        pytest.param({"role": "assistant", "tool_calls": []}, id="missing-content"),
+        pytest.param(
+            {"role": "assistant", "content": "answer", "tool_calls": {}},
+            id="invalid-tool-calls-type",
+        ),
+        pytest.param({"role": "user", "content": "answer"}, id="invalid-role"),
+        pytest.param(
+            tool_response({"id": "call_001", "name": "calculator"}),
+            id="missing-tool-arguments",
+        ),
+    ],
+)
+def test_agent_rejects_malformed_model_response(response):
+    fake = FakeLLM([response])
+
+    result = Agent(llm=fake, registry=ToolRegistry()).run("question")
+
+    assert set(result) == {"status", "answer", "trace", "error"}
+    assert result["status"] == "model_error"
+    assert result["answer"] == ""
+    assert isinstance(result["error"], str) and result["error"]
+    assert all(isinstance(message, dict) for message in result["trace"])
+    assert fake.call_count == 1
+
+
+def test_agent_reports_model_parsing_error():
+    class FailingLLM:
+        def chat(self, messages, tools):
+            raise ValueError("malformed tool call")
+
+    result = Agent(llm=FailingLLM(), registry=ToolRegistry()).run("question")
+
+    assert result["status"] == "model_error"
+    assert result["answer"] == ""
+    assert "malformed tool call" in result["error"]
+    assert result["trace"] == [{"role": "user", "content": "question"}]
 
 
 @pytest.mark.parametrize(
@@ -312,8 +372,10 @@ def test_agent_keeps_message_history_separate_between_runs(recorded_registry):
     ])
     agent = Agent(llm=fake, registry=registry, max_steps=2, max_repeated_calls=1)
 
-    assert agent.run("Please the result of 12*8") == answers[0]
-    assert agent.run("Calculate 12*8 again") == answers[1]
+    first_result = agent.run("Please the result of 12*8")
+    assert_completed_result(first_result, fake, answers[0])
+    second_result = agent.run("Calculate 12*8 again")
+    assert_completed_result(second_result, fake, answers[1])
     assert calls == [arguments, arguments]
     assert fake.call_count == 4
     assert fake.message_history[0] == [{"role": "user", "content": "Please the result of 12*8"}]
@@ -365,14 +427,14 @@ def test_agent_stops_or_resets_repeated_calls(
     assert fake.call_count == expected_steps
     assert calls == [request["arguments"] for request in requests[:executed]]
     if expected_status is None:
-        assert result == answer
+        assert_completed_result(result, fake, answer)
     else:
-        fallback = (
-            "工具调用连续重复，已停止，任务尚未完成。"
-            if expected_status == "repeated_tool_call"
-            else "已达到最大模型调用轮数，任务尚未完成。"
-        )
-        assert result == {"status": expected_status, "answer": fallback, "steps": expected_steps}
+        assert set(result) == {"status", "answer", "trace", "error"}
+        assert result["status"] == expected_status
+        assert result["answer"] == ""
+        assert result["error"]
+        assert sum(message["role"] == "assistant" for message in result["trace"]) == expected_steps
+        assert sum(message["role"] == "tool" for message in result["trace"]) == executed
 
 
 def test_agent_recovers_after_blocked_tool_timeout():
@@ -402,7 +464,8 @@ def test_agent_recovers_after_blocked_tool_timeout():
     ])
     agent = Agent(llm=fake, registry=registry, tool_timeout_seconds=0.05)
     try:
-        assert agent.run("12*8=?") == answer
+        result = agent.run("12*8=?")
+        assert_completed_result(result, fake, answer)
         failed_message = fake.message_history[1][2]
         succeeded_message = fake.message_history[2][4]
         failed = json.loads(failed_message["content"])

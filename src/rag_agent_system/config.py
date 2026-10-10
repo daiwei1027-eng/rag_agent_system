@@ -3,7 +3,6 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
-
 import yaml
 
 from rag_agent_system.paths import project_root, resolve_project_path
@@ -39,7 +38,10 @@ class RerankerConfig:
 @dataclass(frozen=True, slots=True)
 class ContextConfig:
     top_k: int = 5
-
+@dataclass(frozen=True, slots=True)
+class AgentConfig:
+    model_name: str
+    max_new_tokens: int
 @dataclass(frozen=True, slots=True)
 class AppConfig:
     name: str
@@ -49,7 +51,7 @@ class AppConfig:
     generation: GenerationConfig
     reranker: RerankerConfig
     context: ContextConfig
-
+    agent: AgentConfig
 def _section(raw: dict[str, Any], name: str) -> dict[str, Any]:
     value = raw.get(name)
     if not isinstance(value, dict):
@@ -89,13 +91,21 @@ def load_config(path: str | Path | None = None) -> AppConfig:
     generation = _section(raw, "generation")
     reranker= _section(raw, "reranker")
     context = _section(raw, "context")
+    # Older RAG configs have no agent section. Reuse their generation settings
+    # until an explicit agent section is provided.
+    agent = _section(raw, "agent") if "agent" in raw else generation
 
     top_k = _positive_int(retrieval, "top_k", 20, "retrieval")
     rerank_top_k = _positive_int(reranker, "top_k", 5, "reranker")
     max_length = _positive_int(reranker, "max_length", 512, "reranker")
     batch_size = _positive_int(reranker, "batch_size", 8, "reranker")
     context_top_k = _positive_int(context, "top_k", 5, "context")
-
+    agent_max_new_tokens = _positive_int(agent, "max_new_tokens", 256, "agent")
+    agent_model_name=agent.get("model_name")
+    if not isinstance(agent_model_name, str):
+        raise ValueError("agent.model_name must be a string.")
+    if not agent_model_name.strip():
+        raise ValueError("agent.model_name must be a non-empty string.")
     normalize_embeddings = retrieval.get("normalize_embeddings")
     if not isinstance(normalize_embeddings, bool):
         raise ValueError(
@@ -171,4 +181,9 @@ def load_config(path: str | Path | None = None) -> AppConfig:
         context=ContextConfig(
             top_k=context_top_k,
         ),
+        agent=AgentConfig(
+            model_name=agent_model_name.strip(),
+            max_new_tokens=agent_max_new_tokens,
+
+        )
     )
