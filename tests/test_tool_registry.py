@@ -67,12 +67,10 @@ def test_execute_time_returns_utc_observation():
     tool_call = {
         "id": "call_001",
         "name": "time",
-        "arguments": {"timezone": "UTC"},
+        "arguments": {"timezone_name": "UTC"},
     }
-    def time_handler(timezone: str) -> str:
-        return get_current_time(timezone_name=timezone)
     tool_registry = ToolRegistry()
-    tool_registry.register(TIME_SCHEMA, time_handler)
+    tool_registry.register(TIME_SCHEMA, get_current_time)
     result=tool_registry.execute(tool_call)
     assert result["tool_call_id"] == "call_001"
     assert result["name"]=="time"
@@ -119,6 +117,8 @@ def test_search_documents():
             "text": "RAG 将检索与生成结合。",
             "score": 0.85,
             "source": "rag_intro.txt",
+            "rerank_score": None,
+            "rerank_rank": None,
         }],
     }
     assert retriever.calls==[("RAG", 3)]

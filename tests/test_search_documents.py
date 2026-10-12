@@ -22,7 +22,13 @@ def test_search_documents_converts_retrieved_chunk():
         text="RAG 将检索与生成结合。",
         source="rag_intro.txt",
     )
-    item = RetrievedChunk(chunk=chunk, score=0.85, rank=1)
+    item = RetrievedChunk(
+        chunk=chunk,
+        score=0.85,
+        rank=1,
+        rerank_score=0.9,
+        rerank_rank=1,
+    )
     retriever = FakeRetriever([item])
     output = search_documents(query="RAG", top_k=3, retriever=retriever)
     assert output == [{
@@ -30,5 +36,7 @@ def test_search_documents_converts_retrieved_chunk():
             "text": "RAG 将检索与生成结合。",
             "score": 0.85,
             "source": "rag_intro.txt",
+            "rerank_score": 0.9,
+            "rerank_rank": 1,
         }]
     assert retriever.calls == [("RAG", 3)]

@@ -17,19 +17,19 @@ def test_search_rejects_boolean_top_k():
         validate_arguments(para, SEARCH_DOCUMENTS_SCHEMA["parameters"])
 
 def test_time_rejects_numeric_timezone():
-    para = {"timezone": 8}
-    with pytest.raises(TypeError):
+    para = {"timezone_name": 8}
+    with pytest.raises(TypeError, match="must be a string"):
         validate_arguments(para, TIME_SCHEMA["parameters"])
 
-@pytest.mark.parametrize("timezone", ["UTC", "Asia/Shanghai"])
-def test_time_accepts_supported_timezone(timezone):
+@pytest.mark.parametrize("timezone_name", ["UTC", "Asia/Shanghai"])
+def test_time_accepts_supported_timezone(timezone_name):
     validate_arguments(
-        {"timezone": timezone},
+        {"timezone_name": timezone_name},
         TIME_SCHEMA["parameters"],
     )
 def test_time_rejects_unexpected_timezone():
-    para = {"timezone": "abc"}
-    with pytest.raises(ValueError):
+    para = {"timezone_name": "abc"}
+    with pytest.raises(ValueError, match="must be one of"):
         validate_arguments(para, TIME_SCHEMA["parameters"])
 def test_calculator_rejects_unexpected_operation():
     para = {"operation": "power", "a": 2, "b": 2}
@@ -61,7 +61,7 @@ def test_rejects_missing_required_argument():
     with pytest.raises(ValueError, match="top_k"):
         validate_arguments(para, SEARCH_DOCUMENTS_SCHEMA["parameters"])
 def test_rejects_additional_argument():
-    para = {"timezone": "UTC", "top_k": 3}
+    para = {"timezone_name": "UTC", "top_k": 3}
     with pytest.raises(ValueError, match="top_k"):
         validate_arguments(para, TIME_SCHEMA["parameters"])
 

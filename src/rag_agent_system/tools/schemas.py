@@ -20,7 +20,11 @@ CALCULATOR_SCHEMA = {
 
 SEARCH_DOCUMENTS_SCHEMA = {
     "name": "search_documents",
-    "description":"根据查询检索资料库，返回相关文档片段。",
+    "description": (
+        "检索本地 TinyStories 故事资料库并返回原文片段。"
+        "回答 TinyStories 中的人物、情节或事件问题时，先调用此工具查找证据；"
+        "普通常识问题无需检索。"
+    ),
     "parameters": {
         "type":"object",
         "properties": {
@@ -40,13 +44,13 @@ TIME_SCHEMA = {
     "parameters": {
         "type":"object",
         "properties": {
-    "timezone": {
+    "timezone_name": {
         "type": "string",
         "enum": ["UTC", "Asia/Shanghai"],
         "description": "指定查询的时区",
     },
 },
-        "required": ["timezone"],
+        "required": ["timezone_name"],
         "additionalProperties": False,
     }
 }

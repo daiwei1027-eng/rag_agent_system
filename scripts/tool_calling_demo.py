@@ -14,8 +14,6 @@ class FakeRetriever:
         self.calls.append((query, top_k))
         return self.results
 def pipeline():
-    def time_handler(timezone: str) -> str:
-        return get_current_time(timezone_name=timezone)
     chunk = DocumentChunk(
         chunk_id="chunk_001",
         text="RAG 将检索与生成结合。",
@@ -33,7 +31,7 @@ def pipeline():
     tool_registry = ToolRegistry()
     tool_registry.register(CALCULATOR_SCHEMA,calculator)
     tool_registry.register(SEARCH_DOCUMENTS_SCHEMA,search_handler)
-    tool_registry.register(TIME_SCHEMA,time_handler)
+    tool_registry.register(TIME_SCHEMA,get_current_time)
 
 
     search_tool_call = {
@@ -44,7 +42,7 @@ def pipeline():
     time_tool_call = {
         "id": "call_002",
         "name": "time",
-        "arguments": {"timezone": "UTC"},
+        "arguments": {"timezone_name": "UTC"},
     }
     calculator_tool_call = {
         "id": "call_003",
