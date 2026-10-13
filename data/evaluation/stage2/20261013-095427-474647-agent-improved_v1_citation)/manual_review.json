@@ -1,0 +1,311 @@
+{
+  "reviewed_date": "2026-10-13",
+  "review_status": "user_confirmed",
+  "run_id": "20261013-095427-474647-agent-improved_v1_citation)",
+  "mode": "without_rerank",
+  "confirmation": "用户先判定有重排 q003 重复题目、缺少分离原因，随后对整张批量复核表回复：可以。",
+  "review_reason_source": "docs/stage2-agent-review.md",
+  "na_representation": "null means not applicable; excluded from corresponding denominator.",
+  "evidence_supported_note": "评价核心答案是否被证据支持。有重排 q003 所写离开事实及引用归属正确，但未回答所问因果；核心答案证据支持与严格通过不通过，不能将此项误读为该句事实虚构。",
+  "summary": {
+    "completed": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1.0
+    },
+    "search_called": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1.0
+    },
+    "relevant_returned": {
+      "numerator": 3,
+      "denominator": 9,
+      "rate": 0.3333333333333333
+    },
+    "answer_correct": {
+      "numerator": 3,
+      "denominator": 9,
+      "rate": 0.3333333333333333
+    },
+    "evidence_supported": {
+      "numerator": 3,
+      "denominator": 9,
+      "rate": 0.3333333333333333
+    },
+    "citation_correct": {
+      "numerator": 2,
+      "denominator": 9,
+      "rate": 0.2222222222222222
+    },
+    "missing_citation": {
+      "numerator": 2,
+      "denominator": 9,
+      "rate": 0.2222222222222222
+    },
+    "correct_refusal": {
+      "numerator": 2,
+      "denominator": 3,
+      "rate": 0.6666666666666666
+    },
+    "evidence_supported_refusal": {
+      "numerator": 1,
+      "denominator": 3,
+      "rate": 0.3333333333333333
+    },
+    "strict_pass": {
+      "numerator": 3,
+      "denominator": 12,
+      "rate": 0.25
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "q001",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": true,
+      "citation_correct": true,
+      "insufficient_information": null,
+      "strict_pass": true,
+      "failure_reasons": [],
+      "review_reason": "Lily 正确，引用 0 支持；严格通过"
+    },
+    {
+      "query_id": "q003",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_core_answer",
+        "missing_citation"
+      ],
+      "review_reason": "已经想念超出原文事实，缺引用；不通过"
+    },
+    {
+      "query_id": "q005",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_core_answer",
+        "incorrect_citation"
+      ],
+      "review_reason": "错答狗，9093 不支持目标事件；不通过"
+    },
+    {
+      "query_id": "q006",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": true,
+      "citation_correct": true,
+      "insufficient_information": null,
+      "strict_pass": true,
+      "failure_reasons": [],
+      "review_reason": "核心答案和完整引文对应 1250；严格通过"
+    },
+    {
+      "query_id": "q007",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_core_answer",
+        "incorrect_citation"
+      ],
+      "review_reason": "回答悲伤而未回答正确人物，引用 4443 不支持目标事件；不通过"
+    },
+    {
+      "query_id": "q015",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_core_answer",
+        "incorrect_citation"
+      ],
+      "review_reason": "问年龄却回答 Lina，6694 不支持所问年龄；不通过"
+    },
+    {
+      "query_id": "q022",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_citation"
+      ],
+      "review_reason": "鼓正确，但引用 4801 为另一个没有 Billy 的故事；不通过"
+    },
+    {
+      "query_id": "q038",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_core_answer",
+        "incorrect_citation"
+      ],
+      "review_reason": "错答兽医，5552 不支持猫带鸟向猫头鹰求助的目标事件；不通过"
+    },
+    {
+      "query_id": "q040",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_core_answer",
+        "missing_citation"
+      ],
+      "review_reason": "可回答题拒答且缺引用；不通过"
+    },
+    {
+      "query_id": "q041",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": true,
+      "strict_pass": true,
+      "failure_reasons": [],
+      "review_reason": "返回指定故事并明确证据不足；严格通过"
+    },
+    {
+      "query_id": "q042",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": false,
+      "answer_correct": true,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": true,
+      "strict_pass": false,
+      "failure_reasons": [
+        "unsupported_refusal"
+      ],
+      "review_reason": "正确拒答但目标故事未返回；严格不通过"
+    },
+    {
+      "query_id": "q045",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": true,
+      "citation_correct": null,
+      "insufficient_information": false,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_refusal",
+        "unsupported_refusal"
+      ],
+      "review_reason": "编造约 100 克，2500 未给出重量；不通过"
+    }
+  ]
+}

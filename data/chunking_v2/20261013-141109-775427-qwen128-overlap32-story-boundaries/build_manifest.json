@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-10-13T14:11:10.256835+08:00",
+  "version": "story-boundaries-qwen128-overlap32-v2",
+  "status": "reviewed_bundle_entrypoints_validated_real_rag_agent_pending",
+  "source_verification_run": "20261013-113336-625140-source-range-verification",
+  "dataset": "roneneldan/TinyStories",
+  "dataset_cached_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "split": "train",
+  "source_story_count": 5092,
+  "complete_story_count": 5091,
+  "source_qwen_body_token_count": 1000000,
+  "last_story_retained_qwen_tokens": 209,
+  "chunk_tokenizer": "Qwen/Qwen2.5-0.5B-Instruct",
+  "chunk_size_body_tokens": 128,
+  "overlap_body_tokens": 32,
+  "embedding_tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_max_tokens_including_special": 256,
+  "required_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "required_normalize_embeddings": true,
+  "required_index_type": "IndexFlatIP",
+  "expected_embedding_dimension": 384,
+  "old_chunk_count": 10417,
+  "new_chunk_count": 11303,
+  "stories_by_chunk_count": {
+    "2": 3796,
+    "1": 333,
+    "3": 703,
+    "4": 128,
+    "10": 2,
+    "6": 42,
+    "5": 70,
+    "7": 12,
+    "8": 5,
+    "11": 1
+  },
+  "maximum_window_token_count": 128,
+  "maximum_reencoded_qwen_body_token_count": 128,
+  "maximum_embedding_token_count": 152,
+  "validation": {
+    "source_scope_matches_old": true,
+    "all_original_text_offsets_match": true,
+    "all_source_stories_covered_without_gaps": true,
+    "all_legacy_decode_matches": true,
+    "uniform_top_and_metadata_fields": true,
+    "unique_chunk_ids": true,
+    "consecutive_faiss_ids": true,
+    "mini_lm_length_limit": true,
+    "existing_loader_and_mapping": true
+  },
+  "old_asset_sha256": {
+    "tinystories.faiss": "8fc8edd5547a6b8fe7828ceac7b1f82a5a96bf9697f4f7bc7e9cb77057194a2d",
+    "tinystories_chunks.json": "79c755c56d0c05482e8c497f503173c91b46e124216c6f44b91a7c505bd0b5eb",
+    "tinystories_chunks.json.bak": "8670ea48eacb70146c64df95a5e8a20e374797e0adfb5232afb990a5757e8f08"
+  },
+  "files_sha256": {
+    "tinystories_chunks.json": "9057042d06461ff939bef5499390adc4217af734126a43172fc531f11dd3673e",
+    "source_stories.json": "70fa666672a8f3643e08aae340c036077bc756b6f8c169966755934bf23de1b8",
+    "source_verification.json": "6157742a605b09b4ed233f2e3b44b9504f8e246fb20a070f53369b69b9f17ca1",
+    "tinystories.faiss": "fe6d4479cca969f2a1e33e2654a921b9b3178fd05365d72949c897d2834156d2",
+    "index_build.json": "1887252331dce0ccd1211cf39ec85d9e97b6e920d2aa82ab46add36a29e7d5ed",
+    "tinystories_queries.jsonl": "c79c234ee58dfa36acf03ebfe363fb95dbee869b01e7b35f7d902f45c92a0e41",
+    "tinystories_absence_evidence.json": "4d66262437a328e1b25db5267f2d939c9741f3dcbf46aa52314e92a409fa0f41",
+    "tinystories_benchmark_manifest.json": "491512e14c76d48cd5c04f50d184d3fc7b563e934b62686380e8d69a5cd9f953"
+  },
+  "pending": [
+    "run real retrieval/RAG/Agent acceptance and evaluate quality"
+  ],
+  "warning": "Do not pair these chunks with the old FAISS index or old evidence IDs.",
+  "index_validation": {
+    "index_type": "IndexFlatIP",
+    "dimension": 384,
+    "vector_count": 11303,
+    "float32": true,
+    "all_vectors_finite": true,
+    "all_vectors_normalized": true,
+    "all_stored_vectors_match_input_order": true,
+    "independent_reencoding_sample_positions": [
+      0,
+      5651,
+      11302
+    ],
+    "independent_reencoding_samples_match": true,
+    "save_reload_vectors_and_search_match": true,
+    "existing_retriever_smoke": true,
+    "fresh_retriever_disk_load_and_search_match": true
+  },
+  "embedding_model_snapshot_commit": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "benchmark_version": "stage2-story-boundaries-qwen128-overlap32-v2-reviewed",
+  "entrypoint_validation": {
+    "legacy_and_v2_benchmark_preflight": true,
+    "agent_subset_12_9_3": true,
+    "retrieval_dataset_45_40_5": true,
+    "related_pytest_checks_passed": 38,
+    "real_agent_inference_run": false
+  }
+}

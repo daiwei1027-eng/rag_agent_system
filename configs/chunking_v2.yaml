@@ -1,0 +1,28 @@
+project:
+  name: rag-agent-system
+  log_level: INFO
+paths:
+  faiss_index: data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories.faiss
+  chunks: data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_chunks.json
+  benchmark_queries: data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_queries.jsonl
+  benchmark_manifest: data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_benchmark_manifest.json
+  absence_evidence: data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_absence_evidence.json
+retrieval:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  normalize_embeddings: true
+  top_k: 50
+reranker:
+  enabled: false
+  model_name: cross-encoder/ms-marco-MiniLM-L6-v2
+  top_k: 5
+  max_length: 512
+  batch_size: 8
+context:
+  top_k: 5
+generation:
+  model_name: Qwen/Qwen2.5-1.5B-Instruct
+  max_new_tokens: 256
+  temperature: 0.2
+agent:
+  model_name: Qwen/Qwen2.5-1.5B-Instruct
+  max_new_tokens: 256

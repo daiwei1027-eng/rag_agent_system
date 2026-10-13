@@ -111,6 +111,7 @@ def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(errors="backslashreplace")
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", default="configs/default.yaml", help="YAML config path.")
     parser.add_argument("--scenario", choices=SCENARIOS, default="tool_failure")
     parser.add_argument("--all", action="store_true", help="Run all scenarios.")
     parser.add_argument(
@@ -122,7 +123,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.all and args.record_dir is None:
         parser.error("--all requires --record-dir")
 
-    config = load_config()
+    config = load_config(args.config)
     reranker = None
     if config.reranker.enabled:
         reranker = CrossEncoderReranker(

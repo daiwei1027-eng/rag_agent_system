@@ -1,0 +1,14 @@
+{
+  "case_count": 12,
+  "answerable_count": 9,
+  "unanswerable_count": 3,
+  "rerank_enabled": true,
+  "retriever_load_seconds": 6.269102799938992,
+  "reranker_load_seconds": 4.144774799933657,
+  "client_load_seconds": 3.8055775000248104,
+  "warmup_query_id": "q002",
+  "warmup_seconds": 2.5254104998894036,
+  "status_counts": {
+    "completed": 12
+  }
+}

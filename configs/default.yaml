@@ -5,11 +5,13 @@ project:
 paths:
   faiss_index: data/tinystories.faiss
   chunks: data/tinystories_chunks.json
-
+  benchmark_queries: data/benchmark/tinystories_queries.jsonl
+  benchmark_manifest: data/benchmark/tinystories_benchmark_manifest.json
+  absence_evidence: data/benchmark/tinystories_absence_evidence.json
 retrieval:
   embedding_model: sentence-transformers/all-MiniLM-L6-v2
   normalize_embeddings: true
-  top_k: 20
+  top_k: 50
 
 reranker:
   enabled: true

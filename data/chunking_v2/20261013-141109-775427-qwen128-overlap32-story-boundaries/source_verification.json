@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-10-13T11:33:36.623140+08:00",
+  "dataset": "roneneldan/TinyStories",
+  "cached_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "split": "train",
+  "source_tokenizer": "Qwen/Qwen2.5-0.5B-Instruct",
+  "budget_body_tokens": 1000000,
+  "old_chunk_size": 128,
+  "old_overlap": 32,
+  "old_chunk_count": 10417,
+  "recreated_chunk_count": 10417,
+  "all_old_chunk_texts_match": true,
+  "mismatch_count": 0,
+  "first_mismatch_indices": [],
+  "source_story_count": 5092,
+  "complete_story_count": 5091,
+  "last_source_index": 5091,
+  "last_story_complete": false,
+  "last_story_original_qwen_tokens": 210,
+  "last_story_retained_qwen_tokens": 209,
+  "last_story_prefix_reencoded_tokens": 209,
+  "last_story_prefix_token_ids_match": true,
+  "raw_retained_text_matches_decoded_stream": true,
+  "decoded_source_character_count": 4252877,
+  "source_range_verified": true,
+  "source_stories.json_sha256": "70fa666672a8f3643e08aae340c036077bc756b6f8c169966755934bf23de1b8",
+  "old_asset_sha256": {
+    "tinystories.faiss": "8fc8edd5547a6b8fe7828ceac7b1f82a5a96bf9697f4f7bc7e9cb77057194a2d",
+    "tinystories_chunks.json": "79c755c56d0c05482e8c497f503173c91b46e124216c6f44b91a7c505bd0b5eb",
+    "tinystories_chunks.json.bak": "8670ea48eacb70146c64df95a5e8a20e374797e0adfb5232afb990a5757e8f08"
+  }
+}

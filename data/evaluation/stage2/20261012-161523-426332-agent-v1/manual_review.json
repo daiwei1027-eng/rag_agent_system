@@ -1,0 +1,312 @@
+{
+  "reviewed_date": "2026-10-13",
+  "review_status": "user_confirmed",
+  "run_id": "20261012-161523-426332-agent-v1",
+  "mode": "without_rerank",
+  "confirmation": "User rejected with_rerank q003 and q041 with reasons, then explicitly accepted the other 22 draft judgments.",
+  "review_reason_source": "docs/stage2-agent-review.md",
+  "na_representation": "null means not applicable; it is excluded from the corresponding metric denominator.",
+  "evidence_supported_note": "For q006 the accepted judgment concerns the core answer; citation grounding is separately failed.",
+  "summary": {
+    "completed": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1.0
+    },
+    "search_called": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1.0
+    },
+    "relevant_returned": {
+      "numerator": 5,
+      "denominator": 9,
+      "rate": 0.5555555555555556
+    },
+    "answer_correct": {
+      "numerator": 4,
+      "denominator": 9,
+      "rate": 0.4444444444444444
+    },
+    "evidence_supported": {
+      "numerator": 4,
+      "denominator": 9,
+      "rate": 0.4444444444444444
+    },
+    "citation_correct": {
+      "numerator": 0,
+      "denominator": 9,
+      "rate": 0.0
+    },
+    "missing_citation": {
+      "numerator": 8,
+      "denominator": 9,
+      "rate": 0.8888888888888888
+    },
+    "correct_refusal": {
+      "numerator": 2,
+      "denominator": 3,
+      "rate": 0.6666666666666666
+    },
+    "evidence_supported_refusal": {
+      "numerator": 1,
+      "denominator": 3,
+      "rate": 0.3333333333333333
+    },
+    "strict_pass": {
+      "numerator": 1,
+      "denominator": 12,
+      "rate": 0.08333333333333333
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "q001",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "missing_citation"
+      ],
+      "review_reason": "除 Lily 外又声称 Ben 找针让母亲缝纽扣；返回的 Ben 故事其实是他帮 Lily 缝娃娃裙子。"
+    },
+    {
+      "query_id": "q003",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "missing_citation"
+      ],
+      "review_reason": "明确回答担心 Jack 上大学后与自己分离；chunk 500 支持；缺引用。"
+    },
+    {
+      "query_id": "q005",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "missing_citation"
+      ],
+      "review_reason": "回答 white hut；chunk 1001 支持；缺引用。"
+    },
+    {
+      "query_id": "q006",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "citation_includes_unsupported_documents"
+      ],
+      "review_reason": "核心答案正确，但列出全部五个 ID；6350 讲手机、5540 讲签名，不能支持卡片图案。"
+    },
+    {
+      "query_id": "q007",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "labeled_evidence_not_returned",
+        "incorrect_answer",
+        "wrong_refusal_on_answerable_case",
+        "missing_citation"
+      ],
+      "review_reason": "可回答题上回答证据不足；返回结果没有标注文段。"
+    },
+    {
+      "query_id": "q015",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "labeled_evidence_not_returned",
+        "incorrect_answer",
+        "missing_citation"
+      ],
+      "review_reason": "问年龄却回答 Lily 并混合故事情节；返回结果没有标注文段。"
+    },
+    {
+      "query_id": "q022",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "missing_citation"
+      ],
+      "review_reason": "回答 drum，返回的 5249/5250 支持；缺引用。"
+    },
+    {
+      "query_id": "q038",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "labeled_evidence_not_returned",
+        "incorrect_answer",
+        "missing_citation"
+      ],
+      "review_reason": "回答 veterinarian 而不是 owl；返回结果没有标注文段。"
+    },
+    {
+      "query_id": "q040",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "labeled_evidence_not_returned",
+        "incorrect_answer",
+        "missing_citation"
+      ],
+      "review_reason": "回答 Sarah 抓糖果引起母亲注意，目标故事是樱桃树引起 Sarah 注意。"
+    },
+    {
+      "query_id": "q041",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": true,
+      "strict_pass": true,
+      "failure_reasons": [],
+      "review_reason": "明确回答证据不足，返回了指定故事 chunk 0，未编造细节。"
+    },
+    {
+      "query_id": "q042",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": false,
+      "answer_correct": true,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": true,
+      "strict_pass": false,
+      "failure_reasons": [
+        "refusal_without_target_story_evidence"
+      ],
+      "review_reason": "回答证据不足，但没有返回指定猫与猫头鹰故事；不计证据支持的严格通过。"
+    },
+    {
+      "query_id": "q045",
+      "mode": "without_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": false,
+      "strict_pass": false,
+      "failure_reasons": [
+        "unsupported_claim_on_unanswerable_case"
+      ],
+      "review_reason": "编造约 10 克；返回的 2500/2501 未提供重量。"
+    }
+  ]
+}

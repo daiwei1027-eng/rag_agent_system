@@ -1,0 +1,23 @@
+{
+  "do_sample": false,
+  "Retrieved_top_k": 20,
+  "rerank_enabled": false,
+  "tokenizer and generation model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "Reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "Retriever": "sentence-transformers/all-MiniLM-L6-v2",
+  "Max_Length": 512,
+  "Batch_size": 8,
+  "Normalize_embeddings": true,
+  "max_new_tokens": 256,
+  "Faiss_Index_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\tinystories.faiss",
+  "Data_Chunks_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\tinystories_chunks.json",
+  "Query_count": 12,
+  "Queries_path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\benchmark\\tinystories_queries.jsonl",
+  "benchmark_version": "day21-stage1-v1.2",
+  "asset_sha256": {
+    "queries": "9a32ae2cc858007084b0bc79e002850ea15c355259d09f788e530e08badf2acf",
+    "manifest": "2361d8e5486677707f3647b586e723fa3c4a8bee1bb90c6ab6722cadfdd11b41",
+    "faiss_index": "8fc8edd5547a6b8fe7828ceac7b1f82a5a96bf9697f4f7bc7e9cb77057194a2d",
+    "chunks": "79c755c56d0c05482e8c497f503173c91b46e124216c6f44b91a7c505bd0b5eb"
+  }
+}

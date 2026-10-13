@@ -1,0 +1,317 @@
+{
+  "reviewed_date": "2026-10-13",
+  "review_status": "user_confirmed",
+  "run_id": "20261013-093918-574513-agent-improved_v1_citation)",
+  "mode": "with_rerank",
+  "confirmation": "用户先确认有重排 q006、q040 的澄清判定，随后对完整批量复核表明确回复：我确认。",
+  "review_reason_source": "docs/stage2-agent-review.md",
+  "na_representation": "null means not applicable; excluded from the corresponding denominator.",
+  "evidence_supported_note": "q006 核心答案有证据支持；完整引文归属单独在 citation_correct 评分。",
+  "summary": {
+    "completed": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1.0
+    },
+    "search_called": {
+      "numerator": 12,
+      "denominator": 12,
+      "rate": 1.0
+    },
+    "relevant_returned": {
+      "numerator": 6,
+      "denominator": 9,
+      "rate": 0.6666666666666666
+    },
+    "answer_correct": {
+      "numerator": 4,
+      "denominator": 9,
+      "rate": 0.4444444444444444
+    },
+    "evidence_supported": {
+      "numerator": 4,
+      "denominator": 9,
+      "rate": 0.4444444444444444
+    },
+    "citation_correct": {
+      "numerator": 0,
+      "denominator": 9,
+      "rate": 0.0
+    },
+    "missing_citation": {
+      "numerator": 8,
+      "denominator": 9,
+      "rate": 0.8888888888888888
+    },
+    "correct_refusal": {
+      "numerator": 0,
+      "denominator": 3,
+      "rate": 0.0
+    },
+    "evidence_supported_refusal": {
+      "numerator": 0,
+      "denominator": 3,
+      "rate": 0.0
+    },
+    "strict_pass": {
+      "numerator": 0,
+      "denominator": 12,
+      "rate": 0.0
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "q001",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "missing_citation"
+      ],
+      "review_reason": "答案 Lily 正确；缺引用。"
+    },
+    {
+      "query_id": "q003",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_answer",
+        "missing_citation"
+      ],
+      "review_reason": "仍声称已经想念，超出尚未分离的事实范围；缺引用。"
+    },
+    {
+      "query_id": "q005",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "missing_citation"
+      ],
+      "review_reason": "白色小屋，答案正确；缺引用。"
+    },
+    {
+      "query_id": "q006",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": true,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_citation"
+      ],
+      "review_reason": "核心答案爱心和花朵正确；1249 支持核心答案，但止于 and said，模型将 1250 才完整出现的引文归给 1249，引用不通过。"
+    },
+    {
+      "query_id": "q007",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_answer",
+        "missing_citation"
+      ],
+      "review_reason": "错答 Lily 和 Max，标注答案为 Ben 和 Lily；缺引用。"
+    },
+    {
+      "query_id": "q015",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_answer",
+        "missing_citation"
+      ],
+      "review_reason": "问题问年龄却回答 Lina，未返回标注证据；缺引用。"
+    },
+    {
+      "query_id": "q022",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": true,
+      "evidence_supported": true,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "missing_citation"
+      ],
+      "review_reason": "回答鼓或大鼓，返回原文支持；缺引用。"
+    },
+    {
+      "query_id": "q038",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_answer",
+        "missing_citation"
+      ],
+      "review_reason": "错答兽医，目标答案是猫头鹰，未返回标注证据；缺引用。"
+    },
+    {
+      "query_id": "q040",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": true,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": false,
+      "insufficient_information": null,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_answer",
+        "unsupported_answer",
+        "missing_citation"
+      ],
+      "review_reason": "正确证据 9750 已返回，却将樱桃树吸引注意改成接住一颗大樱桃；答案错误、缺引用。"
+    },
+    {
+      "query_id": "q041",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": false,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_refusal",
+        "unsupported_answer"
+      ],
+      "review_reason": "虽追加证据不足，仍断言针没有厂家型号；沿用原标准，不能将未说明推为不存在。"
+    },
+    {
+      "query_id": "q042",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": false,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_refusal",
+        "unsupported_answer"
+      ],
+      "review_reason": "将其他故事的 Laser 当药名，答案无证据支持。"
+    },
+    {
+      "query_id": "q045",
+      "mode": "with_rerank",
+      "review_status": "user_confirmed",
+      "answerable": false,
+      "status": "completed",
+      "search_called": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "answer_correct": false,
+      "evidence_supported": false,
+      "citation_present": false,
+      "citation_correct": null,
+      "insufficient_information": false,
+      "strict_pass": false,
+      "failure_reasons": [
+        "incorrect_refusal",
+        "unsupported_answer"
+      ],
+      "review_reason": "编造约 100 克，返回的目标故事未给出重量。"
+    }
+  ]
+}

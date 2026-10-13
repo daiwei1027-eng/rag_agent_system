@@ -1,0 +1,18 @@
+{
+  "scope": "Migration interface audit only; tiny in-memory FAISS with fake encoder/reranker/LLM. No new corpus or production index generated.",
+  "missing_faiss_id_error": "Invalid faiss_id for chunk story_000000_chunk_000",
+  "short_story_token_count": 164,
+  "short_story_preserves_original": true,
+  "long_story_decoded_to_lowercase": true,
+  "arbitrary_string_ids_in_mapping_retrieval_tool_agent_rag": "passed",
+  "new_corpus_verified": false,
+  "required_unfinished": [
+    "raw_source_coverage",
+    "original_text_preservation",
+    "faiss_id_assignment",
+    "paired_index_generation",
+    "positive_and_negative_label_migration",
+    "asset_binding_and_entrypoint_selection",
+    "actual_new_data_acceptance"
+  ]
+}

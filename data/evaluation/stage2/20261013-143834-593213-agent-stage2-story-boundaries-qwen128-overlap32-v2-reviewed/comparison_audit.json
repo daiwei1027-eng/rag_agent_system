@@ -1,0 +1,151 @@
+{
+  "run_id": "20261013-143834-593213-agent-stage2-story-boundaries-qwen128-overlap32-v2-reviewed",
+  "rerank_enabled": false,
+  "comparison_run_id": "20261013-100217-139317-agent-improved_v1_retrieval_top_k)",
+  "same_prompt_queries_tools_and_generation_settings": true,
+  "all_saved_asset_hashes_verified": true,
+  "all_request_snapshots_verified": true,
+  "case_count": 12,
+  "completed_count": 12,
+  "search_success_count": 12,
+  "positive_relevant_returned_count": 5,
+  "positive_denominator": 9,
+  "negative_target_story_returned_count": 3,
+  "negative_denominator": 3,
+  "positive_citation_present_count": 7,
+  "warmup_search_called": true,
+  "median_elapsed_seconds": 2.01642689993605,
+  "per_query": [
+    {
+      "query_id": "q001",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q003",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q005",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q006",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q007",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "citation_present": false,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q015",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q022",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q038",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": true,
+      "target_story_returned": null,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q040",
+      "answerable": true,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": false,
+      "target_story_returned": null,
+      "citation_present": false,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q041",
+      "answerable": false,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "citation_present": false,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q042",
+      "answerable": false,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "citation_present": true,
+      "semantic_review_status": "pending"
+    },
+    {
+      "query_id": "q045",
+      "answerable": false,
+      "status": "completed",
+      "search_success": true,
+      "relevant_returned": null,
+      "target_story_returned": true,
+      "citation_present": false,
+      "semantic_review_status": "pending"
+    }
+  ],
+  "generation_and_retrieval_parameter_fields_verified": [
+    "do_sample",
+    "Retrieved_top_k",
+    "tokenizer and generation model",
+    "Reranker",
+    "Retriever",
+    "Max_Length",
+    "Batch_size",
+    "Normalize_embeddings",
+    "max_new_tokens"
+  ]
+}

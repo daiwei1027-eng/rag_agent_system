@@ -1,0 +1,1883 @@
+{
+  "created_at": "2026-10-13T10:07:40.633815+08:00",
+  "source_run": "20261013-100316-593488-agent-improved_v1_retrieval_top_k)",
+  "source_records_sha256": "df077826646151d424fff388534b794f6f4734086a7245e132de133b6fa4a6d6",
+  "source_config": {
+    "do_sample": false,
+    "Retrieved_top_k": 50,
+    "rerank_enabled": true,
+    "tokenizer and generation model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "Reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "Retriever": "sentence-transformers/all-MiniLM-L6-v2",
+    "Max_Length": 512,
+    "Batch_size": 8,
+    "Normalize_embeddings": true,
+    "max_new_tokens": 256,
+    "Faiss_Index_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\tinystories.faiss",
+    "Data_Chunks_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\tinystories_chunks.json",
+    "Query_count": 12,
+    "Queries_path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\benchmark\\tinystories_queries.jsonl",
+    "benchmark_version": "day21-stage1-v1.2",
+    "asset_sha256": {
+      "queries": "9a32ae2cc858007084b0bc79e002850ea15c355259d09f788e530e08badf2acf",
+      "manifest": "2361d8e5486677707f3647b586e723fa3c4a8bee1bb90c6ab6722cadfdd11b41",
+      "faiss_index": "8fc8edd5547a6b8fe7828ceac7b1f82a5a96bf9697f4f7bc7e9cb77057194a2d",
+      "chunks": "79c755c56d0c05482e8c497f503173c91b46e124216c6f44b91a7c505bd0b5eb"
+    }
+  },
+  "asset_sha256": {
+    "faiss_index": "8fc8edd5547a6b8fe7828ceac7b1f82a5a96bf9697f4f7bc7e9cb77057194a2d",
+    "chunks": "79c755c56d0c05482e8c497f503173c91b46e124216c6f44b91a7c505bd0b5eb"
+  },
+  "candidate_top_k": 50,
+  "final_top_k": 5,
+  "timing_note": "Model loading recorded separately; no inference warmup. First inference may include cold-start overhead. Diagnostic timings are not a performance comparison.",
+  "cases": [
+    {
+      "query_id": "q007",
+      "question": "Who slid down together and hugged after Max ran away from the slide?",
+      "query": "Who slid down together and hugged after Max ran away from the slide?",
+      "target_chunk_id": "1500"
+    },
+    {
+      "query_id": "q038",
+      "question": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+      "query": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+      "target_chunk_id": "9250"
+    }
+  ],
+  "results": [
+    {
+      "query_id": "q007",
+      "question": "Who slid down together and hugged after Max ran away from the slide?",
+      "query": "Who slid down together and hugged after Max ran away from the slide?",
+      "target_chunk_id": "1500",
+      "faiss_rank": null,
+      "rerank_rank": null,
+      "in_final_top_5": false,
+      "retrieval_seconds": 0.18991199997253716,
+      "rerank_seconds": 0.07511779991909862,
+      "candidates": [
+        {
+          "chunk_id": "4443",
+          "text": " did not like that. She said, \"But he is not nice. He is mean. He does not share. He took our slide.\" Max shrugged. He said, \"I don't know. Maybe he will go soon. Maybe he will get bored.\"\n\nLily and Max waited and waited. But the big boy did not go. He did not get bored. He kept going down the slide. He laughed and shouted. He did not care about Lily and Max.\n\nLily and Max were very sad. They missed the slide. They wished the big boy would leave. They wished their mom would see. They wished they could",
+          "source": "tinystories",
+          "faiss_rank": 1,
+          "score": 0.5786808729171753,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8511",
+          "text": " and started to chew on it. Max was very happy.\n\nMax saw a big icy hill in the yard. He wanted to go up the hill. Max ran and ran, but the icy hill was very slippery. He tried to go up the hill many times, but he could not do it. Max was sad.\n\nMax tried one more time to go up the icy hill. He ran as fast as he could, but he slipped and fell down. Max was hurt and cold. He could not play in the yard anymore. Max went back inside his house and cried. The day was not fun for Max.One day, a little",
+          "source": "tinystories",
+          "faiss_rank": 2,
+          "score": 0.5709730982780457,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4442",
+          "text": " were sad and scared. They did not know what to do. They looked at their mom. Their mom was on a bench. She was reading a book. She did not see the big boy.\n\nLily wanted to tell their mom. She said to Max, \"Let's go to mom. She will help us.\" But Max was obedient. He said, \"No, mom said we have to play nice and share. We have to wait for our turn.\"\n\nLily did not like that. She said, \"But he is not nice. He is mean. He does not share. He took our slide.\" Max shrugged.",
+          "source": "tinystories",
+          "faiss_rank": 3,
+          "score": 0.5639330148696899,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5232",
+          "text": " the rain was pouring down. Max was scared and didn't know what to do. But his owner hugged him tightly and said, \"Don't worry, Max. I'll take care of you.\" \n\nAfter the storm passed, Max's owner noticed that some of her neighbors had lost their homes. She decided to feed them and give them a place to stay. Max watched as his owner helped others and realized that it's important to be kind and help others in times of need. \n\nFrom then on, Max made it his mission to be as loyal and helpful as his owner. He would follow her around and even help her feed the",
+          "source": "tinystories",
+          "faiss_rank": 4,
+          "score": 0.5536690354347229,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5496",
+          "text": " slip again.Once upon a time, there was a little girl named Lily. She loved to play outside with her friends and her dog, Max. One day, Lily and Max were playing when suddenly Max had an emergency. He couldn't breathe and started to have a fit. \n\nLily knew she had to do something to help Max. She ran inside to tell her mommy and daddy what was happening. They called the vet and rushed Max to the animal hospital. \n\nAfter a few hours, the vet was able to help Max and he was feeling much better. Lily was so happy that Max was okay. She gave him a big",
+          "source": "tinystories",
+          "faiss_rank": 5,
+          "score": 0.5390725135803223,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2611",
+          "text": " the park with his friends, when he suddenly noticed something special. It was a buckle! Max was so excited! He wanted to try it on his coat. But when he tried, the buckle was facing the wrong way. Max didn't know what to do.\n\nSo, he called for help. His friends came to help him. They saw the buckle and all said 'Let's reverse it!'. So, they did! They figured out how to turn the buckle around and, soon enough, Max had his buckle on the right way. He was so happy!\n\nMax showed off his new buckle and all his friends were very impressed.",
+          "source": "tinystories",
+          "faiss_rank": 6,
+          "score": 0.5363158583641052,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1320",
+          "text": " named Max. Max loved to run and play, but one day he got lost in the woods. He was very scared and didn't know what to do.\n\nLuckily, a kind boy named Tim saw Max and wanted to help him. Tim put a leash on Max and took him home. Max was so tired from running around all day that he fell asleep right away.\n\nThe next day, Max's owner came to Tim's house to rescue him. Max was so happy to see his owner again and wagged his tail with joy. Max's owner thanked Tim for finding Max and giving him a safe place to stay. From that day on",
+          "source": "tinystories",
+          "faiss_rank": 7,
+          "score": 0.5328565835952759,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6733",
+          "text": " loved to play hide and seek with his friends. One day when Max was playing, he couldn't find his friends. He was so scared of the dark and the unknown that he ran home.\n\nWhen Max walked in, his mom saw his scared look and said, \"Max, you don't need to be scared. Come and sit with me.\" Max felt safe with his mom, so he went and sat with her.\n\nHis mom said, \"Max, don't be afraid to surrender. It's ok to give up and ask for help sometimes.\" She then gave him an invitation. It was an invitation to a special game.\n\nMax",
+          "source": "tinystories",
+          "faiss_rank": 8,
+          "score": 0.531892716884613,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2614",
+          "text": " her little brother came over and knocked down the tower! Anna was so impatient with him that she shouted \"No! Please don't do that\". \n\nBut her little brother just laughed and said \"It's ok Anna, we can make a bigger stack now\". So they both got to work making an even bigger stack of blocks and played with it together. They built towers, roads and shapes and had so much fun. \n\nAt the end of the day they were both very tired, but they had made the most amazing stack of blocks!Once upon a time there were two friends, Sam and Max. Sam and Max liked to have fun",
+          "source": "tinystories",
+          "faiss_rank": 9,
+          "score": 0.5302425026893616,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "10305",
+          "text": " friends: Max and Kiki. Max and Kiki were both little animals. One day, they were walking together in the forest.\n\nSuddenly, Kiki noticed an old, gray wreck in the distance. \n\nKiki said, \"Let's go see the wreck!\"\n\nMax replied, \"No way! It looks scary!\"\n\nKiki said, \"I want to go! Come on!\" \n\nMax said, \"No, I don't want to!\", and he slapped Kiki on the hand. \n\nKiki started to cry and soon, Max felt very sorry. He gave Kiki a big hug and said, \"Let's go",
+          "source": "tinystories",
+          "faiss_rank": 10,
+          "score": 0.5286878347396851,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2612",
+          "text": ", soon enough, Max had his buckle on the right way. He was so happy!\n\nMax showed off his new buckle and all his friends were very impressed. Max was very proud of himself and couldn't help but smile. He had learned an important lesson - that with a bit of help and a bit of work, you can find a way to make something right even when it's not the way you wanted it to be in the first place.Once upon a time there was a little girl called Anna. She was only three years old and loved to play all day.\n\nOne day, Anna saw a huge stack of blocks in the corner",
+          "source": "tinystories",
+          "faiss_rank": 11,
+          "score": 0.5230845212936401,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2012",
+          "text": ". He and Lily both trembled with fear. They wanted to get out of the basement.\n\n\"Where is the exit?\" Lily asked.\n\nMax looked around and saw a small window. It was high up, but he had an idea. He pushed the box he was hiding behind to the wall. He climbed on the box and reached for the window. He opened it and saw the garden outside.\n\n\"Come on, Lily, we can escape through here!\" he said.\n\nHe helped Lily climb on the box and then through the window. They jumped down and ran to the house. They hugged each other and breathed a sigh of relief.\n\n",
+          "source": "tinystories",
+          "faiss_rank": 12,
+          "score": 0.5216237306594849,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8783",
+          "text": " much better now, and it was finally time for them to go home. \n\nThey had had so much fun, that they promised each other that they would come back to the park as soon as possible.Once upon a time, there were two friends, Max and Liz. Max was very selfish and always wanted to be the one in charge. One day, Max and Liz had a disagreement about a turkey Max wanted to keep.\n\nMax said, â€œThe turkey is mine, and I donâ€™t want to share.â€\n\nBut Liz said, â€œNo, Max. Thatâ€™s not fair.",
+          "source": "tinystories",
+          "faiss_rank": 13,
+          "score": 0.5187076330184937,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "10227",
+          "text": " time, there were two best friends named Max and Molly. Max was a little boy and Molly was a little girl. Max and Molly were always playing together. One day, Max fell and hurt his knee. Molly wanted to help him, so she went to her house to borrow a bandage for Max.\n\nMolly knocked on the door and said, \"Mommy, can I borrow a bandage for Max?\"\n\nMommy said, \"Yes, sweetheart, you can borrow one. Here, take this one.\"\n\nMolly took the little bandage and ran back to Max. She put the bandage on Max's knee.\n\nMax",
+          "source": "tinystories",
+          "faiss_rank": 14,
+          "score": 0.51595538854599,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5344",
+          "text": " catch with a ball. Max ran to catch the ball but it was too high for him to reach. \"I can't catch it, it's too high!\" said Max. Lily said, \"Don't worry Max, I can lift you up so you can catch it.\" So, Lily lifted Max up and he caught the ball with his big paw.\n\nMax was so happy that he gave Lily a big lick on her face. Lily laughed and said, \"You are such a good dog, Max!\" They continued to play catch until the sun went down. Max was tired but happy because he had so much fun with his friend.",
+          "source": "tinystories",
+          "faiss_rank": 15,
+          "score": 0.5127483606338501,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7726",
+          "text": " The lawyer stepped in and said, \"you must all prove that he was guilty of cheating before you can declare him the winner\".\n\nThe friends started arguing, but the lawyer said there was no need. He had seen Tim play the entire time and said he was the clear winner. \n\nEveryone was happy and celebrated Tim's victory. From that day on, he was nicknamed the 'King of the Jungle Gym' and everyone know not to mess with him.Max and his mom were walking together in the cold park. Max was balancing a stick in his hands. He was very proud of himself! His mom was impressed too.\n\n\"Wow,\"",
+          "source": "tinystories",
+          "faiss_rank": 16,
+          "score": 0.512475311756134,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6734",
+          "text": " to surrender. It's ok to give up and ask for help sometimes.\" She then gave him an invitation. It was an invitation to a special game.\n\nMax was excited and he soon forgot his fear. He jumped up and said, \"Yes, mommy. I will play!\" Max felt safe and trusted his mom so he gave himself up to the game. It was a game of hide and seek, and Max surrendered and let his mom help him find his friends. \n\nHe found them in the end and laughed louder than before. This time, it felt safe to surrender, and Max was happy that he had taken the invitation.Once",
+          "source": "tinystories",
+          "faiss_rank": 17,
+          "score": 0.5109775066375732,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1596",
+          "text": " was very sad. She liked her balloon and she wanted to play with it. She did not understand why Max did that. She felt angry and hurt. She cried and hugged her friends.\n\nMax was not happy. He thought he would feel better after he popped the balloon. But he did not. He felt guilty and mean. He saw Lily crying and he felt sorry. He wished he did not poke the balloon. He wished he was nice.Sara and Ben like to play outside. But today, the sky is gray and the rain is falling. Sara and Ben are sad. They want to have fun.\n\nThey look for a",
+          "source": "tinystories",
+          "faiss_rank": 18,
+          "score": 0.510670006275177,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5461",
+          "text": " tired and weak. She took him to the vet, who said that Max needed more power in his body to feel better.\n\nMax's owner decided to give him special food that would raise his power. She also gave him lots of love and cuddles. After a few days, Max started to feel much better! He had more power to play with his ball and dig in the dirt.\n\nBut one day, Max got very dirty from digging in a filthy mud puddle. His owner didn't mind, though. She knew that even though Max was filthy, he was still her lovable dog. And Max was happy, because he got",
+          "source": "tinystories",
+          "faiss_rank": 19,
+          "score": 0.5084118843078613,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9132",
+          "text": " with all her might. Maxi was persistent, and she refused to let go until the measure stopped sliding. And after a few seconds, it finally did.\n\nThe measure never moved again and Maxi was so proud that she was able to use her persistence to stop it. Maxi continued on her pretend adventure, always happy to have her measurement with her.Jimmy stepped onto his little bike, with a big smile on his face. He was ready to ride and was wearing a helmet. He checked the sky and noticed big fluffy clouds. â€œItâ€™s gonna be a warm day,â€ he thought to himself.\n\n",
+          "source": "tinystories",
+          "faiss_rank": 20,
+          "score": 0.5076296329498291,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4441",
+          "text": " park, but they always looked out for the big, scary dog.Lily and Max were playing in the park. They liked the slide a lot. They took turns to go down the slide. Lily went first, then Max, then Lily, then Max.\n\nBut then a big boy came. He said he wanted the slide. He pushed Lily and Max away. He said they were too small and he was big. He said the slide was his.\n\nLily and Max were sad and scared. They did not know what to do. They looked at their mom. Their mom was on a bench. She was reading a book.",
+          "source": "tinystories",
+          "faiss_rank": 21,
+          "score": 0.5052558779716492,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7122",
+          "text": " he got it, but he didn't want to talk about it. He just locked himself in his room and kept the shoe for himself. \n\nHis mom was very stubborn, too. She asked him over and over again to tell her where he got the shoe, but Max remained tight-lipped. Finally, his mom had to take the shoe away. Max was very sad, but he knew better than to talk about it.Once upon a time there was a soldier who was in a big hurry. He had to do something very important, but he did not know what it was. He ran and ran until he came to a big",
+          "source": "tinystories",
+          "faiss_rank": 22,
+          "score": 0.5024914741516113,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5988",
+          "text": " their journey, Max said goodbye and went back to the castle. Lucy waved to him and went on her way. She was happy she had such a fun adventure.Once upon a time, there was a girl named Sarah. She loved to skip. She skipped everywhere - inside her house, outside her house, around the block and even in the rain!\n\nToday, Sarah wanted to skip in the kitchen. She skipped around the table and hopped over to the faucet. It was bright purple and made Sarah so happy. She felt silly, so she talked to the faucet.\n\n\"Hi, Faucet,\" she said. \"You're so",
+          "source": "tinystories",
+          "faiss_rank": 23,
+          "score": 0.49744731187820435,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8406",
+          "text": " brought yummy food to share. Tom brought apples, Tim brought sandwiches, Kim brought cookies, and Jim brought juice. They sat on a big blanket under a tree and enjoyed their yummy treats.\n\nAfter they ate, they played games like tag and hide-and-seek. They laughed and had a great time. When the sun began to set, they said goodbye and went home. They knew they would enjoy more fun days together as a team.Once upon a time, there was a little dog named Max. Max was a weak dog, but he was very happy. Max loved to play with his ball and run in the park.\n\nOne day",
+          "source": "tinystories",
+          "faiss_rank": 24,
+          "score": 0.49565020203590393,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1595",
+          "text": " Lily and her friends. He pretended to be nice. He said hello and asked to see the balloon.\n\nLily was surprised. She did not know Max wanted to play. She was kind and she gave him the balloon. She hoped he would like it.\n\nBut Max did not like it. He held the balloon and he poked it with the stick. The balloon popped with a loud bang. Lily and her friends screamed and jumped. Max laughed and ran away.\n\nLily was very sad. She liked her balloon and she wanted to play with it. She did not understand why Max did that. She felt angry and hurt. She",
+          "source": "tinystories",
+          "faiss_rank": 25,
+          "score": 0.491330087184906,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5398",
+          "text": " a walk in the park. It was a dark and cloudy day, but they still had fun. Max saw a big ball and ran to get it. Lily squeezed the leash so Max wouldn't go too far. Max brought the ball back to Lily and they played together for a while.\n\nSuddenly, it started to rain! Lily and Max ran back home as fast as they could. When they got home, Max was wet and tired. Lily gave him a big hug and they snuggled together on the couch. Max was happy to be home and dry.Once upon a time, there was a little girl named Lily. She loved",
+          "source": "tinystories",
+          "faiss_rank": 26,
+          "score": 0.4890627861022949,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1290",
+          "text": ". \n\nFrom that day on, Lily and the monster played together in the park. Max also became friends with the monster. Lily learned that sometimes things that seem scary are actually friendly and nice.Once upon a time, there was an old man. He liked to play games with his friends. They were very competitive and always wanted to win. One day, they decided to have a race to see who was the fastest.\n\nThe old man tried his best, but he was very slow. His friends all ran ahead of him. But then, something magical happened. The old man's granddaughter came to watch the race. She ran up to",
+          "source": "tinystories",
+          "faiss_rank": 27,
+          "score": 0.4890502393245697,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1289",
+          "text": " \"Look, Max! A monster!\" Max barked at the monster, but the monster didn't move. \n\nLily thought about what to do. She remembered that her mom told her to be independent and brave. So, Lily took a deep breath and walked up to the monster. She saw that the monster was sad and lonely. Lily decided to be the monster's friend. She played with the monster and showed him her toys. The monster was happy and no longer scary. \n\nFrom that day on, Lily and the monster played together in the park. Max also became friends with the monster. Lily learned that sometimes things that seem",
+          "source": "tinystories",
+          "faiss_rank": 28,
+          "score": 0.4875321090221405,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8535",
+          "text": " drop the food.\n\nWhen Max saw the tray, his eyes got big and happy. Max ate all the food from the tray. Now, Max was not hungry anymore. Max and Sam played together all day, and they were both very happy.Once upon a time, there was a thin ball that liked to bounce. The ball had a friend named Speed. Speed was a fast car. They liked to play together in the park.\n\nOne day, Speed and the thin ball decided to have a race. Speed went fast, and the thin ball bounced high. They raced to the big tree in the park. The thin ball bounced higher and",
+          "source": "tinystories",
+          "faiss_rank": 29,
+          "score": 0.48653802275657654,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9730",
+          "text": " with me?\" Lucy smiled and said, \"Yes!\"\n\nJohn looked for the best slide. He wanted to find a very tall one. Finally, John spotted a really tall slide.\n\nJohn and Lucy went to the top of the slide. They looked all the way to the bottom. It was scary but also exciting. John said, \"Let's go!\"\n\nThey sat down and started to slide. They went faster and faster until they reached the bottom. John and Lucy were so happy they yelled, \"Score!\"\n\nJohn and Lucy went higher and higher. Then they saw something big and heavy. They stopped and looked closely. It was the biggest",
+          "source": "tinystories",
+          "faiss_rank": 30,
+          "score": 0.4846609830856323,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "15",
+          "text": " \"Owl, my knee hurts. What can I do?\" The owl thought for a moment and said, \"Max, you should test your knee. Try to walk slowly and see if it still hurts.\"\n\nSo Max tested his knee by walking slowly. At first, it hurt a little, but soon Max felt better. He said, \"Thank you, Owl, for your help. Now I can play with my friends again.\"\n\nMax was so happy that he could play with his friends without pain. He learned that sometimes, it was good to slow down and listen to his body. And Max and his friends played happily in the park",
+          "source": "tinystories",
+          "faiss_rank": 31,
+          "score": 0.4817136824131012,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "10306",
+          "text": " on the hand. \n\nKiki started to cry and soon, Max felt very sorry. He gave Kiki a big hug and said, \"Let's go home, okay?\" \n\nKiki smiled. They held hands and ran home together. They never went back to the gray wreck.Once upon a time there was a little girl named Lucy. She was eager to go to the park. When she got there, she saw a huge balloon just waiting for her. She jumped up and down in excitement. \n\n\"What's inside, Mommy?\" Lucy asked. \n\n\"I don't know,\" her mom answered. \"Let's find out",
+          "source": "tinystories",
+          "faiss_rank": 32,
+          "score": 0.48036614060401917,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9729",
+          "text": " brother wanted to keep playing and swinging. Emma tried to convince him to sleep instead, but it was too difficult.\n\nFinally, Emma had an idea - she suggested if they swing together, they could swing slowly like they were taking a nap. Her brother was really happy with the idea, and they spent the rest of the day swinging gently together in the backyard.John and Lucy were playing in the park. John wanted to slide and he asked Lucy, \"Do you want to slide with me?\" Lucy smiled and said, \"Yes!\"\n\nJohn looked for the best slide. He wanted to find a very tall one. Finally, John spotted a",
+          "source": "tinystories",
+          "faiss_rank": 33,
+          "score": 0.47981685400009155,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2610",
+          "text": " morning Mommy was happy again. She took us back to the building and we saw the people. They were smiling and hugging her. They thanked her for the warm water. \n\nEveryone was happy. They said goodbye and we went home. Mommy and Daddy said they were proud of us. We had done a nice thing!Once upon a time there was a dog called Max. Max was very serious but he really loved to play. One day, Max was running around the park with his friends, when he suddenly noticed something special. It was a buckle! Max was so excited! He wanted to try it on his coat.",
+          "source": "tinystories",
+          "faiss_rank": 34,
+          "score": 0.47934767603874207,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9131",
+          "text": " searching for treasure and adventure.\n\nMaxi sailed for a long time, but eventually she became tired and decided to rest for a bit. She put her measure down on the ground, but as she closed her eyes to relax, she felt something strange. Suddenly, the measure started to move and slide away from Maxi!\n\nMaxi opened her eyes in surprise and noticed that her measure was slowly sliding backwards. Suddenly Maxi had an idea! She raced forward and held onto the measure with all her might. Maxi was persistent, and she refused to let go until the measure stopped sliding. And after a few seconds, it finally did.\n\n",
+          "source": "tinystories",
+          "faiss_rank": 35,
+          "score": 0.4781477451324463,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6386",
+          "text": " and offered to show her.\n\nPolly was so happy and grateful that she gave Max a big hug. But then, Max slapped Polly on the back and said, \"I was just joking, I don't know where your nest is.\" Polly was very sad and flew away.\n\nThe moral of the story is that it's not nice to play tricks on others, especially when they're asking for help.Once upon a time, there was a little girl named Lily. She loved going to the market with her mommy. One day, they went to the market and saw that it was closed. Lily was sad because she wanted to buy some",
+          "source": "tinystories",
+          "faiss_rank": 36,
+          "score": 0.47814029455184937,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2965",
+          "text": " the castle.\n\n\"Max, let's play with the ball!\" said Lily. But Max didn't want to play. He barked and ran away. Lily felt sad and didn't know why Max ignored her. She went to look for him in the castle.\n\nLily found Max in a small room. He was looking at a broken toy. Lily understood that Max was sad too. She said, \"Max, I'm sorry I ignored your feelings. Let's fix the toy together.\" They worked together and fixed the broken toy.\n\nAfter fixing the toy, they played with the big, red ball. They learned that they should not",
+          "source": "tinystories",
+          "faiss_rank": 37,
+          "score": 0.4760228395462036,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "10226",
+          "text": " before. It was a lot of traffic. Cars, buses and people were all in his way. But Billy was still brave. He gathered his courage and started to jog through the traffic.\n\nEveryone stopped and looked at Billy. They couldn't believe how gracefully he weaved between the vehicles. Even the loudest cars thanked Billy for making the traffic less noisy.\n\nBilly felt proud and kept jogging. He showed everyone that anyone can be brave and graceful if they try.Once upon a time, there were two best friends named Max and Molly. Max was a little boy and Molly was a little girl. Max and Molly were always playing together.",
+          "source": "tinystories",
+          "faiss_rank": 38,
+          "score": 0.4759165048599243,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4925",
+          "text": " Lily says. She has an idea. She runs to the bench where their mom is sitting. She asks for her mom's phone. She tells her mom about Max.\n\n\"Good idea, Lily,\" mom says. She is proud of Lily and Ben. She takes the phone and dials the number on the tag. She talks to someone on the phone. She tells them where they are and that they found Max.\n\nSoon, a car arrives at the park. A man and a woman get out of the car. They look happy and relieved. They run to Max and hug him.\n\n\"Max, we missed you so much!\" the",
+          "source": "tinystories",
+          "faiss_rank": 39,
+          "score": 0.47572997212409973,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7570",
+          "text": " his eyes, but he was brave. He squirted a bit of the purple shampoo in his hand, rubbed it together and put it on his hair. It tickled! \n\nMax's mum watched him in admiration. She thought he did a great job and told him so. He smiled proudly. \n\nMax was so proud of what he'd done. He had tried something new by himself and it worked out great! His mum's encouragement had made him feel even more confident.Once there was a baby boy who was three years old. He was standing in a field and looking around. He saw a piece of paper blowing in the wind",
+          "source": "tinystories",
+          "faiss_rank": 40,
+          "score": 0.4752107858657837,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5497",
+          "text": " a few hours, the vet was able to help Max and he was feeling much better. Lily was so happy that Max was okay. She gave him a big hug and said, \"I love you, Max. You're my best friend.\" Max wagged his tail and licked her face. Lily knew that Max was going to be okay and they could play together again soon.Once upon a time, there was a little girl named Lily. She loved to play with her toys and make up stories. One day, she found a magic wand in her toy box. She waved it around and said \"Abracadabra!\" but nothing happened",
+          "source": "tinystories",
+          "faiss_rank": 41,
+          "score": 0.47484731674194336,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1778",
+          "text": " but Lily told him it was okay. They walked some more and saw a boy playing with a ball. Max wanted to play too, but the boy said it was his ball. Max didn't fit in with the boy's game, so he just watched from afar.\n\nAt the end of the day, Lily and Max went home. Max was tired from all the fun they had. He went to his bed and fell asleep, dreaming of the shiny rock and the waving flag.Once upon a time, there was a bald man named Tom. He liked to spend his time outside in the sun. One day, he went for a walk",
+          "source": "tinystories",
+          "faiss_rank": 42,
+          "score": 0.47453129291534424,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2099",
+          "text": " hugged Lily and Tom and said, \"I'm sorry, my loves. Don't worry, we can fix the blocks and play again. You did a good job building. I'm proud of you.\" She helped them pick up the blocks and put them in a box. She gave them some cookies and milk and said, \"Let's go to the couch and read a story. That will make you feel better.\"\n\nLily and Tom nodded and smiled. They followed Mom to the couch and snuggled with her. They felt comfortable and safe. They listened to Mom's voice and looked at the pictures. They forgot about Sam and",
+          "source": "tinystories",
+          "faiss_rank": 43,
+          "score": 0.47284063696861267,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "10300",
+          "text": " and put on a helmet. Max was so relieved to see that Tim was being safe. \n\nThe moral of the story is that it's important to act safely and not be rude. Always be sure to wear a helmet if you're riding a bike, or other activities that might be dangerous!Billy was feeling very excited. He had always wanted to go on an adventure. Today was the day, and he was just waiting for his Mommy to open the door. He knew he would be in for a surprise.\n\nMommy opened the door and Billy stepped out. He could smell the sweet smell of the morning air. The sun was",
+          "source": "tinystories",
+          "faiss_rank": 44,
+          "score": 0.4720132350921631,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1982",
+          "text": " to each other and try to score a goal. They had a brilliant time.Lily and Max were playing in their room. They had many toys, but they liked to look at the photo book best. The photo book had pictures of their family and friends. They liked to point at the faces and say their names.\n\n\"Look, this is Grandma and Grandpa,\" Lily said, showing Max a photo. \"They are very nice and give us hugs and cookies.\"\n\nMax nodded and smiled. He liked Grandma and Grandpa too. He turned the page and saw a photo of a big dog. He pointed at it and said,",
+          "source": "tinystories",
+          "faiss_rank": 45,
+          "score": 0.4692588150501251,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4926",
+          "text": " a woman get out of the car. They look happy and relieved. They run to Max and hug him.\n\n\"Max, we missed you so much!\" the woman says. She kisses Max on the nose. \"Thank you for finding him,\" she says to Lily, Ben and mom.\n\n\"You're welcome,\" Lily, Ben and mom say. They are glad that Max is safe and reunited with his family.\n\n\"Can we play with Max again?\" Lily asks.\n\n\"Of course, you can,\" the man says. He smiles at Lily and Ben. \"Max loves to play with new friends. Maybe we can come to the park again",
+          "source": "tinystories",
+          "faiss_rank": 46,
+          "score": 0.4692489206790924,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6363",
+          "text": " he saw them. \n\nTogether, Timmy and Billy built the coolest tower ever. It was so tall that it almost touched the ceiling! They laughed and played with their blocks all afternoon. When it was time for Billy to go home, Timmy felt sad. But he knew that he could play with his blocks again tomorrow, and that made him happy. From that day on, Timmy and Billy were the best of friends, and they always had fun playing with their cool blocks.Once upon a time, there was a dog named Max. Max liked to dig holes in the yard and chase squirrels. One day, Max was",
+          "source": "tinystories",
+          "faiss_rank": 47,
+          "score": 0.46832239627838135,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7311",
+          "text": ", go!\" John slid down the slide, faster and faster. When he reached the bottom, he laughed with joy. He felt brave and proud!\n\nJohn wanted to do it again. This time he stood up and slid on his bottom. He went even faster than before!\n\nAfter a while, John and his parents went home. When they got there, John's dad had a surprise - pizza! John was so excited! He loves pizza and he loves slides. It was a great day with lots of fun!Anna felt strong. She was three years old and she liked to try new things.\n\nToday, Anna was playing with some weights",
+          "source": "tinystories",
+          "faiss_rank": 48,
+          "score": 0.4677712917327881,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "14",
+          "text": ". In the end, Tim won the race and Sarah came in second. They were both so happy and proud of themselves. They celebrated with their friends and had a great day at the park.Once upon a time, there was a clever little dog named Max. Max loved to run and play with his friends in the park. One day, Max was running very fast when he fell and hurt his knee.\n\nMax went to his friend, the wise old owl, and said, \"Owl, my knee hurts. What can I do?\" The owl thought for a moment and said, \"Max, you should test your knee. Try",
+          "source": "tinystories",
+          "faiss_rank": 49,
+          "score": 0.46611911058425903,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8027",
+          "text": " they went to the store, Molly liked to buy jam. One day, when the two of them went to the store, there was no jam available.\n\n\"No jam!\" yelled Molly in disappointment.\n\n\"No jam?\" asked Max. \"That's too bad. What can we do?\"\n\nMolly thought and then said, \"Let's skip around the store to cheer ourselves up!\"\n\nMax was delighted and the two of them started to skip together. As they were skipping they made new friends who were shopping at the store. Everyone was having great fun.\n\nSuddenly, a shopkeeper hurried up to them and told them to stop jumping.\n\n\"Why?\" asked",
+          "source": "tinystories",
+          "faiss_rank": 50,
+          "score": 0.46385931968688965,
+          "rerank_rank": null,
+          "rerank_score": null
+        }
+      ],
+      "reranked": [
+        {
+          "chunk_id": "4441",
+          "text": " park, but they always looked out for the big, scary dog.Lily and Max were playing in the park. They liked the slide a lot. They took turns to go down the slide. Lily went first, then Max, then Lily, then Max.\n\nBut then a big boy came. He said he wanted the slide. He pushed Lily and Max away. He said they were too small and he was big. He said the slide was his.\n\nLily and Max were sad and scared. They did not know what to do. They looked at their mom. Their mom was on a bench. She was reading a book.",
+          "source": "tinystories",
+          "faiss_rank": 21,
+          "score": 0.5052558779716492,
+          "rerank_rank": 1,
+          "rerank_score": 2.4085192680358887
+        },
+        {
+          "chunk_id": "10306",
+          "text": " on the hand. \n\nKiki started to cry and soon, Max felt very sorry. He gave Kiki a big hug and said, \"Let's go home, okay?\" \n\nKiki smiled. They held hands and ran home together. They never went back to the gray wreck.Once upon a time there was a little girl named Lucy. She was eager to go to the park. When she got there, she saw a huge balloon just waiting for her. She jumped up and down in excitement. \n\n\"What's inside, Mommy?\" Lucy asked. \n\n\"I don't know,\" her mom answered. \"Let's find out",
+          "source": "tinystories",
+          "faiss_rank": 32,
+          "score": 0.48036614060401917,
+          "rerank_rank": 2,
+          "rerank_score": 2.3350391387939453
+        },
+        {
+          "chunk_id": "4443",
+          "text": " did not like that. She said, \"But he is not nice. He is mean. He does not share. He took our slide.\" Max shrugged. He said, \"I don't know. Maybe he will go soon. Maybe he will get bored.\"\n\nLily and Max waited and waited. But the big boy did not go. He did not get bored. He kept going down the slide. He laughed and shouted. He did not care about Lily and Max.\n\nLily and Max were very sad. They missed the slide. They wished the big boy would leave. They wished their mom would see. They wished they could",
+          "source": "tinystories",
+          "faiss_rank": 1,
+          "score": 0.5786808729171753,
+          "rerank_rank": 3,
+          "rerank_score": 1.368178367614746
+        },
+        {
+          "chunk_id": "9131",
+          "text": " searching for treasure and adventure.\n\nMaxi sailed for a long time, but eventually she became tired and decided to rest for a bit. She put her measure down on the ground, but as she closed her eyes to relax, she felt something strange. Suddenly, the measure started to move and slide away from Maxi!\n\nMaxi opened her eyes in surprise and noticed that her measure was slowly sliding backwards. Suddenly Maxi had an idea! She raced forward and held onto the measure with all her might. Maxi was persistent, and she refused to let go until the measure stopped sliding. And after a few seconds, it finally did.\n\n",
+          "source": "tinystories",
+          "faiss_rank": 35,
+          "score": 0.4781477451324463,
+          "rerank_rank": 4,
+          "rerank_score": 0.6787350177764893
+        },
+        {
+          "chunk_id": "5398",
+          "text": " a walk in the park. It was a dark and cloudy day, but they still had fun. Max saw a big ball and ran to get it. Lily squeezed the leash so Max wouldn't go too far. Max brought the ball back to Lily and they played together for a while.\n\nSuddenly, it started to rain! Lily and Max ran back home as fast as they could. When they got home, Max was wet and tired. Lily gave him a big hug and they snuggled together on the couch. Max was happy to be home and dry.Once upon a time, there was a little girl named Lily. She loved",
+          "source": "tinystories",
+          "faiss_rank": 26,
+          "score": 0.4890627861022949,
+          "rerank_rank": 5,
+          "rerank_score": 0.528207004070282
+        },
+        {
+          "chunk_id": "1596",
+          "text": " was very sad. She liked her balloon and she wanted to play with it. She did not understand why Max did that. She felt angry and hurt. She cried and hugged her friends.\n\nMax was not happy. He thought he would feel better after he popped the balloon. But he did not. He felt guilty and mean. He saw Lily crying and he felt sorry. He wished he did not poke the balloon. He wished he was nice.Sara and Ben like to play outside. But today, the sky is gray and the rain is falling. Sara and Ben are sad. They want to have fun.\n\nThey look for a",
+          "source": "tinystories",
+          "faiss_rank": 18,
+          "score": 0.510670006275177,
+          "rerank_rank": 6,
+          "rerank_score": 0.1047118604183197
+        },
+        {
+          "chunk_id": "5497",
+          "text": " a few hours, the vet was able to help Max and he was feeling much better. Lily was so happy that Max was okay. She gave him a big hug and said, \"I love you, Max. You're my best friend.\" Max wagged his tail and licked her face. Lily knew that Max was going to be okay and they could play together again soon.Once upon a time, there was a little girl named Lily. She loved to play with her toys and make up stories. One day, she found a magic wand in her toy box. She waved it around and said \"Abracadabra!\" but nothing happened",
+          "source": "tinystories",
+          "faiss_rank": 41,
+          "score": 0.47484731674194336,
+          "rerank_rank": 7,
+          "rerank_score": 0.051277149468660355
+        },
+        {
+          "chunk_id": "2965",
+          "text": " the castle.\n\n\"Max, let's play with the ball!\" said Lily. But Max didn't want to play. He barked and ran away. Lily felt sad and didn't know why Max ignored her. She went to look for him in the castle.\n\nLily found Max in a small room. He was looking at a broken toy. Lily understood that Max was sad too. She said, \"Max, I'm sorry I ignored your feelings. Let's fix the toy together.\" They worked together and fixed the broken toy.\n\nAfter fixing the toy, they played with the big, red ball. They learned that they should not",
+          "source": "tinystories",
+          "faiss_rank": 37,
+          "score": 0.4760228395462036,
+          "rerank_rank": 8,
+          "rerank_score": 0.02251044660806656
+        },
+        {
+          "chunk_id": "5232",
+          "text": " the rain was pouring down. Max was scared and didn't know what to do. But his owner hugged him tightly and said, \"Don't worry, Max. I'll take care of you.\" \n\nAfter the storm passed, Max's owner noticed that some of her neighbors had lost their homes. She decided to feed them and give them a place to stay. Max watched as his owner helped others and realized that it's important to be kind and help others in times of need. \n\nFrom then on, Max made it his mission to be as loyal and helpful as his owner. He would follow her around and even help her feed the",
+          "source": "tinystories",
+          "faiss_rank": 4,
+          "score": 0.5536690354347229,
+          "rerank_rank": 9,
+          "rerank_score": -0.42107343673706055
+        },
+        {
+          "chunk_id": "4926",
+          "text": " a woman get out of the car. They look happy and relieved. They run to Max and hug him.\n\n\"Max, we missed you so much!\" the woman says. She kisses Max on the nose. \"Thank you for finding him,\" she says to Lily, Ben and mom.\n\n\"You're welcome,\" Lily, Ben and mom say. They are glad that Max is safe and reunited with his family.\n\n\"Can we play with Max again?\" Lily asks.\n\n\"Of course, you can,\" the man says. He smiles at Lily and Ben. \"Max loves to play with new friends. Maybe we can come to the park again",
+          "source": "tinystories",
+          "faiss_rank": 46,
+          "score": 0.4692489206790924,
+          "rerank_rank": 10,
+          "rerank_score": -0.54154372215271
+        },
+        {
+          "chunk_id": "1595",
+          "text": " Lily and her friends. He pretended to be nice. He said hello and asked to see the balloon.\n\nLily was surprised. She did not know Max wanted to play. She was kind and she gave him the balloon. She hoped he would like it.\n\nBut Max did not like it. He held the balloon and he poked it with the stick. The balloon popped with a loud bang. Lily and her friends screamed and jumped. Max laughed and ran away.\n\nLily was very sad. She liked her balloon and she wanted to play with it. She did not understand why Max did that. She felt angry and hurt. She",
+          "source": "tinystories",
+          "faiss_rank": 25,
+          "score": 0.491330087184906,
+          "rerank_rank": 11,
+          "rerank_score": -0.7946534752845764
+        },
+        {
+          "chunk_id": "2012",
+          "text": ". He and Lily both trembled with fear. They wanted to get out of the basement.\n\n\"Where is the exit?\" Lily asked.\n\nMax looked around and saw a small window. It was high up, but he had an idea. He pushed the box he was hiding behind to the wall. He climbed on the box and reached for the window. He opened it and saw the garden outside.\n\n\"Come on, Lily, we can escape through here!\" he said.\n\nHe helped Lily climb on the box and then through the window. They jumped down and ran to the house. They hugged each other and breathed a sigh of relief.\n\n",
+          "source": "tinystories",
+          "faiss_rank": 12,
+          "score": 0.5216237306594849,
+          "rerank_rank": 12,
+          "rerank_score": -1.2313964366912842
+        },
+        {
+          "chunk_id": "7311",
+          "text": ", go!\" John slid down the slide, faster and faster. When he reached the bottom, he laughed with joy. He felt brave and proud!\n\nJohn wanted to do it again. This time he stood up and slid on his bottom. He went even faster than before!\n\nAfter a while, John and his parents went home. When they got there, John's dad had a surprise - pizza! John was so excited! He loves pizza and he loves slides. It was a great day with lots of fun!Anna felt strong. She was three years old and she liked to try new things.\n\nToday, Anna was playing with some weights",
+          "source": "tinystories",
+          "faiss_rank": 48,
+          "score": 0.4677712917327881,
+          "rerank_rank": 13,
+          "rerank_score": -1.5403196811676025
+        },
+        {
+          "chunk_id": "10305",
+          "text": " friends: Max and Kiki. Max and Kiki were both little animals. One day, they were walking together in the forest.\n\nSuddenly, Kiki noticed an old, gray wreck in the distance. \n\nKiki said, \"Let's go see the wreck!\"\n\nMax replied, \"No way! It looks scary!\"\n\nKiki said, \"I want to go! Come on!\" \n\nMax said, \"No, I don't want to!\", and he slapped Kiki on the hand. \n\nKiki started to cry and soon, Max felt very sorry. He gave Kiki a big hug and said, \"Let's go",
+          "source": "tinystories",
+          "faiss_rank": 10,
+          "score": 0.5286878347396851,
+          "rerank_rank": 14,
+          "rerank_score": -1.5646851062774658
+        },
+        {
+          "chunk_id": "6386",
+          "text": " and offered to show her.\n\nPolly was so happy and grateful that she gave Max a big hug. But then, Max slapped Polly on the back and said, \"I was just joking, I don't know where your nest is.\" Polly was very sad and flew away.\n\nThe moral of the story is that it's not nice to play tricks on others, especially when they're asking for help.Once upon a time, there was a little girl named Lily. She loved going to the market with her mommy. One day, they went to the market and saw that it was closed. Lily was sad because she wanted to buy some",
+          "source": "tinystories",
+          "faiss_rank": 36,
+          "score": 0.47814029455184937,
+          "rerank_rank": 15,
+          "rerank_score": -1.916893720626831
+        },
+        {
+          "chunk_id": "2610",
+          "text": " morning Mommy was happy again. She took us back to the building and we saw the people. They were smiling and hugging her. They thanked her for the warm water. \n\nEveryone was happy. They said goodbye and we went home. Mommy and Daddy said they were proud of us. We had done a nice thing!Once upon a time there was a dog called Max. Max was very serious but he really loved to play. One day, Max was running around the park with his friends, when he suddenly noticed something special. It was a buckle! Max was so excited! He wanted to try it on his coat.",
+          "source": "tinystories",
+          "faiss_rank": 34,
+          "score": 0.47934767603874207,
+          "rerank_rank": 16,
+          "rerank_score": -2.654811382293701
+        },
+        {
+          "chunk_id": "10227",
+          "text": " time, there were two best friends named Max and Molly. Max was a little boy and Molly was a little girl. Max and Molly were always playing together. One day, Max fell and hurt his knee. Molly wanted to help him, so she went to her house to borrow a bandage for Max.\n\nMolly knocked on the door and said, \"Mommy, can I borrow a bandage for Max?\"\n\nMommy said, \"Yes, sweetheart, you can borrow one. Here, take this one.\"\n\nMolly took the little bandage and ran back to Max. She put the bandage on Max's knee.\n\nMax",
+          "source": "tinystories",
+          "faiss_rank": 14,
+          "score": 0.51595538854599,
+          "rerank_rank": 17,
+          "rerank_score": -2.730288505554199
+        },
+        {
+          "chunk_id": "8511",
+          "text": " and started to chew on it. Max was very happy.\n\nMax saw a big icy hill in the yard. He wanted to go up the hill. Max ran and ran, but the icy hill was very slippery. He tried to go up the hill many times, but he could not do it. Max was sad.\n\nMax tried one more time to go up the icy hill. He ran as fast as he could, but he slipped and fell down. Max was hurt and cold. He could not play in the yard anymore. Max went back inside his house and cried. The day was not fun for Max.One day, a little",
+          "source": "tinystories",
+          "faiss_rank": 2,
+          "score": 0.5709730982780457,
+          "rerank_rank": 18,
+          "rerank_score": -2.9974098205566406
+        },
+        {
+          "chunk_id": "7122",
+          "text": " he got it, but he didn't want to talk about it. He just locked himself in his room and kept the shoe for himself. \n\nHis mom was very stubborn, too. She asked him over and over again to tell her where he got the shoe, but Max remained tight-lipped. Finally, his mom had to take the shoe away. Max was very sad, but he knew better than to talk about it.Once upon a time there was a soldier who was in a big hurry. He had to do something very important, but he did not know what it was. He ran and ran until he came to a big",
+          "source": "tinystories",
+          "faiss_rank": 22,
+          "score": 0.5024914741516113,
+          "rerank_rank": 19,
+          "rerank_score": -3.0473458766937256
+        },
+        {
+          "chunk_id": "5344",
+          "text": " catch with a ball. Max ran to catch the ball but it was too high for him to reach. \"I can't catch it, it's too high!\" said Max. Lily said, \"Don't worry Max, I can lift you up so you can catch it.\" So, Lily lifted Max up and he caught the ball with his big paw.\n\nMax was so happy that he gave Lily a big lick on her face. Lily laughed and said, \"You are such a good dog, Max!\" They continued to play catch until the sun went down. Max was tired but happy because he had so much fun with his friend.",
+          "source": "tinystories",
+          "faiss_rank": 15,
+          "score": 0.5127483606338501,
+          "rerank_rank": 20,
+          "rerank_score": -3.3724191188812256
+        },
+        {
+          "chunk_id": "4442",
+          "text": " were sad and scared. They did not know what to do. They looked at their mom. Their mom was on a bench. She was reading a book. She did not see the big boy.\n\nLily wanted to tell their mom. She said to Max, \"Let's go to mom. She will help us.\" But Max was obedient. He said, \"No, mom said we have to play nice and share. We have to wait for our turn.\"\n\nLily did not like that. She said, \"But he is not nice. He is mean. He does not share. He took our slide.\" Max shrugged.",
+          "source": "tinystories",
+          "faiss_rank": 3,
+          "score": 0.5639330148696899,
+          "rerank_rank": 21,
+          "rerank_score": -3.549436092376709
+        },
+        {
+          "chunk_id": "1320",
+          "text": " named Max. Max loved to run and play, but one day he got lost in the woods. He was very scared and didn't know what to do.\n\nLuckily, a kind boy named Tim saw Max and wanted to help him. Tim put a leash on Max and took him home. Max was so tired from running around all day that he fell asleep right away.\n\nThe next day, Max's owner came to Tim's house to rescue him. Max was so happy to see his owner again and wagged his tail with joy. Max's owner thanked Tim for finding Max and giving him a safe place to stay. From that day on",
+          "source": "tinystories",
+          "faiss_rank": 7,
+          "score": 0.5328565835952759,
+          "rerank_rank": 22,
+          "rerank_score": -3.783013105392456
+        },
+        {
+          "chunk_id": "9730",
+          "text": " with me?\" Lucy smiled and said, \"Yes!\"\n\nJohn looked for the best slide. He wanted to find a very tall one. Finally, John spotted a really tall slide.\n\nJohn and Lucy went to the top of the slide. They looked all the way to the bottom. It was scary but also exciting. John said, \"Let's go!\"\n\nThey sat down and started to slide. They went faster and faster until they reached the bottom. John and Lucy were so happy they yelled, \"Score!\"\n\nJohn and Lucy went higher and higher. Then they saw something big and heavy. They stopped and looked closely. It was the biggest",
+          "source": "tinystories",
+          "faiss_rank": 30,
+          "score": 0.4846609830856323,
+          "rerank_rank": 23,
+          "rerank_score": -3.9034385681152344
+        },
+        {
+          "chunk_id": "5496",
+          "text": " slip again.Once upon a time, there was a little girl named Lily. She loved to play outside with her friends and her dog, Max. One day, Lily and Max were playing when suddenly Max had an emergency. He couldn't breathe and started to have a fit. \n\nLily knew she had to do something to help Max. She ran inside to tell her mommy and daddy what was happening. They called the vet and rushed Max to the animal hospital. \n\nAfter a few hours, the vet was able to help Max and he was feeling much better. Lily was so happy that Max was okay. She gave him a big",
+          "source": "tinystories",
+          "faiss_rank": 5,
+          "score": 0.5390725135803223,
+          "rerank_rank": 24,
+          "rerank_score": -3.952220916748047
+        },
+        {
+          "chunk_id": "4925",
+          "text": " Lily says. She has an idea. She runs to the bench where their mom is sitting. She asks for her mom's phone. She tells her mom about Max.\n\n\"Good idea, Lily,\" mom says. She is proud of Lily and Ben. She takes the phone and dials the number on the tag. She talks to someone on the phone. She tells them where they are and that they found Max.\n\nSoon, a car arrives at the park. A man and a woman get out of the car. They look happy and relieved. They run to Max and hug him.\n\n\"Max, we missed you so much!\" the",
+          "source": "tinystories",
+          "faiss_rank": 39,
+          "score": 0.47572997212409973,
+          "rerank_rank": 25,
+          "rerank_score": -3.9573845863342285
+        },
+        {
+          "chunk_id": "8535",
+          "text": " drop the food.\n\nWhen Max saw the tray, his eyes got big and happy. Max ate all the food from the tray. Now, Max was not hungry anymore. Max and Sam played together all day, and they were both very happy.Once upon a time, there was a thin ball that liked to bounce. The ball had a friend named Speed. Speed was a fast car. They liked to play together in the park.\n\nOne day, Speed and the thin ball decided to have a race. Speed went fast, and the thin ball bounced high. They raced to the big tree in the park. The thin ball bounced higher and",
+          "source": "tinystories",
+          "faiss_rank": 29,
+          "score": 0.48653802275657654,
+          "rerank_rank": 26,
+          "rerank_score": -4.086155891418457
+        },
+        {
+          "chunk_id": "1289",
+          "text": " \"Look, Max! A monster!\" Max barked at the monster, but the monster didn't move. \n\nLily thought about what to do. She remembered that her mom told her to be independent and brave. So, Lily took a deep breath and walked up to the monster. She saw that the monster was sad and lonely. Lily decided to be the monster's friend. She played with the monster and showed him her toys. The monster was happy and no longer scary. \n\nFrom that day on, Lily and the monster played together in the park. Max also became friends with the monster. Lily learned that sometimes things that seem",
+          "source": "tinystories",
+          "faiss_rank": 28,
+          "score": 0.4875321090221405,
+          "rerank_rank": 27,
+          "rerank_score": -4.9560089111328125
+        },
+        {
+          "chunk_id": "8027",
+          "text": " they went to the store, Molly liked to buy jam. One day, when the two of them went to the store, there was no jam available.\n\n\"No jam!\" yelled Molly in disappointment.\n\n\"No jam?\" asked Max. \"That's too bad. What can we do?\"\n\nMolly thought and then said, \"Let's skip around the store to cheer ourselves up!\"\n\nMax was delighted and the two of them started to skip together. As they were skipping they made new friends who were shopping at the store. Everyone was having great fun.\n\nSuddenly, a shopkeeper hurried up to them and told them to stop jumping.\n\n\"Why?\" asked",
+          "source": "tinystories",
+          "faiss_rank": 50,
+          "score": 0.46385931968688965,
+          "rerank_rank": 28,
+          "rerank_score": -4.967520236968994
+        },
+        {
+          "chunk_id": "1290",
+          "text": ". \n\nFrom that day on, Lily and the monster played together in the park. Max also became friends with the monster. Lily learned that sometimes things that seem scary are actually friendly and nice.Once upon a time, there was an old man. He liked to play games with his friends. They were very competitive and always wanted to win. One day, they decided to have a race to see who was the fastest.\n\nThe old man tried his best, but he was very slow. His friends all ran ahead of him. But then, something magical happened. The old man's granddaughter came to watch the race. She ran up to",
+          "source": "tinystories",
+          "faiss_rank": 27,
+          "score": 0.4890502393245697,
+          "rerank_rank": 29,
+          "rerank_score": -5.080436706542969
+        },
+        {
+          "chunk_id": "9729",
+          "text": " brother wanted to keep playing and swinging. Emma tried to convince him to sleep instead, but it was too difficult.\n\nFinally, Emma had an idea - she suggested if they swing together, they could swing slowly like they were taking a nap. Her brother was really happy with the idea, and they spent the rest of the day swinging gently together in the backyard.John and Lucy were playing in the park. John wanted to slide and he asked Lucy, \"Do you want to slide with me?\" Lucy smiled and said, \"Yes!\"\n\nJohn looked for the best slide. He wanted to find a very tall one. Finally, John spotted a",
+          "source": "tinystories",
+          "faiss_rank": 33,
+          "score": 0.47981685400009155,
+          "rerank_rank": 30,
+          "rerank_score": -5.099508285522461
+        },
+        {
+          "chunk_id": "14",
+          "text": ". In the end, Tim won the race and Sarah came in second. They were both so happy and proud of themselves. They celebrated with their friends and had a great day at the park.Once upon a time, there was a clever little dog named Max. Max loved to run and play with his friends in the park. One day, Max was running very fast when he fell and hurt his knee.\n\nMax went to his friend, the wise old owl, and said, \"Owl, my knee hurts. What can I do?\" The owl thought for a moment and said, \"Max, you should test your knee. Try",
+          "source": "tinystories",
+          "faiss_rank": 49,
+          "score": 0.46611911058425903,
+          "rerank_rank": 31,
+          "rerank_score": -5.139091968536377
+        },
+        {
+          "chunk_id": "9132",
+          "text": " with all her might. Maxi was persistent, and she refused to let go until the measure stopped sliding. And after a few seconds, it finally did.\n\nThe measure never moved again and Maxi was so proud that she was able to use her persistence to stop it. Maxi continued on her pretend adventure, always happy to have her measurement with her.Jimmy stepped onto his little bike, with a big smile on his face. He was ready to ride and was wearing a helmet. He checked the sky and noticed big fluffy clouds. â€œItâ€™s gonna be a warm day,â€ he thought to himself.\n\n",
+          "source": "tinystories",
+          "faiss_rank": 20,
+          "score": 0.5076296329498291,
+          "rerank_rank": 32,
+          "rerank_score": -5.198245048522949
+        },
+        {
+          "chunk_id": "1778",
+          "text": " but Lily told him it was okay. They walked some more and saw a boy playing with a ball. Max wanted to play too, but the boy said it was his ball. Max didn't fit in with the boy's game, so he just watched from afar.\n\nAt the end of the day, Lily and Max went home. Max was tired from all the fun they had. He went to his bed and fell asleep, dreaming of the shiny rock and the waving flag.Once upon a time, there was a bald man named Tom. He liked to spend his time outside in the sun. One day, he went for a walk",
+          "source": "tinystories",
+          "faiss_rank": 42,
+          "score": 0.47453129291534424,
+          "rerank_rank": 33,
+          "rerank_score": -5.546661853790283
+        },
+        {
+          "chunk_id": "7570",
+          "text": " his eyes, but he was brave. He squirted a bit of the purple shampoo in his hand, rubbed it together and put it on his hair. It tickled! \n\nMax's mum watched him in admiration. She thought he did a great job and told him so. He smiled proudly. \n\nMax was so proud of what he'd done. He had tried something new by himself and it worked out great! His mum's encouragement had made him feel even more confident.Once there was a baby boy who was three years old. He was standing in a field and looking around. He saw a piece of paper blowing in the wind",
+          "source": "tinystories",
+          "faiss_rank": 40,
+          "score": 0.4752107858657837,
+          "rerank_rank": 34,
+          "rerank_score": -5.598592758178711
+        },
+        {
+          "chunk_id": "2612",
+          "text": ", soon enough, Max had his buckle on the right way. He was so happy!\n\nMax showed off his new buckle and all his friends were very impressed. Max was very proud of himself and couldn't help but smile. He had learned an important lesson - that with a bit of help and a bit of work, you can find a way to make something right even when it's not the way you wanted it to be in the first place.Once upon a time there was a little girl called Anna. She was only three years old and loved to play all day.\n\nOne day, Anna saw a huge stack of blocks in the corner",
+          "source": "tinystories",
+          "faiss_rank": 11,
+          "score": 0.5230845212936401,
+          "rerank_rank": 35,
+          "rerank_score": -5.7083635330200195
+        },
+        {
+          "chunk_id": "5988",
+          "text": " their journey, Max said goodbye and went back to the castle. Lucy waved to him and went on her way. She was happy she had such a fun adventure.Once upon a time, there was a girl named Sarah. She loved to skip. She skipped everywhere - inside her house, outside her house, around the block and even in the rain!\n\nToday, Sarah wanted to skip in the kitchen. She skipped around the table and hopped over to the faucet. It was bright purple and made Sarah so happy. She felt silly, so she talked to the faucet.\n\n\"Hi, Faucet,\" she said. \"You're so",
+          "source": "tinystories",
+          "faiss_rank": 23,
+          "score": 0.49744731187820435,
+          "rerank_rank": 36,
+          "rerank_score": -5.852832317352295
+        },
+        {
+          "chunk_id": "6734",
+          "text": " to surrender. It's ok to give up and ask for help sometimes.\" She then gave him an invitation. It was an invitation to a special game.\n\nMax was excited and he soon forgot his fear. He jumped up and said, \"Yes, mommy. I will play!\" Max felt safe and trusted his mom so he gave himself up to the game. It was a game of hide and seek, and Max surrendered and let his mom help him find his friends. \n\nHe found them in the end and laughed louder than before. This time, it felt safe to surrender, and Max was happy that he had taken the invitation.Once",
+          "source": "tinystories",
+          "faiss_rank": 17,
+          "score": 0.5109775066375732,
+          "rerank_rank": 37,
+          "rerank_score": -5.92061710357666
+        },
+        {
+          "chunk_id": "5461",
+          "text": " tired and weak. She took him to the vet, who said that Max needed more power in his body to feel better.\n\nMax's owner decided to give him special food that would raise his power. She also gave him lots of love and cuddles. After a few days, Max started to feel much better! He had more power to play with his ball and dig in the dirt.\n\nBut one day, Max got very dirty from digging in a filthy mud puddle. His owner didn't mind, though. She knew that even though Max was filthy, he was still her lovable dog. And Max was happy, because he got",
+          "source": "tinystories",
+          "faiss_rank": 19,
+          "score": 0.5084118843078613,
+          "rerank_rank": 38,
+          "rerank_score": -6.0380096435546875
+        },
+        {
+          "chunk_id": "6733",
+          "text": " loved to play hide and seek with his friends. One day when Max was playing, he couldn't find his friends. He was so scared of the dark and the unknown that he ran home.\n\nWhen Max walked in, his mom saw his scared look and said, \"Max, you don't need to be scared. Come and sit with me.\" Max felt safe with his mom, so he went and sat with her.\n\nHis mom said, \"Max, don't be afraid to surrender. It's ok to give up and ask for help sometimes.\" She then gave him an invitation. It was an invitation to a special game.\n\nMax",
+          "source": "tinystories",
+          "faiss_rank": 8,
+          "score": 0.531892716884613,
+          "rerank_rank": 39,
+          "rerank_score": -6.045950412750244
+        },
+        {
+          "chunk_id": "10226",
+          "text": " before. It was a lot of traffic. Cars, buses and people were all in his way. But Billy was still brave. He gathered his courage and started to jog through the traffic.\n\nEveryone stopped and looked at Billy. They couldn't believe how gracefully he weaved between the vehicles. Even the loudest cars thanked Billy for making the traffic less noisy.\n\nBilly felt proud and kept jogging. He showed everyone that anyone can be brave and graceful if they try.Once upon a time, there were two best friends named Max and Molly. Max was a little boy and Molly was a little girl. Max and Molly were always playing together.",
+          "source": "tinystories",
+          "faiss_rank": 38,
+          "score": 0.4759165048599243,
+          "rerank_rank": 40,
+          "rerank_score": -6.214639186859131
+        },
+        {
+          "chunk_id": "1982",
+          "text": " to each other and try to score a goal. They had a brilliant time.Lily and Max were playing in their room. They had many toys, but they liked to look at the photo book best. The photo book had pictures of their family and friends. They liked to point at the faces and say their names.\n\n\"Look, this is Grandma and Grandpa,\" Lily said, showing Max a photo. \"They are very nice and give us hugs and cookies.\"\n\nMax nodded and smiled. He liked Grandma and Grandpa too. He turned the page and saw a photo of a big dog. He pointed at it and said,",
+          "source": "tinystories",
+          "faiss_rank": 45,
+          "score": 0.4692588150501251,
+          "rerank_rank": 41,
+          "rerank_score": -6.335371017456055
+        },
+        {
+          "chunk_id": "2614",
+          "text": " her little brother came over and knocked down the tower! Anna was so impatient with him that she shouted \"No! Please don't do that\". \n\nBut her little brother just laughed and said \"It's ok Anna, we can make a bigger stack now\". So they both got to work making an even bigger stack of blocks and played with it together. They built towers, roads and shapes and had so much fun. \n\nAt the end of the day they were both very tired, but they had made the most amazing stack of blocks!Once upon a time there were two friends, Sam and Max. Sam and Max liked to have fun",
+          "source": "tinystories",
+          "faiss_rank": 9,
+          "score": 0.5302425026893616,
+          "rerank_rank": 42,
+          "rerank_score": -6.368913173675537
+        },
+        {
+          "chunk_id": "2611",
+          "text": " the park with his friends, when he suddenly noticed something special. It was a buckle! Max was so excited! He wanted to try it on his coat. But when he tried, the buckle was facing the wrong way. Max didn't know what to do.\n\nSo, he called for help. His friends came to help him. They saw the buckle and all said 'Let's reverse it!'. So, they did! They figured out how to turn the buckle around and, soon enough, Max had his buckle on the right way. He was so happy!\n\nMax showed off his new buckle and all his friends were very impressed.",
+          "source": "tinystories",
+          "faiss_rank": 6,
+          "score": 0.5363158583641052,
+          "rerank_rank": 43,
+          "rerank_score": -6.51725959777832
+        },
+        {
+          "chunk_id": "8783",
+          "text": " much better now, and it was finally time for them to go home. \n\nThey had had so much fun, that they promised each other that they would come back to the park as soon as possible.Once upon a time, there were two friends, Max and Liz. Max was very selfish and always wanted to be the one in charge. One day, Max and Liz had a disagreement about a turkey Max wanted to keep.\n\nMax said, â€œThe turkey is mine, and I donâ€™t want to share.â€\n\nBut Liz said, â€œNo, Max. Thatâ€™s not fair.",
+          "source": "tinystories",
+          "faiss_rank": 13,
+          "score": 0.5187076330184937,
+          "rerank_rank": 44,
+          "rerank_score": -6.546023845672607
+        },
+        {
+          "chunk_id": "7726",
+          "text": " The lawyer stepped in and said, \"you must all prove that he was guilty of cheating before you can declare him the winner\".\n\nThe friends started arguing, but the lawyer said there was no need. He had seen Tim play the entire time and said he was the clear winner. \n\nEveryone was happy and celebrated Tim's victory. From that day on, he was nicknamed the 'King of the Jungle Gym' and everyone know not to mess with him.Max and his mom were walking together in the cold park. Max was balancing a stick in his hands. He was very proud of himself! His mom was impressed too.\n\n\"Wow,\"",
+          "source": "tinystories",
+          "faiss_rank": 16,
+          "score": 0.512475311756134,
+          "rerank_rank": 45,
+          "rerank_score": -6.595983505249023
+        },
+        {
+          "chunk_id": "8406",
+          "text": " brought yummy food to share. Tom brought apples, Tim brought sandwiches, Kim brought cookies, and Jim brought juice. They sat on a big blanket under a tree and enjoyed their yummy treats.\n\nAfter they ate, they played games like tag and hide-and-seek. They laughed and had a great time. When the sun began to set, they said goodbye and went home. They knew they would enjoy more fun days together as a team.Once upon a time, there was a little dog named Max. Max was a weak dog, but he was very happy. Max loved to play with his ball and run in the park.\n\nOne day",
+          "source": "tinystories",
+          "faiss_rank": 24,
+          "score": 0.49565020203590393,
+          "rerank_rank": 46,
+          "rerank_score": -6.9606499671936035
+        },
+        {
+          "chunk_id": "15",
+          "text": " \"Owl, my knee hurts. What can I do?\" The owl thought for a moment and said, \"Max, you should test your knee. Try to walk slowly and see if it still hurts.\"\n\nSo Max tested his knee by walking slowly. At first, it hurt a little, but soon Max felt better. He said, \"Thank you, Owl, for your help. Now I can play with my friends again.\"\n\nMax was so happy that he could play with his friends without pain. He learned that sometimes, it was good to slow down and listen to his body. And Max and his friends played happily in the park",
+          "source": "tinystories",
+          "faiss_rank": 31,
+          "score": 0.4817136824131012,
+          "rerank_rank": 47,
+          "rerank_score": -7.204179763793945
+        },
+        {
+          "chunk_id": "6363",
+          "text": " he saw them. \n\nTogether, Timmy and Billy built the coolest tower ever. It was so tall that it almost touched the ceiling! They laughed and played with their blocks all afternoon. When it was time for Billy to go home, Timmy felt sad. But he knew that he could play with his blocks again tomorrow, and that made him happy. From that day on, Timmy and Billy were the best of friends, and they always had fun playing with their cool blocks.Once upon a time, there was a dog named Max. Max liked to dig holes in the yard and chase squirrels. One day, Max was",
+          "source": "tinystories",
+          "faiss_rank": 47,
+          "score": 0.46832239627838135,
+          "rerank_rank": 48,
+          "rerank_score": -7.470770835876465
+        },
+        {
+          "chunk_id": "2099",
+          "text": " hugged Lily and Tom and said, \"I'm sorry, my loves. Don't worry, we can fix the blocks and play again. You did a good job building. I'm proud of you.\" She helped them pick up the blocks and put them in a box. She gave them some cookies and milk and said, \"Let's go to the couch and read a story. That will make you feel better.\"\n\nLily and Tom nodded and smiled. They followed Mom to the couch and snuggled with her. They felt comfortable and safe. They listened to Mom's voice and looked at the pictures. They forgot about Sam and",
+          "source": "tinystories",
+          "faiss_rank": 43,
+          "score": 0.47284063696861267,
+          "rerank_rank": 49,
+          "rerank_score": -9.355936050415039
+        },
+        {
+          "chunk_id": "10300",
+          "text": " and put on a helmet. Max was so relieved to see that Tim was being safe. \n\nThe moral of the story is that it's important to act safely and not be rude. Always be sure to wear a helmet if you're riding a bike, or other activities that might be dangerous!Billy was feeling very excited. He had always wanted to go on an adventure. Today was the day, and he was just waiting for his Mommy to open the door. He knew he would be in for a surprise.\n\nMommy opened the door and Billy stepped out. He could smell the sweet smell of the morning air. The sun was",
+          "source": "tinystories",
+          "faiss_rank": 44,
+          "score": 0.4720132350921631,
+          "rerank_rank": 50,
+          "rerank_score": -9.555689811706543
+        }
+      ]
+    },
+    {
+      "query_id": "q038",
+      "question": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+      "query": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+      "target_chunk_id": "9250",
+      "faiss_rank": null,
+      "rerank_rank": null,
+      "in_final_top_5": false,
+      "retrieval_seconds": 0.006351199932396412,
+      "rerank_seconds": 0.052313600201159716,
+      "candidates": [
+        {
+          "chunk_id": "5552",
+          "text": " see what we can do.\" \n\nAt the vet, the doctor weighed the bird and said, \"This little guy is very light. We need to give him some medicine and a nail to help his wing heal.\" \n\nLily watched as the doctor gave the bird some medicine and put a tiny nail in its wing. She thought the bird was so adorable and couldn't wait for it to fly again. \n\nAfter a few days of rest, the bird was ready to go back into the wild. Lily and her mom took the bird back to the backyard and watched as it flew away, happy and healthy once again.Once upon a time",
+          "source": "tinystories",
+          "faiss_rank": 1,
+          "score": 0.6706673502922058,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8634",
+          "text": " there was a big orange cat. His fur was very fluffy and soft. He loved to play with his toy mouse and chase it around the house. One day, the cat saw a little bird with a broken wing. The cat felt sad for the bird and wanted to help. \n\nHe went to his owner and meowed loudly to get their attention. The owner followed the cat and saw the bird. They picked up the bird and took it to the vet. The vet fixed the bird's wing and soon it was able to fly again. The cat was happy to see the bird fly away and he meowed \"thank you\" to",
+          "source": "tinystories",
+          "faiss_rank": 2,
+          "score": 0.6223657727241516,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8306",
+          "text": " He crawled through the tunnel and got the pretty ball. Pippin was very happy, and his friends were proud of him.One day, a friendly cat named Kitty heard a scream. She wanted to find out the mystery of the scream. Kitty walked and walked until she saw a little bird.\n\nThe little bird said, \"Help! I can't fly. I screamed because I'm scared.\" Kitty wanted to help the little bird. She told the bird, \"Don't worry, I'll help you.\"\n\nKitty and the bird tried and tried to make the bird fly. They became good friends. Soon, the little bird could",
+          "source": "tinystories",
+          "faiss_rank": 3,
+          "score": 0.5797922611236572,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3578",
+          "text": ". They all enjoyed the mysterious sound of the bird. \n\nOne day, a little rabbit wanted to know where the mysterious sound was coming from. He asked all the other animals, but nobody knew. Determined to find out, the bunny ventured deeper into the forest. \n\nFinally, the curious bunny found the mysterious bird. The bird had a broken wing and was unable to fly. The little bunny felt really sad. He then decided to help the bird and took it to the vet. \n\nAfter a few weeks, the bird was all healed and was free to fly once again. And so, every time the bird flew, the same",
+          "source": "tinystories",
+          "faiss_rank": 4,
+          "score": 0.5775599479675293,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5551",
+          "text": " upon a time, there was a little girl named Lily. She loved to play in her backyard and explore the world around her. One day, she found a little bird with a broken wing. \n\nLily picked up the bird and took it to her mom. \"Mommy, look! I found a birdie. It's hurt. Can we help it?\" \n\nHer mom smiled and said, \"Of course, sweetie. Let's take it to the vet and see what we can do.\" \n\nAt the vet, the doctor weighed the bird and said, \"This little guy is very light. We need to give him",
+          "source": "tinystories",
+          "faiss_rank": 5,
+          "score": 0.5697901248931885,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8474",
+          "text": " see the veterinarian.\" Lucy was surprised, but she agreed. They both walked to the veterinarian's office, holding hands and talking about their day.\n\nWhen they got to the veterinarian, Fluffy told the doctor, \"I am an unusual cat who can talk.\" The veterinarian was amazed and said, \"Wow, Fluffy! You are very special.\" Fluffy and Lucy were very happy and went home to play some more.Once upon a time, there was a big bird. The bird loved to soar high in the sky. One day, the bird saw a swamp below. The swamp had many frogs and bugs. The bird wanted to",
+          "source": "tinystories",
+          "faiss_rank": 6,
+          "score": 0.5650475025177002,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7380",
+          "text": " and covered in mud. The bird was sad and tried to clean the twig and make it look nice. He used water and special cleaning tools to make it shiny again.\n\nFinally, the twig looked clean and sparkly. The bird was so excited he spread his wings and flew around. He showed the twig to all of the birds and animals in the forest. Everyone admired the twig and said it was very pretty.\n\nThe bird was very happy now. He flew home with the twig and placed it in his nest. It was safe and sound now, and he was very proud of his work. From that day on, all the animals in",
+          "source": "tinystories",
+          "faiss_rank": 7,
+          "score": 0.5559232831001282,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7364",
+          "text": " was no longer lonely or sad. She never had to worry about anything because she knew her bear friend was always there to protect her.Once upon a time, there was a gray cat. The cat liked to take naps and doze in the sunshine. One day while the cat was dozing, a noise woke her up! It was a loud noise, like a spray. It was coming from the tall tree.\n\nSo the cat climbed up the tree to investigate. When she got to the top, she saw a bird! The bird was swinging from some beautiful green leaves. It had a spray in its beak. The cat",
+          "source": "tinystories",
+          "faiss_rank": 8,
+          "score": 0.5540733933448792,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2236",
+          "text": ", but their mom did not hear them.\n\n\"Help, help!\" Ben cried. \"We are in the frame!\"\n\n\"How did we shrink?\" Lily asked. \"We need to get out!\"\n\nThey looked around and saw a window in the frame. They ran to it and pushed it open. They saw a bird outside. They hoped it would not eat them.\n\n\"Maybe we can fly with the bird,\" Ben said. \"Maybe it will take us to our mom.\"\n\nThey climbed on the bird's back and held on tight. The bird flew away with them. They hoped it would not fly too far. They wanted to go back",
+          "source": "tinystories",
+          "faiss_rank": 9,
+          "score": 0.5453625321388245,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4181",
+          "text": " the bird seemed sad, so he said, \"Would you like some help?\".\n\nThe orange bird started to pray to God. Jacob joined in, and together they prayed for happiness. As they finished praying, the orange bird flew away.Once upon a time, there was a shy little bird named Tweety. One day, he went for a walk around the park. As he was walking, he slipped on a banana peel and fell to the ground. He tried to fly away, but he hurt his wing. Upset, he started to cry. \n\nA kindly veterinarian saw him and took him in. She said to him,",
+          "source": "tinystories",
+          "faiss_rank": 10,
+          "score": 0.5452257394790649,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8491",
+          "text": " idea. He gave the bird some food. The bird ate the food and became happy. The bird stopped making a mess and making noise. The farmer and the bird became friends.\n\nFrom that day on, the rare bird helped the farmer organize the farm. The farmer was happy, and the farm was clean and peaceful again.Once upon a time, there was a gentle cat named Fluffy. Fluffy loved to step around the house and play with his toys. His favorite toy was a little ball that he would chase and jump on.\n\nOne day, Fluffy was playing near the table where his owner, Mommy, had her coffee",
+          "source": "tinystories",
+          "faiss_rank": 11,
+          "score": 0.5408731698989868,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5615",
+          "text": " it until it disappeared. He felt mighty as he walked home. He knew the sunglasses had helped him see the wonderful duck.Once upon a time there was a thin cat called Connie. She was very lazy, and liked to sleep in the sun all day. \n\nEvery day, Connie would gaze at the flowers and the birds that flew by. One day, she spotted a magnificent flower with a unique style. She wanted to make the flower her own, but it was too far away to reach.\n\nSo Connie asked the bird, â€œCan you help me? I want the flower!â€\n\nThe bird said, â€",
+          "source": "tinystories",
+          "faiss_rank": 12,
+          "score": 0.538855254650116,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3124",
+          "text": " They played together and had fun. From that day, the squirrel was not jealous of the bird anymore. They became the best of friends.Once upon a time, there was a thoughtful little fly. The fly liked to help others. One day, the fly saw a big dog shiver in the cold. The fly wanted to help the dog, so it went to find a warm place for the dog to sleep.\n\nThe fly found a small, warm house. It went back to the dog and said, \"I found a warm place for you to sleep. Follow me!\" The dog followed the fly to the small house. The dog",
+          "source": "tinystories",
+          "faiss_rank": 13,
+          "score": 0.5380458235740662,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3292",
+          "text": " being the kind-hearted girl she was, wanted to help the bird. She said, \"Let's try to help the bird, Bill!\"\n\n\"How can we help it, Suzy?\" asked Bill.\n\n\"Let's attach a piece of string to the top of the tree, then stay and wait,\" she suggested.\n\nBill was a bit fearful, but followed Suzy's lead. They found a long string and carefully attached it to the top of the tree. Then, they waited at the bottom of the tree.\n\nIt was a bit scary to wait there, because a sudden gust of wind could have blown away the bird. But, as",
+          "source": "tinystories",
+          "faiss_rank": 14,
+          "score": 0.5371432304382324,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3848",
+          "text": " bird in the bush, its wings had broken!\n\nRight away, the lucky lady knew what to do. She carefully picked up the baby bird, and she took it home with her. There, she fed it and gave it a warm, cozy bed.\n\nSoon, the baby bird was feeling much better. Its wings were healed and it was able to fly! The lucky lady opened her window and the bird flew away.\n\nThe lady felt so happy and lucky. She knew she had saved the bird's life.Once upon a time, there was an otter who was in a hurry. The otter wanted to get somewhere quickly, and",
+          "source": "tinystories",
+          "faiss_rank": 15,
+          "score": 0.5331437587738037,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3564",
+          "text": " and happily ran off to play.Once upon a time, there was a cheerful bird living in a big tree. The bird was so happy every day, and soon, many other animals came to the tree to join it.\n\nBut one day, the bird was in danger! A big cat was chasing it, and it wanted to catch the bird. The bird felt a wave of fear in its heart, and knew it had to escape. So, the bird flew away as fast as it could. \n\nThe bird managed to escape, but it had to leave its friends behind. The bird was really sad now, and knew it had to",
+          "source": "tinystories",
+          "faiss_rank": 16,
+          "score": 0.5325364470481873,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2846",
+          "text": " Every day, he wanted to learn something new. He saw the other animals scurrying around and noticed how much they knew. He wanted to be just like them! \n\nOne day, he decided to learn how to climb the trees. He hopped to the base of the tree, but it was too high. He tried and tried, but he couldn't reach the top. He was starting to get frustrated. \n\nThen, a beautiful blue bird flew by. She noticed the old rabbit trying to climb the tree. She swooped down and offered to help. She flew to the branches above and told the old rabbit which way to",
+          "source": "tinystories",
+          "faiss_rank": 17,
+          "score": 0.5309385061264038,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4462",
+          "text": " looks at Lily and Ben. Lily and Ben see the bird and feel sorry for it. They ask Mom and Dad why the bird is pale and sad.\n\nMom and Dad say the bird is sick. It needs a doctor and medicine. They say the zoo people are trying to help the bird. They say Lily and Ben can pray for the bird to get better.\n\nLily and Ben nod. They say bye to the bird and tell it to be strong. They hope the bird will get better soon. They go to see other animals, but they do not forget the pale and sad bird. They pray for it in their hearts.Sam",
+          "source": "tinystories",
+          "faiss_rank": 18,
+          "score": 0.5308092832565308,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "320",
+          "text": " the bird. It needs my help.\" \n\nThe man replied, \"No, it's not worth my time. Leave it and go away!\" John sadly looked at the bird. He wished he could help it. He smiled and went away. \n\nThe little bird died soon after, alone in the pile of ash with no help. John looked back and smiled sadly. He knew that he should have kept trying harder to help.Once upon a time there was a little girl who was so very careful. One day she went outside to play and she found a caterpillar! She was so excited!\n\nThe girl carefully put the caterpillar in",
+          "source": "tinystories",
+          "faiss_rank": 19,
+          "score": 0.5303811430931091,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8433",
+          "text": " They did not know what to do.\n\nThey sat down to discuss who should get the pill. The cat said, \"I saw it first, so I should eat it.\" The dog said, \"But I am bigger and need it more.\" They both wanted the pill very much.\n\nThen, a big bird came down from the sky. The bird took the tasty pill away. The cat and the dog were sad. They learned that they should share things and not fight.Once upon a time, there was a little girl named Jane. She had a pretty skirt that she loved to wear. One day, Jane went to the park to",
+          "source": "tinystories",
+          "faiss_rank": 20,
+          "score": 0.5282766819000244,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6402",
+          "text": "Once upon a time, there was a little girl named Lily. She loved to play outside and pick flowers. One day, she found a bird with a broken wing. Lily felt sad for the bird and wanted to help it. She took the bird home and gave it some water and seeds to eat.\n\nHer nosy neighbor, Mrs. Brown, saw Lily taking care of the bird and asked what was going on. Lily told her about the bird's broken wing and how she was trying to help it. Mrs. Brown said that Lily was very kind and that she should be careful not to spoil the bird too much.\n\nLily didn",
+          "source": "tinystories",
+          "faiss_rank": 21,
+          "score": 0.5275912284851074,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4463",
+          "text": " will get better soon. They go to see other animals, but they do not forget the pale and sad bird. They pray for it in their hearts.Sam was a curious boy who liked to examine everything he saw. One day, he found a big onion in the kitchen. He wondered what it was and how it smelled. He picked up the onion and peeled off the brown skin. He saw many white layers inside.\n\nHe wanted to know more, so he brought the onion to his nose and sniffed it. It smelled very strong and made his eyes water. He sneezed and rubbed his eyes. He felt a burning pain",
+          "source": "tinystories",
+          "faiss_rank": 22,
+          "score": 0.5267268419265747,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7517",
+          "text": " spinning and told her she had to stop. The veterinarian said she had to be still so he could take a look at the hamster. The little girl wasn't sure why the veterinarian was so angry, but she liked her hamster and wanted to do what was best. So, she took a deep breath and stopped spinning. The veterinarian looked at the hamster and said he was healthy. The little girl was relieved and gave the hamster a hug.Once upon a time, there was a black butterfly. He was an happy butterfly and loved to fly around. He wanted to visit different places and see the world. But he was",
+          "source": "tinystories",
+          "faiss_rank": 23,
+          "score": 0.5238162875175476,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "4182",
+          "text": " away, but he hurt his wing. Upset, he started to cry. \n\nA kindly veterinarian saw him and took him in. She said to him, \"Don't worry little Tweety, I can help.\" Tweety, still feeling shy, just nodded. \n\nThe veterinarian said, \"I'll have to take care of your wing for a few days so that you can fly again. Can you come back tomorrow?\" Tweety nodded and the veterinarian smiled. \n\nThe next day, Tweety came back. He was feeling much better and flew around the park again. He never slipped again and was happy he had been able to",
+          "source": "tinystories",
+          "faiss_rank": 24,
+          "score": 0.5224963426589966,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3291",
+          "text": " the three year old had to miss playing outdoors and visit the doctor often, because of the enormous cactus.It was a beautiful morning, and Bill and Suzy were excited to go to the park. They had planned a picnic together.\n\nThey grabbed their lunch basket and started walking to the park.\n\nBut on their way, they noticed something strange. It was a bird, perched high up in a tree. It looked scared, shivering and chirping.\n\nSuzy, being the kind-hearted girl she was, wanted to help the bird. She said, \"Let's try to help the bird, Bill!\"\n\n\"How can we help",
+          "source": "tinystories",
+          "faiss_rank": 25,
+          "score": 0.5224847793579102,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "746",
+          "text": " was a bird that lived in the sky. Its feathers were soft, and its wings were strong. The bird liked to soar through the sky, feeling the wind and the sun's warmth on its wings.\n\nOne day the bird saw something wonderful. On the ground below it there was a meadow full of beautiful flowers and small animals. The bird wanted to find out more about this new life on the ground, so it flew down to take a closer look.\n\nThe bird was amazed at what it saw. The animals ran around, and the flowers seemed to be very happy. The bird knew that it wanted to stay in this new place and",
+          "source": "tinystories",
+          "faiss_rank": 26,
+          "score": 0.5218069553375244,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "1322",
+          "text": "Lily went inside and asked her mommy if they could get a birdcage to keep the bird in. Her mommy said they could plan a trip to the pet store to get one. Lily was very excited about the plan.\n\nThe next day, Lily and her mommy went to the pet store and bought a beautiful birdcage. They brought it home and set it up in the backyard. Lily waited patiently for the bird to come back.\n\nFinally, the bird came back and landed in the backyard. Lily quickly caught it and put it in the birdcage. She was very happy and excited to have a new pet. From that",
+          "source": "tinystories",
+          "faiss_rank": 27,
+          "score": 0.521799623966217,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6401",
+          "text": " didn't know what to do. But then, it saw its friend, a big eagle, who came to support it. The eagle said, \"Don't worry little bird, I will help you.\" The eagle flew with the little bird and kept it safe from the storm. The little bird felt grateful and alert, looking out for any other storms that might come. From that day on, the little bird knew it had a friend who would always be there to support it.Once upon a time, there was a little girl named Lily. She loved to play outside and pick flowers. One day, she found a bird with a broken",
+          "source": "tinystories",
+          "faiss_rank": 28,
+          "score": 0.5213441848754883,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5293",
+          "text": " the owl flew back to its tree to dry itself off. \n\nThe owl flapped its wings and shook its feathers to get dry. After a while, the sun came out and the owl felt warm again. It decided to wait until next Tuesday to catch fish. From then on, the owl always checked the weather before going out to catch fish.Once upon a time, there was a big orange cat named Max. Max was very bald, with no fur on his head. One day, Max saw a little mouse and wanted to eat it. But the mouse disagreed and said, \"Please don't eat me, Max. I'm",
+          "source": "tinystories",
+          "faiss_rank": 29,
+          "score": 0.520704984664917,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9100",
+          "text": " wondered.\n\nThe bird heard the question and flew back down. It smiled at the dog and said, â€œItâ€™s simple. All I do is practice speed every day!â€ \n\nThe dog was inspired by the bird. He thought to himself, â€œMaybe if I practice speed every day, I can fly too!â€\n\nThe bird smiled. â€œIt wonâ€™t be easy, but I believe you can do it!â€\n\nThe dog loved the challenge and decided to give it a try. He practiced every day and finally, after a few weeks, he began to fly",
+          "source": "tinystories",
+          "faiss_rank": 30,
+          "score": 0.5201976299285889,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2677",
+          "text": " day she wanted to play with her ball. She ran outside to the garden with it. She was so happy. She ran and ran, kicking her ball further and further away from her.\n\nSuddenly she felt a sharp pain in her ankle. She started to cry. She wanted to go back inside but the pain was too strong. She sat down and cried.\n\nJust then, a yellow bird came to sit on a tree next to her. The bird started to chirp and flew around her. This made Julie stop crying. She looked up at the bird and smiled.\n\nThe bird flew away but Julie wasn't sad anymore. She slowly walked",
+          "source": "tinystories",
+          "faiss_rank": 31,
+          "score": 0.5184256434440613,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3182",
+          "text": " so he barked very loud to call his friend, Kitty the cat.\n\nKitty came running and asked, \"What's wrong, Rhythm?\" Rhythm pointed to the bird and said, \"We need to rescue the bird. Can you help?\" Kitty nodded and climbed up the tree. She carefully picked up the bird and brought it down to the ground.\n\nThe little bird was so happy to be free. It flapped its wings and sang a beautiful song. Rhythm and Kitty danced to the music, and they all became the best of friends. From that day on, they played and danced together every day, making the busy",
+          "source": "tinystories",
+          "faiss_rank": 32,
+          "score": 0.5179476737976074,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6703",
+          "text": " goose who felt very excited. He wanted to go out and explore the world, so he began to fly. As he flew, he saw a bright and beautiful meadow below him. He was so excited that he couldn't resist and quickly descended to the ground. But, as soon as he landed, he noticed a cat. The cat was huge and fierce-looking. He was scared and tried to fly away, but the cat was too fast for him. The goose knew he had to surrender in order to survive. He held his wings close and stopped struggling. After a few moments, the cat tired of chasing the goose and walked away",
+          "source": "tinystories",
+          "faiss_rank": 33,
+          "score": 0.517806887626648,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9099",
+          "text": " man sadly told the boy to give him back the cane. The boy looked sad too and gave it back. After that, the old man put his cane away and never offered it to anyone else.Once upon a time, there was a pink bird. This bird flapped its wings with incredible speed. It whizzed through the air, faster and faster.\n\nThe dog, who was watching from the ground, was amazed. \"How can the bird go so fast?\" he wondered.\n\nThe bird heard the question and flew back down. It smiled at the dog and said, â€œItâ€™s simple. All I do",
+          "source": "tinystories",
+          "faiss_rank": 34,
+          "score": 0.5175485014915466,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6870",
+          "text": " the baby bird, and he felt sorry. He wished he could take away the baby's troubles.\n\nThe big bird wanted to stay and help the baby bird, so he made a nest nearby. He was happy to be helping, but soon he started to regret it. Every day the nest needed more repairs, and it took a lot of time and effort.\n\nBut the bird was glad he had done it. Even though it was troublesome, he was glad he had helped the baby bird. Every day he would fly to the nest and make sure the baby was safe and sound. He was happy to take care of the baby bird, and",
+          "source": "tinystories",
+          "faiss_rank": 35,
+          "score": 0.5155555009841919,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9474",
+          "text": "?\" His voice trembled with worry. The bird replied, \"Yes, it is. My friends and I come here every morning to have a drink.\"\n\nGrandpa raised his eyebrows and asked, \"Is this drink safe to drink?\" The bird nodded and said, \"Yes, absolutely! Try it and you'll see.\"\n\nGrandpa took a sip, reluctantly. To his horror, it was bitter and tasted poisonous. He choked and started to feel very sick. He was afraid, so he quickly flew away from the pond.\n\nMeanwhile, the bird remained and continued to drink from the pond the same way it did every morning. Little did",
+          "source": "tinystories",
+          "faiss_rank": 36,
+          "score": 0.5125811696052551,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5346",
+          "text": " too fast and the bird hit its chest on the plane's wing. The bird fell down to the ground and hurt itself badly. \n\nThe other birds tried to help, but it was too late. The little bird's chest stopped moving and it went to sleep forever. The other birds were sad and missed their friend very much. They learned that it's not always safe to zoom around without being careful.Once upon a time, there was a big bookcase in a house. The bookcase was very tall and had many books on it. A little boy named Timmy loved to look at the books on the bookcase. One day",
+          "source": "tinystories",
+          "faiss_rank": 37,
+          "score": 0.5110880136489868,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "8344",
+          "text": " knew about medicine. The owl gave Max some special medicine to make Leo feel better. Max thanked the owl and went back to give the medicine to Leo.\n\nMax gave the medicine to Leo, and soon, Leo started to feel better. Leo was very happy and thanked Max for helping him. Now, Leo could play with his friends again. Everyone in the forest was happy and they all lived happily ever after.Once upon a time, there was a smart cat named Tom. Tom lived in a small house with his best friend, a little girl named Sue. One day, Sue had a big idea. She wanted to celebrate the night with",
+          "source": "tinystories",
+          "faiss_rank": 38,
+          "score": 0.5095440745353699,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9249",
+          "text": " the squash!\"\n\nMummy was very proud of Lucy and said, \"That is a wonderful design! You are so clever and persistent.\"\n\nLucy smiled and said, \"Yay! I love making designs!\"Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird",
+          "source": "tinystories",
+          "faiss_rank": 39,
+          "score": 0.5094265937805176,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2660",
+          "text": " upon a time there was a shy little bird. It liked to stay in its nest and chirp away quietly. But it kept feeling like something was missing. \n\nSo one day, it decided that it was time to fly away. It grabbed some feathers, stretched its wings and hopped out of the nest. The bird felt so scared and excited. \n\nIt flew away, higher and higher. The bird went above the clouds and soon it was at the next stage of its journey. It flapped its wings and released itself into the sky.\n\nThe bird felt so free and it flew in circles, enjoying the wind against its feathers.",
+          "source": "tinystories",
+          "faiss_rank": 40,
+          "score": 0.5084177851676941,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3125",
+          "text": " to the dog and said, \"I found a warm place for you to sleep. Follow me!\" The dog followed the fly to the small house. The dog was happy and stopped shivering.\n\nBut the house belonged to a big cat. The cat saw the dog and was not happy. The cat chased the dog and the fly out of the house. The dog and the fly ran away and were cold again. They did not find a warm place to sleep that night.Once upon a time, there was a furry cat named Kitty. Kitty lived in a small house with a little girl named Sue. Sue loved Kitty very much and played",
+          "source": "tinystories",
+          "faiss_rank": 41,
+          "score": 0.5059796571731567,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "6553",
+          "text": " loved the way it glittered and sparkled on the blue canvas above him. Suddenly, he heard a whistle in the air. He looked around and noticed a bird high in the sky. It flew in graceful circles, and the boy was impressed. He had never seen a bird fly like this before. The whistle the bird made was very sweet. He watched it for a long time, until it disappeared into the clouds. The boy smiled and looked back up at the sun with a content look on his face.Once upon a time, there was a little cat who was very troubled. She wanted something to eat, so she went exploring",
+          "source": "tinystories",
+          "faiss_rank": 42,
+          "score": 0.5057880878448486,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "2450",
+          "text": " It flew high into the blue sky and chirped happily. \n\nBelow the bird, the little girl looked up in awe. She wanted to be able to fly like the bird, so she grabbed hold of the birdcage and tried to open it. But it seemed like an impossible task. \n\nSuddenly the girl had an idea. She grabbed her father's scissors and started to cut the strings that were holding the birdcage together. It was easier than she thought and the birdcage opened with ease. The bird flew away and the girl was very happy.Once there was a little bird who wanted to win a race. All",
+          "source": "tinystories",
+          "faiss_rank": 43,
+          "score": 0.5031679272651672,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5426",
+          "text": " fish again.\n\nThe end.Once upon a time, there was a mommy bird and her young babies. They lived in a nest in a tall tree. One day, a big storm came and the wind was very strong. The mommy bird had to raise her wings to keep her babies warm and safe. She was very calm even though she was scared.\n\nAfter the storm, the mommy bird and her young babies were very happy because they were okay. The mommy bird knew she had to teach her young babies how to fly so they could be ready for the next storm. She showed them how to raise their wings and fly high in the sky",
+          "source": "tinystories",
+          "faiss_rank": 44,
+          "score": 0.5027414560317993,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9898",
+          "text": " out, \"No, my idea is much better!â€\n\nThe animals laughed at her. They all thought her idea was silly and they didn't believe she had anything important to say. The fly was so upset. She became very angry and decided to prove them all wrong by releasing her idea into the air.\n\nBut her idea was never heard. As soon as it was released, a strong wind blew it away and it was never seen again. The animals all laughed and were happy to have the big bird's idea back in the centre of attention.\n\nThe moral of the story is that it's important to be kind and not put",
+          "source": "tinystories",
+          "faiss_rank": 45,
+          "score": 0.5023499131202698,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "5273",
+          "text": " her and that everything would be okay.\n\nMrs. Smith gave Lily a tight hug and they played games together. Lily realized that Mrs. Smith was a nice neighbor and she didn't need to be scared. From that day on, Lily trusted Mrs. Smith and loved to visit her.Once upon a time, there was a bird. The bird loved to fly high in the sky and feel the wind on its wings. One day, the bird saw a TV in a window. It was playing a show about other birds flying and soaring in the sky. The bird felt proud of its own flying skills and wanted to soar even higher. \n\n",
+          "source": "tinystories",
+          "faiss_rank": 46,
+          "score": 0.5013099908828735,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "3869",
+          "text": " longer stay awake. So, the bird paused for a moment and decided to take a nap in the sun.\n\nSuddenly, the bird was awoken with a loud noise. It was the sound of thunder! The blue bird spread its wings wide and flew to an empty branch just as the sky was getting grey. Cautiously, the bird looked around and saw a storm building up in the sky.\n\nThe bird then paused again, as if it was building up the courage to fly to safety. With one flutter of its wings, the bird set off, faster and faster, trying to catch up with the dark clouds. The storm was getting",
+          "source": "tinystories",
+          "faiss_rank": 47,
+          "score": 0.5012011528015137,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "7365",
+          "text": " she got to the top, she saw a bird! The bird was swinging from some beautiful green leaves. It had a spray in its beak. The cat meowed and so the bird looked down and saw her. \n\nThe bird flew down to the cat and said, â€œI was spraying the leaves so they look nice and shiny. Would you like to help me?â€ So they both started spraying the leaves.\n\nAfter they were done, the tree had rainbow leaves with lots of sparkles! It was so funny and pretty. The cat and the bird were very happy with their work and they did a happy dance together",
+          "source": "tinystories",
+          "faiss_rank": 48,
+          "score": 0.5011283159255981,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "9724",
+          "text": " day, Sammy was drinking when he noticed something strange swimming in the water. It was a large, crazy creature! It had big wings! Sammy wanted to fly away, but it was too late. The creature's wings wrapped around him and he was never seen again.\n\nThis story teaches us that it's important to listen to the advice of our elders. If Sammy had just listened to the advice of the older bird, he wouldn't have been in this terrible situation. Unfortunately, he was too stubborn to listen and it cost him his life.One day, Bob heard an exciting sound coming from outside. He ran to the window and saw",
+          "source": "tinystories",
+          "faiss_rank": 49,
+          "score": 0.49988123774528503,
+          "rerank_rank": null,
+          "rerank_score": null
+        },
+        {
+          "chunk_id": "636",
+          "text": " for her walk, she would carry her purse with her.\n\nOne day, Sarah was walking through the park, when she noticed a beautiful white bird. She asked the bird if she could have it as a pet. The bird replied, â€œNo, I canâ€™t. But if you can answer my request, Iâ€™ll think about it.â€\n\nThe bird asked Sarah to take her white purse to the far side of the park. Sarah was very excited and ran off towards the other side of the park, with her purse in hand. After she got there, she found a beautiful nest filled with other",
+          "source": "tinystories",
+          "faiss_rank": 50,
+          "score": 0.49981194734573364,
+          "rerank_rank": null,
+          "rerank_score": null
+        }
+      ],
+      "reranked": [
+        {
+          "chunk_id": "5552",
+          "text": " see what we can do.\" \n\nAt the vet, the doctor weighed the bird and said, \"This little guy is very light. We need to give him some medicine and a nail to help his wing heal.\" \n\nLily watched as the doctor gave the bird some medicine and put a tiny nail in its wing. She thought the bird was so adorable and couldn't wait for it to fly again. \n\nAfter a few days of rest, the bird was ready to go back into the wild. Lily and her mom took the bird back to the backyard and watched as it flew away, happy and healthy once again.Once upon a time",
+          "source": "tinystories",
+          "faiss_rank": 1,
+          "score": 0.6706673502922058,
+          "rerank_rank": 1,
+          "rerank_score": 1.917623519897461
+        },
+        {
+          "chunk_id": "8634",
+          "text": " there was a big orange cat. His fur was very fluffy and soft. He loved to play with his toy mouse and chase it around the house. One day, the cat saw a little bird with a broken wing. The cat felt sad for the bird and wanted to help. \n\nHe went to his owner and meowed loudly to get their attention. The owner followed the cat and saw the bird. They picked up the bird and took it to the vet. The vet fixed the bird's wing and soon it was able to fly again. The cat was happy to see the bird fly away and he meowed \"thank you\" to",
+          "source": "tinystories",
+          "faiss_rank": 2,
+          "score": 0.6223657727241516,
+          "rerank_rank": 2,
+          "rerank_score": -1.6395525932312012
+        },
+        {
+          "chunk_id": "6402",
+          "text": "Once upon a time, there was a little girl named Lily. She loved to play outside and pick flowers. One day, she found a bird with a broken wing. Lily felt sad for the bird and wanted to help it. She took the bird home and gave it some water and seeds to eat.\n\nHer nosy neighbor, Mrs. Brown, saw Lily taking care of the bird and asked what was going on. Lily told her about the bird's broken wing and how she was trying to help it. Mrs. Brown said that Lily was very kind and that she should be careful not to spoil the bird too much.\n\nLily didn",
+          "source": "tinystories",
+          "faiss_rank": 21,
+          "score": 0.5275912284851074,
+          "rerank_rank": 3,
+          "rerank_score": -4.450067043304443
+        },
+        {
+          "chunk_id": "5551",
+          "text": " upon a time, there was a little girl named Lily. She loved to play in her backyard and explore the world around her. One day, she found a little bird with a broken wing. \n\nLily picked up the bird and took it to her mom. \"Mommy, look! I found a birdie. It's hurt. Can we help it?\" \n\nHer mom smiled and said, \"Of course, sweetie. Let's take it to the vet and see what we can do.\" \n\nAt the vet, the doctor weighed the bird and said, \"This little guy is very light. We need to give him",
+          "source": "tinystories",
+          "faiss_rank": 5,
+          "score": 0.5697901248931885,
+          "rerank_rank": 4,
+          "rerank_score": -4.600423336029053
+        },
+        {
+          "chunk_id": "8433",
+          "text": " They did not know what to do.\n\nThey sat down to discuss who should get the pill. The cat said, \"I saw it first, so I should eat it.\" The dog said, \"But I am bigger and need it more.\" They both wanted the pill very much.\n\nThen, a big bird came down from the sky. The bird took the tasty pill away. The cat and the dog were sad. They learned that they should share things and not fight.Once upon a time, there was a little girl named Jane. She had a pretty skirt that she loved to wear. One day, Jane went to the park to",
+          "source": "tinystories",
+          "faiss_rank": 20,
+          "score": 0.5282766819000244,
+          "rerank_rank": 5,
+          "rerank_score": -4.969102382659912
+        },
+        {
+          "chunk_id": "8344",
+          "text": " knew about medicine. The owl gave Max some special medicine to make Leo feel better. Max thanked the owl and went back to give the medicine to Leo.\n\nMax gave the medicine to Leo, and soon, Leo started to feel better. Leo was very happy and thanked Max for helping him. Now, Leo could play with his friends again. Everyone in the forest was happy and they all lived happily ever after.Once upon a time, there was a smart cat named Tom. Tom lived in a small house with his best friend, a little girl named Sue. One day, Sue had a big idea. She wanted to celebrate the night with",
+          "source": "tinystories",
+          "faiss_rank": 38,
+          "score": 0.5095440745353699,
+          "rerank_rank": 6,
+          "rerank_score": -4.971893310546875
+        },
+        {
+          "chunk_id": "3578",
+          "text": ". They all enjoyed the mysterious sound of the bird. \n\nOne day, a little rabbit wanted to know where the mysterious sound was coming from. He asked all the other animals, but nobody knew. Determined to find out, the bunny ventured deeper into the forest. \n\nFinally, the curious bunny found the mysterious bird. The bird had a broken wing and was unable to fly. The little bunny felt really sad. He then decided to help the bird and took it to the vet. \n\nAfter a few weeks, the bird was all healed and was free to fly once again. And so, every time the bird flew, the same",
+          "source": "tinystories",
+          "faiss_rank": 4,
+          "score": 0.5775599479675293,
+          "rerank_rank": 7,
+          "rerank_score": -4.983137130737305
+        },
+        {
+          "chunk_id": "4182",
+          "text": " away, but he hurt his wing. Upset, he started to cry. \n\nA kindly veterinarian saw him and took him in. She said to him, \"Don't worry little Tweety, I can help.\" Tweety, still feeling shy, just nodded. \n\nThe veterinarian said, \"I'll have to take care of your wing for a few days so that you can fly again. Can you come back tomorrow?\" Tweety nodded and the veterinarian smiled. \n\nThe next day, Tweety came back. He was feeling much better and flew around the park again. He never slipped again and was happy he had been able to",
+          "source": "tinystories",
+          "faiss_rank": 24,
+          "score": 0.5224963426589966,
+          "rerank_rank": 8,
+          "rerank_score": -5.178167819976807
+        },
+        {
+          "chunk_id": "3182",
+          "text": " so he barked very loud to call his friend, Kitty the cat.\n\nKitty came running and asked, \"What's wrong, Rhythm?\" Rhythm pointed to the bird and said, \"We need to rescue the bird. Can you help?\" Kitty nodded and climbed up the tree. She carefully picked up the bird and brought it down to the ground.\n\nThe little bird was so happy to be free. It flapped its wings and sang a beautiful song. Rhythm and Kitty danced to the music, and they all became the best of friends. From that day on, they played and danced together every day, making the busy",
+          "source": "tinystories",
+          "faiss_rank": 32,
+          "score": 0.5179476737976074,
+          "rerank_rank": 9,
+          "rerank_score": -5.671856880187988
+        },
+        {
+          "chunk_id": "3848",
+          "text": " bird in the bush, its wings had broken!\n\nRight away, the lucky lady knew what to do. She carefully picked up the baby bird, and she took it home with her. There, she fed it and gave it a warm, cozy bed.\n\nSoon, the baby bird was feeling much better. Its wings were healed and it was able to fly! The lucky lady opened her window and the bird flew away.\n\nThe lady felt so happy and lucky. She knew she had saved the bird's life.Once upon a time, there was an otter who was in a hurry. The otter wanted to get somewhere quickly, and",
+          "source": "tinystories",
+          "faiss_rank": 15,
+          "score": 0.5331437587738037,
+          "rerank_rank": 10,
+          "rerank_score": -5.679906368255615
+        },
+        {
+          "chunk_id": "4181",
+          "text": " the bird seemed sad, so he said, \"Would you like some help?\".\n\nThe orange bird started to pray to God. Jacob joined in, and together they prayed for happiness. As they finished praying, the orange bird flew away.Once upon a time, there was a shy little bird named Tweety. One day, he went for a walk around the park. As he was walking, he slipped on a banana peel and fell to the ground. He tried to fly away, but he hurt his wing. Upset, he started to cry. \n\nA kindly veterinarian saw him and took him in. She said to him,",
+          "source": "tinystories",
+          "faiss_rank": 10,
+          "score": 0.5452257394790649,
+          "rerank_rank": 11,
+          "rerank_score": -6.396859169006348
+        },
+        {
+          "chunk_id": "320",
+          "text": " the bird. It needs my help.\" \n\nThe man replied, \"No, it's not worth my time. Leave it and go away!\" John sadly looked at the bird. He wished he could help it. He smiled and went away. \n\nThe little bird died soon after, alone in the pile of ash with no help. John looked back and smiled sadly. He knew that he should have kept trying harder to help.Once upon a time there was a little girl who was so very careful. One day she went outside to play and she found a caterpillar! She was so excited!\n\nThe girl carefully put the caterpillar in",
+          "source": "tinystories",
+          "faiss_rank": 19,
+          "score": 0.5303811430931091,
+          "rerank_rank": 12,
+          "rerank_score": -6.554121971130371
+        },
+        {
+          "chunk_id": "9249",
+          "text": " the squash!\"\n\nMummy was very proud of Lucy and said, \"That is a wonderful design! You are so clever and persistent.\"\n\nLucy smiled and said, \"Yay! I love making designs!\"Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird",
+          "source": "tinystories",
+          "faiss_rank": 39,
+          "score": 0.5094265937805176,
+          "rerank_rank": 13,
+          "rerank_score": -6.838109493255615
+        },
+        {
+          "chunk_id": "7365",
+          "text": " she got to the top, she saw a bird! The bird was swinging from some beautiful green leaves. It had a spray in its beak. The cat meowed and so the bird looked down and saw her. \n\nThe bird flew down to the cat and said, â€œI was spraying the leaves so they look nice and shiny. Would you like to help me?â€ So they both started spraying the leaves.\n\nAfter they were done, the tree had rainbow leaves with lots of sparkles! It was so funny and pretty. The cat and the bird were very happy with their work and they did a happy dance together",
+          "source": "tinystories",
+          "faiss_rank": 48,
+          "score": 0.5011283159255981,
+          "rerank_rank": 14,
+          "rerank_score": -6.960671424865723
+        },
+        {
+          "chunk_id": "4462",
+          "text": " looks at Lily and Ben. Lily and Ben see the bird and feel sorry for it. They ask Mom and Dad why the bird is pale and sad.\n\nMom and Dad say the bird is sick. It needs a doctor and medicine. They say the zoo people are trying to help the bird. They say Lily and Ben can pray for the bird to get better.\n\nLily and Ben nod. They say bye to the bird and tell it to be strong. They hope the bird will get better soon. They go to see other animals, but they do not forget the pale and sad bird. They pray for it in their hearts.Sam",
+          "source": "tinystories",
+          "faiss_rank": 18,
+          "score": 0.5308092832565308,
+          "rerank_rank": 15,
+          "rerank_score": -7.130138397216797
+        },
+        {
+          "chunk_id": "9099",
+          "text": " man sadly told the boy to give him back the cane. The boy looked sad too and gave it back. After that, the old man put his cane away and never offered it to anyone else.Once upon a time, there was a pink bird. This bird flapped its wings with incredible speed. It whizzed through the air, faster and faster.\n\nThe dog, who was watching from the ground, was amazed. \"How can the bird go so fast?\" he wondered.\n\nThe bird heard the question and flew back down. It smiled at the dog and said, â€œItâ€™s simple. All I do",
+          "source": "tinystories",
+          "faiss_rank": 34,
+          "score": 0.5175485014915466,
+          "rerank_rank": 16,
+          "rerank_score": -7.188486099243164
+        },
+        {
+          "chunk_id": "8306",
+          "text": " He crawled through the tunnel and got the pretty ball. Pippin was very happy, and his friends were proud of him.One day, a friendly cat named Kitty heard a scream. She wanted to find out the mystery of the scream. Kitty walked and walked until she saw a little bird.\n\nThe little bird said, \"Help! I can't fly. I screamed because I'm scared.\" Kitty wanted to help the little bird. She told the bird, \"Don't worry, I'll help you.\"\n\nKitty and the bird tried and tried to make the bird fly. They became good friends. Soon, the little bird could",
+          "source": "tinystories",
+          "faiss_rank": 3,
+          "score": 0.5797922611236572,
+          "rerank_rank": 17,
+          "rerank_score": -7.197537422180176
+        },
+        {
+          "chunk_id": "8474",
+          "text": " see the veterinarian.\" Lucy was surprised, but she agreed. They both walked to the veterinarian's office, holding hands and talking about their day.\n\nWhen they got to the veterinarian, Fluffy told the doctor, \"I am an unusual cat who can talk.\" The veterinarian was amazed and said, \"Wow, Fluffy! You are very special.\" Fluffy and Lucy were very happy and went home to play some more.Once upon a time, there was a big bird. The bird loved to soar high in the sky. One day, the bird saw a swamp below. The swamp had many frogs and bugs. The bird wanted to",
+          "source": "tinystories",
+          "faiss_rank": 6,
+          "score": 0.5650475025177002,
+          "rerank_rank": 18,
+          "rerank_score": -7.469202995300293
+        },
+        {
+          "chunk_id": "5346",
+          "text": " too fast and the bird hit its chest on the plane's wing. The bird fell down to the ground and hurt itself badly. \n\nThe other birds tried to help, but it was too late. The little bird's chest stopped moving and it went to sleep forever. The other birds were sad and missed their friend very much. They learned that it's not always safe to zoom around without being careful.Once upon a time, there was a big bookcase in a house. The bookcase was very tall and had many books on it. A little boy named Timmy loved to look at the books on the bookcase. One day",
+          "source": "tinystories",
+          "faiss_rank": 37,
+          "score": 0.5110880136489868,
+          "rerank_rank": 19,
+          "rerank_score": -7.777594566345215
+        },
+        {
+          "chunk_id": "5615",
+          "text": " it until it disappeared. He felt mighty as he walked home. He knew the sunglasses had helped him see the wonderful duck.Once upon a time there was a thin cat called Connie. She was very lazy, and liked to sleep in the sun all day. \n\nEvery day, Connie would gaze at the flowers and the birds that flew by. One day, she spotted a magnificent flower with a unique style. She wanted to make the flower her own, but it was too far away to reach.\n\nSo Connie asked the bird, â€œCan you help me? I want the flower!â€\n\nThe bird said, â€",
+          "source": "tinystories",
+          "faiss_rank": 12,
+          "score": 0.538855254650116,
+          "rerank_rank": 20,
+          "rerank_score": -7.836125373840332
+        },
+        {
+          "chunk_id": "4463",
+          "text": " will get better soon. They go to see other animals, but they do not forget the pale and sad bird. They pray for it in their hearts.Sam was a curious boy who liked to examine everything he saw. One day, he found a big onion in the kitchen. He wondered what it was and how it smelled. He picked up the onion and peeled off the brown skin. He saw many white layers inside.\n\nHe wanted to know more, so he brought the onion to his nose and sniffed it. It smelled very strong and made his eyes water. He sneezed and rubbed his eyes. He felt a burning pain",
+          "source": "tinystories",
+          "faiss_rank": 22,
+          "score": 0.5267268419265747,
+          "rerank_rank": 21,
+          "rerank_score": -7.9164509773254395
+        },
+        {
+          "chunk_id": "8491",
+          "text": " idea. He gave the bird some food. The bird ate the food and became happy. The bird stopped making a mess and making noise. The farmer and the bird became friends.\n\nFrom that day on, the rare bird helped the farmer organize the farm. The farmer was happy, and the farm was clean and peaceful again.Once upon a time, there was a gentle cat named Fluffy. Fluffy loved to step around the house and play with his toys. His favorite toy was a little ball that he would chase and jump on.\n\nOne day, Fluffy was playing near the table where his owner, Mommy, had her coffee",
+          "source": "tinystories",
+          "faiss_rank": 11,
+          "score": 0.5408731698989868,
+          "rerank_rank": 22,
+          "rerank_score": -8.02216911315918
+        },
+        {
+          "chunk_id": "3292",
+          "text": " being the kind-hearted girl she was, wanted to help the bird. She said, \"Let's try to help the bird, Bill!\"\n\n\"How can we help it, Suzy?\" asked Bill.\n\n\"Let's attach a piece of string to the top of the tree, then stay and wait,\" she suggested.\n\nBill was a bit fearful, but followed Suzy's lead. They found a long string and carefully attached it to the top of the tree. Then, they waited at the bottom of the tree.\n\nIt was a bit scary to wait there, because a sudden gust of wind could have blown away the bird. But, as",
+          "source": "tinystories",
+          "faiss_rank": 14,
+          "score": 0.5371432304382324,
+          "rerank_rank": 23,
+          "rerank_score": -8.313789367675781
+        },
+        {
+          "chunk_id": "7380",
+          "text": " and covered in mud. The bird was sad and tried to clean the twig and make it look nice. He used water and special cleaning tools to make it shiny again.\n\nFinally, the twig looked clean and sparkly. The bird was so excited he spread his wings and flew around. He showed the twig to all of the birds and animals in the forest. Everyone admired the twig and said it was very pretty.\n\nThe bird was very happy now. He flew home with the twig and placed it in his nest. It was safe and sound now, and he was very proud of his work. From that day on, all the animals in",
+          "source": "tinystories",
+          "faiss_rank": 7,
+          "score": 0.5559232831001282,
+          "rerank_rank": 24,
+          "rerank_score": -8.457077980041504
+        },
+        {
+          "chunk_id": "3564",
+          "text": " and happily ran off to play.Once upon a time, there was a cheerful bird living in a big tree. The bird was so happy every day, and soon, many other animals came to the tree to join it.\n\nBut one day, the bird was in danger! A big cat was chasing it, and it wanted to catch the bird. The bird felt a wave of fear in its heart, and knew it had to escape. So, the bird flew away as fast as it could. \n\nThe bird managed to escape, but it had to leave its friends behind. The bird was really sad now, and knew it had to",
+          "source": "tinystories",
+          "faiss_rank": 16,
+          "score": 0.5325364470481873,
+          "rerank_rank": 25,
+          "rerank_score": -8.50031852722168
+        },
+        {
+          "chunk_id": "2236",
+          "text": ", but their mom did not hear them.\n\n\"Help, help!\" Ben cried. \"We are in the frame!\"\n\n\"How did we shrink?\" Lily asked. \"We need to get out!\"\n\nThey looked around and saw a window in the frame. They ran to it and pushed it open. They saw a bird outside. They hoped it would not eat them.\n\n\"Maybe we can fly with the bird,\" Ben said. \"Maybe it will take us to our mom.\"\n\nThey climbed on the bird's back and held on tight. The bird flew away with them. They hoped it would not fly too far. They wanted to go back",
+          "source": "tinystories",
+          "faiss_rank": 9,
+          "score": 0.5453625321388245,
+          "rerank_rank": 26,
+          "rerank_score": -8.567876815795898
+        },
+        {
+          "chunk_id": "7364",
+          "text": " was no longer lonely or sad. She never had to worry about anything because she knew her bear friend was always there to protect her.Once upon a time, there was a gray cat. The cat liked to take naps and doze in the sunshine. One day while the cat was dozing, a noise woke her up! It was a loud noise, like a spray. It was coming from the tall tree.\n\nSo the cat climbed up the tree to investigate. When she got to the top, she saw a bird! The bird was swinging from some beautiful green leaves. It had a spray in its beak. The cat",
+          "source": "tinystories",
+          "faiss_rank": 8,
+          "score": 0.5540733933448792,
+          "rerank_rank": 27,
+          "rerank_score": -8.613824844360352
+        },
+        {
+          "chunk_id": "6870",
+          "text": " the baby bird, and he felt sorry. He wished he could take away the baby's troubles.\n\nThe big bird wanted to stay and help the baby bird, so he made a nest nearby. He was happy to be helping, but soon he started to regret it. Every day the nest needed more repairs, and it took a lot of time and effort.\n\nBut the bird was glad he had done it. Even though it was troublesome, he was glad he had helped the baby bird. Every day he would fly to the nest and make sure the baby was safe and sound. He was happy to take care of the baby bird, and",
+          "source": "tinystories",
+          "faiss_rank": 35,
+          "score": 0.5155555009841919,
+          "rerank_rank": 28,
+          "rerank_score": -8.670307159423828
+        },
+        {
+          "chunk_id": "9724",
+          "text": " day, Sammy was drinking when he noticed something strange swimming in the water. It was a large, crazy creature! It had big wings! Sammy wanted to fly away, but it was too late. The creature's wings wrapped around him and he was never seen again.\n\nThis story teaches us that it's important to listen to the advice of our elders. If Sammy had just listened to the advice of the older bird, he wouldn't have been in this terrible situation. Unfortunately, he was too stubborn to listen and it cost him his life.One day, Bob heard an exciting sound coming from outside. He ran to the window and saw",
+          "source": "tinystories",
+          "faiss_rank": 49,
+          "score": 0.49988123774528503,
+          "rerank_rank": 29,
+          "rerank_score": -8.753898620605469
+        },
+        {
+          "chunk_id": "6703",
+          "text": " goose who felt very excited. He wanted to go out and explore the world, so he began to fly. As he flew, he saw a bright and beautiful meadow below him. He was so excited that he couldn't resist and quickly descended to the ground. But, as soon as he landed, he noticed a cat. The cat was huge and fierce-looking. He was scared and tried to fly away, but the cat was too fast for him. The goose knew he had to surrender in order to survive. He held his wings close and stopped struggling. After a few moments, the cat tired of chasing the goose and walked away",
+          "source": "tinystories",
+          "faiss_rank": 33,
+          "score": 0.517806887626648,
+          "rerank_rank": 30,
+          "rerank_score": -9.00456714630127
+        },
+        {
+          "chunk_id": "746",
+          "text": " was a bird that lived in the sky. Its feathers were soft, and its wings were strong. The bird liked to soar through the sky, feeling the wind and the sun's warmth on its wings.\n\nOne day the bird saw something wonderful. On the ground below it there was a meadow full of beautiful flowers and small animals. The bird wanted to find out more about this new life on the ground, so it flew down to take a closer look.\n\nThe bird was amazed at what it saw. The animals ran around, and the flowers seemed to be very happy. The bird knew that it wanted to stay in this new place and",
+          "source": "tinystories",
+          "faiss_rank": 26,
+          "score": 0.5218069553375244,
+          "rerank_rank": 31,
+          "rerank_score": -9.006277084350586
+        },
+        {
+          "chunk_id": "5293",
+          "text": " the owl flew back to its tree to dry itself off. \n\nThe owl flapped its wings and shook its feathers to get dry. After a while, the sun came out and the owl felt warm again. It decided to wait until next Tuesday to catch fish. From then on, the owl always checked the weather before going out to catch fish.Once upon a time, there was a big orange cat named Max. Max was very bald, with no fur on his head. One day, Max saw a little mouse and wanted to eat it. But the mouse disagreed and said, \"Please don't eat me, Max. I'm",
+          "source": "tinystories",
+          "faiss_rank": 29,
+          "score": 0.520704984664917,
+          "rerank_rank": 32,
+          "rerank_score": -9.177383422851562
+        },
+        {
+          "chunk_id": "6401",
+          "text": " didn't know what to do. But then, it saw its friend, a big eagle, who came to support it. The eagle said, \"Don't worry little bird, I will help you.\" The eagle flew with the little bird and kept it safe from the storm. The little bird felt grateful and alert, looking out for any other storms that might come. From that day on, the little bird knew it had a friend who would always be there to support it.Once upon a time, there was a little girl named Lily. She loved to play outside and pick flowers. One day, she found a bird with a broken",
+          "source": "tinystories",
+          "faiss_rank": 28,
+          "score": 0.5213441848754883,
+          "rerank_rank": 33,
+          "rerank_score": -9.341743469238281
+        },
+        {
+          "chunk_id": "3291",
+          "text": " the three year old had to miss playing outdoors and visit the doctor often, because of the enormous cactus.It was a beautiful morning, and Bill and Suzy were excited to go to the park. They had planned a picnic together.\n\nThey grabbed their lunch basket and started walking to the park.\n\nBut on their way, they noticed something strange. It was a bird, perched high up in a tree. It looked scared, shivering and chirping.\n\nSuzy, being the kind-hearted girl she was, wanted to help the bird. She said, \"Let's try to help the bird, Bill!\"\n\n\"How can we help",
+          "source": "tinystories",
+          "faiss_rank": 25,
+          "score": 0.5224847793579102,
+          "rerank_rank": 34,
+          "rerank_score": -9.583514213562012
+        },
+        {
+          "chunk_id": "6553",
+          "text": " loved the way it glittered and sparkled on the blue canvas above him. Suddenly, he heard a whistle in the air. He looked around and noticed a bird high in the sky. It flew in graceful circles, and the boy was impressed. He had never seen a bird fly like this before. The whistle the bird made was very sweet. He watched it for a long time, until it disappeared into the clouds. The boy smiled and looked back up at the sun with a content look on his face.Once upon a time, there was a little cat who was very troubled. She wanted something to eat, so she went exploring",
+          "source": "tinystories",
+          "faiss_rank": 42,
+          "score": 0.5057880878448486,
+          "rerank_rank": 35,
+          "rerank_score": -9.607394218444824
+        },
+        {
+          "chunk_id": "2660",
+          "text": " upon a time there was a shy little bird. It liked to stay in its nest and chirp away quietly. But it kept feeling like something was missing. \n\nSo one day, it decided that it was time to fly away. It grabbed some feathers, stretched its wings and hopped out of the nest. The bird felt so scared and excited. \n\nIt flew away, higher and higher. The bird went above the clouds and soon it was at the next stage of its journey. It flapped its wings and released itself into the sky.\n\nThe bird felt so free and it flew in circles, enjoying the wind against its feathers.",
+          "source": "tinystories",
+          "faiss_rank": 40,
+          "score": 0.5084177851676941,
+          "rerank_rank": 36,
+          "rerank_score": -9.628454208374023
+        },
+        {
+          "chunk_id": "3869",
+          "text": " longer stay awake. So, the bird paused for a moment and decided to take a nap in the sun.\n\nSuddenly, the bird was awoken with a loud noise. It was the sound of thunder! The blue bird spread its wings wide and flew to an empty branch just as the sky was getting grey. Cautiously, the bird looked around and saw a storm building up in the sky.\n\nThe bird then paused again, as if it was building up the courage to fly to safety. With one flutter of its wings, the bird set off, faster and faster, trying to catch up with the dark clouds. The storm was getting",
+          "source": "tinystories",
+          "faiss_rank": 47,
+          "score": 0.5012011528015137,
+          "rerank_rank": 37,
+          "rerank_score": -9.644174575805664
+        },
+        {
+          "chunk_id": "7517",
+          "text": " spinning and told her she had to stop. The veterinarian said she had to be still so he could take a look at the hamster. The little girl wasn't sure why the veterinarian was so angry, but she liked her hamster and wanted to do what was best. So, she took a deep breath and stopped spinning. The veterinarian looked at the hamster and said he was healthy. The little girl was relieved and gave the hamster a hug.Once upon a time, there was a black butterfly. He was an happy butterfly and loved to fly around. He wanted to visit different places and see the world. But he was",
+          "source": "tinystories",
+          "faiss_rank": 23,
+          "score": 0.5238162875175476,
+          "rerank_rank": 38,
+          "rerank_score": -9.711464881896973
+        },
+        {
+          "chunk_id": "636",
+          "text": " for her walk, she would carry her purse with her.\n\nOne day, Sarah was walking through the park, when she noticed a beautiful white bird. She asked the bird if she could have it as a pet. The bird replied, â€œNo, I canâ€™t. But if you can answer my request, Iâ€™ll think about it.â€\n\nThe bird asked Sarah to take her white purse to the far side of the park. Sarah was very excited and ran off towards the other side of the park, with her purse in hand. After she got there, she found a beautiful nest filled with other",
+          "source": "tinystories",
+          "faiss_rank": 50,
+          "score": 0.49981194734573364,
+          "rerank_rank": 39,
+          "rerank_score": -9.729578018188477
+        },
+        {
+          "chunk_id": "9474",
+          "text": "?\" His voice trembled with worry. The bird replied, \"Yes, it is. My friends and I come here every morning to have a drink.\"\n\nGrandpa raised his eyebrows and asked, \"Is this drink safe to drink?\" The bird nodded and said, \"Yes, absolutely! Try it and you'll see.\"\n\nGrandpa took a sip, reluctantly. To his horror, it was bitter and tasted poisonous. He choked and started to feel very sick. He was afraid, so he quickly flew away from the pond.\n\nMeanwhile, the bird remained and continued to drink from the pond the same way it did every morning. Little did",
+          "source": "tinystories",
+          "faiss_rank": 36,
+          "score": 0.5125811696052551,
+          "rerank_rank": 40,
+          "rerank_score": -9.73291015625
+        },
+        {
+          "chunk_id": "2846",
+          "text": " Every day, he wanted to learn something new. He saw the other animals scurrying around and noticed how much they knew. He wanted to be just like them! \n\nOne day, he decided to learn how to climb the trees. He hopped to the base of the tree, but it was too high. He tried and tried, but he couldn't reach the top. He was starting to get frustrated. \n\nThen, a beautiful blue bird flew by. She noticed the old rabbit trying to climb the tree. She swooped down and offered to help. She flew to the branches above and told the old rabbit which way to",
+          "source": "tinystories",
+          "faiss_rank": 17,
+          "score": 0.5309385061264038,
+          "rerank_rank": 41,
+          "rerank_score": -9.769474029541016
+        },
+        {
+          "chunk_id": "5273",
+          "text": " her and that everything would be okay.\n\nMrs. Smith gave Lily a tight hug and they played games together. Lily realized that Mrs. Smith was a nice neighbor and she didn't need to be scared. From that day on, Lily trusted Mrs. Smith and loved to visit her.Once upon a time, there was a bird. The bird loved to fly high in the sky and feel the wind on its wings. One day, the bird saw a TV in a window. It was playing a show about other birds flying and soaring in the sky. The bird felt proud of its own flying skills and wanted to soar even higher. \n\n",
+          "source": "tinystories",
+          "faiss_rank": 46,
+          "score": 0.5013099908828735,
+          "rerank_rank": 42,
+          "rerank_score": -9.946745872497559
+        },
+        {
+          "chunk_id": "5426",
+          "text": " fish again.\n\nThe end.Once upon a time, there was a mommy bird and her young babies. They lived in a nest in a tall tree. One day, a big storm came and the wind was very strong. The mommy bird had to raise her wings to keep her babies warm and safe. She was very calm even though she was scared.\n\nAfter the storm, the mommy bird and her young babies were very happy because they were okay. The mommy bird knew she had to teach her young babies how to fly so they could be ready for the next storm. She showed them how to raise their wings and fly high in the sky",
+          "source": "tinystories",
+          "faiss_rank": 44,
+          "score": 0.5027414560317993,
+          "rerank_rank": 43,
+          "rerank_score": -9.97690200805664
+        },
+        {
+          "chunk_id": "9898",
+          "text": " out, \"No, my idea is much better!â€\n\nThe animals laughed at her. They all thought her idea was silly and they didn't believe she had anything important to say. The fly was so upset. She became very angry and decided to prove them all wrong by releasing her idea into the air.\n\nBut her idea was never heard. As soon as it was released, a strong wind blew it away and it was never seen again. The animals all laughed and were happy to have the big bird's idea back in the centre of attention.\n\nThe moral of the story is that it's important to be kind and not put",
+          "source": "tinystories",
+          "faiss_rank": 45,
+          "score": 0.5023499131202698,
+          "rerank_rank": 44,
+          "rerank_score": -9.979452133178711
+        },
+        {
+          "chunk_id": "1322",
+          "text": "Lily went inside and asked her mommy if they could get a birdcage to keep the bird in. Her mommy said they could plan a trip to the pet store to get one. Lily was very excited about the plan.\n\nThe next day, Lily and her mommy went to the pet store and bought a beautiful birdcage. They brought it home and set it up in the backyard. Lily waited patiently for the bird to come back.\n\nFinally, the bird came back and landed in the backyard. Lily quickly caught it and put it in the birdcage. She was very happy and excited to have a new pet. From that",
+          "source": "tinystories",
+          "faiss_rank": 27,
+          "score": 0.521799623966217,
+          "rerank_rank": 45,
+          "rerank_score": -10.011438369750977
+        },
+        {
+          "chunk_id": "3124",
+          "text": " They played together and had fun. From that day, the squirrel was not jealous of the bird anymore. They became the best of friends.Once upon a time, there was a thoughtful little fly. The fly liked to help others. One day, the fly saw a big dog shiver in the cold. The fly wanted to help the dog, so it went to find a warm place for the dog to sleep.\n\nThe fly found a small, warm house. It went back to the dog and said, \"I found a warm place for you to sleep. Follow me!\" The dog followed the fly to the small house. The dog",
+          "source": "tinystories",
+          "faiss_rank": 13,
+          "score": 0.5380458235740662,
+          "rerank_rank": 46,
+          "rerank_score": -10.118658065795898
+        },
+        {
+          "chunk_id": "2450",
+          "text": " It flew high into the blue sky and chirped happily. \n\nBelow the bird, the little girl looked up in awe. She wanted to be able to fly like the bird, so she grabbed hold of the birdcage and tried to open it. But it seemed like an impossible task. \n\nSuddenly the girl had an idea. She grabbed her father's scissors and started to cut the strings that were holding the birdcage together. It was easier than she thought and the birdcage opened with ease. The bird flew away and the girl was very happy.Once there was a little bird who wanted to win a race. All",
+          "source": "tinystories",
+          "faiss_rank": 43,
+          "score": 0.5031679272651672,
+          "rerank_rank": 47,
+          "rerank_score": -10.132207870483398
+        },
+        {
+          "chunk_id": "9100",
+          "text": " wondered.\n\nThe bird heard the question and flew back down. It smiled at the dog and said, â€œItâ€™s simple. All I do is practice speed every day!â€ \n\nThe dog was inspired by the bird. He thought to himself, â€œMaybe if I practice speed every day, I can fly too!â€\n\nThe bird smiled. â€œIt wonâ€™t be easy, but I believe you can do it!â€\n\nThe dog loved the challenge and decided to give it a try. He practiced every day and finally, after a few weeks, he began to fly",
+          "source": "tinystories",
+          "faiss_rank": 30,
+          "score": 0.5201976299285889,
+          "rerank_rank": 48,
+          "rerank_score": -10.393678665161133
+        },
+        {
+          "chunk_id": "3125",
+          "text": " to the dog and said, \"I found a warm place for you to sleep. Follow me!\" The dog followed the fly to the small house. The dog was happy and stopped shivering.\n\nBut the house belonged to a big cat. The cat saw the dog and was not happy. The cat chased the dog and the fly out of the house. The dog and the fly ran away and were cold again. They did not find a warm place to sleep that night.Once upon a time, there was a furry cat named Kitty. Kitty lived in a small house with a little girl named Sue. Sue loved Kitty very much and played",
+          "source": "tinystories",
+          "faiss_rank": 41,
+          "score": 0.5059796571731567,
+          "rerank_rank": 49,
+          "rerank_score": -10.403730392456055
+        },
+        {
+          "chunk_id": "2677",
+          "text": " day she wanted to play with her ball. She ran outside to the garden with it. She was so happy. She ran and ran, kicking her ball further and further away from her.\n\nSuddenly she felt a sharp pain in her ankle. She started to cry. She wanted to go back inside but the pain was too strong. She sat down and cried.\n\nJust then, a yellow bird came to sit on a tree next to her. The bird started to chirp and flew around her. This made Julie stop crying. She looked up at the bird and smiled.\n\nThe bird flew away but Julie wasn't sad anymore. She slowly walked",
+          "source": "tinystories",
+          "faiss_rank": 31,
+          "score": 0.5184256434440613,
+          "rerank_rank": 50,
+          "rerank_score": -10.682608604431152
+        }
+      ]
+    }
+  ],
+  "retriever_load_seconds": 6.516208600020036,
+  "reranker_load_seconds": 4.177128900075331
+}

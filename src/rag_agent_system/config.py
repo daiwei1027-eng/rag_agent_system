@@ -12,6 +12,9 @@ from rag_agent_system.paths import project_root, resolve_project_path
 class PathConfig:
     faiss_index: Path
     chunks: Path
+    benchmark_queries: Path | None = None
+    benchmark_manifest: Path | None = None
+    absence_evidence: Path | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -151,6 +154,15 @@ def load_config(path: str | Path | None = None) -> AppConfig:
             chunks=resolve_project_path(
                 str(paths["chunks"]),
                 root,
+            ),
+            benchmark_queries=resolve_project_path(
+                str(paths.get("benchmark_queries", "data/benchmark/tinystories_queries.jsonl")), root,
+            ),
+            benchmark_manifest=resolve_project_path(
+                str(paths.get("benchmark_manifest", "data/benchmark/tinystories_benchmark_manifest.json")), root,
+            ),
+            absence_evidence=resolve_project_path(
+                str(paths.get("absence_evidence", "data/benchmark/tinystories_absence_evidence.json")), root,
             ),
         ),
         retrieval=RetrievalConfig(
