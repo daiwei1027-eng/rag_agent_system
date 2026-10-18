@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-10-18T10:31:23.691887+08:00",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "max_new_tokens": 256,
+  "do_sample": false,
+  "instruction": "请只回答问题所问的内容，不补充额外细节。回答中的事实必须由所引原文直接支持，并在句末注明对应的 chunk_id。若原文未说明所问信息，请明确回答“证据不足，原文未说明”。",
+  "provenance": {
+    "parent_run": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\evaluation\\stage2\\20261013-143642-156957-agent-stage2-story-boundaries-qwen128-overlap32-v2-reviewed",
+    "parent_files_sha256": {
+      "per_query.json": "e9d00bfe40024aa3a7812ec23c532a2271a3a4cd1395d1eac94dcb5b1a6eae51",
+      "config.json": "c67e1b274ce64b5c50ecbc02f6e05238871967eb5ba8e12cdaaa3398319947a9"
+    }
+  }
+}

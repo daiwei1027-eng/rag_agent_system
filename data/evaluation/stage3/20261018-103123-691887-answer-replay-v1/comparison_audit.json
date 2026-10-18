@@ -1,0 +1,445 @@
+{
+  "audit_created_at": "2026-10-18T10:35:14.241335+08:00",
+  "run_dir": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\evaluation\\stage3\\20261018-103123-691887-answer-replay-v1",
+  "source_files_sha256": {
+    "config.json": "175ba446a6c19e1f7c3c405456cabd7f5d4eef137c11c48908650c012b61319c",
+    "requests.json": "dc4715fcd0ccc7bb35648ab2074a196d8e0fc839ad6d8af08d0d59d2c81514b9",
+    "per_query.json": "4775827b546ac0af6e97ef3a109a49a8681afc5df8ee510a1ee90c289248e0ae"
+  },
+  "parent_file_fingerprints_verified": true,
+  "queries_and_absence_asset_fingerprints_verified": true,
+  "exactly_12_ordered_pairs": true,
+  "a_answers_identical_to_parent": {
+    "numerator": 12,
+    "denominator": 12
+  },
+  "groups": {
+    "A": {
+      "record_count": 12,
+      "status_counts": {
+        "completed": 12
+      },
+      "positive_evidence_returned": {
+        "numerator": 9,
+        "denominator": 9
+      },
+      "positive_citation_present": {
+        "numerator": 9,
+        "denominator": 9
+      },
+      "cited_rows_with_all_ids_in_returned_set": {
+        "numerator": 10,
+        "denominator": 10
+      },
+      "median_elapsed_seconds": 1.2868789499916602,
+      "total_elapsed_seconds": 15.438253200030886
+    },
+    "B": {
+      "record_count": 12,
+      "status_counts": {
+        "completed": 12
+      },
+      "positive_evidence_returned": {
+        "numerator": 9,
+        "denominator": 9
+      },
+      "positive_citation_present": {
+        "numerator": 7,
+        "denominator": 9
+      },
+      "cited_rows_with_all_ids_in_returned_set": {
+        "numerator": 7,
+        "denominator": 7
+      },
+      "median_elapsed_seconds": 1.2134011999878567,
+      "total_elapsed_seconds": 12.551232299942058
+    }
+  },
+  "records": [
+    {
+      "query_id": "q001",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000000_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q001",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000000_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q003",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000256_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q003",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000256_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q005",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000515_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q005",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000515_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q006",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000656_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q006",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000656_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q007",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_000741_chunk_003"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q007",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q015",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_001662_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q015",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q022",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_002365_chunk_001"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q022",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_002365_chunk_001"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q038",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_004500_chunk_001"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q038",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_004500_chunk_001"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q040",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_004763_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q040",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": true,
+      "negative_target_story_all_chunks_returned": null,
+      "citation_ids": [
+        "story_004763_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q041",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": null,
+      "negative_target_story_all_chunks_returned": true,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q041",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": null,
+      "negative_target_story_all_chunks_returned": true,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q042",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": null,
+      "negative_target_story_all_chunks_returned": true,
+      "citation_ids": [
+        "story_004500_chunk_000"
+      ],
+      "all_extracted_citation_ids_in_observation": true,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q042",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": null,
+      "negative_target_story_all_chunks_returned": true,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": null
+    },
+    {
+      "query_id": "q045",
+      "group": "A",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": null,
+      "negative_target_story_all_chunks_returned": true,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": true
+    },
+    {
+      "query_id": "q045",
+      "group": "B",
+      "request_matches_snapshot": true,
+      "parent_prefix_and_tools_preserved": true,
+      "trace_matches_request_and_answer": true,
+      "saved_search_observation_successful": true,
+      "saved_evidence_count": 5,
+      "relevant_evidence_returned": null,
+      "negative_target_story_all_chunks_returned": true,
+      "citation_ids": [],
+      "all_extracted_citation_ids_in_observation": null,
+      "answer_equals_parent": null
+    }
+  ],
+  "quality_review_status": "partially_user_confirmed",
+  "limitations": [
+    "This is fixed-evidence answer replay, not a new retrieval or full Agent evaluation.",
+    "Citation membership is mechanical; semantic support requires review.",
+    "This saved run cannot establish write-before-call ordering by itself; that behavior was checked in the prior stub acceptance.",
+    "Timing is a single local run with A before B, no recorded warmup, and different answer lengths; no stable speedup claim.",
+    "Runtime package versions and exact model weight snapshots were not saved in this run.",
+    "The same 12 cases have been used for prompt development; results are not independent test-set accuracy."
+  ],
+  "quality_review_confirmed_cases": [
+    {
+      "query_id": "q003",
+      "group": "B"
+    }
+  ]
+}

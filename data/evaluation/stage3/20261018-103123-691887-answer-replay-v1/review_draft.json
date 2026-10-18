@@ -1,0 +1,957 @@
+{
+  "review_status": "partially_user_confirmed",
+  "run_dir": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\evaluation\\stage3\\20261018-103123-691887-answer-replay-v1",
+  "source_files_sha256": {
+    "config.json": "175ba446a6c19e1f7c3c405456cabd7f5d4eef137c11c48908650c012b61319c",
+    "requests.json": "dc4715fcd0ccc7bb35648ab2074a196d8e0fc839ad6d8af08d0d59d2c81514b9",
+    "per_query.json": "4775827b546ac0af6e97ef3a109a49a8681afc5df8ee510a1ee90c289248e0ae"
+  },
+  "scoring_policy": "Existing core-answer, evidence, whole-sentence citation and specified-story refusal rules; no added format penalty.",
+  "boundary_case": {
+    "query_id": "q003",
+    "group": "B",
+    "status": "accepted_by_user",
+    "interpretation": "Accept as a contextual paraphrase of future separation.",
+    "confirmation_date": "2026-10-18",
+    "user_quote": "003可以接受"
+  },
+  "summary_provisional": {
+    "A": {
+      "positive_core_answer_correct": {
+        "known_pass": 8,
+        "pending": 0,
+        "maximum_if_pending_pass": 8,
+        "denominator": 9
+      },
+      "positive_core_evidence_supported": {
+        "known_pass": 8,
+        "pending": 0,
+        "maximum_if_pending_pass": 8,
+        "denominator": 9
+      },
+      "positive_citation_correct": {
+        "known_pass": 7,
+        "pending": 0,
+        "maximum_if_pending_pass": 7,
+        "denominator": 9
+      },
+      "negative_correct_refusal": {
+        "known_pass": 1,
+        "pending": 0,
+        "maximum_if_pending_pass": 1,
+        "denominator": 3
+      },
+      "negative_evidence_supported_refusal": {
+        "known_pass": 1,
+        "pending": 0,
+        "maximum_if_pending_pass": 1,
+        "denominator": 3
+      },
+      "strict_pass": {
+        "known_pass": 8,
+        "pending": 0,
+        "maximum_if_pending_pass": 8,
+        "denominator": 12
+      }
+    },
+    "B": {
+      "positive_core_answer_correct": {
+        "known_pass": 8,
+        "pending": 0,
+        "maximum_if_pending_pass": 8,
+        "denominator": 9
+      },
+      "positive_core_evidence_supported": {
+        "known_pass": 8,
+        "pending": 0,
+        "maximum_if_pending_pass": 8,
+        "denominator": 9
+      },
+      "positive_citation_correct": {
+        "known_pass": 6,
+        "pending": 0,
+        "maximum_if_pending_pass": 6,
+        "denominator": 9
+      },
+      "negative_correct_refusal": {
+        "known_pass": 2,
+        "pending": 0,
+        "maximum_if_pending_pass": 2,
+        "denominator": 3
+      },
+      "negative_evidence_supported_refusal": {
+        "known_pass": 2,
+        "pending": 0,
+        "maximum_if_pending_pass": 2,
+        "denominator": 3
+      },
+      "strict_pass": {
+        "known_pass": 8,
+        "pending": 0,
+        "maximum_if_pending_pass": 8,
+        "denominator": 12
+      }
+    }
+  },
+  "clear_strict_improvements": [
+    "q003",
+    "q042"
+  ],
+  "possible_additional_strict_improvement_pending_review": [],
+  "clear_strict_regressions": [
+    "q007",
+    "q015"
+  ],
+  "preliminary_adoption_recommendation": "Do not integrate this generic post-evidence instruction: strict pass totals tie at 8/12 under current review; q003/q042 improve while q007/q015 regress. Remaining 23 records still require batch confirmation.",
+  "records": [
+    {
+      "query_id": "q001",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Who found a needle in her room and wanted her mother to sew a button on her shirt?",
+      "expected_answer_for_review_only": "Lily",
+      "answerable": true,
+      "answer": "The person who found a needle in her room and wanted her mother to sew a button on her shirt was Lily. (依据：chunk_id=story_000000_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000000_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "Lily 及针、母亲缝纽扣的情节均由所引 story_000000_chunk_000 直接支持。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000000_chunk_000",
+          "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+          "score": 0.6038079261779785,
+          "source": "tinystories",
+          "rerank_score": 6.035392761230469,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q001",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Who found a needle in her room and wanted her mother to sew a button on her shirt?",
+      "expected_answer_for_review_only": "Lily",
+      "answerable": true,
+      "answer": "The story mentions that Lily found a needle in her room and wanted her mother to sew a button on her shirt. (依据：chunk_id=story_000000_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000000_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "措辞变化，Lily 与附带情节仍由同一引用完整支持。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000000_chunk_000",
+          "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+          "score": 0.6038079261779785,
+          "source": "tinystories",
+          "rerank_score": 6.035392761230469,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q003",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Why was Tim sad when Jack was going away to university?",
+      "expected_answer_for_review_only": "He was sad that they would be separated.",
+      "answerable": true,
+      "answer": "Tim was sad when Jack was going away to university because he missed him and did not want to lose their friendship. (依据：chunk_id=story_000256_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": false,
+      "core_evidence_supported": false,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000256_chunk_000"
+      ],
+      "citation_correct": false,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": false,
+      "reason": "将即将分离写为已经想念（missed him），超出原文时态；引用不能支持该细节。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000256_chunk_000",
+          "text": "Once upon a time there were two best friends named Tim and Jack. They had been friends since they were little and always looked out for each other.\n\nOne day, Jack got the exciting news that he had been accepted to the university of his dreams. He was so excited to get started on this new adventure. He told Tim the good news with glee, but Tim didn't seem as excited.\n\n\"Why aren't you happy for me?\" asked Jack.\n\nTim sighed and replied, \"I'm happy for you, but I'm also sad. We will be separated now that you're going away. I don't want that to happen!\"\n\n",
+          "score": 0.5662097334861755,
+          "source": "tinystories",
+          "rerank_score": 7.833478927612305,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_000256_chunk_001",
+          "text": " \"I'm happy for you, but I'm also sad. We will be separated now that you're going away. I don't want that to happen!\"\n\nJack smiled and said, \"That's okay, we will stay in touch and be best friends forever. Just because I'm going to the university, doesn't mean you and I can't still have a chat when we are feeling a bit messy.\" \n\nTim smiled, happy to know that his best friend would still be around even if they were separated. They gave each other a hug and promised to keep in touch. \n\nThe moral of the story is that even when apart,",
+          "score": 0.5942793488502502,
+          "source": "tinystories",
+          "rerank_score": 7.539187431335449,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q003",
+      "group": "B",
+      "review_status": "user_confirmed",
+      "question": "Why was Tim sad when Jack was going away to university?",
+      "expected_answer_for_review_only": "He was sad that they would be separated.",
+      "answerable": true,
+      "answer": "Tim was sad because Jack was going away to university, which made them unable to spend time together anymore. (依据：chunk_id=story_000256_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000256_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "用户于 2026-10-18 回复“003可以接受”，接受 B 回答为即将分离、不能一起相处的语境概括；核心答案、证据支持、引用及严格判定通过。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000256_chunk_000",
+          "text": "Once upon a time there were two best friends named Tim and Jack. They had been friends since they were little and always looked out for each other.\n\nOne day, Jack got the exciting news that he had been accepted to the university of his dreams. He was so excited to get started on this new adventure. He told Tim the good news with glee, but Tim didn't seem as excited.\n\n\"Why aren't you happy for me?\" asked Jack.\n\nTim sighed and replied, \"I'm happy for you, but I'm also sad. We will be separated now that you're going away. I don't want that to happen!\"\n\n",
+          "score": 0.5662097334861755,
+          "source": "tinystories",
+          "rerank_score": 7.833478927612305,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_000256_chunk_001",
+          "text": " \"I'm happy for you, but I'm also sad. We will be separated now that you're going away. I don't want that to happen!\"\n\nJack smiled and said, \"That's okay, we will stay in touch and be best friends forever. Just because I'm going to the university, doesn't mean you and I can't still have a chat when we are feeling a bit messy.\" \n\nTim smiled, happy to know that his best friend would still be around even if they were separated. They gave each other a hug and promised to keep in touch. \n\nThe moral of the story is that even when apart,",
+          "score": 0.5942793488502502,
+          "source": "tinystories",
+          "rerank_score": 7.539187431335449,
+          "rerank_rank": 2
+        }
+      ],
+      "user_confirmation": {
+        "date": "2026-10-18",
+        "quote": "003可以接受",
+        "scope": "q003 group B only"
+      }
+    },
+    {
+      "query_id": "q005",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What did Lucy receive from her mother in exchange for helping clean the house?",
+      "expected_answer_for_review_only": "A white hut to play with.",
+      "answerable": true,
+      "answer": "Lucy received a white hut from her mother in exchange for helping clean the house. (依据：chunk_id=story_000515_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000515_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "白色小屋正确，目标文段明确说明以帮助打扫交换。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000515_chunk_000",
+          "text": "Once there was a little girl. Her name was Lucy. She wanted something new to play with so she asked her Mom. Her Mom said, \"I have an offer for you!\" Lucy was very excited. Her Mom said, \"If you help me clean the house, I'll give you a white hut to play with.\" So Lucy cleaned the house and sure enough, her Mom had a white hut waiting for her when she was done. \n\nLucy was very happy. She dragged the hut into the backyard and played in it all day. She used it as a magical castle and pretended she was a princess. She called it her",
+          "score": 0.5555814504623413,
+          "source": "tinystories",
+          "rerank_score": 5.177606105804443,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q005",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What did Lucy receive from her mother in exchange for helping clean the house?",
+      "expected_answer_for_review_only": "A white hut to play with.",
+      "answerable": true,
+      "answer": "Lucy received a white hut from her mother in exchange for helping clean the house. (依据：chunk_id=story_000515_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000515_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "与 A 完全相同，答案及引用通过。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000515_chunk_000",
+          "text": "Once there was a little girl. Her name was Lucy. She wanted something new to play with so she asked her Mom. Her Mom said, \"I have an offer for you!\" Lucy was very excited. Her Mom said, \"If you help me clean the house, I'll give you a white hut to play with.\" So Lucy cleaned the house and sure enough, her Mom had a white hut waiting for her when she was done. \n\nLucy was very happy. She dragged the hut into the backyard and played in it all day. She used it as a magical castle and pretended she was a princess. She called it her",
+          "score": 0.5555814504623413,
+          "source": "tinystories",
+          "rerank_score": 5.177606105804443,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q006",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What pictures decorated the special card Lily made for her mother, alongside the words I love you?",
+      "expected_answer_for_review_only": "Hearts and flowers.",
+      "answerable": true,
+      "answer": "The pictures that decorated the special card Lily made for her mother were hearts and flowers, along with the words \"I love you\". (依据：chunk_id=story_000656_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000656_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "爱心、花朵和 I love you 均在所引文段中。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000656_chunk_000",
+          "text": "Once upon a time, there was a girl named Lily. She loved to draw pictures for her family and friends. One day, Lily made a special card for her mom. It had hearts and flowers on it, and said \"I love you\" in big letters.\n\nWhen Lily gave the card to her mom, she was very polite and said \"thank you, sweetie\". Lily felt happy because her mom liked the card. She loved making her mom happy.\n\nFrom that day on, Lily made cards for everyone she loved. She would draw pictures and write nice words on them. And everyone was always polite and said thank you. Lily",
+          "score": 0.6076511144638062,
+          "source": "tinystories",
+          "rerank_score": 5.423396587371826,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q006",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What pictures decorated the special card Lily made for her mother, alongside the words I love you?",
+      "expected_answer_for_review_only": "Hearts and flowers.",
+      "answerable": true,
+      "answer": "The pictures on Lily's special card for her mother were hearts and flowers, along with the words \"I love you\". (依据：chunk_id=story_000656_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000656_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "等义改写，全部所述事实仍在同一文段中。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000656_chunk_000",
+          "text": "Once upon a time, there was a girl named Lily. She loved to draw pictures for her family and friends. One day, Lily made a special card for her mom. It had hearts and flowers on it, and said \"I love you\" in big letters.\n\nWhen Lily gave the card to her mom, she was very polite and said \"thank you, sweetie\". Lily felt happy because her mom liked the card. She loved making her mom happy.\n\nFrom that day on, Lily made cards for everyone she loved. She would draw pictures and write nice words on them. And everyone was always polite and said thank you. Lily",
+          "score": 0.6076511144638062,
+          "source": "tinystories",
+          "rerank_score": 5.423396587371826,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q007",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Who slid down together and hugged after Max ran away from the slide?",
+      "expected_answer_for_review_only": "Ben and Lily.",
+      "answerable": true,
+      "answer": "The two children who slid down together and hugged after Max ran away from the slide were Ben and Lily. (依据：chunk_id=story_000741_chunk_003)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_000741_chunk_003"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "所引 story_000741_chunk_003 明确写出 Max 跑开后 Ben 与 Lily 一起滑下并拥抱。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000741_chunk_003",
+          "text": ". You are envious of everything.\"\n\nMax did not know what to say. He felt ashamed and small. He ran away from the slide. Ben and Lily smiled at each other. They slid down together and hugged. They were happy and proud. Their moms saw them and clapped. They had the best skin. It was the skin of friends.",
+          "score": 0.5478249788284302,
+          "source": "tinystories",
+          "rerank_score": 8.80303955078125,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q007",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Who slid down together and hugged after Max ran away from the slide?",
+      "expected_answer_for_review_only": "Ben and Lily.",
+      "answerable": true,
+      "answer": "证据不足，原文未说明。",
+      "status": "completed",
+      "core_answer_correct": false,
+      "core_evidence_supported": false,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": false,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": true,
+      "strict_pass": false,
+      "reason": "目标证据已返回且明确回答问题，却说证据不足；属于可回答题错误拒答，缺引用。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000741_chunk_003",
+          "text": ". You are envious of everything.\"\n\nMax did not know what to say. He felt ashamed and small. He ran away from the slide. Ben and Lily smiled at each other. They slid down together and hugged. They were happy and proud. Their moms saw them and clapped. They had the best skin. It was the skin of friends.",
+          "score": 0.5478249788284302,
+          "source": "tinystories",
+          "rerank_score": 8.80303955078125,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q015",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "How old was the youngest child in the wealthy family who also wanted to go to university?",
+      "expected_answer_for_review_only": "Three years old.",
+      "answerable": true,
+      "answer": "The youngest child in the wealthy family who also wanted to go to university was three years old. (依据：chunk_id=story_001662_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_001662_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "三岁正确，所引文段也包含富裕家庭、最小孩子和想上大学的条件。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_001662_chunk_000",
+          "text": "Once there was a wealthy family with three kids. Two of them were in university, but the youngest one was only three. He wanted to go to university too!\n\nOne day, the three university students decided to take the youngest one with them on a fun day out. As they drove to the university, the little kid cheered with joy. \n\nWhen they arrived, the little kid wanted to explore everywhere. He ran around and screamed with excitement!\n\nThe university students showed him all the places and got him some ice cream. He was having so much fun!\n\nAt the end of the day, the family drove home and the little kid felt so",
+          "score": 0.31369316577911377,
+          "source": "tinystories",
+          "rerank_score": 7.9243316650390625,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q015",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "How old was the youngest child in the wealthy family who also wanted to go to university?",
+      "expected_answer_for_review_only": "Three years old.",
+      "answerable": true,
+      "answer": "Youngest child: 3 years old.",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": false,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": false,
+      "reason": "三岁正确，返回原文直接支持，但答案没有 chunk_id；核心答案通过，引用及严格判定不通过。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_001662_chunk_000",
+          "text": "Once there was a wealthy family with three kids. Two of them were in university, but the youngest one was only three. He wanted to go to university too!\n\nOne day, the three university students decided to take the youngest one with them on a fun day out. As they drove to the university, the little kid cheered with joy. \n\nWhen they arrived, the little kid wanted to explore everywhere. He ran around and screamed with excitement!\n\nThe university students showed him all the places and got him some ice cream. He was having so much fun!\n\nAt the end of the day, the family drove home and the little kid felt so",
+          "score": 0.31369316577911377,
+          "source": "tinystories",
+          "rerank_score": 7.9243316650390625,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q022",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What instrument did Timmy and Billy bang on when they played music together every day?",
+      "expected_answer_for_review_only": "A drum.",
+      "answerable": true,
+      "answer": "The instrument that Timmy and Billy banged on when they played music together every day was the drum. (依据：chunk_id=story_002365_chunk_001)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_002365_chunk_001"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "鼓正确，所引文段明确包含 Timmy、Billy 和每天一起敲鼓。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_002365_chunk_001",
+          "text": " started to bang on the drum. Timmy laughed and said, \"You're really good at playing the drum, Billy!\" Billy smiled and said, \"Thanks, Timmy. I like playing with your drum.\" \n\nFrom that day on, Timmy and Billy played together every day. They would bang on the drum and laugh together. They were the best of friends and they loved playing music together. The end.",
+          "score": 0.6658266186714172,
+          "source": "tinystories",
+          "rerank_score": 7.977778434753418,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q022",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What instrument did Timmy and Billy bang on when they played music together every day?",
+      "expected_answer_for_review_only": "A drum.",
+      "answerable": true,
+      "answer": "Timmy and Billy banged on the drum when they played music together every day. (依据：chunk_id=story_002365_chunk_001)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_002365_chunk_001"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "等义改写，答案与引用通过。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_002365_chunk_001",
+          "text": " started to bang on the drum. Timmy laughed and said, \"You're really good at playing the drum, Billy!\" Billy smiled and said, \"Thanks, Timmy. I like playing with your drum.\" \n\nFrom that day on, Timmy and Billy played together every day. They would bang on the drum and laugh together. They were the best of friends and they loved playing music together. The end.",
+          "score": 0.6658266186714172,
+          "source": "tinystories",
+          "rerank_score": 7.977778434753418,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q038",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+      "expected_answer_for_review_only": "A wise owl examined its wing and gave it medicine.",
+      "answerable": true,
+      "answer": "The evidence supports that the cat took the bird to a wise owl who knew how to heal small birds, and the owl examined the bird's wing and gave it some medicine. (依据：chunk_id=story_004500_chunk_001)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_004500_chunk_001"
+      ],
+      "citation_correct": false,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": false,
+      "reason": "猫头鹰核心答案有证据支持。所引 chunk_001 从 to a wise owl 开始，未完整支持附带的猫带鸟求助动作；沿用用户已确认的整句引用边界，严格不通过。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_004500_chunk_001",
+          "text": " to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird's wing felt better and it could fly again. The bird was happy and grateful to the cat and the owl. From that day on, the bird sang even more beautifully than before.",
+          "score": 0.5980703830718994,
+          "source": "tinystories",
+          "rerank_score": 5.4560956954956055,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_004500_chunk_000",
+          "text": "Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird and wanted to help. The cat took the bird to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird",
+          "score": 0.6463643312454224,
+          "source": "tinystories",
+          "rerank_score": 3.945209503173828,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q038",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+      "expected_answer_for_review_only": "A wise owl examined its wing and gave it medicine.",
+      "answerable": true,
+      "answer": "The bird was examined by a wise owl and given medicine after the cat took it to another animal for help. (依据：chunk_id=story_004500_chunk_001)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_004500_chunk_001"
+      ],
+      "citation_correct": false,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": false,
+      "reason": "仍将猫带鸟求助写进答案，但只引 chunk_001；该动作需要 chunk_000 的主体与谓语，引用问题未修复。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_004500_chunk_001",
+          "text": " to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird's wing felt better and it could fly again. The bird was happy and grateful to the cat and the owl. From that day on, the bird sang even more beautifully than before.",
+          "score": 0.5980703830718994,
+          "source": "tinystories",
+          "rerank_score": 5.4560956954956055,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_004500_chunk_000",
+          "text": "Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird and wanted to help. The cat took the bird to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird",
+          "score": 0.6463643312454224,
+          "source": "tinystories",
+          "rerank_score": 3.945209503173828,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q040",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What caught Sarah's attention while she was walking through the park with her mother?",
+      "expected_answer_for_review_only": "A big tree covered with bright red cherries.",
+      "answerable": true,
+      "answer": "The cherry caught Sarah's attention while she was walking through the park with her mother. (依据：chunk_id=story_004763_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_004763_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "沿用用户已确认边界，接受 cherry 为树上樱桃的简略表达；引用支持，严格通过。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_004763_chunk_000",
+          "text": "One day there was a young girl named Sarah. She was walking through the park with her mum when she saw something that made her stop in her tracks. In the distance, there was a big tree with lots of bright red cherries on it. She pulled on her mothers hand and pointed at the tree, saying that she wanted to get one. \n\nHer Mother smiled and told her she could, but that they would need to go home first to get a basket. After picking up the basket from their house, they walked back to the park. \n\nSarah was very happy. She raced to the tree and stretched her hands up to pick",
+          "score": 0.6073960065841675,
+          "source": "tinystories",
+          "rerank_score": 6.405282974243164,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q040",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "What caught Sarah's attention while she was walking through the park with her mother?",
+      "expected_answer_for_review_only": "A big tree covered with bright red cherries.",
+      "answerable": true,
+      "answer": "Evidence: Sarah was walking through the park with her mother.\nQuestion: What caught Sarah's attention while she was walking through the park with her mother?\nAnswer: A big tree with bright red cherries caught Sarah's attention. (依据：chunk_id=story_004763_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": true,
+      "core_evidence_supported": true,
+      "citation_present": true,
+      "citation_ids": [
+        "story_004763_chunk_000"
+      ],
+      "citation_correct": true,
+      "correct_refusal": null,
+      "evidence_supported_refusal": null,
+      "wrong_refusal_on_answerable_case": false,
+      "strict_pass": true,
+      "reason": "明确说大树和鲜红樱桃，内容更完整且引用支持。额外列出 Evidence/Question/Answer，不符合简短一句话目标，但不新增格式惩罚改变已有严格评分规则。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_004763_chunk_000",
+          "text": "One day there was a young girl named Sarah. She was walking through the park with her mum when she saw something that made her stop in her tracks. In the distance, there was a big tree with lots of bright red cherries on it. She pulled on her mothers hand and pointed at the tree, saying that she wanted to get one. \n\nHer Mother smiled and told her she could, but that they would need to go home first to get a basket. After picking up the basket from their house, they walked back to the park. \n\nSarah was very happy. She raced to the tree and stretched her hands up to pick",
+          "score": 0.6073960065841675,
+          "source": "tinystories",
+          "rerank_score": 6.405282974243164,
+          "rerank_rank": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q041",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "In the story where Lily finds a needle and her mother sews a button on her shirt, what is the exact manufacturer and model number of the needle?",
+      "expected_answer_for_review_only": "The story does not specify the manufacturer or model number of the needle.",
+      "answerable": false,
+      "answer": "The needle mentioned in the story is not explicitly stated to have a specific manufacturer or model number. Therefore, the answer is: Evidence insufficient.",
+      "status": "completed",
+      "core_answer_correct": null,
+      "core_evidence_supported": null,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": null,
+      "correct_refusal": true,
+      "evidence_supported_refusal": true,
+      "wrong_refusal_on_answerable_case": null,
+      "strict_pass": true,
+      "reason": "明确表示厂家型号未被说明并拒答；指定故事两块均已返回，缺失证据记录也支持该结论。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000000_chunk_000",
+          "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+          "score": 0.712099552154541,
+          "source": "tinystories",
+          "rerank_score": 9.20280933380127,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_000000_chunk_001",
+          "text": " shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other. After they finished, Lily thanked her mom for sharing the needle and fixing her shirt. They both felt happy because they had shared and worked together.",
+          "score": 0.7402734756469727,
+          "source": "tinystories",
+          "rerank_score": 7.662482261657715,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q041",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "In the story where Lily finds a needle and her mother sews a button on her shirt, what is the exact manufacturer and model number of the needle?",
+      "expected_answer_for_review_only": "The story does not specify the manufacturer or model number of the needle.",
+      "answerable": false,
+      "answer": "证据不足，原文未说明。",
+      "status": "completed",
+      "core_answer_correct": null,
+      "core_evidence_supported": null,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": null,
+      "correct_refusal": true,
+      "evidence_supported_refusal": true,
+      "wrong_refusal_on_answerable_case": null,
+      "strict_pass": true,
+      "reason": "正确拒答，指定故事两块均返回；负例不要求引用空标注集合。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_000000_chunk_000",
+          "text": "One day, a little girl named Lily found a needle in her room. She knew it was difficult to play with it because it was sharp. Lily wanted to share the needle with her mom, so she could sew a button on her shirt.\n\nLily went to her mom and said, \"Mom, I found this needle. Can you share it with me and sew my shirt?\" Her mom smiled and said, \"Yes, Lily, we can share the needle and fix your shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other",
+          "score": 0.712099552154541,
+          "source": "tinystories",
+          "rerank_score": 9.20280933380127,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_000000_chunk_001",
+          "text": " shirt.\"\n\nTogether, they shared the needle and sewed the button on Lily's shirt. It was not difficult for them because they were sharing and helping each other. After they finished, Lily thanked her mom for sharing the needle and fixing her shirt. They both felt happy because they had shared and worked together.",
+          "score": 0.7402734756469727,
+          "source": "tinystories",
+          "rerank_score": 7.662482261657715,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q042",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "In the story where a cat takes an injured bird to a wise owl, what is the exact medicine name and dose that the owl gives the bird?",
+      "expected_answer_for_review_only": "The story says the owl gives the bird some medicine, but does not specify its name or dose.",
+      "answerable": false,
+      "answer": "The owl gave the bird a special medicine called \"Laser\" which has a dose of 1 unit. (依据：chunk_id=story_004500_chunk_000)",
+      "status": "completed",
+      "core_answer_correct": null,
+      "core_evidence_supported": null,
+      "citation_present": true,
+      "citation_ids": [
+        "story_004500_chunk_000"
+      ],
+      "citation_correct": null,
+      "correct_refusal": false,
+      "evidence_supported_refusal": false,
+      "wrong_refusal_on_answerable_case": null,
+      "strict_pass": false,
+      "reason": "故事仅写 some medicine。Laser 来自其他返回故事中修理物品的激光，1 unit 无原文依据；编造药名及剂量。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_004500_chunk_000",
+          "text": "Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird and wanted to help. The cat took the bird to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird",
+          "score": 0.6943609714508057,
+          "source": "tinystories",
+          "rerank_score": 6.473136901855469,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_004500_chunk_001",
+          "text": " to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird's wing felt better and it could fly again. The bird was happy and grateful to the cat and the owl. From that day on, the bird sang even more beautifully than before.",
+          "score": 0.652984619140625,
+          "source": "tinystories",
+          "rerank_score": 6.282026290893555,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q042",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "In the story where a cat takes an injured bird to a wise owl, what is the exact medicine name and dose that the owl gives the bird?",
+      "expected_answer_for_review_only": "The story says the owl gives the bird some medicine, but does not specify its name or dose.",
+      "answerable": false,
+      "answer": "证据不足，原文未说明。",
+      "status": "completed",
+      "core_answer_correct": null,
+      "core_evidence_supported": null,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": null,
+      "correct_refusal": true,
+      "evidence_supported_refusal": true,
+      "wrong_refusal_on_answerable_case": null,
+      "strict_pass": true,
+      "reason": "改为正确拒答，指定鸟/猫/猫头鹰故事两块均已返回，完整故事未说明药名剂量。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_004500_chunk_000",
+          "text": "Once upon a time, there was a small bird who loved to sing. One day, the bird fell down from the tree and felt a lot of pain in its wing. The bird tried to fly, but it couldn't. It felt sad and scared.\n\nThe bird saw a kind cat who came to question it. The bird told the cat about its pain and how it couldn't fly. The cat felt sorry for the bird and wanted to help. The cat took the bird to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird",
+          "score": 0.6943609714508057,
+          "source": "tinystories",
+          "rerank_score": 6.473136901855469,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_004500_chunk_001",
+          "text": " to a wise owl who knew how to heal small birds.\n\nThe owl examined the bird's wing and gave it some medicine. After a few days, the bird's wing felt better and it could fly again. The bird was happy and grateful to the cat and the owl. From that day on, the bird sang even more beautifully than before.",
+          "score": 0.652984619140625,
+          "source": "tinystories",
+          "rerank_score": 6.282026290893555,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q045",
+      "group": "A",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "In the story where Jack asks Jill to help him make something special using clay, how many grams of clay do they use?",
+      "expected_answer_for_review_only": "The story does not specify how many grams of clay they use.",
+      "answerable": false,
+      "answer": "他们使用了大约 100 克的 clay。",
+      "status": "completed",
+      "core_answer_correct": null,
+      "core_evidence_supported": null,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": null,
+      "correct_refusal": false,
+      "evidence_supported_refusal": false,
+      "wrong_refusal_on_answerable_case": null,
+      "strict_pass": false,
+      "reason": "指定 Jack/Jill 黏土故事及完整缺失证据均没有克数，约 100 克属于编造。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_001097_chunk_000",
+          "text": "Once upon a time, there were two friends: Jack and Jill. Jack had a brilliant idea. He wanted to make something special using clay.\n\nHe asked Jill for help to match the pieces of clay together. She was happy to join in and the two began to make something exciting.\n\nWith Jill's help, shapes and designs began to appear from the clay. Hours passed, and eventually the friends had made something really fantastic. It was a beautiful clay castle.\n\nThey stood back to admire their work. Jill said it was brilliant, and Jack was very proud.\n\nThe castle was the perfect match for their creativity! They both knew it was something",
+          "score": 0.6373075246810913,
+          "source": "tinystories",
+          "rerank_score": 9.847404479980469,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_001097_chunk_001",
+          "text": " admire their work. Jill said it was brilliant, and Jack was very proud.\n\nThe castle was the perfect match for their creativity! They both knew it was something special. The end.",
+          "score": 0.4991679787635803,
+          "source": "tinystories",
+          "rerank_score": 2.754147529602051,
+          "rerank_rank": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q045",
+      "group": "B",
+      "review_status": "assistant_initial_review_pending_user_confirmation",
+      "question": "In the story where Jack asks Jill to help him make something special using clay, how many grams of clay do they use?",
+      "expected_answer_for_review_only": "The story does not specify how many grams of clay they use.",
+      "answerable": false,
+      "answer": "他们使用了大约 100 克的 clay。",
+      "status": "completed",
+      "core_answer_correct": null,
+      "core_evidence_supported": null,
+      "citation_present": false,
+      "citation_ids": [],
+      "citation_correct": null,
+      "correct_refusal": false,
+      "evidence_supported_refusal": false,
+      "wrong_refusal_on_answerable_case": null,
+      "strict_pass": false,
+      "reason": "与 A 完全相同，仍编造约 100 克；约束没有修复该题。",
+      "evidence_for_review_only": [
+        {
+          "chunk_id": "story_001097_chunk_000",
+          "text": "Once upon a time, there were two friends: Jack and Jill. Jack had a brilliant idea. He wanted to make something special using clay.\n\nHe asked Jill for help to match the pieces of clay together. She was happy to join in and the two began to make something exciting.\n\nWith Jill's help, shapes and designs began to appear from the clay. Hours passed, and eventually the friends had made something really fantastic. It was a beautiful clay castle.\n\nThey stood back to admire their work. Jill said it was brilliant, and Jack was very proud.\n\nThe castle was the perfect match for their creativity! They both knew it was something",
+          "score": 0.6373075246810913,
+          "source": "tinystories",
+          "rerank_score": 9.847404479980469,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "story_001097_chunk_001",
+          "text": " admire their work. Jill said it was brilliant, and Jack was very proud.\n\nThe castle was the perfect match for their creativity! They both knew it was something special. The end.",
+          "score": 0.4991679787635803,
+          "source": "tinystories",
+          "rerank_score": 2.754147529602051,
+          "rerank_rank": 2
+        }
+      ]
+    }
+  ],
+  "review_updated_at": "2026-10-18T10:37:29.471495+08:00",
+  "confirmation_scope": {
+    "user_confirmed_cases": [
+      {
+        "query_id": "q003",
+        "group": "B"
+      }
+    ],
+    "other_record_count_pending_batch_confirmation": 23
+  }
+}
