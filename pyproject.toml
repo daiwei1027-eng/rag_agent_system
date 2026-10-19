@@ -5,22 +5,28 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "rag-agent-system"
 version = "0.1.0"
-description = "An engineering-first RAG baseline built after the Hugging Face notebook playground."
+description = "A local RAG Agent with tool calling, retrieval evaluation, and a FastAPI service."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
-  "faiss-cpu>=1.8,<2",
-  "numpy>=1.26,<3",
-  "pyyaml>=6.0,<7",
-  "sentence-transformers>=3.0,<4",
-  "torch>=2.2",
-  "transformers>=4.45,<5",
+  "faiss-cpu>=1.15.1,<2",
+  "numpy>=2.4.6,<3",
+  "pyyaml>=6.0.3,<7",
+  "sentence-transformers>=6.1,<7",
+  "torch>=2.11,<3",
+  "transformers>=5.17,<6",
 ]
 
 [project.optional-dependencies]
+service = [
+  "fastapi>=0.143.3,<0.144",
+  "uvicorn>=0.54,<0.55",
+  "pydantic>=2.14.1,<3",
+]
 dev = [
   "pytest>=8.0,<9",
   "ruff>=0.7,<1",
+  "httpx>=0.28,<1",
 ]
 
 [project.scripts]
@@ -35,7 +41,7 @@ addopts = "-ra"
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

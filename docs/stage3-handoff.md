@@ -167,6 +167,18 @@ python scripts/eval_agent.py --config configs/chunking_v2.yaml
 
 同日真实运行已完成，目录为 data/evaluation/stage3/20261018-103123-691887-answer-replay-v1。两组各 12/12 completed，父文件指纹与固定证据 A/B 变量核验通过；A 的 12 个答案也与父运行逐字一致。用户随后回复“003可以接受”，确认本次 B 组 q003 通过；包含此确认的当前初评 A/B 严格通过均为 8/12。q003/q042 改善，但 q007 错误拒答、q015 漏引用，q038 引用及 q045 重量幻觉未修复。其余 23 条仍待用户整组确认，未生成确认版 manual_review.json；当前无总体严格通过收益证据，建议不直接采用该后置指令。具体逐题依据见运行目录新增 review.md、review_draft.json、comparison_audit.json 及 [最新回放学习日志](C:/Users/admin/PycharmProjects/Deeplearning_Study/rag_agent_system/docs/learning-log/2026-10-14.md) 末节。
 
-## 给新对话的可复制指令
+## 历史接续指令（已由文末最新状态取代）
 
 请按 docs/stage3-handoff.md 接续。先读 AGENTS.md、最新学习日志、Agent 复核文档与交接中的关键代码。阶段二基线已完成，新分段两组真实运行已核验。无重排 q003 已确认通过，有重排 q038 已确认核心答案通过但引用及严格判定不通过，有重排 q040 已确认通过；其余 21 条初评尚未明确确认，不重复询问三个已确认边界，不发布整组最终分数。下一步只推进阶段三任务 1：固定已有 observation 的回答阶段对照，明确它与修改首次 PROMPT_TEMPLATE 后重跑 Agent 的区别。请按“原理 → 核心实现 → 一组验收 → 复盘”推进，核心设计与实现先让用户动手；用户明确要求代做时执行。不要再从头扩提示、换模型、扩语料或搭服务框架。新实验保存独立目录，每次回答给明确下一步，Git 提交和推送由用户完成。
+
+## 最新状态：2026-10-19 最小服务收尾
+
+用户已完成共享 Agent 装配、FastAPI 生命周期、输入校验、串行锁、模型异常返回、请求日志与 Dockerfile。
+依赖声明、版本约束、requirements、Git / Docker 忽略规则已统一，安装元数据刷新后 pip check 通过。
+用户已构建并启动 Linux CPU 镜像，从宿主机 8001 调用真实检索问答，回答 Lily 并给出支持它的 chunk_id。
+容器健康检查和三种无效输入检查通过；README 已更新，具体范围见
+[服务验收记录](service-acceptance-2026-10-19.md) 和 [运行环境说明](runtime-environment.md)。
+
+当前已完成约定的最小服务化、容器演示与说明文档范围。继续协作时先读上述最新记录，
+不要按历史指令重新布置回放实现、提示试验或服务搭建。阶段三其余 23 条人工评分仍待确认，
+这是一项已披露的结论局限，不将初评发布成最终分数。Git 提交和推送由用户完成。

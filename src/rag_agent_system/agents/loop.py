@@ -59,12 +59,12 @@ class Agent:
         for step in range(self.max_steps):
             try:
                 response = self.llm.chat(messages, schemas)
-            except ValueError as e:
+            except (ValueError, OSError, RuntimeError) as e:
                 return {
                     "status": "model_error",
                     "answer": "",
                     "trace": messages,
-                    "error": str(e),
+                    "error": f"{type(e).__name__}: {e}",
                 }
             if not isinstance(response, dict):
                 return {

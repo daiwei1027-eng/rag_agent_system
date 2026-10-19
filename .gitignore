@@ -7,6 +7,7 @@ __pycache__/
 
 # Environments and secrets
 .venv/
+.venv-*/
 venv/
 .env
 .env.*
@@ -22,18 +23,33 @@ Thumbs.db
 build/
 dist/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
 
 # Local model/cache artifacts
 .cache/
 models/
+model_store/
 
-# Generated retrieval artifacts (keep placeholders only)
-data/*.faiss
-data/chunks.json
-data/*_chunks.json
-data/*.bak
-data/*.tmp
-data/*.npy
+# Newly generated bulk data, including nested build directories.
+# Existing tracked bundles stay tracked; see data/README.md.
+/data/**/*.faiss
+/data/**/chunks.json
+/data/**/*_chunks.json
+/data/**/source_stories.json
+/data/**/*.bak
+/data/**/*.tmp
+/data/**/*.npy
+/data/**/*.npz
+/data/**/*.parquet
+/data/raw/
+/data/local/
+/data/runtime/
+
+# Keep benchmark labels, manifests and experiment evidence eligible for Git.
+# Runtime logs, unlike evaluation records, are local outputs.
+/logs/
+*.log
 .ipynb_checkpoints/
 

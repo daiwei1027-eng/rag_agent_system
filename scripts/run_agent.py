@@ -1,7 +1,7 @@
 """Run and optionally record representative local Qwen Agent scenarios."""
 
 from __future__ import annotations
-
+from rag_agent_system.agents.factory import build_agent
 import argparse
 import json
 import sys
@@ -122,41 +122,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.all and args.record_dir is None:
         parser.error("--all requires --record-dir")
-
     config = load_config(args.config)
-    reranker = None
-    if config.reranker.enabled:
-        reranker = CrossEncoderReranker(
-            config.reranker.model_name,
-            max_length=config.reranker.max_length,
-            batch_size=config.reranker.batch_size,
-        )
-    retriever = FaissRetriever(
-        index_path=config.paths.faiss_index,
-        chunks_path=config.paths.chunks,
-        embedding_model=config.retrieval.embedding_model,
-        normalize_embeddings=config.retrieval.normalize_embeddings,
-    )
-
-    def search_handler(query: str, top_k: int) -> list[dict[str, Any]]:
-        return search_documents(
-            query,
-            top_k,
-            retriever=retriever,
-            reranker=reranker,
-            candidate_top_k=config.retrieval.top_k,
-        )
-
-    registry = ToolRegistry()
-    registry.register(SEARCH_DOCUMENTS_SCHEMA, search_handler)
-    registry.register(TIME_SCHEMA, get_current_time)
-    registry.register(CALCULATOR_SCHEMA, calculator)
-    client = LocalLLMClient(
-        config.agent.model_name,
-        max_new_tokens=config.agent.max_new_tokens,
-    )
-    agent = Agent(client, registry)
-
+    agent = build_agent(config)
+    registry = agent.registry
     record_dir = args.record_dir
     if record_dir is not None and not record_dir.is_absolute():
         record_dir = project_root() / record_dir

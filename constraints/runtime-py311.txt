@@ -1,0 +1,15 @@
+# Direct runtime versions observed in the working Windows / Python 3.11.16 environment.
+# See docs/runtime-environment.md for provenance, installation and limitations.
+# Transitive dependencies and model weights are not locked by this file.
+faiss-cpu==1.15.1
+numpy==2.4.6
+PyYAML==6.0.3
+sentence-transformers==6.1.0
+transformers==5.17.0
+fastapi==0.143.3
+uvicorn==0.54.0
+pydantic==2.14.1
+
+# Observed wheel: 2.11.0+cu128. Match the release here; choose the CPU/CUDA
+# wheel source separately for the target platform before installing the project.
+torch==2.11.0
