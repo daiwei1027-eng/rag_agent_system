@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "draft",
+  "metadata_provenance": "Company identity/CIK, form, fiscal year and complete period end inspected in local Inline XBRL; accession, report period and primary document matched against SEC filing detail pages on 2026-10-20. See source-verification.json. Local browser-saved bytes were not compared with official response bytes.",
+  "path_base": "manifest_directory",
+  "documents": [
+    {
+      "document_id": "msft-2026-10k",
+      "company": "Microsoft",
+      "ticker": "MSFT",
+      "fiscal_year": 2026,
+      "period_end": "2026-06-30",
+      "form_type": "10-K",
+      "source_file": "raw/microsoft/msft-2026-10k.html",
+      "size_bytes": 8591463,
+      "sha256": "696cd33fc1d32b6ae6f5d2f40d776cc902dc3e04ec557f4fb1c6db8e4a3d7e34",
+      "accession_number": "0001193125-26-323660",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+    },
+    {
+      "document_id": "msft-2025-10k",
+      "company": "Microsoft",
+      "ticker": "MSFT",
+      "fiscal_year": 2025,
+      "period_end": "2025-06-30",
+      "form_type": "10-K",
+      "source_file": "raw/microsoft/msft-2025-10k.html",
+      "size_bytes": 8163548,
+      "sha256": "1ece2a2aa888784aefb5199a3ad6c84794f0fa4764be691486540034bef2fe42",
+      "accession_number": "0000950170-25-100235",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm"
+    },
+    {
+      "document_id": "nvda-2026-10k",
+      "company": "NVIDIA",
+      "ticker": "NVDA",
+      "fiscal_year": 2026,
+      "period_end": "2026-01-25",
+      "form_type": "10-K",
+      "source_file": "raw/nvidia/nvda-2026-10k.html",
+      "size_bytes": 2003528,
+      "sha256": "507bee6d0f0ac13a0606e4b9ff93c7456eb24479089b9a012875e50b8ae04fdd",
+      "accession_number": "0001045810-26-000021",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+    },
+    {
+      "document_id": "nvda-2025-10k",
+      "company": "NVIDIA",
+      "ticker": "NVDA",
+      "fiscal_year": 2025,
+      "period_end": "2025-01-26",
+      "form_type": "10-K",
+      "source_file": "raw/nvidia/nvda-2025-10k.html",
+      "size_bytes": 2099246,
+      "sha256": "1e23a1ebbd9b8cf1444cc8d005c74e12be8eded108bf9b6eea78920023d646ae",
+      "accession_number": "0001045810-25-000023",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm"
+    },
+    {
+      "document_id": "goog-2025-10k",
+      "company": "Alphabet",
+      "ticker": "GOOG",
+      "fiscal_year": 2025,
+      "period_end": "2025-12-31",
+      "form_type": "10-K",
+      "source_file": "raw/alphabet/goog-2025-10k.html",
+      "size_bytes": 2663541,
+      "sha256": "2d77e0c3e0534924bfef085e7f916051a922137b9b8e0a722f09172eebb6b0c0",
+      "accession_number": "0001652044-26-000018",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+    },
+    {
+      "document_id": "goog-2024-10k",
+      "company": "Alphabet",
+      "ticker": "GOOG",
+      "fiscal_year": 2024,
+      "period_end": "2024-12-31",
+      "form_type": "10-K",
+      "source_file": "raw/alphabet/goog-2024-10k.html",
+      "size_bytes": 2576157,
+      "sha256": "75e46a722a1ed15223670294c1090b032415b2fb468efc7c7c9c14d270eb864b",
+      "accession_number": "0001652044-25-000014",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/goog-20241231.htm"
+    }
+  ]
+}

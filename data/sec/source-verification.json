@@ -1,0 +1,124 @@
+{
+  "checked_on": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "method": "Manual SEC filing detail page review plus local Inline XBRL inspection including continuedAt chains.",
+  "snapshot_type": "browser_saved_html",
+  "scope": "Filing identity and report metadata; not a byte-for-byte comparison or full document completeness review.",
+  "manifest_status": "draft",
+  "documents": [
+    {
+      "document_id": "msft-2026-10k",
+      "local_sha256": "696cd33fc1d32b6ae6f5d2f40d776cc902dc3e04ec557f4fb1c6db8e4a3d7e34",
+      "local_inline_xbrl": {
+        "EntityRegistrantName": "MICROSOFT CORPORATION",
+        "EntityCentralIndexKey": "0000789019",
+        "DocumentType": "10-K",
+        "DocumentFiscalYearFocus": "2026",
+        "DocumentPeriodEndDate": "June 30 , 2026"
+      },
+      "normalized_period_end": "2026-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/0001193125-26-323660-index.html",
+      "filing_date": "2026-07-29",
+      "sec_primary_document_size_bytes": 8585501,
+      "local_size_bytes": 8591463,
+      "parser_detected_encoding": "windows-1252",
+      "status": "filing_identity_and_metadata_matched"
+    },
+    {
+      "document_id": "msft-2025-10k",
+      "local_sha256": "1ece2a2aa888784aefb5199a3ad6c84794f0fa4764be691486540034bef2fe42",
+      "local_inline_xbrl": {
+        "EntityRegistrantName": "MICROSOFT CORPORATION",
+        "EntityCentralIndexKey": "0000789019",
+        "DocumentType": "10-K",
+        "DocumentFiscalYearFocus": "2025",
+        "DocumentPeriodEndDate": "June 30 , 2025"
+      },
+      "normalized_period_end": "2025-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/0000950170-25-100235-index.html",
+      "filing_date": "2025-07-30",
+      "sec_primary_document_size_bytes": 8158067,
+      "local_size_bytes": 8163548,
+      "parser_detected_encoding": "windows-1252",
+      "status": "filing_identity_and_metadata_matched"
+    },
+    {
+      "document_id": "nvda-2026-10k",
+      "local_sha256": "507bee6d0f0ac13a0606e4b9ff93c7456eb24479089b9a012875e50b8ae04fdd",
+      "local_inline_xbrl": {
+        "EntityRegistrantName": "NVIDIA CORP",
+        "EntityCentralIndexKey": "0001045810",
+        "DocumentType": "10-K",
+        "DocumentFiscalYearFocus": "2026",
+        "DocumentPeriodEndDate": "January 25 , 2026"
+      },
+      "normalized_period_end": "2026-01-25",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/0001045810-26-000021-index.html",
+      "filing_date": "2026-02-25",
+      "sec_primary_document_size_bytes": 1967816,
+      "local_size_bytes": 2003528,
+      "parser_detected_encoding": "windows-1252",
+      "status": "filing_identity_and_metadata_matched"
+    },
+    {
+      "document_id": "nvda-2025-10k",
+      "local_sha256": "1e23a1ebbd9b8cf1444cc8d005c74e12be8eded108bf9b6eea78920023d646ae",
+      "local_inline_xbrl": {
+        "EntityRegistrantName": "NVIDIA CORP",
+        "EntityCentralIndexKey": "0001045810",
+        "DocumentType": "10-K",
+        "DocumentFiscalYearFocus": "2025",
+        "DocumentPeriodEndDate": "January 26 , 2025"
+      },
+      "normalized_period_end": "2025-01-26",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/0001045810-25-000023-index.html",
+      "filing_date": "2025-02-26",
+      "sec_primary_document_size_bytes": 2067520,
+      "local_size_bytes": 2099246,
+      "parser_detected_encoding": "windows-1252",
+      "status": "filing_identity_and_metadata_matched"
+    },
+    {
+      "document_id": "goog-2025-10k",
+      "local_sha256": "2d77e0c3e0534924bfef085e7f916051a922137b9b8e0a722f09172eebb6b0c0",
+      "local_inline_xbrl": {
+        "EntityRegistrantName": "Alphabet Inc.",
+        "EntityCentralIndexKey": "0001652044",
+        "DocumentType": "10-K",
+        "DocumentFiscalYearFocus": "2025",
+        "DocumentPeriodEndDate": "December 31 , 2025"
+      },
+      "normalized_period_end": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/0001652044-26-000018-index.html",
+      "filing_date": "2026-02-05",
+      "sec_primary_document_size_bytes": 2616499,
+      "local_size_bytes": 2663541,
+      "parser_detected_encoding": "windows-1252",
+      "status": "filing_identity_and_metadata_matched"
+    },
+    {
+      "document_id": "goog-2024-10k",
+      "local_sha256": "75e46a722a1ed15223670294c1090b032415b2fb468efc7c7c9c14d270eb864b",
+      "local_inline_xbrl": {
+        "EntityRegistrantName": "Alphabet Inc.",
+        "EntityCentralIndexKey": "0001652044",
+        "DocumentType": "10-K",
+        "DocumentFiscalYearFocus": "2024",
+        "DocumentPeriodEndDate": "December 31 , 2024"
+      },
+      "normalized_period_end": "2024-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/goog-20241231.htm",
+      "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/0001652044-25-000014-index.html",
+      "filing_date": "2025-02-05",
+      "sec_primary_document_size_bytes": 2528344,
+      "local_size_bytes": 2576157,
+      "parser_detected_encoding": "windows-1252",
+      "status": "filing_identity_and_metadata_matched"
+    }
+  ]
+}
