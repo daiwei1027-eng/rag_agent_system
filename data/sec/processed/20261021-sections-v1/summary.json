@@ -1,0 +1,182 @@
+[
+  {
+    "section_id": "msft-2026-10k:item_1",
+    "candidate_blocks": 192,
+    "removed_blocks": 46,
+    "kept_blocks": 146,
+    "text_blocks": 145,
+    "tables": 1,
+    "first_text_preview": "GENERAL",
+    "last_text_preview": "The information found on these websites is not part of, or incorporated by reference into, this or any other report we file with, or furnish to, the SEC. In addition to these channels, we use social media to communicate to the public. It is"
+  },
+  {
+    "section_id": "msft-2026-10k:item_1a",
+    "candidate_blocks": 175,
+    "removed_blocks": 60,
+    "kept_blocks": 115,
+    "text_blocks": 115,
+    "tables": 0,
+    "first_text_preview": "Our operations and financial results are subject to various risks and uncertainties, including those described below, that could adversely affect our business, operations, financial condition, results of operations, liquidity, and the tradi",
+    "last_text_preview": "Our business depends on our ability to attract and retain talented employees. Our business is based on successfully attracting, training, and retaining talented employees representing diverse backgrounds, experiences, and skill sets. The ma"
+  },
+  {
+    "section_id": "msft-2026-10k:item_7",
+    "candidate_blocks": 271,
+    "removed_blocks": 86,
+    "kept_blocks": 185,
+    "text_blocks": 172,
+    "tables": 13,
+    "first_text_preview": "The following Management’s Discussion and Analysis of Financial Condition and Results of Operations (“MD&A”) is intended to help the reader understand the results of operations and financial condition of Microsoft Corporation. MD&A is provi",
+    "last_text_preview": "The Board of Directors, through its Audit Committee, consisting solely of independent directors of the Company, meets periodically with management, internal auditors, and our independent registered public accounting firm to ensure that each"
+  },
+  {
+    "section_id": "msft-2025-10k:item_1",
+    "candidate_blocks": 226,
+    "removed_blocks": 54,
+    "kept_blocks": 172,
+    "text_blocks": 171,
+    "tables": 1,
+    "first_text_preview": "GENERAL",
+    "last_text_preview": "The information found on these websites is not part of, or incorporated by reference into, this or any other report we file with, or furnish to, the SEC. In addition to these channels, we use social media to communicate to the public. It is"
+  },
+  {
+    "section_id": "msft-2025-10k:item_1a",
+    "candidate_blocks": 154,
+    "removed_blocks": 56,
+    "kept_blocks": 98,
+    "text_blocks": 98,
+    "tables": 0,
+    "first_text_preview": "Our operations and financial results are subject to various risks and uncertainties, including those described below, that could adversely affect our business, operations, financial condition, results of operations, liquidity, and the tradi",
+    "last_text_preview": "Our business depends on our ability to attract and retain talented employees. Our business is based on successfully attracting, training, and retaining talented employees representing diverse backgrounds, experiences, and skill sets. The ma"
+  },
+  {
+    "section_id": "msft-2025-10k:item_7",
+    "candidate_blocks": 255,
+    "removed_blocks": 79,
+    "kept_blocks": 176,
+    "text_blocks": 164,
+    "tables": 12,
+    "first_text_preview": "The following Management’s Discussion and Analysis of Financial Condition and Results of Operations (“MD&A”) is intended to help the reader understand the results of operations and financial condition of Microsoft Corporation. MD&A is provi",
+    "last_text_preview": "The Board of Directors, through its Audit Committee, consisting solely of independent directors of the Company, meets periodically with management, internal auditors, and our independent registered public accounting firm to ensure that each"
+  },
+  {
+    "section_id": "nvda-2026-10k:item_1",
+    "candidate_blocks": 146,
+    "removed_blocks": 33,
+    "kept_blocks": 113,
+    "text_blocks": 112,
+    "tables": 1,
+    "first_text_preview": "Item 1. Business",
+    "last_text_preview": "Our annual reports on Form 10-K, quarterly reports on Form 10-Q, current reports on Form 8-K and, if applicable, amendments to those reports filed or furnished pursuant to Section 13(a) or 15(d) of the Securities Exchange Act of 1934, as am"
+  },
+  {
+    "section_id": "nvda-2026-10k:item_1a",
+    "candidate_blocks": 277,
+    "removed_blocks": 41,
+    "kept_blocks": 236,
+    "text_blocks": 236,
+    "tables": 0,
+    "first_text_preview": "Item 1A. Risk Factors",
+    "last_text_preview": "The anti-takeover provisions of the Delaware General Corporation Law may discourage, delay, or prevent a change in control. Provisions in our certificate of incorporation and bylaws could make it more difficult for a third party to acquire "
+  },
+  {
+    "section_id": "nvda-2026-10k:item_7",
+    "candidate_blocks": 163,
+    "removed_blocks": 45,
+    "kept_blocks": 118,
+    "text_blocks": 109,
+    "tables": 9,
+    "first_text_preview": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+    "last_text_preview": "Refer to Note 1 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for a discussion of adoption of new and recently issued accounting pronouncements."
+  },
+  {
+    "section_id": "nvda-2025-10k:item_1",
+    "candidate_blocks": 153,
+    "removed_blocks": 18,
+    "kept_blocks": 135,
+    "text_blocks": 134,
+    "tables": 1,
+    "first_text_preview": "Item 1. Business",
+    "last_text_preview": "Our annual reports on Form 10-K, quarterly reports on Form 10-Q, current reports on Form 8-K and, if applicable, amendments to those reports filed or furnished pursuant to Section 13(a) or 15(d) of the Securities Exchange Act of 1934, as am"
+  },
+  {
+    "section_id": "nvda-2025-10k:item_1a",
+    "candidate_blocks": 261,
+    "removed_blocks": 38,
+    "kept_blocks": 223,
+    "text_blocks": 223,
+    "tables": 0,
+    "first_text_preview": "Item 1A. Risk Factors",
+    "last_text_preview": "The anti-takeover provisions of the Delaware General Corporation Law may discourage, delay, or prevent a change in control. Provisions in our certificate of incorporation and bylaws could make it more difficult for a third party to acquire "
+  },
+  {
+    "section_id": "nvda-2025-10k:item_7",
+    "candidate_blocks": 150,
+    "removed_blocks": 22,
+    "kept_blocks": 128,
+    "text_blocks": 118,
+    "tables": 10,
+    "first_text_preview": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+    "last_text_preview": "Refer to Note 1 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for a discussion of adoption of new and recently issued accounting pronouncements."
+  },
+  {
+    "section_id": "goog-2025-10k:item_1",
+    "candidate_blocks": 97,
+    "removed_blocks": 18,
+    "kept_blocks": 79,
+    "text_blocks": 79,
+    "tables": 0,
+    "first_text_preview": "ITEM 1.BUSINESS",
+    "last_text_preview": "We webcast our earnings calls, as well as certain events we participate in or host with members of the investment community, via our investor relations YouTube channel and website. Our investor relations website also provides notifications "
+  },
+  {
+    "section_id": "goog-2025-10k:item_1a",
+    "candidate_blocks": 189,
+    "removed_blocks": 29,
+    "kept_blocks": 160,
+    "text_blocks": 160,
+    "tables": 0,
+    "first_text_preview": "ITEM 1A.RISK FACTORS",
+    "last_text_preview": "We believe that our corporate culture fosters innovation, creativity, and teamwork. As our organization grows and evolves, we may need to adapt our corporate culture and work environments to ever-changing circumstances, and these changes co"
+  },
+  {
+    "section_id": "goog-2025-10k:item_7",
+    "candidate_blocks": 319,
+    "removed_blocks": 64,
+    "kept_blocks": 255,
+    "text_blocks": 243,
+    "tables": 12,
+    "first_text_preview": "ITEM 7.MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+    "last_text_preview": "We evaluate, on a regular basis, developments in our legal matters that could affect the amount of liability that has been previously accrued, and the matters and related reasonably possible losses disclosed, and make adjustments as necessa"
+  },
+  {
+    "section_id": "goog-2024-10k:item_1",
+    "candidate_blocks": 120,
+    "removed_blocks": 19,
+    "kept_blocks": 101,
+    "text_blocks": 101,
+    "tables": 0,
+    "first_text_preview": "ITEM 1.BUSINESS",
+    "last_text_preview": "We webcast via our investor relations YouTube channel and website our earnings calls and certain events we participate in or host with members of the investment community. Our investor relations website also provides notifications of news o"
+  },
+  {
+    "section_id": "goog-2024-10k:item_1a",
+    "candidate_blocks": 187,
+    "removed_blocks": 30,
+    "kept_blocks": 157,
+    "text_blocks": 157,
+    "tables": 0,
+    "first_text_preview": "ITEM 1A.RISK FACTORS",
+    "last_text_preview": "In addition, we believe that our corporate culture fosters innovation, creativity, and teamwork. As our organization grows and evolves, we may need to adapt our corporate culture and work environments to ever-changing circumstances, such as"
+  },
+  {
+    "section_id": "goog-2024-10k:item_7",
+    "candidate_blocks": 329,
+    "removed_blocks": 60,
+    "kept_blocks": 269,
+    "text_blocks": 255,
+    "tables": 14,
+    "first_text_preview": "ITEM 7.MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+    "last_text_preview": "We evaluate, on a regular basis, developments in our legal matters that could affect the amount of liability that has been previously accrued, and the matters and related reasonably possible losses disclosed, and make adjustments and change"
+  }
+]

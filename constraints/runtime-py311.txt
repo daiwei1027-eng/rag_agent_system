@@ -1,6 +1,7 @@
 # Direct runtime versions observed in the working Windows / Python 3.11.16 environment.
 # See docs/runtime-environment.md for provenance, installation and limitations.
 # Transitive dependencies and model weights are not locked by this file.
+beautifulsoup4==4.15.0
 faiss-cpu==1.15.1
 numpy==2.4.6
 PyYAML==6.0.3

@@ -1,0 +1,62 @@
+{
+  "checked_on": "2026-10-21",
+  "status": "passed",
+  "sections": 18,
+  "blocks": 2866,
+  "tables": 74,
+  "tables_with_colspan": 66,
+  "table_cells_checked": 6893,
+  "rowspan_examples": [
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "cell_text": "Less FX Effect",
+      "rowspan": 2,
+      "rendered_occurrences": 4
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "cell_text": "Constant Currency Revenues",
+      "rowspan": 2,
+      "rendered_occurrences": 4
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "cell_text": "As Reported",
+      "rowspan": 2,
+      "rendered_occurrences": 2
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "cell_text": "Less Hedging Effect",
+      "rowspan": 2,
+      "rendered_occurrences": 2
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "cell_text": "Less FX Effect",
+      "rowspan": 2,
+      "rendered_occurrences": 4
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "cell_text": "Constant Currency Revenues",
+      "rowspan": 2,
+      "rendered_occurrences": 4
+    }
+  ],
+  "source_hashes_match": true,
+  "output_hashes_match": true,
+  "kept_counts_match_previous_review": true,
+  "block_indices_ordered_unique": true,
+  "all_selected_table_cell_text_preserved": true,
+  "rendered_table_column_counts_consistent": true,
+  "repeated_extraction_sections_bytes_identical": true,
+  "sections_sha256": "b1f386a50608fc726def5a61a0e46be7ff233e24527964f802cf4d5d97afb8d1",
+  "limitations": "Structural/content-preservation checks are not independent source coverage or financial interpretation validation. Physical grid rendering has not inferred semantic headers or units."
+}

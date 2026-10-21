@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_at_utc": "2026-10-21T03:05:51.848981+00:00",
+  "input_manifest": {
+    "original_path": "data/sec/manifest.draft.json",
+    "source_file_base": "data/sec",
+    "snapshot": "input_manifest.json",
+    "sha256": "17bd12f1fd502ed7373ce3c7814e4db851bee767a87e8283c3dda42d0738a29e"
+  },
+  "sources": [
+    {
+      "document_id": "msft-2026-10k",
+      "source_file": "raw/microsoft/msft-2026-10k.html",
+      "source_sha256": "696cd33fc1d32b6ae6f5d2f40d776cc902dc3e04ec557f4fb1c6db8e4a3d7e34",
+      "parser_detected_encoding": "windows-1252"
+    },
+    {
+      "document_id": "msft-2025-10k",
+      "source_file": "raw/microsoft/msft-2025-10k.html",
+      "source_sha256": "1ece2a2aa888784aefb5199a3ad6c84794f0fa4764be691486540034bef2fe42",
+      "parser_detected_encoding": "windows-1252"
+    },
+    {
+      "document_id": "nvda-2026-10k",
+      "source_file": "raw/nvidia/nvda-2026-10k.html",
+      "source_sha256": "507bee6d0f0ac13a0606e4b9ff93c7456eb24479089b9a012875e50b8ae04fdd",
+      "parser_detected_encoding": "windows-1252"
+    },
+    {
+      "document_id": "nvda-2025-10k",
+      "source_file": "raw/nvidia/nvda-2025-10k.html",
+      "source_sha256": "1e23a1ebbd9b8cf1444cc8d005c74e12be8eded108bf9b6eea78920023d646ae",
+      "parser_detected_encoding": "windows-1252"
+    },
+    {
+      "document_id": "goog-2025-10k",
+      "source_file": "raw/alphabet/goog-2025-10k.html",
+      "source_sha256": "2d77e0c3e0534924bfef085e7f916051a922137b9b8e0a722f09172eebb6b0c0",
+      "parser_detected_encoding": "windows-1252"
+    },
+    {
+      "document_id": "goog-2024-10k",
+      "source_file": "raw/alphabet/goog-2024-10k.html",
+      "source_sha256": "75e46a722a1ed15223670294c1090b032415b2fb468efc7c7c9c14d270eb864b",
+      "parser_detected_encoding": "windows-1252"
+    }
+  ],
+  "config": {
+    "html_parser": "html.parser",
+    "section_specs": [
+      [
+        "item_1",
+        "Business",
+        "Risk Factors"
+      ],
+      [
+        "item_1a",
+        "Risk Factors",
+        "Unresolved Staff Comments"
+      ],
+      [
+        "item_7",
+        "Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+        "Quantitative and Qualitative Disclosures About Market Risk"
+      ]
+    ],
+    "cleaning_profile": "inspected-msft-nvda-goog-v1",
+    "block_index": "candidate position before noise removal; gaps allowed",
+    "table_renderer": "physical-grid-v1",
+    "colspan": "text in first column, blank continuation columns",
+    "rowspan": "repeat text and colspan placeholders in covered rows",
+    "empty_table_rows": "omitted after span placement",
+    "unsupported_tables": "nested tables, nonpositive or overlapping spans",
+    "source_html": "BeautifulSoup serialization, not original byte offsets"
+  },
+  "environment": {
+    "python": "3.11.16",
+    "beautifulsoup4": "4.15.0"
+  },
+  "code_sha256": {
+    "sec_html.py": "7ae1827debda50ae838dc5704bcf4e74f142839a279b5ca28ce7cf62a26a60f9",
+    "sec_manifest.py": "561484ecb9d81e59d497952254123d1db821f125d3d62218174d4f21a86677e1",
+    "sec_build.py": "6496b97c9fb4b506fedb338acb41cd967469e11b85420ce8321d3a2bebdb587e"
+  },
+  "counts": {
+    "documents": 6,
+    "sections": 18,
+    "blocks": 2866,
+    "tables": 74
+  },
+  "files_sha256": {
+    "sections.jsonl": "b1f386a50608fc726def5a61a0e46be7ff233e24527964f802cf4d5d97afb8d1",
+    "summary.json": "bacda81f525ab71aee8183c7afa54fa140954c244e0831728b68ca774f6454a5",
+    "input_manifest.json": "17bd12f1fd502ed7373ce3c7814e4db851bee767a87e8283c3dda42d0738a29e"
+  },
+  "limitations": [
+    "The input manifest is a provenance snapshot; resolve source_file from source_file_base.",
+    "A completed build does not certify full content coverage or financial table semantics.",
+    "Physical column positions are preserved; header roles, units and logical column groups are not inferred.",
+    "No SEC chunks, retrieval index or benchmark is created by this command."
+  ]
+}

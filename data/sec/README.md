@@ -1,5 +1,30 @@
 # SEC corpus：准备阶段
 
+## 最新状态：2026-10-21 结构化章节输出完成
+
+构建产物位于 `processed/20261021-sections-v1/`：六份报告、18 个章节、2866 个块，
+其中 74 张表。`sections.jsonl` 为下一阶段 chunker 的输入，每个块统一包含
+block_index/type/text/source_html。文字和表格均保留 HTML 来源，表格 text 已处理
+colspan/rowspan；它保留物理列位置，不推断财务语义。
+
+`build_manifest.json` 保存原文、输入清单、代码与输出指纹，以及配置和依赖版本；
+`summary.json` 与 `validation.json` 提供统计和核对结果。源 manifest 仍保留 draft
+标签，当前冻结的是这一版处理配置与章节产物，不表示原文全文覆盖已认证。
+
+```powershell
+python scripts/build_sec_sections.py --manifest data/sec/manifest.draft.json --output-dir data/sec/processed/20261021-sections-v1
+```
+
+此目录已存在，复跑时换一个新目录名；入口拒绝覆盖。sections.jsonl 是约 4.7 MB
+的可再生本地产物，已忽略；构建清单、输入快照、summary 和验证证据可提交。
+复现仍需要原始六份 HTML，input_manifest.json 的路径基准见 build_manifest。
+
+当前针对 manifest 与章节转换的 pytest 为 39 passed；六份真实报告重复抽取的
+章节文件字节一致。详细范围与限制见 [2026-10-21 学习记录](../../docs/learning-log/2026-10-21.md)。
+下一步直接进入 chunk 策略，不再继续逐行布置 HTML 处理。
+
+## 2026-10-20 准备与实现记录
+
 六份 HTML 已从用户提供的本地文件复制到 `raw/`，按公司与财年规范命名。
 复制不改写原始字节，已逐份比较原件与副本的 SHA256。原件保持不变。
 `raw/` 为本地输入，不进入 Git；manifest 草稿和说明可以提交。

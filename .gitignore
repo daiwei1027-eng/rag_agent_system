@@ -45,6 +45,7 @@ model_store/
 /data/**/*.parquet
 /data/raw/
 /data/sec/raw/
+/data/sec/processed/**/sections.jsonl
 /data/local/
 /data/runtime/
 
