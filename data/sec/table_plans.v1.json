@@ -1,0 +1,1684 @@
+{
+  "schema_version": 1,
+  "sections_sha256": "b1f386a50608fc726def5a61a0e46be7ff233e24527964f802cf4d5d97afb8d1",
+  "notes": [
+    "Row indices refer to frozen block.text before blank-column removal.",
+    "Whole-table-only plans must never split; new budgets or new sources require review.",
+    "Header and subgroup roles inspected for the 28 originally oversized tables. No automatic financial semantics inference."
+  ],
+  "tables": [
+    {
+      "section_id": "msft-2026-10k:item_1",
+      "block_index": 165,
+      "text_sha256": "b3c5b494593adac3ce13aa6957d981dcba35eab4c3abab6affb98574f9349b94",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 44,
+      "text_sha256": "7a5f5018e952680d3e54333e7177946d1c5471b77144c51d1e145dfefe184c5d",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 49,
+      "text_sha256": "3c19e73b0d3bfa7cf2261555c4379179a06f93e10a49d346bb3259a459089f36",
+      "mode": "reviewed-row-groups",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 58,
+      "text_sha256": "f4ff1f5a7ea16b5af8c787bf4d4e59a87b110dc8ce1a679d704fae6b5b81e5c5",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 62,
+      "text_sha256": "13f416812f7a3a0b9a4838892d37c6c1db481327188a4901963f066eb1f2074f",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 81,
+      "text_sha256": "9223ccf3ae3c7047c9b214342ba7f52374f5ea787a0f8151da35e934d3d91dbc",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0
+      ],
+      "groups": [
+        {
+          "context_rows": [
+            1
+          ],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "context_rows": [
+            6
+          ],
+          "data_rows": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "context_rows": [
+            11
+          ],
+          "data_rows": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "context_rows": [
+            16
+          ],
+          "data_rows": [
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 126,
+      "text_sha256": "3495c3d992479fb36075c8e6d1a26d042b9b80dd561b20d5ece91c0522e50ff2",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 133,
+      "text_sha256": "eca2acce9f9f01e9bd06d7230f48c999094d628ca090755acf121c10662775c4",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 140,
+      "text_sha256": "8d7f69f636e47c149e8e93b88aa0094dd2f912fe1b1413a19bd1e88c893d30af",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 152,
+      "text_sha256": "d33950526fa26c79b1b73860c5c56bd9b2be0c8d91610f479f03f002200acf61",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 174,
+      "text_sha256": "cfc26c567495379df27a63c8d2e04d4534af00e110221ee23d39e722c22a8b5e",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 199,
+      "text_sha256": "a7f6b6a9cdadd37e986098f20550b605d7d99b696f3321f710dceac317434df8",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 206,
+      "text_sha256": "6334c33f1e2afba94db2781a64ba26aba54bb0244e6bcbb272efe396d6001f07",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0
+      ],
+      "groups": [
+        {
+          "context_rows": [
+            1
+          ],
+          "data_rows": [
+            2,
+            3
+          ]
+        },
+        {
+          "context_rows": [],
+          "data_rows": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2026-10k:item_7",
+      "block_index": 265,
+      "text_sha256": "2d358d72f721d00eaad3d8e7c4b1160a867680ed332e36113528676d02818c7b",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_1",
+      "block_index": 198,
+      "text_sha256": "6e0a91f64aee4426f919d345aa93c1160bc63103bf4c8da1edf49e39466cc9b3",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 44,
+      "text_sha256": "7a5f5018e952680d3e54333e7177946d1c5471b77144c51d1e145dfefe184c5d",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 49,
+      "text_sha256": "673e351bd41c7f25520ff0e3b417484b358b2e599bb5987c65ed67bb24b6bd29",
+      "mode": "reviewed-row-groups",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 58,
+      "text_sha256": "a5b43ed85d8b4c895bc6e4c5d4eac4b730e9d0e4886637f8158f605532ddddbb",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 61,
+      "text_sha256": "587187a0b7702ed3c71f477d6f57911f4ab34b72ef6e071668a0df51404f1b3f",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 77,
+      "text_sha256": "c08bfb563f50d19f7546695fd04a5073924856590d299765405437ff58e96c58",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0
+      ],
+      "groups": [
+        {
+          "context_rows": [
+            1
+          ],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "context_rows": [
+            6
+          ],
+          "data_rows": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "context_rows": [
+            11
+          ],
+          "data_rows": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "context_rows": [
+            16
+          ],
+          "data_rows": [
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 115,
+      "text_sha256": "6ff6ac202d443842d770ab8978ce6ab1724ce868dbbe331c0a3c8e4047ba6260",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 126,
+      "text_sha256": "5e5572ee9bb5367199d9278fcc6c7d9a9ac739f8c27da0631f809dd7e7952704",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 133,
+      "text_sha256": "530a681d1b9b10b2a5d5a38c383d6d28a39498d5c410cc3c05f8636028438468",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 141,
+      "text_sha256": "e08dcbe3b3b4dc53e5c8a96c3125e83027f8a3dec9d826f8a9ee9c21e4fe4bef",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 183,
+      "text_sha256": "42df7d6c9139043f58099d1c1bfa909c7fd47335da8cba8efb16beec2b9f85f2",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 190,
+      "text_sha256": "f15e028bdbb12cba6e1fb9e27c9ae8d89342c6c3ec00c50faf5ddf3a88372a09",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0
+      ],
+      "groups": [
+        {
+          "context_rows": [
+            1
+          ],
+          "data_rows": [
+            2,
+            3
+          ]
+        },
+        {
+          "context_rows": [],
+          "data_rows": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "msft-2025-10k:item_7",
+      "block_index": 249,
+      "text_sha256": "2d358d72f721d00eaad3d8e7c4b1160a867680ed332e36113528676d02818c7b",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_1",
+      "block_index": 134,
+      "text_sha256": "d07ae3e9ff95766d46364c29638d7c2fb4afe9edfd5869fab37cf744e71c325f",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 27,
+      "text_sha256": "9bec4de277489bf8db80bcaf03ed3c52e4c7023ce2f60f9cb0a8be9632feea15",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 71,
+      "text_sha256": "b26d64bcea5191b128c2742a64057d62db664178f6141e23138d49beb9a7a68c",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "context_rows": [
+            5
+          ],
+          "data_rows": [
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "context_rows": [],
+          "data_rows": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 75,
+      "text_sha256": "f0e7c1ccef27226533b69ec93b3fd46cba73c26e5e17ec052ba2e124bb1b2f70",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 77,
+      "text_sha256": "ade1429410266406473a174dc81ede87b1bd638a297beae41ac8b2ab43494719",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 98,
+      "text_sha256": "773d67d857b6aa7d83d1e54b6cbaeb2948453b95ebeee9e4fb0408161dcad804",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 105,
+      "text_sha256": "14829a6f9de41c30a55766af3be2c9699758f937f7a1fd98a48f59f146e5e4bc",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 120,
+      "text_sha256": "fd8db4f98d5b8ec8e781cab55e39a222e9423bafa3117e834aa14284aa48a85f",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 124,
+      "text_sha256": "3e81482171876f8313fb6fb630da84db6dba696ce66aa30d2dcd3d66b33c24dc",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2026-10k:item_7",
+      "block_index": 149,
+      "text_sha256": "21af93dd5ebf93ea652dc5c2147adff10192f6a3c7862b6e9cc1c89eed190b03",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_1",
+      "block_index": 145,
+      "text_sha256": "3c91ba7d0c3e8db7bafb5e5f358cb5b90e890403e32e464f90bf89fc7f46e77b",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 33,
+      "text_sha256": "bb019ea3a6f7d1a5e79e2c00db71bb593a09e9046d0c17f2528c47e66beb58b7",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 72,
+      "text_sha256": "b9b648d0f08a8e66ba8a2aa3ddacbf450accca91cb295b0aba1b1174c198f30a",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "context_rows": [
+            5
+          ],
+          "data_rows": [
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "context_rows": [],
+          "data_rows": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 77,
+      "text_sha256": "c96f78b3fa1d593f0288bebf6f0fd003c31ea08f70364f86158382a4fe130486",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 79,
+      "text_sha256": "de6a5fcf306f112d21ec14774f495e9ad8ed726b2a7edeacb94c681e76123d1b",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 87,
+      "text_sha256": "99740d97545d4f0d60e31264cefb0ef6bac9c588459358d552361cdd78d60c76",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 100,
+      "text_sha256": "c3b2866d7a3ac63980a886dfc7bcd4cdd8b5427c05b11378ab16e7c03eb57c27",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4
+          ]
+        },
+        {
+          "context_rows": [],
+          "data_rows": [
+            5,
+            6
+          ]
+        },
+        {
+          "context_rows": [],
+          "data_rows": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 106,
+      "text_sha256": "e601d809d7ed692da16276b76afd0f3567ed58ceabef4a2bad56a8585863bcc3",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 118,
+      "text_sha256": "218dd40f37adbbfc1573b271c8f0aca0422eee8c6bbf49646051c5f5d5593422",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 119,
+      "text_sha256": "f5dc46764a7cb826b2ae94396c5feefbf9be9737b00fb13ed6f82a75ceb863ac",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "nvda-2025-10k:item_7",
+      "block_index": 137,
+      "text_sha256": "d25dec2600f12d16d4bb0fe2aeb649eae5ba79461cb121668eb8f49e27d857cc",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 112,
+      "text_sha256": "a1fa42f4aa16cecc2d04e011aebf452f47d8517e87deeecdac211809157be2b5",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 135,
+      "text_sha256": "651421a2f21227d8c78efc94ca8a6fa39438b95fcc1efafdb547e7140cec0634",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 148,
+      "text_sha256": "6aad9064e795227f6c670ef91bd31debf8f7245fbe66b95e7c5e2e527b2b561e",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 158,
+      "text_sha256": "2dca9c41b3adbe07592fa4aa4df435a518fa7c0fba5f9b8522bad7678b09855d",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 168,
+      "text_sha256": "0005c4bce2ed3a75abc5f4b9a07e9215268d15483eccf2c1b331ee57fe0fd24e",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 175,
+      "text_sha256": "2147bbc35f4842ff369b6895dfae9a0e6d0f3fa4ea92f0e2fc1e5dd355b5e0cd",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 180,
+      "text_sha256": "12a5133e45fc626361079b17731de99f810da262328c97ddfbfed775814dcab8",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 185,
+      "text_sha256": "cef9537d477dd67530770ae9d165ecf6d931a0c7bab0bb767f1a26f229b78c7d",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 193,
+      "text_sha256": "7915869c3dbd68ae647dcb06a968b7657c25e586fcfee33238f4b21c5a84c979",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 204,
+      "text_sha256": "de3cf85dc99500f3f180330153a7a12b5d2b556a1a0dec51bdb1f6227b6a1c22",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 212,
+      "text_sha256": "54e1d1c991b5542c68f8cb9b6ad5b58021835136dfd378766a322a4681a5b3bf",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2025-10k:item_7",
+      "block_index": 225,
+      "text_sha256": "800d7b024bb64aa2739434ee83c77a4576ddb8a5b3b4caeb6c9615300458ce00",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 123,
+      "text_sha256": "02346a83f77aa38a7132b74a3aa88e8c05586b3a423baefd0dbb2dae009c50a7",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 144,
+      "text_sha256": "331f13416b1bd666d8203ec8992b34ed000fa5c66758191db02a55820abea7e7",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 155,
+      "text_sha256": "ee7722b006bdc27e56a866bb37d994083c66e1b3a021639d71ea1a5e7c14ee84",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 167,
+      "text_sha256": "9c0d623c8c2550530016fd2f94b82f06c1d380b44713ff15670e85eb178ec530",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 178,
+      "text_sha256": "e6f2ff623b6b19cb526e34fcbcd554a1acb46bb16a06395045c3f4acaad0e296",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 188,
+      "text_sha256": "18d06571c7fdbaf5961d8955c7236e13f57212dd9336ca0b8fc39a6175ee1698",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 197,
+      "text_sha256": "b8eee65733316f871b346e48465e7272a64dd24d5086e7dac07f574d9d65c730",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 202,
+      "text_sha256": "26699c11bb15f1d02b8a1d7f278e7e4cfa56e77d0833c11e08a755a6237eda58",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 207,
+      "text_sha256": "1d8637d35e4f5dc1ddf6fe15e5d7197f388536068ff8974627fa05f6bce49e87",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 213,
+      "text_sha256": "074ffc76d39c3bee45b82f61c06cf230d32bb0309ffd7f33173767c7ae8354f0",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1,
+        2
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 226,
+      "text_sha256": "0852f10646b500f3c839d27a57b2b553e5b3065751d169b88d534d54a0aebf6e",
+      "mode": "reviewed-row-groups",
+      "header_rows": [
+        0,
+        1
+      ],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 233,
+      "text_sha256": "ce43e5a3d9a4cf8bb575c53bfd1bf8a2576a032a10b0915b8dcfe202356d8e3f",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 245,
+      "text_sha256": "bb4dd968c03ca8d84365b24c8ca17663ac44a9dad5c2273e6812469c52b7c133",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "goog-2024-10k:item_7",
+      "block_index": 286,
+      "text_sha256": "137515db624671782d8857e9aaabb07364dba75add9276b50bb7ad7ec1e73e65",
+      "mode": "whole-table-only",
+      "header_rows": [],
+      "groups": [
+        {
+          "context_rows": [],
+          "data_rows": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    }
+  ]
+}

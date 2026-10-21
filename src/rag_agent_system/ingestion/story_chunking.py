@@ -17,13 +17,6 @@ def chunk_story(
     faiss_start: int = 0,
     require_legacy_text_match: bool = True,
 ) -> list[dict[str, Any]]:
-    """Cut one story, preserving original text and checking its embedding length.
-
-    max_tokens/overlap count BODY tokens with the supplied chunk tokenizer.
-    embedding_max_tokens includes the embedding tokenizer's special tokens.
-    faiss_start is the first vector position for this story in the final list.
-    Strict legacy matching exposes text changes beyond story-local windowing.
-    """
     if not isinstance(story, str) or not story.strip():
         raise ValueError("story must be a non-empty string")
     if not isinstance(story_id, str) or not story_id.strip():
@@ -55,7 +48,6 @@ def chunk_story(
 
     chunks = []
     step = max_tokens - overlap
-    # Short and long stories use the same construction path and dictionary schema.
     for chunk_index, start in enumerate(range(0, len(token_ids), step)):
         end = min(start + max_tokens, len(token_ids))
         start_char = 0 if start == 0 else offsets[start][0]

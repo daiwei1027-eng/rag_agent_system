@@ -1,0 +1,51 @@
+{
+  "checked_on": "2026-10-21",
+  "status": "passed",
+  "strategy": "Each text block is chunked independently; no paragraph merging. Overlap remains within one source block.",
+  "config": {
+    "max_tokens": 200,
+    "overlap_tokens": 32,
+    "add_special_tokens_for_windowing": false,
+    "truncation": false
+  },
+  "input_sections": {
+    "path": "data/sec/processed/20261021-sections-v1/sections.jsonl",
+    "sha256": "b1f386a50608fc726def5a61a0e46be7ff233e24527964f802cf4d5d97afb8d1"
+  },
+  "implementation_sha256": "772d16f7605b538ff41ab40c0b1570104a4eab724c04ec61e9b262042ad03508",
+  "tokenizer": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "local_snapshot": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "loaded_local_files_only": true,
+    "embedding_max_seq_length_from_local_config": 256
+  },
+  "synthetic_pytest": {
+    "file": "tests/test_sec_chunking.py",
+    "passed": 17
+  },
+  "real_data": {
+    "sections": 18,
+    "text_blocks": 2792,
+    "text_chunks": 2995,
+    "unique_chunk_ids": 2995,
+    "original_slices_match_source_spans": true,
+    "source_blocks_covered_without_gaps": true,
+    "metadata_matches_parent_section": true,
+    "max_reencoded_body_tokens": 200,
+    "body_over_200": 0
+  },
+  "prefix_length_probe": {
+    "status": "diagnostic only; prefix is not added by chunk_text_run",
+    "template": "{company} ({ticker}) | FY{fiscal_year} | {form_type} | {section_label}: {section_title}\n\n",
+    "section_label": "section with underscores replaced by spaces and uppercased",
+    "includes_special_tokens": true,
+    "max_complete_input_tokens": 236,
+    "complete_inputs_over_256": 0
+  },
+  "limitations": [
+    "Text chunks only; tables are intentionally handled by a separate strategy.",
+    "No FAISS labels, index, benchmark or model inference produced.",
+    "Independent paragraph chunking has not been compared with paragraph merging for retrieval quality.",
+    "Real-data measurements are a one-off local tokenizer audit; the persisted pytest suite is model-free."
+  ]
+}

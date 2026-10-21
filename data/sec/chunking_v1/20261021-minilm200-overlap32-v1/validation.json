@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "chunks_sha256": "712199ed06dc4f0d171667165c5cba6beca8d3cdc25b29a3772b086eab98af67",
+  "chunks_bytes": 4551846,
+  "loaded_chunks": 3091,
+  "checks": {
+    "bundle_file_hashes": true,
+    "existing_load_chunks": true,
+    "existing_faiss_id_mapping": true,
+    "byte_identical_reassembly": true
+  },
+  "scope": "Tokenizer and JSON/mapping checks only; no embedding, index or retrieval evaluation."
+}

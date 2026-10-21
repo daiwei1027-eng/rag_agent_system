@@ -1,6 +1,43 @@
 # SEC corpus：准备阶段
 
-## 最新状态：2026-10-21 结构化章节输出完成
+## 最新状态：2026-10-21 统一 chunk 输出完成
+
+`chunking_v1/20261021-minilm200-overlap32-v1/chunks.json` 已生成：
+2995 个文字 chunk、96 个表格 chunk，合计 3091 个。保持原有
+`chunk_id/text/source/metadata` 四字段，现有 `load_chunks` 和 FAISS ID 映射可直接读取。
+全局 faiss_id 为 0–3090；这一步尚未创建向量索引。
+
+文字按独立来源块切分，正文预算 200 tokens，块内重叠 32，不合并段落。
+表格优先整表，超长时按完整行拆分并重复已核对的表头和业务分组。
+`table_plans.v1.json` 绑定章节文件与每张表的 hash：74 张表都有计划，其中原始正文
+超过预算的 28 张标定了行角色；其余只允许整表输出，新来源或预算变更需要重新核对。
+表格仅删除整表始终为空的物理列；有值的列不删除、不重排。
+
+最终 text 统一加公司/ticker、财年、form、章节前缀，便于现有检索链路携带上下文。
+metadata.content_start_char 指向前缀之后的正文；source_spans 始终相对于原始
+block.text，采用左闭右开区间。表格用 table_row_indices 与 table_columns 记录行选择
+和列投影，还原时先按 source_spans 取行，再按 table_columns 投影，最后以换行连接。
+source_html 保留在章节产物，不在每个 chunk 中重复。
+
+完整输入含前缀及特殊 token，最长 236，低于当前 MiniLM 的 256 上限；正文最长 200。
+本地验收通过来源重建、所有来源块覆盖、表格数据行恰好一次、ID 唯一、连续 FAISS
+编号和字节一致的重复组装。46 项 chunk/接入测试通过；验证证据见输出目录中的
+`summary.json`、`validation.json` 和 `build_manifest.json`。
+
+```powershell
+python scripts/build_sec_chunks.py --tokenizer-path "本地 all-MiniLM-L6-v2 snapshot 目录" --output-dir data/sec/chunking_v1/20261021-minilm200-overlap32-v1-rebuild
+```
+
+仅加载本地 tokenizer，不联网下载。原始长块分词可能提示超过 tokenizer 的原始长度
+限制；不会将该长块送入模型，切分后的完整输入另行检查。输出目录必须不存在。
+构建清单记录输入、表格计划、实现、tokenizer 文件与产物 hash，及实际模型长度配置。
+chunks.json 已忽略，可由冻结章节和计划复现；清单和验证记录可以提交。
+
+这证明 chunk 结构、预算与来源对应关系，不证明财务语义推断或检索精度。
+表外标题/脚注不会自动复制到表格 chunk，独立段落的跨块上下文也仍有限。
+下一阶段为 SEC 索引及检索 benchmark，不再增加 HTML 清洗练习。
+
+## 前序状态：2026-10-21 结构化章节输出完成
 
 构建产物位于 `processed/20261021-sections-v1/`：六份报告、18 个章节、2866 个块，
 其中 74 张表。`sections.jsonl` 为下一阶段 chunker 的输入，每个块统一包含

@@ -1,0 +1,22 @@
+{
+  "documents": 6,
+  "sections": 18,
+  "source_blocks": {
+    "text": 2792,
+    "table": 74
+  },
+  "chunks": 3091,
+  "chunk_types": {
+    "text": 2995,
+    "table": 96
+  },
+  "max_body_tokens": 200,
+  "max_embedding_tokens": 236,
+  "checks": {
+    "unique_ids": true,
+    "source_reconstruction": true,
+    "block_and_row_coverage": true,
+    "token_limits": true,
+    "contiguous_faiss_ids": true
+  }
+}
