@@ -1,0 +1,61 @@
+{
+  "status": "reviewed_structurally_validated",
+  "validation_date": "2026-10-22",
+  "counts": {
+    "questions": 40,
+    "dev": 30,
+    "test": 10,
+    "answerable": 32,
+    "unanswerable": 8,
+    "reviewed": 40
+  },
+  "checks": {
+    "dev_formal_loader": true,
+    "test_formal_loader": true,
+    "draft_unchanged": true,
+    "question_answer_evidence_unchanged": true,
+    "asset_hashes": true,
+    "unique_query_ids_and_texts": true,
+    "exact_quote_membership": true,
+    "explicit_report_metadata": true,
+    "source_constraints": true,
+    "evidence_group_membership": true,
+    "complete_matching_negative_scopes": true,
+    "disjoint_fact_groups": true,
+    "disjoint_positive_evidence_chunks": true,
+    "decimal_arithmetic": true,
+    "dev_cli_check_only": true,
+    "absence_content_unchanged": true
+  },
+  "categories": {
+    "dev": {
+      "business_fact": 2,
+      "definition": 3,
+      "table_numeric": 5,
+      "calculation": 3,
+      "risk_paraphrase": 4,
+      "multi_evidence": 4,
+      "event_numeric": 1,
+      "cross_year": 1,
+      "cross_company": 1,
+      "unanswerable": 6
+    },
+    "test": {
+      "table_numeric": 2,
+      "definition": 1,
+      "business_fact": 2,
+      "calculation": 1,
+      "multi_evidence": 1,
+      "risk_paraphrase": 1,
+      "unanswerable": 2
+    }
+  },
+  "semantic_review_basis": "Explicit user confirmation recorded in review_record.json; structural checks are not an independent semantic audit.",
+  "models_executed": false,
+  "limits": [
+    "Negative labels apply only to the specified extracted sections, not all filings or external knowledge.",
+    "Alternative relevant chunks may be incomplete.",
+    "Flat Recall/MRR do not certify complete evidence-group coverage.",
+    "Small same-corpus held-out-question test set, not held-out-company evaluation."
+  ]
+}

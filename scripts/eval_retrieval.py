@@ -1,265 +1,239 @@
-import argparse
-import json
-from pathlib import Path
-import csv
-from rag_agent_system.config import load_config
-from rag_agent_system.evaluation.benchmark import load_benchmark
-from rag_agent_system.evaluation.metrics import (
-    recall_at_k,
-    hit_rate_at_k,
-    reciprocal_rank,
-)
-from rag_agent_system.retrieval.faiss_retriever import FaissRetriever
-from rag_agent_system.retrieval.reranker import CrossEncoderReranker
-from rag_agent_system.paths import resolve_project_path
-import shutil
-from time import perf_counter
-import hashlib
-from datetime import datetime, timedelta, timezone
+"""Evaluate a version-bound retrieval benchmark with optional reranking."""
 
-def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as f:
-        while block := f.read(1024 * 1024):
-            digest.update(block)
-    return digest.hexdigest()
+import argparse
+import csv
+import json
+import shutil
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from time import perf_counter
+
+from rag_agent_system.config import load_config
+from rag_agent_system.evaluation.benchmark import load_benchmark, sha256_file
+from rag_agent_system.evaluation.metrics import hit_rate_at_k, recall_at_k, reciprocal_rank
+from rag_agent_system.paths import resolve_project_path
+from rag_agent_system.retrieval.faiss_retriever import DocumentRetriever
+from rag_agent_system.retrieval.reranker import CrossEncoderReranker
+
+METRIC_NAMES = ("recall_1", "recall_3", "recall_5", "hit_5", "rr_at_20")
+
+
+def write_json(path: Path, value) -> None:
+    """Replace a checkpoint only after its new JSON has been fully written."""
+    temporary = path.with_name(path.name + ".tmp")
+    temporary.write_text(
+        json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+        encoding="utf-8",
+    )
+    temporary.replace(path)
+
+
+def score_ranking(ids: list[str], relevant: set[str], *,
+                  retrieval_seconds: float, rerank_seconds: float | None) -> dict:
+    return {
+        **{f"recall_{k}": recall_at_k(ids, relevant, k) for k in (1, 3, 5)},
+        "hit_5": hit_rate_at_k(ids, relevant, 5),
+        "rr_at_20": reciprocal_rank([chunk_id in relevant for chunk_id in ids[:20]]),
+        "retrieval_seconds": retrieval_seconds,
+        "rerank_seconds": rerank_seconds,
+    }
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Evaluate retrieval on the formal TinyStories benchmark.")
-    parser.add_argument("--config", default="configs/default.yaml", help="Config selecting one data/benchmark version.")
-    parser.add_argument("--check-only", action="store_true", help="Validate inputs without loading models or creating a run.")
-    parser.add_argument(
-        "--run-dir", type=Path,
-        help="New output directory; defaults to a timestamped directory under data/evaluation/stage2.",
-    )
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", default="configs/default.yaml",
+                        help="Config selecting one benchmark and its retrieval assets.")
+    parser.add_argument("--check-only", action="store_true",
+                        help="Validate inputs without constructing models or creating a run.")
+    parser.add_argument("--run-dir", type=Path, help="New output directory; never overwritten.")
+    parser.add_argument("--candidate-top-k", type=int, default=20,
+                        help="Evaluation candidate budget; default 20 preserves the historical protocol.")
     args = parser.parse_args(argv)
+    if args.candidate_top_k <= 0:
+        parser.error("--candidate-top-k must be a positive integer")
     config = load_config(args.config)
     benchmark = load_benchmark(config)
-    queries_path = benchmark["queries_path"]
-    manifest_path = benchmark["manifest_path"]
+    manifest = benchmark["manifest"]
     queries = benchmark["queries"]
+    # The loader already checks manifest counts, annotations, quotes and asset bindings.
+    scored_queries = [item for item in queries if item["answerable"]]
+    excluded_queries = [
+        {"query_id": item["query_id"], "excluded_reason": "unanswerable_no_relevant_ids"}
+        for item in queries if not item["answerable"]
+    ]
+    if not scored_queries:
+        raise ValueError("No answerable queries available for retrieval evaluation")
+    warmup_item = scored_queries[0]
     if args.check_only:
-        print(json.dumps({"benchmark_version": benchmark["manifest"]["version"],
-                          "query_count": len(queries), "queries_path": str(queries_path),
-                          "chunks_path": str(config.paths.chunks),
-                          "faiss_index": str(config.paths.faiss_index)}, ensure_ascii=True, indent=2))
+        print(json.dumps({
+            "benchmark_version": manifest["version"], "query_count": len(queries),
+            "scored_count": len(scored_queries), "excluded_count": len(excluded_queries),
+            "queries_path": str(benchmark["queries_path"]),
+            "chunks_path": str(config.paths.chunks), "faiss_index": str(config.paths.faiss_index),
+            "retrieval_mode": config.retrieval.mode, "reranker_enabled": config.reranker.enabled,
+            "candidate_top_k": args.candidate_top_k, "warmup_query_id": warmup_item["query_id"],
+        }, ensure_ascii=False, indent=2))
         return 0
+
+    inputs = {
+        "queries": benchmark["queries_path"], "manifest": benchmark["manifest_path"],
+        "absence_evidence": benchmark["absence_path"],
+    }
+    asset_paths = {**inputs, "faiss_index": config.paths.faiss_index, "chunks": config.paths.chunks}
+    asset_hashes = {name: sha256_file(path) for name, path in asset_paths.items()}
+    if asset_hashes["queries"] != manifest["dataset_sha256"]:
+        raise ValueError("Benchmark changed after validation")
+    if json.loads(inputs["manifest"].read_text(encoding="utf-8-sig")) != manifest:
+        raise ValueError("Benchmark manifest changed after validation")
+    for name, expected in manifest.get("asset_binding", {}).items():
+        if name in asset_hashes and asset_hashes[name] != expected:
+            raise ValueError(f"Benchmark asset changed after validation: {name}")
+    names = [path.name for path in inputs.values()]
+    reserved = {"config.json", "per_query.json", "summary.json", "excluded_queries.json",
+                "run_status.json", "failure.json", "total.csv"}
+    if len(set(names)) != len(names) or set(names) & reserved:
+        raise ValueError("Benchmark input filenames collide with run artifacts")
     if args.run_dir is None:
         run_id = datetime.now(timezone(timedelta(hours=8))).strftime("%Y%m%d-%H%M%S-%f")
-        args.run_dir = Path("data/evaluation/stage2") / f"{run_id}-retrieval-{benchmark['manifest']['version']}"
+        args.run_dir = Path("data/evaluation/sec_v1") / f"{run_id}-retrieval-{manifest['version']}"
     run_dir = resolve_project_path(args.run_dir)
     run_dir.mkdir(parents=True, exist_ok=False)
-
-    retriever = FaissRetriever(
-        index_path=config.paths.faiss_index,
-        chunks_path=config.paths.chunks,
-        embedding_model=config.retrieval.embedding_model,
-        normalize_embeddings=config.retrieval.normalize_embeddings,
-    )
-
-    reranker = CrossEncoderReranker(
-        model_name=config.reranker.model_name,
-        max_length=config.reranker.max_length,
-        batch_size=config.reranker.batch_size,
-    )
-
-    all_results = []
     json_path = run_dir / "per_query.json"
-    scored_queries=[]
-    excluded_queries=[]
-    query_ids=[]
-
-    for item in queries:
-        query = item["query"]
-        if item["query_id"] in query_ids:
-            raise ValueError("Query ids must be unique.")
-        else:
-            query_ids.append(item["query_id"])
-        answerable = item["answerable"]
-        relevant_ids = item["relevant_chunk_ids"]
-        if type(answerable) is not bool:
-            raise ValueError("answerable must be a boolean")
-        if answerable != bool(relevant_ids):
-            raise ValueError(f"Inconsistent annotation: {item['query_id']}")
-        if not answerable:
-            excluded_queries.append({"query_id": item["query_id"],"excluded_reason":"unanswerable_no_relevant_ids"})
-        else:
-            scored_queries.append(item)
-        if item["annotation_status"] != "reviewed":
-            raise ValueError(f"Unreviewed query: {item['query_id']}")
-    if len(scored_queries) != 40:
-        raise ValueError("Scored queries must have exactly 40 queries.")
-    if len(excluded_queries) != 5:
-        raise ValueError("Excluded queries must have exactly 5 queries.")
-    if len(queries) != 45:
-        raise ValueError("Queries must have exactly 45 queries.")
-    shutil.copy2(queries_path, run_dir / queries_path.name)
-    shutil.copy2(manifest_path, run_dir / manifest_path.name)
-    shutil.copy2(benchmark["absence_path"], run_dir / benchmark["absence_path"].name)
-    with manifest_path.open("r", encoding="utf-8") as f:
-        manifest = json.load(f)
-    benchmark_version = manifest["version"]
-    asset_hashes = {
-        "queries": sha256_file(run_dir / queries_path.name),
-        "manifest": sha256_file(run_dir / manifest_path.name),
-        "faiss_index": sha256_file(config.paths.faiss_index),
-        "chunks": sha256_file(config.paths.chunks),
-        "absence_evidence": sha256_file(benchmark["absence_path"]),
+    all_results = []
+    run_names = ["Without Rerank"]
+    if config.reranker.enabled:
+        run_names.append("With Rerank")
+    # Pure retrieval evaluation reranks all candidates before metric cutoffs.
+    # reranker.top_k/context.top_k select answer context in the application pipeline.
+    config_record = {
+        "evaluation_protocol": "retrieval-optional-rerank-v2",
+        "retrieval_mode": config.retrieval.mode, "reranker_enabled": config.reranker.enabled,
+        "experiments": run_names, "Retrieved_top_k": args.candidate_top_k,
+        "Rerank_top_k": args.candidate_top_k if config.reranker.enabled else None,
+        "Context_top_k": config.context.top_k,
+        "Reranker": config.reranker.model_name if config.reranker.enabled else None,
+        "Retriever": config.retrieval.embedding_model,
+        "Max_Length": config.reranker.max_length if config.reranker.enabled else None,
+        "Batch_size": config.reranker.batch_size if config.reranker.enabled else None,
+        "Normalize_embeddings": config.retrieval.normalize_embeddings,
+        "Faiss_Index_Path": str(config.paths.faiss_index),
+        "Data_Chunks_Path": str(config.paths.chunks),
+        "Query_count": len(scored_queries), "Total_query_count": len(queries),
+        "Excluded_count": len(excluded_queries), "Queries_path": str(inputs["queries"]),
+        "benchmark_version": manifest["version"],
+        "config_source": str(resolve_project_path(args.config)), "asset_sha256": asset_hashes,
+        "code_sha256": {"eval_retrieval.py": sha256_file(Path(__file__))},
+        "metrics": ["Recall@1/3/5", "HitRate@5", "MRR@20"],
+        "timing_note": "Preparation and one warmup are separate from scored query timings.",
     }
+    phase, current_item, current_baseline_ids = "snapshot", None, []
+    try:
+        for name, path in inputs.items():
+            copied = run_dir / path.name
+            shutil.copy2(path, copied)
+            if sha256_file(copied) != asset_hashes[name]:
+                raise ValueError(f"Benchmark input changed during snapshot: {name}")
+        write_json(run_dir / "config.json", config_record)
+        write_json(run_dir / "excluded_queries.json", excluded_queries)
+        write_json(json_path, all_results)
+        write_json(run_dir / "run_status.json", {"status": "running", "completed_count": 0})
 
-    if asset_hashes["queries"] != manifest["dataset_sha256"]:
-        raise ValueError("Benchmark hash does not match manifest")
-    start = perf_counter()
-    retriever._load_resources()
-    retriever_end = perf_counter()
-    retriever_load_seconds = retriever_end - start
-    reranker._load_resources()
-    reranker_end = perf_counter()
-    reranker_load_seconds = reranker_end - retriever_end
-    warmup_item = next(
-        item for item in queries if item["query_id"] == "q002"
-    )
-    retrieved_warm_up_chunks=retriever.retrieve(warmup_item["query"],top_k=20)
-    rerank_warm_up_chunk=reranker.rerank(warmup_item["query"],retrieved_warm_up_chunks,top_k=20)
-    warm_up_end = perf_counter()
-    warm_up_seconds = warm_up_end - reranker_end
-    for item in scored_queries:
-        query = item["query"]
-        relevant_ids = set(item["relevant_chunk_ids"])
-        start = perf_counter()
-        candidates = retriever.retrieve(query, top_k=20)
-        retrieval_end_time = perf_counter()
-        retrieval_time = retrieval_end_time - start
-        reranked = reranker.rerank(query, candidates, top_k=20)
-        rerank_end_time = perf_counter()
-        rerank_time = rerank_end_time - retrieval_end_time
-        baseline_ids = [result.chunk.chunk_id for result in candidates]
-        reranked_ids = [result.chunk.chunk_id for result in reranked]
-
-        # TODO：分别计算两组 Recall@1/3/5、HitRate@5、RR@20
-        # TODO：保存 query_id、两组排序 ID 和逐问题指标
-        with_rerank_recall_1=recall_at_k(reranked_ids,relevant_ids,1)
-        with_rerank_recall_3 = recall_at_k(reranked_ids, relevant_ids, 3)
-        with_rerank_recall_5 = recall_at_k(reranked_ids, relevant_ids, 5)
-        with_rerank_hit_5 = hit_rate_at_k(reranked_ids, relevant_ids, 5)
-        with_rerank_relevance = [chunk_id in relevant_ids for chunk_id in reranked_ids[:20]]
-        with_rr_20 = reciprocal_rank(with_rerank_relevance)
-        without_rerank_recall_1 = recall_at_k(baseline_ids, relevant_ids, 1)
-        without_rerank_recall_3 = recall_at_k(baseline_ids, relevant_ids, 3)
-        without_rerank_recall_5 = recall_at_k(baseline_ids, relevant_ids, 5)
-        without_rerank_hit_5 = hit_rate_at_k(baseline_ids, relevant_ids, 5)
-        without_rerank_relevance = [chunk_id in relevant_ids for chunk_id in baseline_ids[:20]]
-        without_rr_20 = reciprocal_rank(without_rerank_relevance)
-        experiments={
-            "With Rerank":{"recall_1":with_rerank_recall_1,
-                           "recall_3": with_rerank_recall_3,
-                           "recall_5": with_rerank_recall_5,
-                           "hit_5": with_rerank_hit_5,
-                           "rr_at_20": with_rr_20,
-                           "retrieval_seconds":retrieval_time,
-                           "rerank_seconds":rerank_time,
-                           }
-            ,"Without Rerank":{"recall_1":without_rerank_recall_1,
-                           "recall_3": without_rerank_recall_3,
-                           "recall_5": without_rerank_recall_5,
-                           "hit_5": without_rerank_hit_5,
-                           "rr_at_20": without_rr_20,
-                           "retrieval_seconds": retrieval_time,
-                           "rerank_seconds": None,
-                           }
-        }
-        all_results.append({
-            "query_id": item["query_id"],
-            "query": query,
-            "relevant_chunk_ids": sorted(relevant_ids),
-            "baseline_ids": baseline_ids,
-            "reranked_ids": reranked_ids,
-            "metrics": experiments,
-        })
-    if not all_results:
-        raise ValueError("No evaluation results")
-
-
-    summary = {}
-
-    for run in ("Without Rerank", "With Rerank"):
-        summary[run] = {}
-
-        for metric in ("recall_1", "recall_3", "recall_5", "hit_5", "rr_at_20"):
-            average = sum(
-                result["metrics"][run][metric]
-                for result in all_results
-            ) / len(all_results)
-
-            name = "mrr_at_20" if metric == "rr_at_20" else metric
-            summary[run][name] = average
-    summary_record={
-        "scored_count":len(all_results),
-        "excluded_count":len(excluded_queries),
-        "retriever_load_seconds":retriever_load_seconds,
-        "reranker_load_seconds":reranker_load_seconds,
-    "warmup_query_id": warmup_item["query_id"],
-    "warmup_seconds": warm_up_seconds,
-        "metrics":summary,
-    }
-    print(json.dumps(summary_record, ensure_ascii=False, indent=2))
-    json_path.parent.mkdir(parents=True, exist_ok=True)
-    with json_path.open("w", encoding="utf-8") as f:
-        json.dump(all_results, f, ensure_ascii=False, indent=2)
-    summary_path = run_dir / "summary.json"
-    with summary_path.open("w", encoding="utf-8") as f:
-        json.dump(summary_record, f, ensure_ascii=False, indent=2)
-    csv_path = run_dir / "total.csv"
-    csv_path.parent.mkdir(parents=True, exist_ok=True)
-    config_json={"Temperature":config.generation.temperature,
-                       "Retrieved_top_k":20,
-                       "Rerank_top_k":20,
-                       "Context_top_k":config.context.top_k,
-                       "tokenizer and generation model":config.generation.model_name,
-                       "Reranker":config.reranker.model_name,
-                       "Retriever":config.retrieval.embedding_model,
-                       "Max_Length":config.reranker.max_length,
-                       "Batch_size":config.reranker.batch_size,
-                       "Normalize_embeddings":config.retrieval.normalize_embeddings,
-                       "max_new_tokens":config.generation.max_new_tokens,
-                       "Faiss_Index_Path":str(config.paths.faiss_index),
-                       "Data_Chunks_Path":str(config.paths.chunks),
-    "Query_count": len(all_results),
-    "Queries_path": str(queries_path),
-                 "benchmark_version":benchmark_version,
-                 "config_source": str(resolve_project_path(args.config)),
-    "asset_sha256": asset_hashes,
-                       }
-    config_path = run_dir / "config.json"
-    config_path.parent.mkdir(parents=True, exist_ok=True)
-    excluded_path = run_dir / "excluded_queries.json"
-    with excluded_path.open("w", encoding="utf-8") as f:
-        json.dump(excluded_queries, f, ensure_ascii=False, indent=2)
-    with config_path.open("w", encoding="utf-8") as f:
-        json.dump(config_json, f, ensure_ascii=False, indent=2)
-
-    print(f"Saved config to {config_path}")
-    with csv_path.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=[
-                "run",
-                "recall_1",
-                "recall_3",
-                "recall_5",
-                "hit_5",
-                "mrr_at_20",
-            ],
+        phase = "prepare"
+        retriever = DocumentRetriever(
+            index_path=config.paths.faiss_index, chunks_path=config.paths.chunks,
+            embedding_model=config.retrieval.embedding_model,
+            normalize_embeddings=config.retrieval.normalize_embeddings, mode=config.retrieval.mode,
         )
+        reranker = None
+        if config.reranker.enabled:
+            reranker = CrossEncoderReranker(model_name=config.reranker.model_name,
+                max_length=config.reranker.max_length, batch_size=config.reranker.batch_size)
+        start = perf_counter()
+        retriever.prepare()
+        retriever_load_seconds = perf_counter() - start
+        reranker_load_seconds = None
+        if reranker is not None:
+            start = perf_counter()
+            reranker.prepare()
+            reranker_load_seconds = perf_counter() - start
 
-        writer.writeheader()
+        phase, current_item = "warmup", warmup_item
+        start = perf_counter()
+        candidates = retriever.retrieve(warmup_item["query"], top_k=args.candidate_top_k)
+        if reranker is not None:
+            reranker.rerank(warmup_item["query"], candidates, top_k=args.candidate_top_k)
+        warmup_seconds = perf_counter() - start
 
-        for run, metrics in summary.items():
-            writer.writerow({
-                "run": run,
-                **metrics,
-            })
+        for item in scored_queries:
+            phase, current_item, current_baseline_ids = "retrieve", item, []
+            relevant = set(item["relevant_chunk_ids"])
+            start = perf_counter()
+            candidates = retriever.retrieve(item["query"], top_k=args.candidate_top_k)
+            retrieval_seconds = perf_counter() - start
+            current_baseline_ids = [r.chunk.chunk_id for r in candidates]
+            rankings = {"Without Rerank": current_baseline_ids}
+            rerank_seconds = None
+            if reranker is not None:
+                phase = "rerank"
+                start = perf_counter()
+                reranked = reranker.rerank(item["query"], candidates, top_k=args.candidate_top_k)
+                rerank_seconds = perf_counter() - start
+                rankings["With Rerank"] = [r.chunk.chunk_id for r in reranked]
+            experiments = {
+                name: score_ranking(ids, relevant, retrieval_seconds=retrieval_seconds,
+                                    rerank_seconds=rerank_seconds if name == "With Rerank" else None)
+                for name, ids in rankings.items()
+            }
+            record = {
+                "query_id": item["query_id"], "query": item["query"],
+                "relevant_chunk_ids": sorted(relevant), "baseline_ids": current_baseline_ids,
+                "reranked_ids": rankings.get("With Rerank"), "metrics": experiments,
+            }
+            phase = "checkpoint"
+            write_json(json_path, all_results + [record])
+            all_results.append(record)
+            write_json(run_dir / "run_status.json",
+                       {"status": "running", "completed_count": len(all_results)})
+
+        phase, current_item = "summarize", None
+        summary_metrics = {
+            name: {
+                "mrr_at_20" if metric == "rr_at_20" else metric:
+                    sum(r["metrics"][name][metric] for r in all_results) / len(all_results)
+                for metric in METRIC_NAMES
+            } for name in run_names
+        }
+        summary = {
+            "scored_count": len(all_results), "excluded_count": len(excluded_queries),
+            "retrieval_mode": config.retrieval.mode, "reranker_enabled": config.reranker.enabled,
+            "retriever_load_seconds": retriever_load_seconds,
+            "reranker_load_seconds": reranker_load_seconds,
+            "warmup_query_id": warmup_item["query_id"], "warmup_seconds": warmup_seconds,
+            "metrics": summary_metrics,
+        }
+        with (run_dir / "total.csv").open("w", encoding="utf-8-sig", newline="") as handle:
+            writer = csv.DictWriter(handle,
+                fieldnames=["run", "recall_1", "recall_3", "recall_5", "hit_5", "mrr_at_20"])
+            writer.writeheader()
+            for name, metrics in summary_metrics.items():
+                writer.writerow({"run": name, **metrics})
+        write_json(run_dir / "summary.json", summary)
+        write_json(run_dir / "run_status.json",
+                   {"status": "complete", "completed_count": len(all_results)})
+    except (Exception, KeyboardInterrupt) as error:
+        # Preserve diagnostics and re-raise; a failed run must not look successful.
+        failure = {
+            "status": "interrupted" if isinstance(error, KeyboardInterrupt) else "failed",
+            "phase": phase, "query_id": current_item["query_id"] if current_item else None,
+            "query": current_item["query"] if current_item else None,
+            "completed_count": len(all_results), "baseline_ids": current_baseline_ids,
+            "error_type": type(error).__name__, "error": str(error),
+        }
+        write_json(run_dir / "failure.json", failure)
+        write_json(run_dir / "run_status.json", failure)
+        raise
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(f"Saved retrieval results to {run_dir}")
     return 0
 
 

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "version": "sec-v1-reviewed",
+  "status": "reviewed_frozen",
+  "frozen_date": "2026-10-22",
+  "counts": {
+    "questions": 40,
+    "dev": 30,
+    "test": 10,
+    "answerable": 32,
+    "unanswerable": 8,
+    "reviewed": 40
+  },
+  "parent_bundle": {
+    "path": "data/sec/benchmark/20261022-sec-v1-draft/bundle_manifest.json",
+    "sha256": "d468188cb5e36b2e49fef1b6233b1a2e25c28fa49b9fb8ef32c925af55c628d0"
+  },
+  "inputs": {
+    "chunks": {
+      "path": "data/sec/chunking_v1/20261021-minilm200-overlap32-v1/chunks.json",
+      "sha256": "712199ed06dc4f0d171667165c5cba6beca8d3cdc25b29a3772b086eab98af67"
+    },
+    "index": {
+      "path": "data/sec/indexes/20261022-minilm-flatip-v1/sec.faiss",
+      "sha256": "7e1bdbf23a5ef9c3ed9e25dd5247c0b4611682b50d49afd74c1d2fc5ca4bac3e"
+    }
+  },
+  "evaluation_config_snapshot": "evaluation_config.yaml",
+  "validation_code_sha256": {
+    "benchmark.py": "19c918ddac73de6aacfcfae431d1bdbb4a2105e1cdd3ca421a6d0c2cb4745028",
+    "eval_retrieval.py": "644836bb5df89ae88bd3a569929c921df52e26cf6302d6388cf4eb4732be83e8",
+    "config.py": "63fc7ad025e2219a1f33e98c5826897c999a2eea6b4adeec7e04e382c4828c89"
+  },
+  "files_sha256": {
+    "chunks_build_manifest.json": "c3e78cef78500df5c00660f8515da6f5d57a1c1e8bc8b4d910fc5b98b0d66b55",
+    "dev_absence_evidence.json": "5ff74a023276b1c6778d8a035622aca35c4fccc6a5358fc2106ce1d4ff242af0",
+    "dev_manifest.json": "05320582ccc0a0494824bf7bb97c625056599f307359f3519d697c8825b54cd3",
+    "dev_preflight.json": "1685ea4412ae2289b31a5cf9bcdafe739d42b75be15a4870c5890eb7b60f1c4b",
+    "dev_queries.jsonl": "8be273b2e0d84a32fa86af0fcf5d1a05f4dae933bf43a6a1cd209aa7c45a79ef",
+    "dev_review.md": "3d4325758ff797e3757580d09ab37e90cea2bee22a8c5dd013dd44384977e2bd",
+    "evaluation_config.yaml": "c73966076635992174e6f637953ace26a8797bcd76e30421d837eba4beb2c219",
+    "index_build_manifest.json": "73c3135930baef629e28f075fc71887b006061404fbc53504e3728bf6f986ec4",
+    "README.md": "923d91359690838a453145ee4a8ba94e79b375441f2911ef08f4f94394485558",
+    "review_record.json": "11c1adf0655e394cbdab6248820374bf82e8ed6c1f9d7eed7bb5f4320bb61b11",
+    "test_absence_evidence.json": "f6438e2d5dd34704f81d8f4cb1d81bc6ac988dca1917fb604879ce7080703149",
+    "test_manifest.json": "7c8859becc0098a49ae7d9737e069e5c8c5971cd19245a9ea7ce4636800a40ee",
+    "test_queries.jsonl": "04c78df3ad520842262665f0f139791a64eaf1d512a54460bfe3fd945322f529",
+    "test_review.md": "e70aee135025d8ba3b47d3ede0a5586a337cc90acc6f73aad27c3a47157c1152",
+    "validation.json": "33e413dc21dee967852e3803796b59d0c48d2aa9b9cbce20cd21ae0974ea8976"
+  },
+  "limits": [
+    "Negative labels apply only to the specified extracted sections, not all filings or external knowledge.",
+    "Alternative relevant chunks may be incomplete.",
+    "Flat Recall/MRR do not certify complete evidence-group coverage.",
+    "Small same-corpus held-out-question test set, not held-out-company evaluation."
+  ],
+  "retrieval_evaluated": false,
+  "generation_evaluated": false
+}

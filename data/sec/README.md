@@ -1,6 +1,74 @@
-# SEC corpus：准备阶段
+# SEC corpus：数据、索引与评测资产
 
-## 最新状态：2026-10-21 统一 chunk 输出完成
+## 最新状态：2026-10-22 Benchmark v1 已复核冻结
+
+用户确认「核实完毕，可以冻结」后，生成独立版本
+`benchmark/20261022-sec-v1-reviewed/`，保留原草稿不变。
+40 题全部为 reviewed：dev 30 题（24 可回答、6 不可回答），
+test 10 题（8 可回答、2 不可回答）。题目、答案、证据与拆分内容未改动。
+`review_record.json` 记录确认来源，`bundle_manifest.json` 绑定文件指纹及父版本。
+
+`configs/SEC_v1.yaml` 仅接入 reviewed dev。两个 split 均通过正式 loader 的资产、
+引用和数量检查；额外核对元数据、负例范围、证据组、Decimal 计算及拆分隔离。
+实际开发集 check-only 结果见该目录 `dev_preflight.json`，无模型推理或正式成绩。
+test 继续保留，方案固定前不用于调参；后续先运行 Dense 开发集 baseline。
+
+```powershell
+python scripts/eval_retrieval.py --config configs/SEC_v1.yaml --check-only
+```
+
+负例范围只包含指定报告已抽取的 Item 1、1A、7，不能解释为全文或外部知识中不存在。
+当前指标使用扁平相关 ID，多证据问题仍须另查完整证据组覆盖。
+修改标注或绑定资产时创建新版本，保留此冻结版本。
+
+## 前序状态：2026-10-22 FAISS 索引生成与验收完成
+
+索引为 `indexes/20261022-minilm-flatip-v1/sec.faiss`：IndexFlatIP，3091 条、384 维。
+对应 chunks 仍是 `chunking_v1/20261021-minilm200-overlap32-v1/chunks.json`，不复制或
+改写已完成的 chunk bundle。编号对应原列表位置，源文件与索引 hash 记录在
+`index_build.json`；不要搭配其他版本的 chunks 使用。
+
+用户完成 faiss_build.py 的核心实现；助手只修正 faiss 的运行时导入，补齐持久化入口
+与验收。实际在 cuda:0、batch_size=64、离线本地 MiniLM snapshot 下构建：全部向量
+为有限 float32，单位范数最大误差约 1.19e-7；首、中、末三条独立重新编码核对通过。
+索引保存后全部向量逐元素相同，检索分数/编号相同；现有 FaissRetriever 重新加载
+磁盘索引、chunks 和本地模型后，结果与直接搜索一致。
+
+```powershell
+python scripts/build_sec_index.py --model-path "本地 all-MiniLM-L6-v2 snapshot 目录" --output-dir data/sec/indexes/20261022-minilm-flatip-v1-rebuild
+```
+
+输出目录必须不存在，完成标记 `index_build.json` 最后写入。索引绑定当前 chunk
+清单记录的模型 snapshot 和 tokenizer 文件指纹，并额外保存权重及 pooling 配置指纹。
+入口不会下载模型；本次检索器兼容验收也在离线环境运行。
+sec.faiss 是忽略 Git 的可再生产物，构建清单、验证结果与 chunk 清单快照可以提交。
+
+新增代表性验收分两批运行：核心函数 17 passed，构建入口保护 3 passed。
+这验证结构、数值、持久化与现有检索器兼容，不是正式 SEC 检索质量评测。
+当时公司/财年过滤与 SEC benchmark 尚未完成；当前问答服务配置仍未切换。
+
+同日评测入口改造已完成：scripts/eval_retrieval.py 支持动态题数、mode 和可选重排，
+check-only 不创建模型或运行目录；配置在推理前保存，结果逐题检查点落盘，失败单独记录。
+benchmark.py 已支持通用 scope_chunk_ids，并兼容旧 story_chunk_ids；双字段冲突会拒绝。
+当时 SEC 标注草稿与对应 manifest 已建立，尚待人工复核及冻结，未运行正式 SEC baseline。
+
+首版草稿位于 `benchmark/20261022-sec-v1-draft/`：开发集 30 题、测试集 10 题，
+总计 32 个正例和 8 个待核查负例，全部 pending_review。先阅读该目录 README 和
+dev_review.md 集中核对答案、单位、引用和负例范围；测试集单独保留，不参与调参。
+正式 loader 会拒绝待复核状态，当前没有 SEC 质量指标。
+
+通用入口预检：
+
+```powershell
+python scripts/eval_retrieval.py --config configs/chunking_v2.yaml --check-only
+```
+
+正式运行去掉 --check-only 并指定新的 --run-dir；默认评测候选数为 20，可用
+--candidate-top-k 显式调整。启用重排时比较同批候选的排序；关闭时只有未重排结果。
+run_status.json 为 complete 才表示整组完成，失败时可查看 failure.json 和已完成题目。
+上述是冻结前状态；SEC_v1.yaml 现已绑定 reviewed SEC 开发集，见顶部最新状态。
+
+## 前序状态：2026-10-21 统一 chunk 输出完成
 
 `chunking_v1/20261021-minilm200-overlap32-v1/chunks.json` 已生成：
 2995 个文字 chunk、96 个表格 chunk，合计 3091 个。保持原有

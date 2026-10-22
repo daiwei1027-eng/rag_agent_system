@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "draft_pending_review",
+  "created_date": "2026-10-22",
+  "counts": {
+    "questions": 40,
+    "dev": 30,
+    "test": 10,
+    "answerable": 32,
+    "unanswerable": 8,
+    "reviewed": 0
+  },
+  "inputs": {
+    "chunks": {
+      "path": "data/sec/chunking_v1/20261021-minilm200-overlap32-v1/chunks.json",
+      "sha256": "712199ed06dc4f0d171667165c5cba6beca8d3cdc25b29a3772b086eab98af67"
+    },
+    "index": {
+      "path": "data/sec/indexes/20261022-minilm-flatip-v1/sec.faiss",
+      "sha256": "7e1bdbf23a5ef9c3ed9e25dd5247c0b4611682b50d49afd74c1d2fc5ca4bac3e"
+    }
+  },
+  "validation_code_sha256": {
+    "benchmark.py": "19c918ddac73de6aacfcfae431d1bdbb4a2105e1cdd3ca421a6d0c2cb4745028"
+  },
+  "files_sha256": {
+    "chunks_build_manifest.json": "c3e78cef78500df5c00660f8515da6f5d57a1c1e8bc8b4d910fc5b98b0d66b55",
+    "dev_absence_evidence.json": "b4c16d4d416d24b01746980d0c2bdc00bd8019538832629c966ebb8399422563",
+    "dev_manifest.json": "9c66ab9898ac8be4bcdf49c85eb5e31f4440af8c1944aec8915a043ad720c31f",
+    "dev_queries.jsonl": "a29adba1562ef50c7f6177e28d30aca4c8c3bdc60fee5a7a7a8971984b6140d1",
+    "dev_review.md": "220677cd02b07ce9a6c4c39d01b34914ffaaaf98d8806ee945170764e7570f54",
+    "index_build_manifest.json": "73c3135930baef629e28f075fc71887b006061404fbc53504e3728bf6f986ec4",
+    "README.md": "be349a097c8ec9e88c49a0d5f82064d5da7ed7d198d40f3676c7dec422b009ce",
+    "test_absence_evidence.json": "46b5f4f4693e588de7be1659a5c8305d318ff4a2d5ccf25f4e125e59e40839a6",
+    "test_manifest.json": "8524bc2743d30c0fc45f6274411bcf32cb2ea600fb406ce5ce802f26aae552e7",
+    "test_queries.jsonl": "5156a4a1c769a48d92b2ab4265616676cbb5008c942286eacc53656d9f326ade",
+    "test_review.md": "2da37b724e91105a135bb72df71f8c8eae4fa4fb61485f26cf27a001cab2109d",
+    "validation.json": "534c064b8652265c3f409259073a2ed653f3607173b16bc4ec623d1acbc0fc82"
+  },
+  "limits": [
+    "All semantic labels require human review.",
+    "Formal loader rejects the pending annotations.",
+    "No retrieval/generation evaluation or test-set tuning has been performed."
+  ]
+}

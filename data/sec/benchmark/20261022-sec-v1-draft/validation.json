@@ -1,0 +1,54 @@
+{
+  "status": "structurally_valid_review_pending",
+  "counts": {
+    "total": 40,
+    "dev": 30,
+    "test": 10,
+    "answerable": 32,
+    "unanswerable": 8,
+    "reviewed": 0
+  },
+  "categories": {
+    "dev": {
+      "business_fact": 2,
+      "definition": 3,
+      "table_numeric": 5,
+      "calculation": 3,
+      "risk_paraphrase": 4,
+      "multi_evidence": 4,
+      "event_numeric": 1,
+      "cross_year": 1,
+      "cross_company": 1,
+      "unanswerable": 6
+    },
+    "test": {
+      "table_numeric": 2,
+      "definition": 1,
+      "business_fact": 2,
+      "calculation": 1,
+      "multi_evidence": 1,
+      "risk_paraphrase": 1,
+      "unanswerable": 2
+    }
+  },
+  "checks": {
+    "unique_query_ids": true,
+    "exact_quote_membership": true,
+    "asset_hashes": true,
+    "source_constraints": true,
+    "nonempty_matching_negative_scopes": true,
+    "disjoint_fact_groups": true,
+    "disjoint_positive_evidence_chunks": true,
+    "arithmetic_recomputed_with_decimal": true,
+    "formal_loader_rejects_pending_both_splits": true,
+    "explicit_report_metadata_matches_evidence": true,
+    "no_duplicate_question_text": true
+  },
+  "limits": [
+    "No human semantic approval.",
+    "Keyword scans do not certify absence.",
+    "Relevance alternatives may be incomplete.",
+    "No retrieval or generation model was run.",
+    "This is a small same-corpus held-out-question set, not held-out-company evaluation."
+  ]
+}

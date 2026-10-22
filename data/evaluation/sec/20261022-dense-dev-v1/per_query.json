@@ -1,0 +1,995 @@
+[
+  {
+    "query_id": "sec_dev_001",
+    "query": "In Microsoft's FY2025 10-K Business section, what are the three business segments used to report financial performance?",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_1_b0038_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_1_b0041_c000",
+      "msft-2026-10k_item_1_b0042_c000",
+      "msft-2025-10k_item_1_b0037_c000",
+      "msft-2026-10k_item_1_b0039_c000",
+      "msft-2025-10k_item_7_b0033_c000",
+      "msft-2026-10k_item_7_b0033_c000",
+      "msft-2025-10k_item_7_b0079_c000",
+      "msft-2025-10k_item_7_b0030_c000",
+      "msft-2025-10k_item_1_b0038_c000",
+      "msft-2025-10k_item_1_b0042_c000",
+      "msft-2026-10k_item_7_b0083_c000",
+      "msft-2026-10k_item_7_b0031_c000",
+      "msft-2026-10k_item_1_b0043_c000",
+      "msft-2026-10k_item_1_b0040_c000",
+      "msft-2025-10k_item_1_b0131_c000",
+      "msft-2025-10k_item_7_b0031_c000",
+      "msft-2026-10k_item_1_b0132_c000",
+      "msft-2025-10k_item_1_b0040_c000",
+      "msft-2025-10k_item_7_b0059_c000",
+      "msft-2025-10k_item_7_b0075_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.1111111111111111,
+        "retrieval_seconds": 0.007390499988105148,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_002",
+    "query": "According to Microsoft's FY2026 MD&A metrics definitions, which businesses contribute to the Microsoft Cloud revenue metric?",
+    "relevant_chunk_ids": [
+      "msft-2026-10k_item_7_b0044_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0040_c000",
+      "msft-2026-10k_item_7_b0007_c000",
+      "msft-2025-10k_item_7_b0049_c001",
+      "msft-2025-10k_item_7_b0064_c000",
+      "msft-2025-10k_item_7_b0006_c000",
+      "msft-2025-10k_item_7_b0010_c000",
+      "msft-2025-10k_item_7_b0044_c000",
+      "msft-2025-10k_item_7_b0005_c000",
+      "msft-2026-10k_item_7_b0008_c000",
+      "msft-2025-10k_item_7_b0007_c000",
+      "msft-2026-10k_item_7_b0011_c000",
+      "msft-2026-10k_item_7_b0049_c001",
+      "msft-2025-10k_item_7_b0077_c001",
+      "msft-2026-10k_item_7_b0044_c000",
+      "msft-2026-10k_item_7_b0066_c000",
+      "msft-2025-10k_item_7_b0097_c000",
+      "msft-2026-10k_item_7_b0102_c000",
+      "msft-2025-10k_item_7_b0083_c000",
+      "msft-2026-10k_item_7_b0005_c000",
+      "msft-2026-10k_item_7_b0088_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.07142857142857142,
+        "retrieval_seconds": 0.006285100011155009,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_003",
+    "query": "How does Microsoft's FY2025 MD&A define commercial remaining performance obligation, including revenue not yet invoiced?",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_7_b0044_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0044_c000",
+      "msft-2026-10k_item_7_b0044_c000",
+      "msft-2026-10k_item_7_b0006_c000",
+      "msft-2025-10k_item_7_b0180_c000",
+      "msft-2025-10k_item_7_b0179_c000",
+      "msft-2026-10k_item_7_b0196_c000",
+      "msft-2025-10k_item_7_b0185_c000",
+      "msft-2026-10k_item_7_b0195_c000",
+      "msft-2025-10k_item_7_b0181_c000",
+      "msft-2025-10k_item_7_b0221_c000",
+      "msft-2026-10k_item_7_b0201_c000",
+      "msft-2025-10k_item_7_b0187_c000",
+      "msft-2026-10k_item_7_b0236_c000",
+      "msft-2025-10k_item_7_b0188_c000",
+      "msft-2025-10k_item_7_b0212_c000",
+      "msft-2025-10k_item_7_b0077_c003",
+      "msft-2025-10k_item_7_b0041_c000",
+      "msft-2025-10k_item_7_b0156_c000",
+      "msft-2026-10k_item_7_b0197_c000",
+      "msft-2025-10k_item_7_b0213_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.005633499997202307,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_004",
+    "query": "According to Microsoft's FY2025 MD&A segment table, what was Intelligent Cloud revenue for FY2025 and its year-over-year growth? Give the amount in USD millions.",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_7_b0077_c001"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0005_c000",
+      "msft-2025-10k_item_7_b0064_c000",
+      "msft-2025-10k_item_7_b0049_c001",
+      "msft-2026-10k_item_7_b0066_c000",
+      "msft-2025-10k_item_7_b0010_c000",
+      "msft-2026-10k_item_7_b0005_c000",
+      "msft-2025-10k_item_7_b0084_c000",
+      "msft-2025-10k_item_7_b0065_c000",
+      "msft-2025-10k_item_7_b0077_c001",
+      "msft-2025-10k_item_7_b0007_c000",
+      "msft-2025-10k_item_7_b0088_c000",
+      "msft-2025-10k_item_7_b0006_c000",
+      "msft-2025-10k_item_7_b0040_c000",
+      "msft-2026-10k_item_7_b0007_c000",
+      "msft-2026-10k_item_7_b0088_c000",
+      "goog-2024-10k_item_7_b0163_c000",
+      "goog-2025-10k_item_7_b0154_c000",
+      "msft-2026-10k_item_7_b0008_c000",
+      "msft-2026-10k_item_7_b0049_c001",
+      "msft-2026-10k_item_7_b0011_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.1111111111111111,
+        "retrieval_seconds": 0.004953800002112985,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_005",
+    "query": "In Microsoft's FY2026 MD&A, what revenue and growth rate are reported for Productivity and Business Processes in FY2026? Use USD millions.",
+    "relevant_chunk_ids": [
+      "msft-2026-10k_item_7_b0081_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0115_c000",
+      "msft-2025-10k_item_7_b0077_c000",
+      "msft-2025-10k_item_7_b0096_c000",
+      "msft-2025-10k_item_1_b0042_c000",
+      "msft-2025-10k_item_7_b0082_c000",
+      "msft-2026-10k_item_1_b0043_c000",
+      "msft-2025-10k_item_7_b0104_c000",
+      "msft-2025-10k_item_7_b0064_c000",
+      "msft-2025-10k_item_7_b0133_c000",
+      "msft-2026-10k_item_7_b0081_c000",
+      "msft-2025-10k_item_7_b0005_c000",
+      "msft-2026-10k_item_7_b0126_c000",
+      "msft-2026-10k_item_7_b0086_c000",
+      "msft-2026-10k_item_7_b0101_c000",
+      "msft-2025-10k_item_7_b0077_c003",
+      "msft-2025-10k_item_7_b0100_c000",
+      "msft-2025-10k_item_7_b0126_c000",
+      "msft-2025-10k_item_7_b0010_c000",
+      "msft-2025-10k_item_7_b0152_c000",
+      "msft-2025-10k_item_7_b0077_c002"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.1,
+        "retrieval_seconds": 0.007224900007713586,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_006",
+    "query": "Using Microsoft's FY2025 MD&A, by how many USD millions did research and development expense increase from FY2024 to FY2025? State both source amounts.",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_7_b0115_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0100_c000",
+      "msft-2025-10k_item_7_b0065_c000",
+      "msft-2025-10k_item_7_b0005_c000",
+      "msft-2025-10k_item_7_b0096_c000",
+      "msft-2025-10k_item_7_b0088_c000",
+      "msft-2025-10k_item_7_b0109_c000",
+      "msft-2026-10k_item_7_b0067_c000",
+      "msft-2026-10k_item_7_b0005_c000",
+      "msft-2025-10k_item_7_b0082_c000",
+      "msft-2025-10k_item_7_b0104_c000",
+      "msft-2025-10k_item_7_b0123_c000",
+      "goog-2024-10k_item_7_b0197_c000",
+      "msft-2026-10k_item_7_b0086_c000",
+      "msft-2026-10k_item_7_b0101_c000",
+      "msft-2025-10k_item_7_b0117_c000",
+      "msft-2026-10k_item_7_b0130_c000",
+      "msft-2025-10k_item_7_b0064_c000",
+      "msft-2025-10k_item_7_b0107_c000",
+      "goog-2025-10k_item_7_b0175_c000",
+      "msft-2025-10k_item_7_b0090_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.0061824000149499625,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_007",
+    "query": "In Microsoft's FY2026 MD&A metrics definitions, what offerings are included in Azure and other cloud services revenue, beyond Azure itself?",
+    "relevant_chunk_ids": [
+      "msft-2026-10k_item_7_b0049_c001"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0049_c001",
+      "msft-2026-10k_item_7_b0049_c001",
+      "msft-2026-10k_item_7_b0011_c000",
+      "msft-2025-10k_item_7_b0010_c000",
+      "msft-2025-10k_item_7_b0064_c000",
+      "msft-2025-10k_item_7_b0097_c000",
+      "msft-2026-10k_item_7_b0102_c000",
+      "msft-2025-10k_item_7_b0044_c000",
+      "msft-2026-10k_item_7_b0007_c000",
+      "msft-2025-10k_item_1_b0075_c000",
+      "msft-2026-10k_item_7_b0066_c000",
+      "msft-2025-10k_item_7_b0007_c000",
+      "msft-2025-10k_item_7_b0006_c000",
+      "msft-2026-10k_item_7_b0008_c000",
+      "msft-2026-10k_item_7_b0044_c000",
+      "msft-2025-10k_item_7_b0100_c000",
+      "msft-2026-10k_item_1_b0076_c000",
+      "msft-2025-10k_item_1_b0068_c000",
+      "msft-2025-10k_item_7_b0040_c000",
+      "msft-2025-10k_item_7_b0084_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.006243100011488423,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_008",
+    "query": "Why does Microsoft's FY2025 Risk Factors section say it must keep innovating to remain competitive?",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_1a_b0004_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_1a_b0003_c000",
+      "msft-2026-10k_item_1a_b0003_c000",
+      "msft-2025-10k_item_1a_b0001_c000",
+      "msft-2025-10k_item_1a_b0010_c000",
+      "msft-2025-10k_item_1a_b0004_c000",
+      "msft-2025-10k_item_1a_b0015_c000",
+      "msft-2026-10k_item_1a_b0001_c000",
+      "msft-2025-10k_item_1a_b0002_c000",
+      "msft-2025-10k_item_1a_b0016_c000",
+      "msft-2025-10k_item_1a_b0005_c000",
+      "msft-2025-10k_item_1a_b0022_c000",
+      "msft-2026-10k_item_1a_b0014_c000",
+      "msft-2025-10k_item_1a_b0029_c000",
+      "msft-2026-10k_item_1a_b0015_c000",
+      "msft-2026-10k_item_1a_b0004_c000",
+      "msft-2025-10k_item_1a_b0035_c000",
+      "msft-2026-10k_item_1a_b0005_c000",
+      "msft-2025-10k_item_1a_b0062_c000",
+      "msft-2026-10k_item_1a_b0016_c000",
+      "msft-2026-10k_item_1a_b0002_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.2,
+        "retrieval_seconds": 0.0063513999921269715,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_009",
+    "query": "What problems with training data and AI-generated content does Microsoft's FY2026 Risk Factors section identify?",
+    "relevant_chunk_ids": [
+      "msft-2026-10k_item_1a_b0089_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_1a_b0128_c000",
+      "msft-2026-10k_item_1a_b0153_c000",
+      "msft-2026-10k_item_1a_b0068_c000",
+      "msft-2026-10k_item_1a_b0089_c000",
+      "msft-2026-10k_item_1a_b0094_c000",
+      "msft-2025-10k_item_1a_b0062_c000",
+      "msft-2026-10k_item_1a_b0032_c000",
+      "msft-2026-10k_item_1a_b0035_c000",
+      "msft-2025-10k_item_1a_b0024_c000",
+      "msft-2026-10k_item_1a_b0145_c000",
+      "msft-2026-10k_item_1a_b0049_c000",
+      "msft-2026-10k_item_1a_b0036_c000",
+      "msft-2025-10k_item_1a_b0082_c000",
+      "msft-2026-10k_item_1a_b0095_c000",
+      "msft-2026-10k_item_1a_b0154_c000",
+      "msft-2025-10k_item_1a_b0129_c000",
+      "msft-2025-10k_item_1a_b0044_c000",
+      "msft-2025-10k_item_1a_b0082_c001",
+      "msft-2026-10k_item_1a_b0033_c000",
+      "msft-2025-10k_item_1a_b0125_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.25,
+        "retrieval_seconds": 0.0063362000219058245,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_010",
+    "query": "According to NVIDIA's FY2025 Business section, what manufacturing strategy does it use and which two foundries does it name for semiconductor wafers?",
+    "relevant_chunk_ids": [
+      "nvda-2025-10k_item_1_b0068_c000",
+      "nvda-2025-10k_item_1_b0072_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_1_b0072_c000",
+      "nvda-2025-10k_item_1_b0068_c000",
+      "nvda-2025-10k_item_1_b0067_c000",
+      "nvda-2025-10k_item_1a_b0104_c000",
+      "nvda-2026-10k_item_1_b0079_c000",
+      "nvda-2025-10k_item_1a_b0090_c000",
+      "nvda-2025-10k_item_1_b0084_c000",
+      "nvda-2026-10k_item_1_b0077_c000",
+      "nvda-2026-10k_item_1a_b0109_c000",
+      "nvda-2026-10k_item_1a_b0093_c000",
+      "nvda-2025-10k_item_1a_b0100_c000",
+      "nvda-2026-10k_item_1_b0078_c000",
+      "nvda-2025-10k_item_1a_b0095_c000",
+      "nvda-2025-10k_item_1_b0087_c000",
+      "nvda-2026-10k_item_1_b0096_c000",
+      "nvda-2025-10k_item_1a_b0091_c000",
+      "nvda-2025-10k_item_7_b0096_c000",
+      "nvda-2025-10k_item_1a_b0051_c000",
+      "nvda-2025-10k_item_1_b0079_c000",
+      "nvda-2025-10k_item_1a_b0093_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.006107900000642985,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_011",
+    "query": "Which two business segments are described in NVIDIA's FY2026 Business section, and what does each include?",
+    "relevant_chunk_ids": [
+      "nvda-2026-10k_item_1_b0021_c000",
+      "nvda-2026-10k_item_1_b0022_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2026-10k_item_1_b0057_c000",
+      "nvda-2026-10k_item_1_b0058_c000",
+      "nvda-2026-10k_item_1_b0069_c000",
+      "nvda-2026-10k_item_1_b0020_c000",
+      "nvda-2025-10k_item_1_b0050_c000",
+      "nvda-2025-10k_item_1_b0049_c000",
+      "nvda-2025-10k_item_1_b0017_c000",
+      "nvda-2025-10k_item_1_b0120_c000",
+      "nvda-2025-10k_item_1_b0061_c000",
+      "nvda-2026-10k_item_1_b0019_c000",
+      "nvda-2026-10k_item_1_b0077_c000",
+      "nvda-2026-10k_item_1_b0144_c000",
+      "nvda-2026-10k_item_1_b0102_c000",
+      "nvda-2025-10k_item_1_b0016_c000",
+      "nvda-2026-10k_item_1_b0000_c000",
+      "nvda-2025-10k_item_1_b0091_c000",
+      "nvda-2025-10k_item_1_b0151_c000",
+      "nvda-2025-10k_item_1_b0067_c000",
+      "nvda-2026-10k_item_1_b0081_c000",
+      "nvda-2025-10k_item_1_b0126_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.004965300002368167,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_012",
+    "query": "In NVIDIA's FY2025 Risk Factors, how can repeated export-rule changes affect supply chains, customer demand and compliance?",
+    "relevant_chunk_ids": [
+      "nvda-2025-10k_item_1a_b0202_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_1a_b0202_c000",
+      "nvda-2026-10k_item_1a_b0214_c000",
+      "nvda-2025-10k_item_1a_b0206_c000",
+      "nvda-2025-10k_item_1a_b0055_c000",
+      "nvda-2025-10k_item_1a_b0009_c000",
+      "nvda-2025-10k_item_1a_b0025_c000",
+      "nvda-2025-10k_item_1a_b0194_c000",
+      "nvda-2025-10k_item_1_b0100_c000",
+      "nvda-2025-10k_item_1a_b0100_c000",
+      "nvda-2026-10k_item_1a_b0241_c000",
+      "nvda-2026-10k_item_1a_b0240_c000",
+      "nvda-2025-10k_item_7_b0025_c000",
+      "nvda-2025-10k_item_1a_b0191_c000",
+      "nvda-2026-10k_item_1a_b0056_c000",
+      "nvda-2026-10k_item_1a_b0006_c000",
+      "nvda-2026-10k_item_1a_b0216_c000",
+      "nvda-2025-10k_item_1a_b0036_c000",
+      "nvda-2025-10k_item_1a_b0006_c000",
+      "nvda-2026-10k_item_1a_b0103_c000",
+      "nvda-2026-10k_item_1a_b0237_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.005348900012904778,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_013",
+    "query": "According to NVIDIA's FY2026 MD&A, what April 2025 export requirement led to the H20 charge, how large was the charge and what did it cover?",
+    "relevant_chunk_ids": [
+      "nvda-2026-10k_item_7_b0014_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2026-10k_item_1a_b0220_c000",
+      "nvda-2026-10k_item_1_b0109_c000",
+      "nvda-2026-10k_item_7_b0014_c000",
+      "nvda-2025-10k_item_1a_b0096_c000",
+      "nvda-2026-10k_item_1a_b0221_c000",
+      "nvda-2026-10k_item_1a_b0222_c000",
+      "nvda-2025-10k_item_1a_b0105_c000",
+      "nvda-2026-10k_item_1_b0111_c000",
+      "nvda-2026-10k_item_1a_b0099_c000",
+      "nvda-2025-10k_item_1a_b0044_c000",
+      "nvda-2026-10k_item_7_b0015_c000",
+      "nvda-2026-10k_item_1a_b0110_c000",
+      "nvda-2025-10k_item_1a_b0092_c000",
+      "nvda-2025-10k_item_7_b0016_c000",
+      "nvda-2025-10k_item_1a_b0186_c000",
+      "nvda-2025-10k_item_1a_b0097_c000",
+      "nvda-2025-10k_item_1a_b0043_c000",
+      "nvda-2025-10k_item_1a_b0187_c000",
+      "nvda-2026-10k_item_1a_b0218_c000",
+      "nvda-2026-10k_item_1_b0110_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.3333333333333333,
+        "retrieval_seconds": 0.005139900022186339,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_014",
+    "query": "In NVIDIA's FY2025 MD&A highlights, what were FY2025 and FY2024 revenue and the reported growth percentage? Use USD millions.",
+    "relevant_chunk_ids": [
+      "nvda-2025-10k_item_7_b0033_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_7_b0088_c000",
+      "nvda-2025-10k_item_7_b0035_c000",
+      "nvda-2025-10k_item_7_b0084_c000",
+      "nvda-2025-10k_item_7_b0076_c000",
+      "nvda-2025-10k_item_7_b0081_c000",
+      "nvda-2025-10k_item_7_b0072_c000",
+      "nvda-2025-10k_item_7_b0058_c000",
+      "nvda-2025-10k_item_7_b0037_c000",
+      "nvda-2026-10k_item_7_b0028_c000",
+      "nvda-2025-10k_item_7_b0057_c000",
+      "nvda-2026-10k_item_7_b0084_c000",
+      "nvda-2025-10k_item_7_b0040_c000",
+      "nvda-2025-10k_item_7_b0089_c000",
+      "nvda-2025-10k_item_7_b0123_c000",
+      "nvda-2025-10k_item_7_b0045_c000",
+      "nvda-2025-10k_item_7_b0032_c000",
+      "nvda-2026-10k_item_7_b0074_c000",
+      "nvda-2025-10k_item_7_b0095_c000",
+      "nvda-2026-10k_item_7_b0071_c000",
+      "nvda-2025-10k_item_7_b0039_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.00537820000317879,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_015",
+    "query": "At January 25, 2026, what cash and cash equivalents, marketable securities and combined total does NVIDIA's FY2026 MD&A report? Use USD millions.",
+    "relevant_chunk_ids": [
+      "nvda-2026-10k_item_7_b0120_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_7_b0118_c000",
+      "nvda-2026-10k_item_7_b0120_c000",
+      "nvda-2025-10k_item_7_b0070_c000",
+      "nvda-2025-10k_item_7_b0119_c000",
+      "nvda-2026-10k_item_7_b0067_c000",
+      "nvda-2025-10k_item_7_b0124_c000",
+      "nvda-2025-10k_item_7_b0032_c000",
+      "nvda-2026-10k_item_7_b0124_c000",
+      "nvda-2025-10k_item_7_b0136_c000",
+      "nvda-2026-10k_item_7_b0026_c000",
+      "nvda-2025-10k_item_7_b0123_c000",
+      "nvda-2026-10k_item_7_b0127_c000",
+      "nvda-2026-10k_item_7_b0075_c000",
+      "nvda-2025-10k_item_7_b0077_c000",
+      "nvda-2025-10k_item_7_b0040_c000",
+      "nvda-2025-10k_item_7_b0035_c000",
+      "nvda-2025-10k_item_7_b0125_c000",
+      "nvda-2026-10k_item_7_b0128_c000",
+      "nvda-2026-10k_item_7_b0129_c000",
+      "nvda-2026-10k_item_7_b0148_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.00489219999872148,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_016",
+    "query": "Using NVIDIA's FY2026 MD&A cash-flow table, how much did net cash provided by operating activities increase from FY2025 to FY2026? Give source amounts and the change in USD millions.",
+    "relevant_chunk_ids": [
+      "nvda-2026-10k_item_7_b0124_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_7_b0123_c000",
+      "nvda-2026-10k_item_7_b0127_c000",
+      "nvda-2025-10k_item_7_b0119_c000",
+      "nvda-2025-10k_item_7_b0124_c000",
+      "nvda-2025-10k_item_7_b0035_c000",
+      "nvda-2026-10k_item_7_b0124_c000",
+      "nvda-2025-10k_item_7_b0107_c000",
+      "nvda-2025-10k_item_7_b0081_c000",
+      "nvda-2025-10k_item_7_b0105_c000",
+      "nvda-2025-10k_item_7_b0100_c002",
+      "nvda-2025-10k_item_7_b0125_c000",
+      "nvda-2025-10k_item_7_b0100_c000",
+      "nvda-2025-10k_item_7_b0106_c000",
+      "nvda-2025-10k_item_7_b0058_c000",
+      "nvda-2025-10k_item_7_b0040_c000",
+      "nvda-2025-10k_item_7_b0100_c001",
+      "nvda-2025-10k_item_7_b0084_c000",
+      "nvda-2026-10k_item_7_b0129_c000",
+      "nvda-2026-10k_item_7_b0028_c000",
+      "nvda-2025-10k_item_7_b0088_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.16666666666666666,
+        "retrieval_seconds": 0.005178699997486547,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_017",
+    "query": "How does Alphabet's FY2024 Business section group Google and non-Google businesses for reporting, and where is centralized AI research reported?",
+    "relevant_chunk_ids": [
+      "goog-2024-10k_item_1_b0004_c000"
+    ],
+    "baseline_ids": [
+      "goog-2025-10k_item_7_b0007_c000",
+      "goog-2024-10k_item_1_b0036_c000",
+      "goog-2025-10k_item_1_b0004_c000",
+      "goog-2024-10k_item_1_b0004_c000",
+      "goog-2025-10k_item_1_b0022_c000",
+      "goog-2024-10k_item_1_b0076_c000",
+      "goog-2025-10k_item_1_b0050_c000",
+      "goog-2025-10k_item_1_b0065_c000",
+      "goog-2024-10k_item_7_b0007_c000",
+      "goog-2024-10k_item_7_b0074_c000",
+      "goog-2024-10k_item_1_b0011_c000",
+      "goog-2025-10k_item_7_b0062_c000",
+      "goog-2024-10k_item_7_b0050_c000",
+      "goog-2025-10k_item_7_b0012_c000",
+      "goog-2025-10k_item_7_b0038_c000",
+      "goog-2025-10k_item_1_b0048_c000",
+      "goog-2025-10k_item_1_b0052_c000",
+      "goog-2024-10k_item_1_b0013_c000",
+      "goog-2024-10k_item_1_b0021_c000",
+      "goog-2024-10k_item_7_b0073_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.25,
+        "retrieval_seconds": 0.006158600008348003,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_018",
+    "query": "Why does Alphabet's FY2025 MD&A expect technical-infrastructure operating costs to rise, and which cost categories does it name?",
+    "relevant_chunk_ids": [
+      "goog-2025-10k_item_7_b0014_c000"
+    ],
+    "baseline_ids": [
+      "goog-2025-10k_item_7_b0090_c000",
+      "goog-2024-10k_item_7_b0093_c000",
+      "goog-2025-10k_item_7_b0083_c000",
+      "goog-2024-10k_item_7_b0090_c000",
+      "goog-2024-10k_item_7_b0189_c000",
+      "goog-2025-10k_item_7_b0080_c000",
+      "goog-2024-10k_item_7_b0092_c000",
+      "goog-2025-10k_item_7_b0082_c000",
+      "goog-2025-10k_item_7_b0169_c000",
+      "goog-2024-10k_item_7_b0088_c000",
+      "goog-2024-10k_item_7_b0084_c000",
+      "goog-2024-10k_item_7_b0184_c000",
+      "goog-2024-10k_item_7_b0081_c000",
+      "goog-2025-10k_item_7_b0078_c000",
+      "goog-2025-10k_item_7_b0162_c000",
+      "goog-2025-10k_item_7_b0071_c000",
+      "goog-2024-10k_item_7_b0128_c000",
+      "goog-2025-10k_item_7_b0074_c000",
+      "goog-2024-10k_item_7_b0060_c000",
+      "goog-2024-10k_item_7_b0186_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.005144399998243898,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_019",
+    "query": "According to Alphabet's FY2024 MD&A revenue-by-type table, how much revenue did Google Cloud generate in 2024? State the table unit.",
+    "relevant_chunk_ids": [
+      "goog-2024-10k_item_7_b0143_c000",
+      "goog-2024-10k_item_7_b0144_c000"
+    ],
+    "baseline_ids": [
+      "goog-2024-10k_item_7_b0163_c000",
+      "goog-2025-10k_item_7_b0154_c000",
+      "goog-2024-10k_item_7_b0126_c000",
+      "goog-2024-10k_item_7_b0220_c000",
+      "goog-2025-10k_item_7_b0198_c000",
+      "goog-2025-10k_item_7_b0114_c000",
+      "goog-2025-10k_item_1_b0042_c000",
+      "goog-2024-10k_item_1_b0057_c000",
+      "goog-2024-10k_item_7_b0073_c000",
+      "goog-2025-10k_item_7_b0061_c000",
+      "goog-2024-10k_item_7_b0161_c000",
+      "goog-2025-10k_item_7_b0152_c000",
+      "goog-2024-10k_item_7_b0077_c000",
+      "goog-2025-10k_item_7_b0196_c000",
+      "goog-2025-10k_item_7_b0065_c000",
+      "goog-2024-10k_item_7_b0219_c000",
+      "goog-2024-10k_item_7_b0162_c000",
+      "goog-2024-10k_item_7_b0072_c000",
+      "goog-2025-10k_item_7_b0197_c000",
+      "goog-2025-10k_item_7_b0153_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.0052804000151809305,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_020",
+    "query": "Using Alphabet's FY2025 MD&A revenue-by-type table, how much did YouTube ads revenue increase from 2024 to 2025? Give both amounts and the change in USD millions.",
+    "relevant_chunk_ids": [
+      "goog-2025-10k_item_7_b0134_c000",
+      "goog-2025-10k_item_7_b0135_c000"
+    ],
+    "baseline_ids": [
+      "goog-2025-10k_item_7_b0143_c000",
+      "goog-2024-10k_item_7_b0150_c000",
+      "goog-2025-10k_item_7_b0152_c000",
+      "goog-2024-10k_item_7_b0161_c000",
+      "goog-2025-10k_item_7_b0145_c000",
+      "goog-2025-10k_item_7_b0171_c000",
+      "goog-2025-10k_item_7_b0139_c000",
+      "goog-2025-10k_item_7_b0039_c000",
+      "goog-2024-10k_item_7_b0191_c000",
+      "goog-2024-10k_item_7_b0051_c000",
+      "goog-2024-10k_item_7_b0148_c000",
+      "goog-2024-10k_item_7_b0152_c000",
+      "goog-2024-10k_item_7_b0179_c000",
+      "goog-2025-10k_item_7_b0169_c000",
+      "goog-2025-10k_item_7_b0147_c000",
+      "goog-2024-10k_item_7_b0126_c000",
+      "goog-2024-10k_item_7_b0154_c000",
+      "goog-2025-10k_item_7_b0142_c000",
+      "goog-2024-10k_item_7_b0189_c000",
+      "goog-2025-10k_item_7_b0114_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.004816000000573695,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_021",
+    "query": "In Alphabet's FY2025 MD&A financial highlights, what were 2025 net income and diluted net income per share? State the appropriate unit for each.",
+    "relevant_chunk_ids": [
+      "goog-2025-10k_item_7_b0111_c000",
+      "goog-2025-10k_item_7_b0112_c001"
+    ],
+    "baseline_ids": [
+      "goog-2025-10k_item_7_b0112_c001",
+      "goog-2025-10k_item_7_b0113_c000",
+      "goog-2024-10k_item_7_b0123_c001",
+      "goog-2025-10k_item_7_b0212_c000",
+      "goog-2025-10k_item_7_b0202_c000",
+      "goog-2025-10k_item_7_b0102_c000",
+      "goog-2024-10k_item_7_b0233_c000",
+      "goog-2024-10k_item_7_b0224_c000",
+      "goog-2024-10k_item_7_b0111_c000",
+      "msft-2025-10k_item_7_b0139_c000",
+      "msft-2025-10k_item_7_b0061_c000",
+      "msft-2025-10k_item_7_b0138_c000",
+      "goog-2025-10k_item_7_b0225_c000",
+      "goog-2024-10k_item_7_b0226_c000",
+      "goog-2025-10k_item_7_b0192_c000",
+      "msft-2025-10k_item_7_b0141_c000",
+      "goog-2024-10k_item_7_b0245_c000",
+      "goog-2024-10k_item_7_b0212_c000",
+      "goog-2025-10k_item_7_b0211_c000",
+      "goog-2024-10k_item_7_b0207_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 0.5,
+        "recall_5": 0.5,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.006459099997300655,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_022",
+    "query": "Using Microsoft's FY2025 and FY2026 MD&A reports as separate sources, give net income for each report's current fiscal year and calculate the increase in USD millions.",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_7_b0061_c000",
+      "msft-2026-10k_item_7_b0062_c000"
+    ],
+    "baseline_ids": [
+      "goog-2024-10k_item_7_b0179_c000",
+      "msft-2025-10k_item_7_b0096_c000",
+      "msft-2025-10k_item_7_b0070_c000",
+      "msft-2025-10k_item_7_b0108_c000",
+      "msft-2025-10k_item_7_b0152_c000",
+      "msft-2025-10k_item_7_b0188_c000",
+      "msft-2025-10k_item_7_b0087_c000",
+      "msft-2025-10k_item_7_b0141_c000",
+      "msft-2025-10k_item_7_b0082_c000",
+      "msft-2025-10k_item_7_b0077_c003",
+      "msft-2025-10k_item_7_b0099_c000",
+      "msft-2025-10k_item_7_b0104_c000",
+      "msft-2025-10k_item_7_b0115_c000",
+      "msft-2025-10k_item_7_b0004_c000",
+      "msft-2025-10k_item_7_b0139_c000",
+      "msft-2025-10k_item_7_b0005_c000",
+      "msft-2025-10k_item_7_b0183_c000",
+      "msft-2025-10k_item_7_b0025_c000",
+      "msft-2025-10k_item_7_b0148_c000",
+      "msft-2025-10k_item_7_b0136_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.00495149998459965,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_023",
+    "query": "Compare research-and-development expense as a share of revenue in Microsoft's FY2025 MD&A and Alphabet's FY2024 MD&A. State each percentage and their difference in percentage points, using each company's stated fiscal period.",
+    "relevant_chunk_ids": [
+      "goog-2024-10k_item_7_b0197_c000",
+      "msft-2025-10k_item_7_b0115_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0117_c000",
+      "goog-2024-10k_item_7_b0197_c000",
+      "msft-2026-10k_item_7_b0128_c000",
+      "goog-2025-10k_item_7_b0175_c000",
+      "msft-2025-10k_item_7_b0115_c000",
+      "msft-2025-10k_item_7_b0077_c000",
+      "msft-2025-10k_item_7_b0077_c003",
+      "msft-2025-10k_item_7_b0138_c000",
+      "msft-2025-10k_item_7_b0139_c000",
+      "msft-2025-10k_item_7_b0096_c000",
+      "msft-2025-10k_item_7_b0233_c000",
+      "msft-2025-10k_item_7_b0148_c000",
+      "msft-2025-10k_item_7_b0136_c000",
+      "msft-2025-10k_item_7_b0129_c000",
+      "msft-2025-10k_item_7_b0122_c000",
+      "msft-2025-10k_item_7_b0080_c000",
+      "msft-2025-10k_item_7_b0063_c000",
+      "msft-2025-10k_item_7_b0077_c002",
+      "msft-2025-10k_item_7_b0031_c000",
+      "msft-2026-10k_item_7_b0130_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.5,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.005832199996802956,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_dev_024",
+    "query": "Using Alphabet's FY2024 MD&A financial highlights, report 2024 operating income and net income in USD millions.",
+    "relevant_chunk_ids": [
+      "goog-2024-10k_item_7_b0122_c000",
+      "goog-2024-10k_item_7_b0123_c000",
+      "goog-2024-10k_item_7_b0123_c001"
+    ],
+    "baseline_ids": [
+      "goog-2024-10k_item_7_b0233_c000",
+      "goog-2025-10k_item_7_b0212_c000",
+      "goog-2024-10k_item_7_b0212_c000",
+      "goog-2025-10k_item_7_b0192_c000",
+      "goog-2024-10k_item_7_b0143_c000",
+      "goog-2024-10k_item_7_b0123_c001",
+      "goog-2025-10k_item_7_b0134_c000",
+      "goog-2024-10k_item_7_b0224_c000",
+      "goog-2024-10k_item_7_b0111_c000",
+      "goog-2025-10k_item_7_b0202_c000",
+      "goog-2025-10k_item_7_b0102_c000",
+      "goog-2024-10k_item_7_b0232_c000",
+      "goog-2025-10k_item_7_b0211_c000",
+      "goog-2024-10k_item_7_b0213_c000",
+      "goog-2025-10k_item_7_b0112_c001",
+      "goog-2024-10k_item_7_b0319_c000",
+      "goog-2024-10k_item_7_b0134_c000",
+      "goog-2025-10k_item_7_b0193_c000",
+      "goog-2024-10k_item_7_b0207_c000",
+      "goog-2025-10k_item_7_b0312_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.16666666666666666,
+        "retrieval_seconds": 0.004898699990008026,
+        "rerank_seconds": null
+      }
+    }
+  }
+]

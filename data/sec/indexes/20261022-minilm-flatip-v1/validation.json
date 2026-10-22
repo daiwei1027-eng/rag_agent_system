@@ -1,0 +1,62 @@
+{
+  "checks": {
+    "finite_unit_vectors": true,
+    "input_order_sample_reencoded": true,
+    "all_saved_vectors_equal": true,
+    "reload_search_equal": true,
+    "existing_retriever_disk_load_and_search": true
+  },
+  "count": 3091,
+  "dimension": 384,
+  "dtype": "float32",
+  "max_norm_error": 1.1920928955078125e-07,
+  "sample_positions": [
+    0,
+    1545,
+    3090
+  ],
+  "smoke_query": "What risks does NVIDIA discuss concerning export controls?",
+  "smoke_results": [
+    {
+      "chunk_id": "nvda-2025-10k_item_1a_b0202_c000",
+      "score": 0.809551477432251,
+      "rank": 1,
+      "ticker": "NVDA",
+      "fiscal_year": 2025,
+      "section": "item_1a"
+    },
+    {
+      "chunk_id": "nvda-2026-10k_item_1a_b0214_c000",
+      "score": 0.8088642358779907,
+      "rank": 2,
+      "ticker": "NVDA",
+      "fiscal_year": 2026,
+      "section": "item_1a"
+    },
+    {
+      "chunk_id": "nvda-2026-10k_item_1a_b0240_c000",
+      "score": 0.7828667163848877,
+      "rank": 3,
+      "ticker": "NVDA",
+      "fiscal_year": 2026,
+      "section": "item_1a"
+    },
+    {
+      "chunk_id": "nvda-2026-10k_item_1a_b0237_c000",
+      "score": 0.7793121337890625,
+      "rank": 4,
+      "ticker": "NVDA",
+      "fiscal_year": 2026,
+      "section": "item_1a"
+    },
+    {
+      "chunk_id": "nvda-2026-10k_item_1a_b0239_c000",
+      "score": 0.7779299020767212,
+      "rank": 5,
+      "ticker": "NVDA",
+      "fiscal_year": 2026,
+      "section": "item_1a"
+    }
+  ],
+  "scope": "Engineering smoke check with fresh local retriever/model load; not relevance judgments or benchmark results."
+}

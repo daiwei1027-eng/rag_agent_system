@@ -17,12 +17,20 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def load_benchmark(config: AppConfig) -> dict:
-    """Fail before inference for mixed versions, stale labels or pending reviews.
+def read_scope(record: dict) -> list[str]:
+    if "scope_chunk_ids" in record and "story_chunk_ids" in record:
+        raise ValueError("Ambiguous absence evidence scope")
+    scope = record.get("scope_chunk_ids", record.get("story_chunk_ids"))
+    if (
+        not isinstance(scope, list)
+        or not scope
+        or any(not isinstance(chunk_id, str) for chunk_id in scope)
+    ):
+        raise ValueError("Absence evidence scope must be a non-empty list of chunk IDs")
+    return scope
 
-    Older manifests bind their chunk store through the provenance files list.
-    New manifests explicitly bind chunks, index and absence evidence by hash.
-    """
+
+def load_benchmark(config: AppConfig) -> dict:
     root = project_root() / "data/benchmark"
     queries_path = config.paths.benchmark_queries or root / "tinystories_queries.jsonl"
     manifest_path = config.paths.benchmark_manifest or root / "tinystories_benchmark_manifest.json"
@@ -46,7 +54,6 @@ def load_benchmark(config: AppConfig) -> dict:
                          if Path(file["path"].replace("\\", "/")).name == config.paths.chunks.name]
         if len(legacy_chunks) != 1 or sha256_file(config.paths.chunks) != legacy_chunks[0]["sha256"]:
             raise ValueError("Benchmark asset mismatch: chunks")
-
     queries = [json.loads(line) for line in queries_path.read_text(encoding="utf-8-sig").splitlines()
                if line.strip()]
     chunks = load_chunks(config.paths.chunks)
@@ -75,13 +82,16 @@ def load_benchmark(config: AppConfig) -> dict:
                 raise ValueError(f"Invalid evidence quote or chunk: {query_id}")
         if not item["answerable"]:
             external = absence_by_id.get(query_id)
-            scope = item["absence_evidence"]["story_chunk_ids"]
-            if external is None or not scope or scope != external["story_chunk_ids"]:
+            if external is None:
+                raise ValueError(f"Missing absence evidence: {query_id}")
+            scope = read_scope(item["absence_evidence"])
+            external_scope = read_scope(external)
+            if scope != external_scope:
                 raise ValueError(f"Inconsistent absence evidence: {query_id}")
             if item["absence_evidence"]["file"] != absence_path.name:
                 raise ValueError(f"Absence evidence file mismatch: {query_id}")
-            if any(not isinstance(i, str) or i not in chunks for i in scope):
-                raise ValueError(f"Unknown absence story chunk ID: {query_id}")
+            if any(chunk_id not in chunks for chunk_id in scope):
+                raise ValueError(f"Unknown absence scope chunk ID: {query_id}")
             if binding is not None and external.get("annotation_status") != "reviewed":
                 raise ValueError(f"Unreviewed absence evidence: {query_id}")
     positives = sum(item["answerable"] for item in queries)

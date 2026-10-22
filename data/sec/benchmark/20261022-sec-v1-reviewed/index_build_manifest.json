@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_at_utc": "2026-10-22T01:21:32.129638+00:00",
+  "chunks": {
+    "path": "data/sec/chunking_v1/20261021-minilm200-overlap32-v1/chunks.json",
+    "sha256": "712199ed06dc4f0d171667165c5cba6beca8d3cdc25b29a3772b086eab98af67",
+    "build_manifest_sha256": "c3e78cef78500df5c00660f8515da6f5d57a1c1e8bc8b4d910fc5b98b0d66b55"
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_model_snapshot": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "model_files_sha256": {
+    "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+    "config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+    "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+    "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+    "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+    "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23"
+  },
+  "normalize_embeddings": true,
+  "embedding_max_tokens": 256,
+  "batch_size": 64,
+  "index_type": "IndexFlatIP",
+  "dimension": 384,
+  "vector_count": 3091,
+  "faiss_id": "zero-based chunks list position, validated before encoding",
+  "timing_seconds": {
+    "model_load": 0.48581140002352186,
+    "index_build": 2.939888999972027,
+    "total_with_validation": 4.035658100008732
+  },
+  "environment": {
+    "python": "3.11.16",
+    "device": "cuda:0",
+    "torch": "2.11.0+cu128",
+    "sentence-transformers": "6.1.0",
+    "transformers": "5.17.0",
+    "numpy": "2.4.6",
+    "faiss-cpu": "1.15.1"
+  },
+  "code_sha256": {
+    "faiss_build.py": "d8bf9ff294a2223789c254e939882c2cca9e9cfe535a5d7b5a0dab3140a31138",
+    "sec_index_build.py": "71a2ad8ac46fb9e5fd361d442a6ebaf94355ccb0afddf6922ca21aa3db83da83",
+    "faiss_retriever.py": "6387bbf12df34d1811e549d0c3852442d09da47b6dd04c139ae832e942bb87ec"
+  },
+  "files_sha256": {
+    "sec.faiss": "7e1bdbf23a5ef9c3ed9e25dd5247c0b4611682b50d49afd74c1d2fc5ca4bac3e",
+    "validation.json": "6ce947cd63376c2d0b198cdb98d284874adeb3656db3465c74755a02a9d3dffb",
+    "chunks_build_manifest.json": "c3e78cef78500df5c00660f8515da6f5d57a1c1e8bc8b4d910fc5b98b0d66b55"
+  },
+  "limitations": [
+    "Chunks remain in the path recorded above; index and chunks must stay hash-bound.",
+    "Only three document vectors are independently reencoded; the smoke query uses a freshly loaded local retriever/model.",
+    "No metadata filtering, reranking or formal SEC benchmark was evaluated.",
+    "No cross-device bitwise reproduction claim is made."
+  ]
+}

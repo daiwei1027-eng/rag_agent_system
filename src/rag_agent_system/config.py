@@ -22,6 +22,7 @@ class RetrievalConfig:
     embedding_model: str
     normalize_embeddings: bool
     top_k: int = 20
+    mode: str = "dense"
 
 
 @dataclass(frozen=True, slots=True)
@@ -105,6 +106,9 @@ def load_config(path: str | Path | None = None) -> AppConfig:
     context_top_k = _positive_int(context, "top_k", 5, "context")
     agent_max_new_tokens = _positive_int(agent, "max_new_tokens", 256, "agent")
     agent_model_name=agent.get("model_name")
+    mode = retrieval.get("mode", "dense")
+    if not isinstance(mode, str) or mode not in {"dense", "bm25", "hybrid"}:
+        raise ValueError("retrieval.mode must be dense, bm25 or hybrid.")
     if not isinstance(agent_model_name, str):
         raise ValueError("agent.model_name must be a string.")
     if not agent_model_name.strip():
@@ -171,6 +175,7 @@ def load_config(path: str | Path | None = None) -> AppConfig:
             ),
             normalize_embeddings=normalize_embeddings,
             top_k=top_k,
+            mode=mode,
         ),
         generation=GenerationConfig(
             model_name=str(

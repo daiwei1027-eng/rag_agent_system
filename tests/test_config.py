@@ -70,6 +70,7 @@ def test_load_valid_config(valid_config, write_config):
     assert config.context.top_k == 5, "context.top_k not match"
     assert config.agent.model_name == "Qwen/Qwen2.5-1.5B-Instruct"
     assert config.agent.max_new_tokens == 256
+    assert config.retrieval.mode == "dense"
 
 
 def test_legacy_config_without_agent_reuses_generation(valid_config, write_config):
@@ -135,3 +136,16 @@ def test_enabled_reranker_rejects_insufficient_top_k(
     path = write_config(valid_config)
     with pytest.raises(ValueError, match=r"context\.top_k"):
         load_config(path)
+
+
+@pytest.mark.parametrize("mode", ["dense", "bm25", "hybrid"])
+def test_retrieval_mode_is_read_from_yaml(valid_config, write_config, mode):
+    valid_config["retrieval"]["mode"] = mode
+    assert load_config(write_config(valid_config)).retrieval.mode == mode
+
+
+@pytest.mark.parametrize("mode", [None, True, [], "hybird", ""])
+def test_invalid_retrieval_mode_is_rejected(valid_config, write_config, mode):
+    valid_config["retrieval"]["mode"] = mode
+    with pytest.raises(ValueError, match=r"retrieval\.mode"):
+        load_config(write_config(valid_config))

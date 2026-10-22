@@ -7,7 +7,7 @@ from types import SimpleNamespace
 import pytest
 
 from rag_agent_system.config import PathConfig
-from rag_agent_system.evaluation.benchmark import load_benchmark, sha256_file
+from rag_agent_system.evaluation.benchmark import load_benchmark, read_scope, sha256_file
 
 
 @pytest.fixture
@@ -54,8 +54,18 @@ def bundle(tmp_path):
     return config, queries, absence, write
 
 
-def test_matching_bundle_loads_without_models(bundle):
-    config, queries, _, _ = bundle
+@pytest.mark.parametrize("query_key,external_key", [
+    ("story_chunk_ids", "story_chunk_ids"),
+    ("scope_chunk_ids", "scope_chunk_ids"),
+    ("scope_chunk_ids", "story_chunk_ids"),
+    ("story_chunk_ids", "scope_chunk_ids"),
+])
+def test_matching_bundle_loads_without_models(bundle, query_key, external_key):
+    config, queries, absence, write = bundle
+    record = queries[1]["absence_evidence"]
+    record[query_key] = record.pop("story_chunk_ids")
+    absence[0][external_key] = absence[0].pop("story_chunk_ids")
+    write()
     assert load_benchmark(config)["queries"] == queries
 
 
@@ -71,7 +81,7 @@ def test_reject_mixed_version_files(bundle, asset, tmp_path):
 
 @pytest.mark.parametrize("fault, error", [
     ("pending", "Unreviewed query"), ("unknown_id", "Unknown relevant chunk"),
-    ("quote", "Invalid evidence quote"), ("negative_scope", "Unknown absence story chunk"),
+    ("quote", "Invalid evidence quote"), ("negative_scope", "Unknown absence scope chunk"),
 ])
 def test_reject_invalid_labels_even_with_updated_fingerprints(bundle, fault, error):
     config, queries, absence, write = bundle
@@ -84,6 +94,36 @@ def test_reject_invalid_labels_even_with_updated_fingerprints(bundle, fault, err
     else:
         queries[1]["absence_evidence"]["story_chunk_ids"] = ["old-0"]
         absence[0]["story_chunk_ids"] = ["old-0"]
+    write()
+    with pytest.raises(ValueError, match=error):
+        load_benchmark(config)
+
+
+@pytest.mark.parametrize("record,error", [
+    ({}, "non-empty list"),
+    ({"scope_chunk_ids": []}, "non-empty list"),
+    ({"scope_chunk_ids": "new-a"}, "non-empty list"),
+    ({"scope_chunk_ids": [1]}, "non-empty list"),
+    ({"scope_chunk_ids": ["new-a"], "story_chunk_ids": ["new-a"]}, "Ambiguous"),
+])
+def test_invalid_or_ambiguous_scope_rejected(record, error):
+    with pytest.raises(ValueError, match=error):
+        read_scope(record)
+
+
+@pytest.mark.parametrize("fault,error", [
+    ("missing", "Missing absence evidence"),
+    ("different", "Inconsistent absence evidence"),
+])
+def test_missing_or_different_external_scope_rejected(bundle, fault, error):
+    config, queries, absence, write = bundle
+    record = queries[1]["absence_evidence"]
+    record["scope_chunk_ids"] = record.pop("story_chunk_ids")
+    if fault == "missing":
+        absence.clear()
+    else:
+        absence[0].pop("story_chunk_ids")
+        absence[0]["scope_chunk_ids"] = ["new-a"]
     write()
     with pytest.raises(ValueError, match=error):
         load_benchmark(config)

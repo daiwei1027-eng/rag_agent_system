@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_at_utc": "2026-10-21T07:10:04.162828+00:00",
+  "input": {
+    "sections_sha256": "b1f386a50608fc726def5a61a0e46be7ff233e24527964f802cf4d5d97afb8d1",
+    "table_plans_sha256": "d8d2314acd58666cd0eebcaeeaeaf186e0d55fcffabb3bacb1bfc5613ecc96e9",
+    "sections_build_manifest_sha256": "cc3137886d77f0e9ffbf315cf3caace5fc925836c6a2f5fb12da91cdeb160947"
+  },
+  "config": {
+    "max_body_tokens": 200,
+    "text_overlap_tokens": 32,
+    "embedding_max_tokens": 256,
+    "text_strategy": "independent-block-windows",
+    "table_strategy": "reviewed-headers-and-groups-whole-rows",
+    "prefix": "company (ticker) | FYyear | form | ITEM label: title + two newlines",
+    "source_spans": "block.text half-open offsets; table rows projected by table_columns",
+    "content_start_char": "prefix length in final chunk.text",
+    "faiss_id": "global zero-based output order; no index built"
+  },
+  "tokenizer": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "snapshot": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "files_sha256": {
+      "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+      "config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+      "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    }
+  },
+  "environment": {
+    "python": "3.11.16",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2"
+  },
+  "code_sha256": {
+    "sec_chunking.py": "d4c24ae39e02cf54efbea85c1424b1927b9bb7136a8e4489a1cbac76d9b85a6e",
+    "sec_chunk_build.py": "221c38d03518e09dd4c62f73e78c441f4a71b7444b8d6e557e921b76293acf38"
+  },
+  "counts": {
+    "documents": 6,
+    "sections": 18,
+    "source_blocks": {
+      "text": 2792,
+      "table": 74
+    },
+    "chunks": 3091,
+    "chunk_types": {
+      "text": 2995,
+      "table": 96
+    },
+    "max_body_tokens": 200,
+    "max_embedding_tokens": 236,
+    "checks": {
+      "unique_ids": true,
+      "source_reconstruction": true,
+      "block_and_row_coverage": true,
+      "token_limits": true,
+      "contiguous_faiss_ids": true
+    }
+  },
+  "files_sha256": {
+    "chunks.json": "712199ed06dc4f0d171667165c5cba6beca8d3cdc25b29a3772b086eab98af67",
+    "summary.json": "fd78990a202002b4a397c1bd91986c068c78485e1377158d41b5f28d369d6b8e",
+    "table_plans.json": "d8d2314acd58666cd0eebcaeeaeaf186e0d55fcffabb3bacb1bfc5613ecc96e9",
+    "sections_build_manifest.json": "cc3137886d77f0e9ffbf315cf3caace5fc925836c6a2f5fb12da91cdeb160947"
+  },
+  "limitations": [
+    "Row roles apply only to the hash-bound reviewed corpus.",
+    "Physical table rendering does not infer financial relationships or external footnotes.",
+    "Independent blocks can lose cross-paragraph context; retrieval quality is unmeasured.",
+    "No embeddings, retrieval index or benchmark evaluation was run."
+  ]
+}

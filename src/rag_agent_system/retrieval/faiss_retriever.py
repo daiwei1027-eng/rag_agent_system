@@ -1,4 +1,4 @@
-"""FAISS-backed retrieval contract for the Day 18 exercise."""
+"""Mode-based retrieval with the existing dense implementation and learning stubs."""
 
 from pathlib import Path
 
@@ -10,7 +10,7 @@ from rag_agent_system.ingestion import load_chunks
 from rag_agent_system.models import DocumentChunk, RetrievedChunk
 from rag_agent_system.paths import require_file
 
-class FaissRetriever:
+class DocumentRetriever:
     def __init__(
         self,
         index_path: Path,
@@ -18,7 +18,11 @@ class FaissRetriever:
         embedding_model: str,
         *,
         normalize_embeddings: bool,
+        mode: str = "dense",
     ) -> None:
+        if not isinstance(mode, str) or mode not in {"dense", "bm25", "hybrid"}:
+            raise ValueError("mode must be dense, bm25 or hybrid")
+        self.mode = mode
         self.index_path = index_path
         self.chunks_path = chunks_path
         self.embedding_model = embedding_model
@@ -52,7 +56,17 @@ class FaissRetriever:
             mapping[faiss_id] = chunk_id
 
         return mapping
+    def prepare(self) -> None:
+        """Prepare the selected mode before timed evaluation queries."""
+        self._load_resources()
+
     def _load_resources(self) -> None:
+        """Compatibility entry point for existing dense evaluation scripts."""
+        if self.mode != "dense":
+            raise NotImplementedError(f"{self.mode} resource loading is not implemented yet")
+        self._load_dense_resources()
+
+    def _load_dense_resources(self) -> None:
         """Load and validate the index, chunks, and encoder once."""
         if (
             self._index is not None
@@ -92,8 +106,6 @@ class FaissRetriever:
             raise ValueError(
                 "Encoder dimension does not match FAISS index."
             )
-
-        # 全部成功后才保存，避免对象留下半加载状态。
         self._index = index
         self._chunks = chunks
         self._encoder = encoder
@@ -103,7 +115,7 @@ class FaissRetriever:
             query: str,
             top_k: int = 3,
     ) -> list[RetrievedChunk]:
-        """Return chunks ranked by vector relevance."""
+        """Validate common inputs and dispatch to the selected retrieval mode."""
         if not isinstance(query, str):
             raise ValueError("The query must be a string.")
         query = query.strip()
@@ -111,7 +123,14 @@ class FaissRetriever:
             raise ValueError("The query cannot be empty.")
         if type(top_k) is not int or top_k <= 0:
             raise ValueError("top_k must be a positive integer.")
-        self._load_resources()
+        if self.mode == "dense":
+            return self._retrieve_dense(query, top_k)
+        if self.mode == "bm25":
+            return self._retrieve_bm25(query, top_k)
+        return self._retrieve_hybrid(query, top_k)
+
+    def _retrieve_dense(self, query: str, top_k: int) -> list[RetrievedChunk]:
+        self._load_dense_resources()
         ## Resources are loaded and cached for reuse.Then use encoder to process [query] with L2NORM,then turn it into float32,finally use faiss to search similarity
         index = self._index
         chunks = self._chunks
@@ -135,3 +154,23 @@ class FaissRetriever:
             each_RetrievedChunk = RetrievedChunk(chunk=chunk,score=float(score),rank=len(results)+1)
             results.append(each_RetrievedChunk)
         return results
+
+    def _retrieve_bm25(self, query: str, top_k: int) -> list[RetrievedChunk]:
+        """Learning task: lexical ranking with its own resources and tokenizer.
+
+        Load chunks and build/cache the lexical index without loading a dense
+        model or FAISS index. Return ranked RetrievedChunk objects using the
+        original chunk IDs. Corpus/index storage changes belong to that task.
+        """
+        raise NotImplementedError("Implement BM25 retrieval here")
+
+    def _retrieve_hybrid(self, query: str, top_k: int) -> list[RetrievedChunk]:
+        """Learning task: retrieve both candidate lists, fuse and assign ranks.
+
+        Deduplicate by chunk_id and use an explicit fusion rule; raw dense and
+        BM25 scores are not on the same scale. Preserve source metadata.
+        """
+        raise NotImplementedError("Implement hybrid fusion after BM25")
+
+
+FaissRetriever = DocumentRetriever

@@ -16,6 +16,10 @@ class CrossEncoderReranker:
         self.batch_size = batch_size
         self._model=None
 
+    def prepare(self) -> None:
+        """Load the reranker before timed evaluation queries."""
+        self._load_resources()
+
     def _load_resources(self) -> None:
         if self._model is not None:
             return

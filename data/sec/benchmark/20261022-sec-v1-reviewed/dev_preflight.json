@@ -1,0 +1,13 @@
+{
+  "benchmark_version": "sec-v1-dev-reviewed",
+  "query_count": 30,
+  "scored_count": 24,
+  "excluded_count": 6,
+  "queries_path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\sec\\benchmark\\20261022-sec-v1-reviewed\\dev_queries.jsonl",
+  "chunks_path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\sec\\chunking_v1\\20261021-minilm200-overlap32-v1\\chunks.json",
+  "faiss_index": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\sec\\indexes\\20261022-minilm-flatip-v1\\sec.faiss",
+  "retrieval_mode": "dense",
+  "reranker_enabled": false,
+  "candidate_top_k": 20,
+  "warmup_query_id": "sec_dev_001"
+}
