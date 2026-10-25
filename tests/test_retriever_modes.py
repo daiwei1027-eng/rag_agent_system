@@ -45,19 +45,14 @@ def test_unknown_mode_rejected_at_construction(mode):
         retriever(mode=mode)
 
 
-@pytest.mark.parametrize("mode", ["bm25", "hybrid"])
-def test_unimplemented_modes_do_not_load_or_fall_back_to_dense(mode, monkeypatch):
-    engine = retriever(mode=mode)
+def test_hybrid_prepare_dispatches_to_both_resource_loaders(monkeypatch):
+    engine = retriever(mode="hybrid")
+    calls = []
 
-    def forbidden():
-        raise AssertionError("Non-dense branch loaded dense resources")
-
-    monkeypatch.setattr(engine, "_load_dense_resources", forbidden)
-    with pytest.raises(NotImplementedError):
-        engine.retrieve("query", top_k=2)
-    with pytest.raises(NotImplementedError):
-        engine._load_resources()
-    assert engine._encoder is None and engine._index is None
+    monkeypatch.setattr(engine, "_load_dense_resources", lambda: calls.append("dense"))
+    monkeypatch.setattr(engine, "_load_bm25_resources", lambda: calls.append("bm25"))
+    engine.prepare()
+    assert sorted(calls) == ["bm25", "dense"]
 
 
 @pytest.mark.parametrize("query,top_k", [("  ", 2), ("query", True)])

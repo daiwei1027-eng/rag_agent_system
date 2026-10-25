@@ -1,0 +1,1654 @@
+[
+  {
+    "query_id": "q001",
+    "query": "Who found a needle in her room and wanted her mother to sew a button on her shirt?",
+    "relevant_chunk_ids": [
+      "story_000000_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_000000_chunk_000",
+      "story_000000_chunk_001",
+      "story_002169_chunk_000",
+      "story_001230_chunk_000",
+      "story_003375_chunk_000",
+      "story_002183_chunk_000",
+      "story_004934_chunk_000",
+      "story_003797_chunk_000",
+      "story_004210_chunk_000",
+      "story_002277_chunk_002",
+      "story_003840_chunk_000",
+      "story_002877_chunk_000",
+      "story_004520_chunk_000",
+      "story_000052_chunk_001",
+      "story_002060_chunk_000",
+      "story_000538_chunk_000",
+      "story_003656_chunk_000",
+      "story_004417_chunk_000",
+      "story_003137_chunk_001",
+      "story_000328_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03954010002780706,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q002",
+    "query": "Which animal chased the little mouse, barked loudly, and caught up with it?",
+    "relevant_chunk_ids": [
+      "story_000130_chunk_000",
+      "story_000130_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_003728_chunk_001",
+      "story_000130_chunk_000",
+      "story_000130_chunk_001",
+      "story_003973_chunk_000",
+      "story_002638_chunk_000",
+      "story_000169_chunk_001",
+      "story_004074_chunk_001",
+      "story_004074_chunk_000",
+      "story_001806_chunk_000",
+      "story_000653_chunk_001",
+      "story_001806_chunk_001",
+      "story_004474_chunk_001",
+      "story_004106_chunk_001",
+      "story_002263_chunk_000",
+      "story_002220_chunk_001",
+      "story_004936_chunk_001",
+      "story_001806_chunk_002",
+      "story_001367_chunk_000",
+      "story_004818_chunk_000",
+      "story_000169_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.034876299963798374,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q003",
+    "query": "Why was Tim sad when Jack was going away to university?",
+    "relevant_chunk_ids": [
+      "story_000256_chunk_000",
+      "story_000256_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_002795_chunk_000",
+      "story_003032_chunk_001",
+      "story_000455_chunk_000",
+      "story_001409_chunk_000",
+      "story_000048_chunk_000",
+      "story_000256_chunk_001",
+      "story_001704_chunk_001",
+      "story_003604_chunk_001",
+      "story_000256_chunk_000",
+      "story_000367_chunk_000",
+      "story_004761_chunk_001",
+      "story_001007_chunk_001",
+      "story_000897_chunk_001",
+      "story_001704_chunk_000",
+      "story_005027_chunk_001",
+      "story_002070_chunk_000",
+      "story_003587_chunk_001",
+      "story_002795_chunk_001",
+      "story_000027_chunk_000",
+      "story_002870_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.16666666666666666,
+        "retrieval_seconds": 0.028040100005455315,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q004",
+    "query": "Why did Sally hesitate before trying to go up the pale stair?",
+    "relevant_chunk_ids": [
+      "story_000379_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_000379_chunk_000",
+      "story_002128_chunk_001",
+      "story_000180_chunk_000",
+      "story_001356_chunk_000",
+      "story_000742_chunk_003",
+      "story_004602_chunk_000",
+      "story_004824_chunk_000",
+      "story_003811_chunk_000",
+      "story_002103_chunk_002",
+      "story_001824_chunk_001",
+      "story_003518_chunk_001",
+      "story_000129_chunk_000",
+      "story_002299_chunk_001",
+      "story_004373_chunk_000",
+      "story_000794_chunk_001",
+      "story_003811_chunk_001",
+      "story_002373_chunk_000",
+      "story_005047_chunk_001",
+      "story_005090_chunk_000",
+      "story_004764_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.027448999986518174,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q005",
+    "query": "What did Lucy receive from her mother in exchange for helping clean the house?",
+    "relevant_chunk_ids": [
+      "story_000515_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_004425_chunk_001",
+      "story_004660_chunk_002",
+      "story_003810_chunk_000",
+      "story_000483_chunk_000",
+      "story_000187_chunk_002",
+      "story_000115_chunk_002",
+      "story_001645_chunk_001",
+      "story_001467_chunk_001",
+      "story_004425_chunk_000",
+      "story_004071_chunk_000",
+      "story_000515_chunk_000",
+      "story_000115_chunk_001",
+      "story_003486_chunk_001",
+      "story_001372_chunk_000",
+      "story_000187_chunk_001",
+      "story_003872_chunk_001",
+      "story_004071_chunk_001",
+      "story_002862_chunk_001",
+      "story_003810_chunk_001",
+      "story_001134_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.09090909090909091,
+        "retrieval_seconds": 0.03003959998022765,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q006",
+    "query": "What pictures decorated the special card Lily made for her mother, alongside the words I love you?",
+    "relevant_chunk_ids": [
+      "story_000656_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_000656_chunk_000",
+      "story_000656_chunk_001",
+      "story_002178_chunk_001",
+      "story_002178_chunk_002",
+      "story_002452_chunk_000",
+      "story_000327_chunk_001",
+      "story_002452_chunk_001",
+      "story_002100_chunk_004",
+      "story_003136_chunk_001",
+      "story_000782_chunk_003",
+      "story_000997_chunk_001",
+      "story_000901_chunk_003",
+      "story_002174_chunk_000",
+      "story_000912_chunk_002",
+      "story_000778_chunk_001",
+      "story_000456_chunk_001",
+      "story_002174_chunk_001",
+      "story_003843_chunk_001",
+      "story_000655_chunk_000",
+      "story_000785_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.030468199984170496,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q007",
+    "query": "Who slid down together and hugged after Max ran away from the slide?",
+    "relevant_chunk_ids": [
+      "story_000741_chunk_003"
+    ],
+    "baseline_ids": [
+      "story_000741_chunk_003",
+      "story_002995_chunk_001",
+      "story_000951_chunk_003",
+      "story_003495_chunk_000",
+      "story_004505_chunk_001",
+      "story_000695_chunk_001",
+      "story_003103_chunk_001",
+      "story_004273_chunk_000",
+      "story_002995_chunk_000",
+      "story_001170_chunk_000",
+      "story_003303_chunk_001",
+      "story_002451_chunk_001",
+      "story_004273_chunk_001",
+      "story_001337_chunk_000",
+      "story_000658_chunk_001",
+      "story_004498_chunk_001",
+      "story_000901_chunk_001",
+      "story_001170_chunk_001",
+      "story_000763_chunk_002",
+      "story_004540_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.030146599980071187,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q008",
+    "query": "Why did Timmy feel embarrassed when he joined the older kids' game at the fair?",
+    "relevant_chunk_ids": [
+      "story_000806_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_000806_chunk_001",
+      "story_004157_chunk_000",
+      "story_004357_chunk_001",
+      "story_000806_chunk_000",
+      "story_000851_chunk_000",
+      "story_004913_chunk_000",
+      "story_002780_chunk_001",
+      "story_004157_chunk_001",
+      "story_004518_chunk_000",
+      "story_004097_chunk_000",
+      "story_002802_chunk_001",
+      "story_003958_chunk_000",
+      "story_002435_chunk_001",
+      "story_004328_chunk_000",
+      "story_002901_chunk_000",
+      "story_000410_chunk_001",
+      "story_002085_chunk_000",
+      "story_004750_chunk_000",
+      "story_001692_chunk_000",
+      "story_000851_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.02780670003267005,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q009",
+    "query": "What tool did Ben try to put into the box lock after seeing it on the table where Mom had cut dough?",
+    "relevant_chunk_ids": [
+      "story_000921_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_000943_chunk_000",
+      "story_004342_chunk_002",
+      "story_003723_chunk_000",
+      "story_000956_chunk_001",
+      "story_000949_chunk_002",
+      "story_003723_chunk_001",
+      "story_000949_chunk_000",
+      "story_001239_chunk_000",
+      "story_000975_chunk_001",
+      "story_002649_chunk_001",
+      "story_002143_chunk_003",
+      "story_004342_chunk_001",
+      "story_000921_chunk_001",
+      "story_000949_chunk_001",
+      "story_001303_chunk_001",
+      "story_000921_chunk_002",
+      "story_002115_chunk_000",
+      "story_000949_chunk_003",
+      "story_000040_chunk_000",
+      "story_004485_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.07692307692307693,
+        "retrieval_seconds": 0.0395416000392288,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q010",
+    "query": "Why did Mom say Ben and Lily could not swim with the ducks they had shared olives with?",
+    "relevant_chunk_ids": [
+      "story_000978_chunk_001",
+      "story_000978_chunk_002"
+    ],
+    "baseline_ids": [
+      "story_000978_chunk_002",
+      "story_000978_chunk_001",
+      "story_002128_chunk_001",
+      "story_002332_chunk_002",
+      "story_000990_chunk_003",
+      "story_002259_chunk_001",
+      "story_000971_chunk_002",
+      "story_002165_chunk_000",
+      "story_003678_chunk_001",
+      "story_000949_chunk_002",
+      "story_002165_chunk_001",
+      "story_002274_chunk_000",
+      "story_002259_chunk_000",
+      "story_002152_chunk_001",
+      "story_002319_chunk_000",
+      "story_002144_chunk_002",
+      "story_002177_chunk_000",
+      "story_000952_chunk_004",
+      "story_000949_chunk_006",
+      "story_000732_chunk_002"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.037783000036142766,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q011",
+    "query": "What material did Jack want to use to make something special with Jill's help?",
+    "relevant_chunk_ids": [
+      "story_001097_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_001097_chunk_000",
+      "story_001560_chunk_001",
+      "story_004234_chunk_000",
+      "story_004323_chunk_001",
+      "story_000272_chunk_000",
+      "story_004714_chunk_000",
+      "story_002189_chunk_004",
+      "story_000574_chunk_000",
+      "story_004414_chunk_001",
+      "story_003696_chunk_000",
+      "story_004707_chunk_000",
+      "story_002712_chunk_000",
+      "story_000616_chunk_001",
+      "story_000524_chunk_000",
+      "story_001819_chunk_000",
+      "story_004729_chunk_000",
+      "story_000742_chunk_003",
+      "story_002623_chunk_001",
+      "story_004729_chunk_001",
+      "story_005031_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.02757699997164309,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q012",
+    "query": "Why did the man feel guilty after asking his wife to come on a trip?",
+    "relevant_chunk_ids": [
+      "story_001240_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_001240_chunk_000",
+      "story_002744_chunk_000",
+      "story_003629_chunk_000",
+      "story_003629_chunk_001",
+      "story_000763_chunk_002",
+      "story_001240_chunk_001",
+      "story_002744_chunk_001",
+      "story_003716_chunk_000",
+      "story_000420_chunk_000",
+      "story_001790_chunk_001",
+      "story_004427_chunk_001",
+      "story_003681_chunk_000",
+      "story_000763_chunk_003",
+      "story_001796_chunk_000",
+      "story_000950_chunk_002",
+      "story_000238_chunk_000",
+      "story_002665_chunk_000",
+      "story_003953_chunk_001",
+      "story_001212_chunk_000",
+      "story_001493_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03284559998428449,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q013",
+    "query": "Why was Spot hurt and crying after Tom threw a ball for him in the park?",
+    "relevant_chunk_ids": [
+      "story_001385_chunk_000",
+      "story_001385_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_001385_chunk_000",
+      "story_001353_chunk_000",
+      "story_000774_chunk_002",
+      "story_004004_chunk_000",
+      "story_001385_chunk_001",
+      "story_001443_chunk_001",
+      "story_003963_chunk_000",
+      "story_002109_chunk_000",
+      "story_004117_chunk_000",
+      "story_002970_chunk_000",
+      "story_001471_chunk_001",
+      "story_002693_chunk_001",
+      "story_000916_chunk_004",
+      "story_001353_chunk_001",
+      "story_002925_chunk_000",
+      "story_000774_chunk_001",
+      "story_001464_chunk_001",
+      "story_000746_chunk_001",
+      "story_002427_chunk_000",
+      "story_002109_chunk_004"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 0.5,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03700259997276589,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q014",
+    "query": "What caused the cat to lose the perfect name it had attached to a tree?",
+    "relevant_chunk_ids": [
+      "story_001529_chunk_000",
+      "story_001529_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_001529_chunk_000",
+      "story_001529_chunk_001",
+      "story_004729_chunk_001",
+      "story_004432_chunk_000",
+      "story_004947_chunk_000",
+      "story_001129_chunk_001",
+      "story_000967_chunk_004",
+      "story_003992_chunk_000",
+      "story_001067_chunk_000",
+      "story_001969_chunk_001",
+      "story_002577_chunk_000",
+      "story_002655_chunk_000",
+      "story_004056_chunk_000",
+      "story_003340_chunk_000",
+      "story_003604_chunk_001",
+      "story_004081_chunk_000",
+      "story_001362_chunk_000",
+      "story_003204_chunk_000",
+      "story_004041_chunk_000",
+      "story_000540_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.032210599980317056,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q015",
+    "query": "How old was the youngest child in the wealthy family who also wanted to go to university?",
+    "relevant_chunk_ids": [
+      "story_001662_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_001662_chunk_000",
+      "story_003073_chunk_000",
+      "story_000661_chunk_000",
+      "story_000144_chunk_000",
+      "story_001186_chunk_001",
+      "story_000300_chunk_000",
+      "story_003557_chunk_000",
+      "story_003433_chunk_000",
+      "story_001852_chunk_000",
+      "story_001760_chunk_000",
+      "story_004358_chunk_000",
+      "story_001286_chunk_000",
+      "story_004439_chunk_000",
+      "story_000325_chunk_001",
+      "story_001562_chunk_000",
+      "story_003735_chunk_001",
+      "story_003735_chunk_000",
+      "story_001760_chunk_001",
+      "story_001104_chunk_000",
+      "story_000630_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03450320003321394,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q016",
+    "query": "What helped Amy feel safe and loved during the frightening storm?",
+    "relevant_chunk_ids": [
+      "story_001795_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_001795_chunk_001",
+      "story_001172_chunk_002",
+      "story_004922_chunk_002",
+      "story_004069_chunk_000",
+      "story_000013_chunk_001",
+      "story_004862_chunk_001",
+      "story_003968_chunk_001",
+      "story_003723_chunk_000",
+      "story_002989_chunk_000",
+      "story_003178_chunk_000",
+      "story_004083_chunk_001",
+      "story_003519_chunk_000",
+      "story_004862_chunk_000",
+      "story_002708_chunk_001",
+      "story_002044_chunk_001",
+      "story_001423_chunk_000",
+      "story_004064_chunk_000",
+      "story_003727_chunk_000",
+      "story_004926_chunk_000",
+      "story_003007_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.026898999989498407,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q017",
+    "query": "Why did the teacher tell Mary to put away the candy she was sharing in the classroom?",
+    "relevant_chunk_ids": [
+      "story_001920_chunk_000",
+      "story_001920_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_001920_chunk_001",
+      "story_001920_chunk_000",
+      "story_003636_chunk_000",
+      "story_002799_chunk_001",
+      "story_002045_chunk_001",
+      "story_004317_chunk_001",
+      "story_000111_chunk_000",
+      "story_002165_chunk_001",
+      "story_000953_chunk_002",
+      "story_000386_chunk_001",
+      "story_003953_chunk_001",
+      "story_001147_chunk_000",
+      "story_004103_chunk_000",
+      "story_002258_chunk_002",
+      "story_002742_chunk_000",
+      "story_000959_chunk_001",
+      "story_003091_chunk_000",
+      "story_004086_chunk_001",
+      "story_000973_chunk_001",
+      "story_002276_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.04037499998230487,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q018",
+    "query": "What did Sarah do after her mother caught her grabbing candy from the jar without permission?",
+    "relevant_chunk_ids": [
+      "story_002045_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_002045_chunk_001",
+      "story_002045_chunk_000",
+      "story_002477_chunk_000",
+      "story_003711_chunk_001",
+      "story_004565_chunk_001",
+      "story_002357_chunk_001",
+      "story_004242_chunk_000",
+      "story_004780_chunk_000",
+      "story_000320_chunk_001",
+      "story_001914_chunk_002",
+      "story_003810_chunk_000",
+      "story_004447_chunk_000",
+      "story_001196_chunk_000",
+      "story_004417_chunk_000",
+      "story_004434_chunk_000",
+      "story_000099_chunk_000",
+      "story_000732_chunk_002",
+      "story_002788_chunk_001",
+      "story_004913_chunk_001",
+      "story_004763_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.033166399982292205,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q019",
+    "query": "Under what condition did the man agree to forgive Sam and Ben in the kayak story?",
+    "relevant_chunk_ids": [
+      "story_002137_chunk_007",
+      "story_002137_chunk_008"
+    ],
+    "baseline_ids": [
+      "story_002137_chunk_001",
+      "story_002137_chunk_000",
+      "story_002137_chunk_005",
+      "story_002137_chunk_007",
+      "story_002137_chunk_003",
+      "story_002137_chunk_006",
+      "story_002413_chunk_000",
+      "story_002137_chunk_002",
+      "story_002137_chunk_008",
+      "story_002157_chunk_002",
+      "story_000744_chunk_002",
+      "story_002279_chunk_001",
+      "story_000744_chunk_001",
+      "story_002157_chunk_003",
+      "story_002137_chunk_004",
+      "story_000744_chunk_000",
+      "story_000731_chunk_002",
+      "story_003544_chunk_001",
+      "story_002144_chunk_001",
+      "story_002144_chunk_002"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.5,
+        "hit_5": 1.0,
+        "rr_at_20": 0.25,
+        "retrieval_seconds": 0.03649339999537915,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q020",
+    "query": "Why did Lily refuse to go to her bedroom when her mother said it was bedtime?",
+    "relevant_chunk_ids": [
+      "story_002205_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_004612_chunk_001",
+      "story_004913_chunk_000",
+      "story_002205_chunk_001",
+      "story_000680_chunk_000",
+      "story_002205_chunk_000",
+      "story_000680_chunk_001",
+      "story_004913_chunk_001",
+      "story_004623_chunk_001",
+      "story_004623_chunk_000",
+      "story_000300_chunk_001",
+      "story_000590_chunk_000",
+      "story_004425_chunk_000",
+      "story_003840_chunk_001",
+      "story_003840_chunk_000",
+      "story_002395_chunk_000",
+      "story_003840_chunk_002",
+      "story_000727_chunk_001",
+      "story_002737_chunk_000",
+      "story_001645_chunk_001",
+      "story_002175_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.2,
+        "retrieval_seconds": 0.036473499960266054,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q021",
+    "query": "What was the name of the man's dog that met Tim and Lily and liked to run and play?",
+    "relevant_chunk_ids": [
+      "story_002292_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_002292_chunk_000",
+      "story_001381_chunk_000",
+      "story_002292_chunk_001",
+      "story_002344_chunk_000",
+      "story_002344_chunk_002",
+      "story_002283_chunk_000",
+      "story_001446_chunk_000",
+      "story_000907_chunk_000",
+      "story_003945_chunk_000",
+      "story_002255_chunk_000",
+      "story_002870_chunk_001",
+      "story_000695_chunk_000",
+      "story_002036_chunk_000",
+      "story_002139_chunk_000",
+      "story_001399_chunk_000",
+      "story_004002_chunk_000",
+      "story_002961_chunk_000",
+      "story_002272_chunk_001",
+      "story_002870_chunk_000",
+      "story_004092_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.3333333333333333,
+        "retrieval_seconds": 0.04953600000590086,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q022",
+    "query": "What instrument did Timmy and Billy bang on when they played music together every day?",
+    "relevant_chunk_ids": [
+      "story_002365_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_002365_chunk_001",
+      "story_002365_chunk_000",
+      "story_002231_chunk_000",
+      "story_002983_chunk_000",
+      "story_002983_chunk_001",
+      "story_002958_chunk_000",
+      "story_000817_chunk_001",
+      "story_002231_chunk_001",
+      "story_003018_chunk_000",
+      "story_001398_chunk_001",
+      "story_004171_chunk_000",
+      "story_002454_chunk_001",
+      "story_002958_chunk_001",
+      "story_000817_chunk_000",
+      "story_003975_chunk_001",
+      "story_003018_chunk_001",
+      "story_002211_chunk_000",
+      "story_002516_chunk_001",
+      "story_000883_chunk_000",
+      "story_002454_chunk_002"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.032708499988075346,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q023",
+    "query": "Where did the ball get stuck after flying over Timmy's head during a game of catch?",
+    "relevant_chunk_ids": [
+      "story_002511_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_002511_chunk_000",
+      "story_002511_chunk_001",
+      "story_000916_chunk_000",
+      "story_000683_chunk_000",
+      "story_001008_chunk_001",
+      "story_003963_chunk_000",
+      "story_004581_chunk_000",
+      "story_000588_chunk_000",
+      "story_000916_chunk_001",
+      "story_002908_chunk_000",
+      "story_004581_chunk_001",
+      "story_002787_chunk_001",
+      "story_001028_chunk_000",
+      "story_003961_chunk_000",
+      "story_002354_chunk_000",
+      "story_002152_chunk_000",
+      "story_002959_chunk_000",
+      "story_001923_chunk_001",
+      "story_003936_chunk_001",
+      "story_004282_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03378060000250116,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q024",
+    "query": "What bit Julia on the arm while she was helping a bird that was afraid of lightning?",
+    "relevant_chunk_ids": [
+      "story_002640_chunk_001",
+      "story_002640_chunk_002"
+    ],
+    "baseline_ids": [
+      "story_002640_chunk_001",
+      "story_002640_chunk_002",
+      "story_002640_chunk_000",
+      "story_003659_chunk_000",
+      "story_004731_chunk_001",
+      "story_000891_chunk_001",
+      "story_002196_chunk_001",
+      "story_003046_chunk_001",
+      "story_004845_chunk_000",
+      "story_004731_chunk_000",
+      "story_000891_chunk_000",
+      "story_000666_chunk_000",
+      "story_004442_chunk_001",
+      "story_003486_chunk_001",
+      "story_002363_chunk_001",
+      "story_001365_chunk_001",
+      "story_003659_chunk_001",
+      "story_004266_chunk_001",
+      "story_002953_chunk_000",
+      "story_002730_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.04113420000066981,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q025",
+    "query": "What did Sophie discover shining in the darkness after striking it with her stick?",
+    "relevant_chunk_ids": [
+      "story_002763_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_002763_chunk_000",
+      "story_000614_chunk_000",
+      "story_003691_chunk_001",
+      "story_000317_chunk_000",
+      "story_002770_chunk_000",
+      "story_002048_chunk_000",
+      "story_000317_chunk_001",
+      "story_002835_chunk_000",
+      "story_003375_chunk_001",
+      "story_000599_chunk_000",
+      "story_001728_chunk_000",
+      "story_002048_chunk_001",
+      "story_004210_chunk_002",
+      "story_003375_chunk_000",
+      "story_003970_chunk_000",
+      "story_003970_chunk_001",
+      "story_000847_chunk_000",
+      "story_003288_chunk_000",
+      "story_002763_chunk_001",
+      "story_000736_chunk_004"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.0346127999946475,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q026",
+    "query": "What were Sally and her family painting when Grandma asked to visit?",
+    "relevant_chunk_ids": [
+      "story_002893_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_002893_chunk_001",
+      "story_004696_chunk_001",
+      "story_003518_chunk_000",
+      "story_002893_chunk_000",
+      "story_002040_chunk_000",
+      "story_004696_chunk_000",
+      "story_005047_chunk_001",
+      "story_003238_chunk_000",
+      "story_002040_chunk_001",
+      "story_003081_chunk_001",
+      "story_004673_chunk_001",
+      "story_002739_chunk_001",
+      "story_005047_chunk_000",
+      "story_002006_chunk_000",
+      "story_004520_chunk_001",
+      "story_001051_chunk_000",
+      "story_004573_chunk_001",
+      "story_004804_chunk_002",
+      "story_001218_chunk_000",
+      "story_002600_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.030760399997234344,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q027",
+    "query": "How did Lily's mother help her read the library book with a hairy monster on its cover?",
+    "relevant_chunk_ids": [
+      "story_003037_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003037_chunk_000",
+      "story_002204_chunk_000",
+      "story_000289_chunk_000",
+      "story_002362_chunk_000",
+      "story_004798_chunk_001",
+      "story_000710_chunk_001",
+      "story_002387_chunk_000",
+      "story_000761_chunk_004",
+      "story_000255_chunk_000",
+      "story_001959_chunk_001",
+      "story_004101_chunk_001",
+      "story_000023_chunk_000",
+      "story_004486_chunk_001",
+      "story_002442_chunk_000",
+      "story_001959_chunk_000",
+      "story_002204_chunk_001",
+      "story_004798_chunk_002",
+      "story_000710_chunk_005",
+      "story_002770_chunk_001",
+      "story_000710_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03738270001485944,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q028",
+    "query": "What activity did Amy's mother suggest instead of jumping near the enormous tree in the park?",
+    "relevant_chunk_ids": [
+      "story_003178_chunk_000",
+      "story_003178_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_003913_chunk_000",
+      "story_001647_chunk_000",
+      "story_000230_chunk_000",
+      "story_000995_chunk_004",
+      "story_004652_chunk_000",
+      "story_004811_chunk_002",
+      "story_001353_chunk_000",
+      "story_000995_chunk_003",
+      "story_004768_chunk_000",
+      "story_003678_chunk_000",
+      "story_001830_chunk_000",
+      "story_002892_chunk_001",
+      "story_004306_chunk_000",
+      "story_001948_chunk_001",
+      "story_002737_chunk_000",
+      "story_002308_chunk_000",
+      "story_000711_chunk_000",
+      "story_000916_chunk_000",
+      "story_002919_chunk_000",
+      "story_000095_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.03571600001305342,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q029",
+    "query": "Why did the adventurous bear resist eating the tasty-looking treat in the forest?",
+    "relevant_chunk_ids": [
+      "story_003318_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003318_chunk_000",
+      "story_000048_chunk_000",
+      "story_004903_chunk_000",
+      "story_003318_chunk_001",
+      "story_003359_chunk_001",
+      "story_004176_chunk_001",
+      "story_003237_chunk_001",
+      "story_002014_chunk_001",
+      "story_003946_chunk_001",
+      "story_001966_chunk_000",
+      "story_003359_chunk_000",
+      "story_003927_chunk_000",
+      "story_001172_chunk_001",
+      "story_004321_chunk_000",
+      "story_000436_chunk_000",
+      "story_001172_chunk_000",
+      "story_001093_chunk_000",
+      "story_002697_chunk_001",
+      "story_002371_chunk_001",
+      "story_003818_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03426310000941157,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q030",
+    "query": "What appeared in the sky and brought water to the angry man who could not find any?",
+    "relevant_chunk_ids": [
+      "story_003461_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003461_chunk_000",
+      "story_003294_chunk_000",
+      "story_003756_chunk_001",
+      "story_002328_chunk_001",
+      "story_000382_chunk_000",
+      "story_003862_chunk_000",
+      "story_004155_chunk_000",
+      "story_000715_chunk_002",
+      "story_002328_chunk_000",
+      "story_003765_chunk_002",
+      "story_001475_chunk_001",
+      "story_001115_chunk_000",
+      "story_004759_chunk_000",
+      "story_000623_chunk_000",
+      "story_003477_chunk_000",
+      "story_004848_chunk_000",
+      "story_004554_chunk_000",
+      "story_000617_chunk_000",
+      "story_002105_chunk_002",
+      "story_002175_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.05709529999876395,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q031",
+    "query": "In Pete's cupboard story, in which direction did the walls and furniture move when the room started to reverse?",
+    "relevant_chunk_ids": [
+      "story_003600_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003600_chunk_000",
+      "story_003520_chunk_000",
+      "story_001295_chunk_001",
+      "story_000650_chunk_000",
+      "story_000435_chunk_000",
+      "story_004449_chunk_000",
+      "story_000383_chunk_000",
+      "story_004381_chunk_000",
+      "story_003600_chunk_001",
+      "story_000908_chunk_000",
+      "story_002926_chunk_000",
+      "story_003270_chunk_001",
+      "story_001155_chunk_000",
+      "story_003811_chunk_001",
+      "story_001094_chunk_000",
+      "story_003796_chunk_000",
+      "story_003876_chunk_000",
+      "story_004246_chunk_000",
+      "story_004246_chunk_001",
+      "story_000435_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.0495799999916926,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q032",
+    "query": "What did Nan and Pap decide to build together on their beach vacation?",
+    "relevant_chunk_ids": [
+      "story_003730_chunk_000",
+      "story_003730_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_003730_chunk_000",
+      "story_003730_chunk_001",
+      "story_000731_chunk_004",
+      "story_000443_chunk_000",
+      "story_003896_chunk_001",
+      "story_004385_chunk_000",
+      "story_002917_chunk_001",
+      "story_001758_chunk_000",
+      "story_000024_chunk_000",
+      "story_003333_chunk_002",
+      "story_004152_chunk_001",
+      "story_002015_chunk_000",
+      "story_004424_chunk_000",
+      "story_002320_chunk_004",
+      "story_000391_chunk_000",
+      "story_002150_chunk_003",
+      "story_002281_chunk_000",
+      "story_002150_chunk_004",
+      "story_000952_chunk_005",
+      "story_002320_chunk_003"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.04280789999756962,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q033",
+    "query": "Why did Bob have to wait before he could enter the playground?",
+    "relevant_chunk_ids": [
+      "story_003851_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003851_chunk_000",
+      "story_001543_chunk_001",
+      "story_001146_chunk_000",
+      "story_000742_chunk_003",
+      "story_002778_chunk_001",
+      "story_000794_chunk_001",
+      "story_003875_chunk_001",
+      "story_003452_chunk_001",
+      "story_001824_chunk_001",
+      "story_004420_chunk_001",
+      "story_000485_chunk_001",
+      "story_001543_chunk_002",
+      "story_000355_chunk_001",
+      "story_002478_chunk_001",
+      "story_004751_chunk_001",
+      "story_001824_chunk_000",
+      "story_000953_chunk_003",
+      "story_002778_chunk_002",
+      "story_003697_chunk_001",
+      "story_004841_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.04022429999895394,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q034",
+    "query": "What kind of music did Lily, whose little brother bothered her while she danced in her room, like best?",
+    "relevant_chunk_ids": [
+      "story_003975_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003975_chunk_001",
+      "story_003975_chunk_000",
+      "story_002872_chunk_000",
+      "story_002402_chunk_000",
+      "story_002752_chunk_000",
+      "story_003270_chunk_001",
+      "story_002993_chunk_001",
+      "story_000710_chunk_000",
+      "story_004189_chunk_000",
+      "story_004174_chunk_000",
+      "story_003976_chunk_001",
+      "story_000721_chunk_000",
+      "story_004070_chunk_000",
+      "story_000782_chunk_001",
+      "story_004588_chunk_001",
+      "story_003341_chunk_000",
+      "story_003270_chunk_000",
+      "story_002953_chunk_000",
+      "story_003590_chunk_000",
+      "story_002524_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.03353779995813966,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q035",
+    "query": "Where did Sue and the formerly lonely ugly duck meet every day to play?",
+    "relevant_chunk_ids": [
+      "story_004119_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_004119_chunk_001",
+      "story_004119_chunk_000",
+      "story_001330_chunk_001",
+      "story_004032_chunk_001",
+      "story_001330_chunk_000",
+      "story_002714_chunk_000",
+      "story_001458_chunk_000",
+      "story_004045_chunk_000",
+      "story_001465_chunk_001",
+      "story_001446_chunk_000",
+      "story_001461_chunk_001",
+      "story_000520_chunk_001",
+      "story_004032_chunk_000",
+      "story_000609_chunk_000",
+      "story_002176_chunk_001",
+      "story_004110_chunk_000",
+      "story_000022_chunk_000",
+      "story_002162_chunk_002",
+      "story_001356_chunk_001",
+      "story_001356_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.03683280001860112,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q036",
+    "query": "What food did Tony choose for dinner before he felt unwell and rushed to the toilet?",
+    "relevant_chunk_ids": [
+      "story_004256_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_004256_chunk_000",
+      "story_004256_chunk_001",
+      "story_004248_chunk_000",
+      "story_003472_chunk_000",
+      "story_005008_chunk_001",
+      "story_003930_chunk_001",
+      "story_005087_chunk_000",
+      "story_002693_chunk_001",
+      "story_002533_chunk_000",
+      "story_003993_chunk_000",
+      "story_004248_chunk_001",
+      "story_004913_chunk_001",
+      "story_002492_chunk_001",
+      "story_001802_chunk_001",
+      "story_004659_chunk_000",
+      "story_001802_chunk_000",
+      "story_002129_chunk_001",
+      "story_003330_chunk_000",
+      "story_000391_chunk_000",
+      "story_000021_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.05455589998746291,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q037",
+    "query": "Why did Emma and her mother ask the shopkeeper for a little pie instead of the one on the counter?",
+    "relevant_chunk_ids": [
+      "story_004378_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_004378_chunk_001",
+      "story_004378_chunk_000",
+      "story_004924_chunk_001",
+      "story_004463_chunk_000",
+      "story_004463_chunk_001",
+      "story_001505_chunk_001",
+      "story_004924_chunk_000",
+      "story_004811_chunk_002",
+      "story_000059_chunk_000",
+      "story_001645_chunk_000",
+      "story_004695_chunk_000",
+      "story_001848_chunk_000",
+      "story_004913_chunk_000",
+      "story_003636_chunk_000",
+      "story_003775_chunk_000",
+      "story_003372_chunk_000",
+      "story_005059_chunk_001",
+      "story_003568_chunk_000",
+      "story_003869_chunk_000",
+      "story_003612_chunk_001"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.05349279998335987,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q038",
+    "query": "Who examined the bird's wing and gave it medicine after the cat took it directly to another animal for help?",
+    "relevant_chunk_ids": [
+      "story_004500_chunk_000",
+      "story_004500_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_004500_chunk_001",
+      "story_004500_chunk_000",
+      "story_004195_chunk_001",
+      "story_002541_chunk_001",
+      "story_004195_chunk_000",
+      "story_001209_chunk_000",
+      "story_002982_chunk_000",
+      "story_001367_chunk_000",
+      "story_002148_chunk_005",
+      "story_003009_chunk_001",
+      "story_003204_chunk_000",
+      "story_004027_chunk_000",
+      "story_004395_chunk_000",
+      "story_004779_chunk_001",
+      "story_004027_chunk_001",
+      "story_001346_chunk_000",
+      "story_000782_chunk_003",
+      "story_000329_chunk_001",
+      "story_001543_chunk_001",
+      "story_003049_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.07181689998833463,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q039",
+    "query": "Where did Jack go to play with his new puppy after hugging his parents?",
+    "relevant_chunk_ids": [
+      "story_004638_chunk_000",
+      "story_004638_chunk_001"
+    ],
+    "baseline_ids": [
+      "story_004638_chunk_000",
+      "story_002575_chunk_000",
+      "story_000267_chunk_001",
+      "story_004638_chunk_001",
+      "story_002693_chunk_000",
+      "story_002712_chunk_000",
+      "story_003279_chunk_000",
+      "story_002712_chunk_001",
+      "story_000267_chunk_000",
+      "story_000409_chunk_000",
+      "story_000409_chunk_001",
+      "story_002550_chunk_001",
+      "story_002213_chunk_000",
+      "story_000499_chunk_000",
+      "story_002693_chunk_001",
+      "story_002067_chunk_001",
+      "story_001604_chunk_000",
+      "story_000300_chunk_000",
+      "story_004389_chunk_001",
+      "story_001513_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 0.5,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.048166399996262044,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "q040",
+    "query": "What caught Sarah's attention while she was walking through the park with her mother?",
+    "relevant_chunk_ids": [
+      "story_004763_chunk_000"
+    ],
+    "baseline_ids": [
+      "story_003267_chunk_000",
+      "story_002543_chunk_001",
+      "story_002483_chunk_000",
+      "story_004447_chunk_000",
+      "story_004462_chunk_000",
+      "story_002994_chunk_000",
+      "story_000322_chunk_000",
+      "story_001894_chunk_000",
+      "story_003004_chunk_000",
+      "story_001834_chunk_000",
+      "story_004234_chunk_000",
+      "story_004763_chunk_000",
+      "story_000408_chunk_001",
+      "story_004275_chunk_000",
+      "story_003812_chunk_000",
+      "story_001186_chunk_001",
+      "story_002907_chunk_000",
+      "story_003517_chunk_000",
+      "story_003222_chunk_000",
+      "story_000214_chunk_000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.08333333333333333,
+        "retrieval_seconds": 0.09131419996265322,
+        "rerank_seconds": null
+      }
+    }
+  }
+]

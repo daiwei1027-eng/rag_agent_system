@@ -1,0 +1,19 @@
+{
+  "scored_count": 40,
+  "excluded_count": 5,
+  "retrieval_mode": "dense",
+  "reranker_enabled": false,
+  "retriever_load_seconds": 6.46778920001816,
+  "reranker_load_seconds": null,
+  "warmup_query_id": "q001",
+  "warmup_seconds": 0.15876909997314215,
+  "metrics": {
+    "Without Rerank": {
+      "recall_1": 0.4,
+      "recall_3": 0.725,
+      "recall_5": 0.8125,
+      "hit_5": 0.825,
+      "mrr_at_20": 0.6509943977591035
+    }
+  }
+}

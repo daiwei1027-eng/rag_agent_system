@@ -1,0 +1,19 @@
+{
+  "scored_count": 24,
+  "excluded_count": 6,
+  "retrieval_mode": "bm25",
+  "reranker_enabled": false,
+  "retriever_load_seconds": 0.06181859999196604,
+  "reranker_load_seconds": null,
+  "warmup_query_id": "sec_dev_001",
+  "warmup_seconds": 0.011419599992223084,
+  "metrics": {
+    "Without Rerank": {
+      "recall_1": 0.16666666666666666,
+      "recall_3": 0.3125,
+      "recall_5": 0.3541666666666667,
+      "hit_5": 0.375,
+      "mrr_at_20": 0.25626803751803756
+    }
+  }
+}

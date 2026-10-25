@@ -1,0 +1,41 @@
+{
+  "evaluation_protocol": "retrieval-optional-rerank-v2",
+  "retrieval_mode": "hybrid",
+  "reranker_enabled": true,
+  "experiments": [
+    "Without Rerank",
+    "With Rerank"
+  ],
+  "Retrieved_top_k": 20,
+  "Rerank_top_k": 20,
+  "Context_top_k": 5,
+  "Reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "Retriever": "sentence-transformers/all-MiniLM-L6-v2",
+  "Max_Length": 512,
+  "Batch_size": 8,
+  "Normalize_embeddings": true,
+  "Faiss_Index_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\chunking_v2\\20261013-141109-775427-qwen128-overlap32-story-boundaries\\tinystories.faiss",
+  "Data_Chunks_Path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\chunking_v2\\20261013-141109-775427-qwen128-overlap32-story-boundaries\\tinystories_chunks.json",
+  "Query_count": 40,
+  "Total_query_count": 45,
+  "Excluded_count": 5,
+  "Queries_path": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\data\\chunking_v2\\20261013-141109-775427-qwen128-overlap32-story-boundaries\\tinystories_queries.jsonl",
+  "benchmark_version": "stage2-story-boundaries-qwen128-overlap32-v2-reviewed",
+  "config_source": "C:\\Users\\admin\\PycharmProjects\\Deeplearning_Study\\rag_agent_system\\configs\\chunking_v2.yaml",
+  "asset_sha256": {
+    "queries": "c79c234ee58dfa36acf03ebfe363fb95dbee869b01e7b35f7d902f45c92a0e41",
+    "manifest": "491512e14c76d48cd5c04f50d184d3fc7b563e934b62686380e8d69a5cd9f953",
+    "absence_evidence": "4d66262437a328e1b25db5267f2d939c9741f3dcbf46aa52314e92a409fa0f41",
+    "faiss_index": "fe6d4479cca969f2a1e33e2654a921b9b3178fd05365d72949c897d2834156d2",
+    "chunks": "9057042d06461ff939bef5499390adc4217af734126a43172fc531f11dd3673e"
+  },
+  "code_sha256": {
+    "eval_retrieval.py": "aa6b4d80c7bc464830f3adc2b739bb724a26fdc82e6f19e472b23bff0315a2ee"
+  },
+  "metrics": [
+    "Recall@1/3/5",
+    "HitRate@5",
+    "MRR@20"
+  ],
+  "timing_note": "Preparation and one warmup are separate from scored query timings."
+}

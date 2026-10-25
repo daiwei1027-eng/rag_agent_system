@@ -1,11 +1,12 @@
 """Mode-based retrieval with the existing dense implementation and learning stubs."""
 
 from pathlib import Path
-
+from collections import Counter
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
-
+from sentence_transformers.util import normalize_embeddings
+import math
 from rag_agent_system.ingestion import load_chunks
 from rag_agent_system.models import DocumentChunk, RetrievedChunk
 from rag_agent_system.paths import require_file
@@ -31,6 +32,12 @@ class DocumentRetriever:
         self._index: faiss.Index | None = None
         self._chunks: dict[str, DocumentChunk] | None = None
         self._encoder: SentenceTransformer | None = None
+        self._bm25_chunk_ids: list[str] = []
+        self._bm25_term_frequencies: list[dict[str, int]] = []
+        self._bm25_document_lengths: list[int] = []
+        self._bm25_document_frequency: dict[str, int] = {}
+        self._bm25_average_length: float = 0.0
+        self._bm25_ready: bool = False
 
     @staticmethod
     def _build_id_mapping(
@@ -62,9 +69,53 @@ class DocumentRetriever:
 
     def _load_resources(self) -> None:
         """Compatibility entry point for existing dense evaluation scripts."""
-        if self.mode != "dense":
-            raise NotImplementedError(f"{self.mode} resource loading is not implemented yet")
-        self._load_dense_resources()
+        if self.mode == "dense":
+            self._load_dense_resources()
+            return
+        if self.mode == "bm25":
+            self._load_bm25_resources()
+            return
+        if self.mode == "hybrid":
+            self._load_bm25_resources()
+            self._load_dense_resources()
+            return
+
+    @staticmethod
+    def _tokenize_bm25(text: str) -> list[str]:
+        return text.lower().split()
+
+    def _load_bm25_resources(self) -> None:
+        if self._bm25_ready:
+            return
+        chunks_path = require_file(
+            self.chunks_path, label="chunk store"
+        )
+        chunks = load_chunks(chunks_path)
+        if not chunks:
+            raise ValueError("Chunks are empty")
+        chunk_ids = []
+        term_frequencies = []
+        document_lengths = []
+        document_frequency = Counter()
+        for chunk_id, chunk in chunks.items():
+            tokens = self._tokenize_bm25(chunk.text)
+            term_frequency = Counter(tokens)
+            document_length=len(tokens)
+            chunk_ids.append(chunk_id)
+            term_frequencies.append(term_frequency)
+            document_lengths.append(document_length)
+            document_frequency.update(term_frequency.keys())
+        average_length=sum(document_lengths)/len(document_lengths)
+        if average_length ==0:
+            raise ValueError("Tokenized chunks are empty")
+        self._chunks = chunks
+        self._bm25_chunk_ids = chunk_ids
+        self._bm25_term_frequencies = term_frequencies
+        self._bm25_document_lengths = document_lengths
+        self._bm25_document_frequency = dict(document_frequency)
+        self._bm25_average_length = average_length
+        self._bm25_ready = True
+
 
     def _load_dense_resources(self) -> None:
         """Load and validate the index, chunks, and encoder once."""
@@ -156,21 +207,79 @@ class DocumentRetriever:
         return results
 
     def _retrieve_bm25(self, query: str, top_k: int) -> list[RetrievedChunk]:
-        """Learning task: lexical ranking with its own resources and tokenizer.
+        self._load_bm25_resources()
+        query_terms = sorted(set(self._tokenize_bm25(query)))
+        if not query_terms:
+            return []
+        document_count = len(self._bm25_chunk_ids)
+        scores = []
+        k1=1.5
+        b=0.75
+        for position, chunk_id in enumerate(self._bm25_chunk_ids):
+            term_frequency = self._bm25_term_frequencies[position]
+            document_length = self._bm25_document_lengths[position]
+            score = 0.0
+            K_d = k1 * (
+                    1 - b + b * document_length / self._bm25_average_length
+            )
 
-        Load chunks and build/cache the lexical index without loading a dense
-        model or FAISS index. Return ranked RetrievedChunk objects using the
-        original chunk IDs. Corpus/index storage changes belong to that task.
-        """
-        raise NotImplementedError("Implement BM25 retrieval here")
+            for term in query_terms:
+                tf = term_frequency.get(term, 0)
+                if tf == 0:
+                    continue
 
-    def _retrieve_hybrid(self, query: str, top_k: int) -> list[RetrievedChunk]:
-        """Learning task: retrieve both candidate lists, fuse and assign ranks.
+                df = self._bm25_document_frequency[term]
+                idf = math.log(
+                    1 + (document_count - df + 0.5) / (df + 0.5)
+                )
+                score+=idf*tf*(k1+1)/(tf+K_d)
+            if score > 0:
+                scores.append((chunk_id, score))
+        scores.sort(key=lambda item: (-item[1], item[0]))
+        results = []
+        for rank, (chunk_id, score) in enumerate(scores[:top_k], start=1):
+            results.append(
+                RetrievedChunk(
+                    chunk=self._chunks[chunk_id],
+                    score=float(score),
+                    rank=rank,
+                )
+            )
 
-        Deduplicate by chunk_id and use an explicit fusion rule; raw dense and
-        BM25 scores are not on the same scale. Preserve source metadata.
-        """
-        raise NotImplementedError("Implement hybrid fusion after BM25")
+        return results
+
+    def _retrieve_hybrid(
+            self, query: str, top_k: int
+    ) -> list[RetrievedChunk]:
+        dense_results = self._retrieve_dense(query, top_k=top_k)
+        bm25_results = self._retrieve_bm25(query, top_k=top_k)
+
+        c = 60
+        fused_scores: dict[str, float] = {}
+        chunks_by_id: dict[str, DocumentChunk] = {}
+
+        for candidates in (dense_results, bm25_results):
+            for rank, result in enumerate(candidates, start=1):
+                chunk_id = result.chunk.chunk_id
+                chunks_by_id[chunk_id] = result.chunk
+                fused_scores[chunk_id] = (
+                        fused_scores.get(chunk_id, 0.0) + 1 / (rank + c)
+                )
+        ranked_scores = sorted(
+            fused_scores.items(),
+            key=lambda item: (-item[1], item[0]),
+        )
+        results = []
+        for rank, (chunk_id, score) in enumerate(ranked_scores[:top_k], start=1):
+            results.append(
+                RetrievedChunk(
+                    chunk=chunks_by_id[chunk_id],
+                    score=float(score),
+                    rank=rank,
+                )
+            )
+
+        return results
 
 
 FaissRetriever = DocumentRetriever

@@ -11,8 +11,9 @@ retrieval:
   embedding_model: sentence-transformers/all-MiniLM-L6-v2
   normalize_embeddings: true
   top_k: 50
+  mode: "bm25"
 reranker:
-  enabled: false
+  enabled: true
   model_name: cross-encoder/ms-marco-MiniLM-L6-v2
   top_k: 5
   max_length: 512

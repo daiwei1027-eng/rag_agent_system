@@ -1,0 +1,62 @@
+{
+  "version": "stage2-story-boundaries-qwen128-overlap32-v2-reviewed",
+  "created_date": "2026-10-13",
+  "review_confirmation": "审核完毕",
+  "question_count": 45,
+  "answerable_count": 40,
+  "unanswerable_count": 5,
+  "split": "unsplit",
+  "annotation_status_counts": {
+    "reviewed": 45
+  },
+  "corpus_chunk_count": 11303,
+  "generation_evaluated": false,
+  "dataset_sha256": "c79c234ee58dfa36acf03ebfe363fb95dbee869b01e7b35f7d902f45c92a0e41",
+  "asset_binding": {
+    "chunks": "9057042d06461ff939bef5499390adc4217af734126a43172fc531f11dd3673e",
+    "faiss_index": "fe6d4479cca969f2a1e33e2654a921b9b3178fd05365d72949c897d2834156d2",
+    "absence_evidence": "4d66262437a328e1b25db5267f2d939c9741f3dcbf46aa52314e92a409fa0f41"
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "normalize_embeddings": true,
+  "embedding_dimension": 384,
+  "embedding_model_snapshot_commit": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "source_version": "story-boundaries-qwen128-overlap32-v2",
+  "source_qwen_body_token_count": 1000000,
+  "source_story_count": 5092,
+  "chunk_size_body_tokens": 128,
+  "overlap_body_tokens": 32,
+  "files": [
+    {
+      "kind": "queries",
+      "path": "data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_queries.jsonl",
+      "sha256": "c79c234ee58dfa36acf03ebfe363fb95dbee869b01e7b35f7d902f45c92a0e41"
+    },
+    {
+      "kind": "chunks",
+      "path": "data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_chunks.json",
+      "sha256": "9057042d06461ff939bef5499390adc4217af734126a43172fc531f11dd3673e"
+    },
+    {
+      "kind": "faiss_index",
+      "path": "data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories.faiss",
+      "sha256": "fe6d4479cca969f2a1e33e2654a921b9b3178fd05365d72949c897d2834156d2"
+    },
+    {
+      "kind": "absence_evidence",
+      "path": "data/chunking_v2/20261013-141109-775427-qwen128-overlap32-story-boundaries/tinystories_absence_evidence.json",
+      "sha256": "4d66262437a328e1b25db5267f2d939c9741f3dcbf46aa52314e92a409fa0f41"
+    }
+  ],
+  "migration_source": {
+    "old_benchmark_sha256": "9a32ae2cc858007084b0bc79e002850ea15c355259d09f788e530e08badf2acf",
+    "review_table_sha256": "8b60056d95bd5ab2c12d0d5e3db3896158f220096194d788b9d2e908addc07c9",
+    "source_stories_sha256": "70fa666672a8f3643e08aae340c036077bc756b6f8c169966755934bf23de1b8"
+  },
+  "limitations": [
+    "Known source-derived questions; no held-out split.",
+    "Relevant chunk IDs changed with story-local windowing; per-query Recall denominators can change.",
+    "Preserved all question text, expected answers and evidence_mode; sufficient-evidence candidates confirmed by user.",
+    "Runtime assets bound by SHA256; real v2 Agent quality has not yet been measured."
+  ]
+}

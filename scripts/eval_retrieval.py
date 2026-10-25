@@ -41,7 +41,7 @@ def score_ranking(ids: list[str], relevant: set[str], *,
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="configs/default.yaml",
+    parser.add_argument("--config", default="configs/chunking_v2.yaml",
                         help="Config selecting one benchmark and its retrieval assets.")
     parser.add_argument("--check-only", action="store_true",
                         help="Validate inputs without constructing models or creating a run.")
@@ -95,7 +95,7 @@ def main(argv: list[str] | None = None) -> int:
         raise ValueError("Benchmark input filenames collide with run artifacts")
     if args.run_dir is None:
         run_id = datetime.now(timezone(timedelta(hours=8))).strftime("%Y%m%d-%H%M%S-%f")
-        args.run_dir = Path("data/evaluation/sec_v1") / f"{run_id}-retrieval-{manifest['version']}"
+        args.run_dir = Path("data/evaluation/tinystory_chunking_v2") / f"{run_id}-retrieval-{manifest['version']}"
     run_dir = resolve_project_path(args.run_dir)
     run_dir.mkdir(parents=True, exist_ok=False)
     json_path = run_dir / "per_query.json"
