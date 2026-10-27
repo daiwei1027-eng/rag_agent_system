@@ -9,17 +9,18 @@ import logging
 from time import perf_counter
 from uuid import uuid4
 from rag_agent_system.logging_config import configure_logging
+from rag_agent_system.datasets import DatasetName, get_dataset_config_path
 logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     config = load_config("configs/chunking_v2.yaml")
     configure_logging(config.log_level)
-    agent = build_agent(config)
     app.state.agent_lock = Lock()
-    app.state.agent=agent
+    app.state.agents= {}
     yield
 class QueryRequest(BaseModel):
     question: str
+    dataset: DatasetName="tinystories"
     @field_validator("question")
     @classmethod
     def validate_question(cls, value: str) -> str:
@@ -36,15 +37,23 @@ def query(payload: QueryRequest,request: Request):
     request_id=uuid4().hex
     start = perf_counter()
     with request.app.state.agent_lock:
-        agent = request.app.state.agent
-        prompt = build_agent_prompt(payload.question)
+        dataset = payload.dataset
+        agents = request.app.state.agents
+
+        if dataset not in agents:
+            config = load_config(get_dataset_config_path(dataset))
+            agents[dataset] = build_agent(config, dataset=dataset)
+
+        agent = agents[dataset]
+        prompt = build_agent_prompt(payload.question, dataset=dataset)
         result = agent.run(prompt)
         end = perf_counter()
 
     elapsed_seconds = end - start
     logger.info(
-        "request_id=%s status=%s elapsed_seconds=%.3f",
+        "request_id=%s dataset=%s status=%s elapsed_seconds=%.3f",
         request_id,
+        dataset,
         result["status"],
         elapsed_seconds,
     )

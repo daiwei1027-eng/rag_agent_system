@@ -117,6 +117,7 @@ def test_search_documents():
             "text": "RAG 将检索与生成结合。",
             "score": 0.85,
             "source": "rag_intro.txt",
+            "metadata": {},
             "rerank_score": None,
             "rerank_rank": None,
         }],

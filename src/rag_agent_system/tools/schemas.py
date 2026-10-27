@@ -1,3 +1,7 @@
+from copy import deepcopy
+from typing import Any
+
+from rag_agent_system.datasets import DatasetName
 
 CALCULATOR_SCHEMA = {
     "name": "calculator",
@@ -37,6 +41,29 @@ SEARCH_DOCUMENTS_SCHEMA = {
         "additionalProperties": False,
     }
 }
+
+SEARCH_DOCUMENTS_DESCRIPTIONS: dict[DatasetName, str] = {
+    "tinystories": SEARCH_DOCUMENTS_SCHEMA["description"],
+    "sec": (
+        "检索本地 SEC 公司申报文件资料库并返回原文片段及 chunk_id。"
+        "回答公司业务、风险、财务指标或跨报告比较问题时，先检索支持答案的证据。"
+        "query 应保留公司或 ticker、报告财年和目标指标；"
+        "跨公司或跨年度问题可以分别检索。公司和财年通过查询文本表达，"
+        "本工具当前不提供结构化元数据过滤参数。"
+    ),
+}
+
+
+def build_search_documents_schema(
+    dataset: DatasetName = "tinystories",
+) -> dict[str, Any]:
+    """Return an independent schema for the selected dataset."""
+    if dataset not in SEARCH_DOCUMENTS_DESCRIPTIONS:
+        raise ValueError(f"Unknown dataset: {dataset}")
+    schema = deepcopy(SEARCH_DOCUMENTS_SCHEMA)
+    schema["description"] = SEARCH_DOCUMENTS_DESCRIPTIONS[dataset]
+    return schema
+
 
 TIME_SCHEMA = {
     "name": "time",

@@ -47,6 +47,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             normalize_embeddings=(
                 config.retrieval.normalize_embeddings
             ),
+            mode=config.retrieval.mode,
         ),
         reranker=reranker,
         rerank_top_k=config.reranker.top_k,

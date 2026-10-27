@@ -7,7 +7,6 @@ def search_documents(
     reranker=None,
     candidate_top_k: int | None = None,
 ) -> list[dict[str, Any]]:
-    """检索相关文档，并转换为可序列化的字典列表。"""
     if reranker is not None:
         if type(candidate_top_k) is not int or candidate_top_k < top_k:
             raise ValueError("candidate_top_k must be an integer >= top_k")
@@ -22,6 +21,7 @@ def search_documents(
             "text": retrieved_chunk.chunk.text,
             "score": float(retrieved_chunk.score),
             "source": retrieved_chunk.chunk.source,
+            "metadata": dict(retrieved_chunk.chunk.metadata),
             "rerank_score": (
                 float(retrieved_chunk.rerank_score)
                 if retrieved_chunk.rerank_score is not None else None

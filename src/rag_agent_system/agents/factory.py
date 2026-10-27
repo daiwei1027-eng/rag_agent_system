@@ -1,9 +1,10 @@
 from rag_agent_system.agents.loop import Agent
 from rag_agent_system.config import AppConfig
+from rag_agent_system.datasets import DatasetName
 from rag_agent_system.tools.search_docments import search_documents
 from rag_agent_system.tools.schemas import (
     CALCULATOR_SCHEMA,
-    SEARCH_DOCUMENTS_SCHEMA,
+    build_search_documents_schema,
     TIME_SCHEMA,
 )
 from typing import Any
@@ -12,7 +13,8 @@ from rag_agent_system.tools.calculator_tool import calculator
 from rag_agent_system.tools.registry import ToolRegistry
 from rag_agent_system.tools.time_tool import get_current_time
 from rag_agent_system.retrieval import CrossEncoderReranker, FaissRetriever
-def build_agent(config: AppConfig) -> Agent:
+def build_agent(config: AppConfig, *, dataset: DatasetName = "tinystories") -> Agent:
+    search_schema = build_search_documents_schema(dataset)
     reranker = None
     if config.reranker.enabled:
         reranker = CrossEncoderReranker(
@@ -25,6 +27,7 @@ def build_agent(config: AppConfig) -> Agent:
         chunks_path=config.paths.chunks,
         embedding_model=config.retrieval.embedding_model,
         normalize_embeddings=config.retrieval.normalize_embeddings,
+        mode=config.retrieval.mode,
     )
 
     def search_handler(query: str, top_k: int) -> list[dict[str, Any]]:
@@ -37,7 +40,7 @@ def build_agent(config: AppConfig) -> Agent:
         )
 
     registry = ToolRegistry()
-    registry.register(SEARCH_DOCUMENTS_SCHEMA, search_handler)
+    registry.register(search_schema, search_handler)
     registry.register(TIME_SCHEMA, get_current_time)
     registry.register(CALCULATOR_SCHEMA, calculator)
     client = LocalLLMClient(

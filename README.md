@@ -1,28 +1,29 @@
 # RAG Agent System
 
-基于本地 Qwen 的 TinyStories RAG Agent。手写工具调用循环，结合 FAISS 检索、可选
+基于本地 Qwen 的 RAG Agent，API 支持选择 TinyStories 或 SEC。手写工具调用循环，结合三种检索模式、可选
 CrossEncoder 重排、固定证据回答回放，以及 FastAPI / Docker 最小服务。
 
 项目关注检索证据、模型回答和引用之间的关系，并保留可检查的请求、工具结果和实验记录。
 当前提供本地与单进程容器演示；问答仍存在幻觉、错误拒答和引用遗漏，不作为生产可靠性证明。
 
-SEC 迁移进度（2026-10-22）：六份报告的目标章节已生成 3091 个统一 chunk，完成
+SEC 迁移进度（2026-10-27）：六份报告的目标章节已生成 3091 个统一 chunk，完成
 MiniLM embedding 与 384 维 IndexFlatIP 的保存、重载和现有检索器兼容验收。
-当前服务仍使用 TinyStories；检索评测入口已支持动态题数、模式配置及可选重排，
+API 已按 dataset 选择配置、Agent prompt 和搜索 schema，并按数据集缓存 Agent；
+该接线通过替代组件的 HTTP 验收，SEC 真实问答尚待验收。检索评测入口支持动态题数、模式配置及可选重排，
 不可回答证据范围已通用化；SEC benchmark 经用户复核确认后冻结为 reviewed 版本：
-开发集 30 题、测试集 10 题，SEC_v1.yaml 仅绑定开发集。尚无正式 SEC 指标，
+开发集 30 题、测试集 10 题，SEC_v1.yaml 仅绑定开发集。三种检索模式的开发集对照已完成，测试集尚未运行，
 公司/财年过滤仍待完成。
 资产与复现入口见 [SEC 数据说明](data/sec/README.md)。
 
 ## 当前能力与架构
 
 ```text
-POST /query: question
-    -> 校验输入、使用已有 TinyStories 问答提示
-    -> 取得共享 Agent 的进程内锁
+POST /query: question + dataset（默认 tinystories）
+    -> 校验输入、选择对应数据集的 YAML 与 Agent 提示词
+    -> 取得进程内锁、创建或复用该数据集的 Agent
     -> 本地 Qwen 生成工具调用
     -> Registry 校验参数并执行工具
-       search_documents -> FAISS -> 可选 CrossEncoder -> 原文片段
+       search_documents -> Dense / BM25 / Hybrid -> 可选 CrossEncoder -> 原文片段
        calculator / time -> 计算或时间结果
     -> observation 写回消息历史 -> Qwen 继续回答
     -> status / answer / trace / error
@@ -32,10 +33,10 @@ POST /query: question
 - 工具参数由手写 schema 与校验器检查，工具失败保留为结构化 observation。
 - 检索资产使用故事边界和 token 窗口切分，业务 chunk_id 与 FAISS ID 映射分开管理。
 - 评估区分证据命中、答案正确、引用支持与不可回答题拒答，记录资产指纹。
-- FastAPI 启动时创建共享 Agent；模型和检索资源在首次使用时加载并复用。
-- 服务串行执行 Agent，请求日志记录随机 request_id、任务状态及含排队时间的耗时。
+- FastAPI 启动时初始化 Agent 缓存；首次请求某个数据集时创建其 Agent，模型与检索资源按需加载。
+- 服务串行执行 Agent，请求日志记录随机 request_id、dataset、任务状态及含排队时间的耗时。
 
-`/query` 当前面向 TinyStories 问答。计算、时间及多工具的通用 Agent 演示使用 CLI 场景入口。
+`/query` 接受 TinyStories 或 SEC 的资料库问答。计算、时间及多工具的通用 Agent 演示使用 CLI 场景入口。
 
 ## 已验证的范围
 
@@ -147,13 +148,27 @@ Dockerfile 设置 `HF_HOME=/models/huggingface` 和 `HF_HUB_OFFLINE=1`。
 | 接口 | 用途 |
 | --- | --- |
 | GET /health | 返回 `{"status":"ok"}`，表示应用能响应；不会触发模型加载或检查全部资源 |
-| POST /query | 接收 `question`，执行 TinyStories Agent，返回四字段结果 |
+| POST /query | 接收 `question` 与可选 `dataset`，执行所选 Agent，返回四字段结果 |
 
 请求：
 
 ```json
 {
-  "question": "Who found a needle in her room and wanted her mother to sew a button on her shirt?"
+  "question": "Who found a needle in her room and wanted her mother to sew a button on her shirt?",
+  "dataset": "tinystories"
+}
+```
+
+`dataset` 支持 `tinystories`（默认）与 `sec`，分别使用 `configs/chunking_v2.yaml`
+和 `configs/SEC_v1.yaml`。同一个选择同时决定 Agent 提示词与搜索工具描述；
+每个数据集首次构建成功后缓存 Agent，后续请求复用。修改对应 YAML 后重启服务使其生效。
+
+SEC 请求示例：
+
+```json
+{
+  "question": "What were Microsoft's research and development expenses in FY2025?",
+  "dataset": "sec"
 }
 ```
 
@@ -167,9 +182,12 @@ Dockerfile 设置 `HF_HOME=/models/huggingface` 和 `HF_HUB_OFFLINE=1`。
 | error | 无任务级错误时为 null，否则为错误描述 |
 
 question 会去掉首尾空白。缺字段、空字符串与纯空白返回 HTTP 422，进入 Agent 前终止。
+不支持的 dataset 返回 HTTP 422；创建 Agent 失败时不缓存失败结果，后续请求可重新尝试。
 得到 AgentResult 时 HTTP 返回 200；调用方仍需检查业务 status，包括 model_error。
 模型调用中的 ValueError、OSError、RuntimeError 进入该结果；其他未处理的程序错误仍可能返回 500。
 日志编号和耗时保留在接口层，不加入 AgentResult，也不会自动把全部检索结果当作答案引用。
+共享 search_documents 工具的每条结果包含原 chunk 的 metadata，用于报告、财年和来源追溯；
+不同数据集的 metadata 字段可以不同，工具不会补造缺失信息。
 
 ## 实验与证据
 
@@ -233,7 +251,7 @@ python -m pytest --ignore=tests/test_generator.py -k "not test_local_model_emits
 | src/rag_agent_system/agents/factory.py | 服务与通用 CLI 复用的 Agent 装配 |
 | src/rag_agent_system/agents/loop.py | 手写工具循环、结果检查和终止保护 |
 | src/rag_agent_system/agents/llm_client.py | 本地 Qwen 的聊天与工具调用适配 |
-| src/rag_agent_system/agents/prompts.py | TinyStories Agent 问答提示 |
+| src/rag_agent_system/agents/prompts.py | TinyStories / SEC Agent 问答提示选择 |
 | src/rag_agent_system/tools/ | 工具 schema、校验、执行与 observation |
 | src/rag_agent_system/retrieval/ | FAISS 检索与 CrossEncoder 重排 |
 | scripts/run_agent.py | 计算、时间、检索等真实 Agent 演示 |
