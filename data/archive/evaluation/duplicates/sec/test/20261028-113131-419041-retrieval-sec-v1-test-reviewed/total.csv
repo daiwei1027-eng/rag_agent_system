@@ -1,0 +1,2 @@
+﻿run,recall_1,recall_3,recall_5,hit_5,mrr_at_20
+Without Rerank,0.3125,0.6875,0.6875,0.75,0.5595238095238094

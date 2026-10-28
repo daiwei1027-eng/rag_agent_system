@@ -30,7 +30,7 @@
 
 ## 有重排：12 条已确认记录
 
-原始记录：[per_query.json](../data/evaluation/stage2/20261012-160851-010726-agent-v1/per_query.json)。全部 12 条已由用户确认。
+原始记录：[per_query.json](../data/archive/evaluation/historical/stage2/20261012-160851-010726-agent-v1/per_query.json)。全部 12 条已由用户确认。
 
 | ID | 标注/指定故事返回（事实） | 答案或拒答（已确认） | 证据支持（已确认） | 引用（已确认） | 严格通过（已确认） | 判定理由 |
 |---|---|---|---|---|---|---|
@@ -64,7 +64,7 @@
 
 ## 无重排：12 条已确认记录
 
-原始记录：[per_query.json](../data/evaluation/stage2/20261012-161523-426332-agent-v1/per_query.json)。全部 12 条已由用户确认。
+原始记录：[per_query.json](../data/archive/evaluation/historical/stage2/20261012-161523-426332-agent-v1/per_query.json)。全部 12 条已由用户确认。
 
 | ID | 标注/指定故事返回（事实） | 答案或拒答（已确认） | 证据支持（已确认） | 引用（已确认） | 严格通过（已确认） | 判定理由 |
 |---|---|---|---|---|---|---|
@@ -129,7 +129,7 @@
 
 ## 追加：v1_citation 最终复核（2026-10-13）
 
-本节属于新提示词实验，不修改上面的 v1 基线评分。无重排目录为 `20261013-093821-150038-agent-improved_v1_citation)`，有重排目录为 `20261013-093918-574513-agent-improved_v1_citation)`，均位于 `data/evaluation/stage2/`。
+本节属于新提示词实验，不修改上面的 v1 基线评分。无重排目录为 `20261013-093821-150038-agent-improved_v1_citation)`，有重排目录为 `20261013-093918-574513-agent-improved_v1_citation)`，均位于 `data/archive/evaluation/historical/stage2/`。
 
 用户分析后接受以下两题的澄清判定，均来自有重排组：
 

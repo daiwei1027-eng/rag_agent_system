@@ -12,7 +12,7 @@
 
 ### 1. 固定评估协议（约 2 小时）
 
-- 以 `data/benchmark/tinystories_queries.jsonl` 为**唯一正式题集**：45 条已复核记录，40 条可回答、5 条故事范围内不可回答。`data/evaluation/tinystories_queries_draft.jsonl` 是旧草稿，不能混入正式结果。记录 benchmark manifest、模型和索引版本、配置、运行环境、评估日期。
+- 以 `data/benchmark/tinystories_queries.jsonl` 为**唯一正式题集**：45 条已复核记录，40 条可回答、5 条故事范围内不可回答。`data/archive/evaluation/historical/root/tinystories_queries_draft.jsonl` 是旧草稿，不能混入正式结果。记录 benchmark manifest、模型和索引版本、配置、运行环境、评估日期。
 - 检索指标在 40 条可回答题上计算；5 条无相关 chunk ID 的负例不参与 Recall/MRR 的分母。固定候选数、最终条数与 `k`，同一批 FAISS 候选用于有/无重排比较。建议候选 20、比较排序前 20、报告 Recall@1/3/5、HitRate@5、MRR@20，并写清这些指标各自的分母。
 - Agent 端到端先固定下面 12 条案例，运行前不要按结果挑选：`q001, q003, q005, q006, q007, q015, q022, q038, q040, q041, q042, q045`。包含事实、因果、改写、多条件与 3 条不可回答题。提示词应告诉模型回答 TinyStories 问题、尽可能引用依据；不要在题目中点名 `search_documents`，这样才能观察自主工具选择。保存统一提示词模板。
 - 先写人工判定表：答案是否正确、是否有工具返回的直接证据、引用 `chunk_id` 是否出现在工具结果且对应标注证据、负例是否明确说证据不足。缺引用要单列为失败；`completed` 只说明任务级流程结束。对于措辞不同但语义正确的答案，保留人工判断和理由；不要用简单字符串相等伪装答案准确率。

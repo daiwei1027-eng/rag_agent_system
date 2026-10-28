@@ -1,7 +1,26 @@
 # 数据与实验资产保留规则
 
-当前服务使用 `configs/chunking_v2.yaml` 指向的 story-boundaries bundle。
-不要把顶层旧索引与这个 bundle 的文段、题集或 manifest 混用。
+安装、资源准备、服务启动与评测命令统一见 [根目录 README 的复现路线](../README.md#复现路线)。
+
+API 按 dataset 分别使用 `configs/chunking_v2.yaml` 和 `configs/SEC_v1.yaml`。
+两套原始数据、Chunks、索引和冻结 Benchmark 保持原位；不要跨版本混用。
+
+## 实验记录入口（2026-10-28 整理）
+
+- [正式实验索引](evaluation/README.md)：SEC dev/test、TinyStories 检索，以及代表性 Agent/回答回放。
+- [检索实验报告](../docs/retrieval-experiments.md)：最终指标、失败分析与评测局限。
+- `archive/evaluation/`：重复运行、早期实验和失败记录，保留用于追溯。
+- [迁移清单](evaluation/organization-20261028.json)：49 项原路径与新路径、303 个文件的 SHA256。
+
+每种检索模式保留一份开启重排的完整运行，其中同时包含重排前后两组排名和指标。
+独立的未重排重复运行移入归档，先核对它与保留记录的基础排名一致。
+此次只移动文件，没有删除实验记录或改写历史 JSON；配置快照中的旧绝对路径保留为原始来源，
+查找迁移后的记录使用清单。移动前后逐文件 hash 相同，Git 提交与推送由用户完成。
+
+新检索运行按 `evaluation/sec/dev/`、`evaluation/sec/test/` 或
+`evaluation/tinystories/retrieval/` 输出；Agent 运行按数据集放入 `agent/`。
+未识别为 SEC 的 benchmark 按历史 TinyStories 路径组织，新增数据集时需扩展路由。
+临时诊断输出放在被 Git 忽略的 `data/local/diagnostics/`。
 
 ## 保留的项目证据
 

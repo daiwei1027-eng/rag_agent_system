@@ -1,0 +1,31 @@
+{
+  "status": "failed",
+  "phase": "checkpoint",
+  "query_id": "q026",
+  "query": "What were Sally and her family painting when Grandma asked to visit?",
+  "completed_count": 25,
+  "baseline_ids": [
+    "story_002893_chunk_001",
+    "story_004696_chunk_001",
+    "story_003518_chunk_000",
+    "story_002893_chunk_000",
+    "story_002040_chunk_000",
+    "story_004696_chunk_000",
+    "story_005047_chunk_001",
+    "story_003238_chunk_000",
+    "story_002040_chunk_001",
+    "story_003081_chunk_001",
+    "story_004673_chunk_001",
+    "story_002739_chunk_001",
+    "story_005047_chunk_000",
+    "story_002006_chunk_000",
+    "story_004520_chunk_001",
+    "story_001051_chunk_000",
+    "story_004573_chunk_001",
+    "story_004804_chunk_002",
+    "story_001218_chunk_000",
+    "story_002600_chunk_000"
+  ],
+  "error_type": "PermissionError",
+  "error": "[WinError 5] 拒绝访问。: 'C:\\\\Users\\\\admin\\\\PycharmProjects\\\\Deeplearning_Study\\\\rag_agent_system\\\\data\\\\evaluation\\\\tinystory_chunking_v2\\\\20261028-112942-218698-retrieval-stage2-story-boundaries-qwen128-overlap32-v2-reviewed\\\\per_query.json.tmp' -> 'C:\\\\Users\\\\admin\\\\PycharmProjects\\\\Deeplearning_Study\\\\rag_agent_system\\\\data\\\\evaluation\\\\tinystory_chunking_v2\\\\20261028-112942-218698-retrieval-stage2-story-boundaries-qwen128-overlap32-v2-reviewed\\\\per_query.json'"
+}

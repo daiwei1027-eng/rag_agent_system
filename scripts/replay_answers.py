@@ -18,7 +18,7 @@ from rag_agent_system.paths import project_root
 from datetime import datetime
 
 PARENT_RUN = project_root() / (
-    "data/evaluation/stage2/"
+    "data/evaluation/tinystories/agent/"
     "20261013-143642-156957-agent-stage2-story-boundaries-qwen128-overlap32-v2-reviewed"
 )
 
@@ -210,7 +210,7 @@ def main() -> None:
     run_id = started_at.strftime("%Y%m%d-%H%M%S-%f")
     run_dir = (
             project_root()
-            / "data/evaluation/stage3"
+            / "data/evaluation/tinystories/answer_replay"
             / f"{run_id}-answer-replay-v1"
     )
     run_dir.mkdir(parents=True, exist_ok=False)

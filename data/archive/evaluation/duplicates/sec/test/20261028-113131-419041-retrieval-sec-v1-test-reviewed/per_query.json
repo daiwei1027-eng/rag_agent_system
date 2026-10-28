@@ -1,0 +1,331 @@
+[
+  {
+    "query_id": "sec_test_001",
+    "query": "According to Microsoft's FY2026 MD&A, what was FY2026 sales and marketing expense in USD millions and its share of revenue?",
+    "relevant_chunk_ids": [
+      "msft-2026-10k_item_7_b0133_c000"
+    ],
+    "baseline_ids": [
+      "msft-2026-10k_item_7_b0137_c000",
+      "msft-2025-10k_item_7_b0128_c000",
+      "msft-2025-10k_item_7_b0130_c000",
+      "nvda-2026-10k_item_7_b0111_c000",
+      "goog-2025-10k_item_7_b0274_c000",
+      "msft-2025-10k_item_7_b0088_c000",
+      "msft-2025-10k_item_7_b0109_c000",
+      "nvda-2026-10k_item_1_b0069_c000",
+      "msft-2025-10k_item_7_b0096_c000",
+      "msft-2026-10k_item_7_b0135_c000",
+      "goog-2024-10k_item_1_b0039_c000",
+      "goog-2025-10k_item_1_b0025_c000",
+      "msft-2025-10k_item_7_b0005_c000",
+      "msft-2025-10k_item_7_b0082_c000",
+      "msft-2026-10k_item_1_b0171_c000",
+      "goog-2024-10k_item_7_b0202_c000",
+      "msft-2026-10k_item_7_b0131_c000",
+      "msft-2025-10k_item_7_b0100_c000",
+      "nvda-2025-10k_item_7_b0111_c000",
+      "msft-2025-10k_item_7_b0104_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.0,
+        "retrieval_seconds": 0.014378200052306056,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_002",
+    "query": "In Microsoft's FY2025 MD&A metrics definitions, what does Microsoft 365 Commercial seat growth measure, and what qualifies as a seat?",
+    "relevant_chunk_ids": [
+      "msft-2025-10k_item_7_b0049_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_7_b0049_c000",
+      "msft-2026-10k_item_7_b0049_c000",
+      "msft-2025-10k_item_7_b0040_c000",
+      "msft-2025-10k_item_7_b0083_c000",
+      "msft-2026-10k_item_7_b0087_c000",
+      "msft-2025-10k_item_7_b0006_c000",
+      "msft-2025-10k_item_1_b0049_c000",
+      "msft-2025-10k_item_7_b0039_c000",
+      "msft-2025-10k_item_7_b0044_c000",
+      "msft-2026-10k_item_1_b0050_c000",
+      "msft-2025-10k_item_7_b0089_c000",
+      "msft-2026-10k_item_7_b0039_c000",
+      "msft-2025-10k_item_1_b0044_c000",
+      "msft-2025-10k_item_7_b0042_c000",
+      "msft-2026-10k_item_7_b0044_c000",
+      "msft-2025-10k_item_7_b0084_c000",
+      "msft-2025-10k_item_7_b0007_c000",
+      "msft-2026-10k_item_7_b0040_c000",
+      "msft-2025-10k_item_1_b0045_c000",
+      "msft-2026-10k_item_7_b0097_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.014535399968735874,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_003",
+    "query": "Who is listed as NVIDIA's Executive Vice President and Chief Financial Officer in its FY2026 Business-section executive-officer table?",
+    "relevant_chunk_ids": [
+      "nvda-2026-10k_item_1_b0134_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_1_b0145_c000",
+      "nvda-2026-10k_item_1_b0134_c000",
+      "msft-2026-10k_item_7_b0265_c000",
+      "msft-2025-10k_item_1_b0198_c000",
+      "msft-2026-10k_item_1_b0165_c000",
+      "nvda-2026-10k_item_1_b0133_c000",
+      "msft-2025-10k_item_7_b0249_c000",
+      "nvda-2025-10k_item_1_b0144_c000",
+      "nvda-2025-10k_item_1_b0143_c000",
+      "nvda-2026-10k_item_1_b0132_c000",
+      "msft-2026-10k_item_1_b0171_c000",
+      "nvda-2026-10k_item_1_b0140_c000",
+      "msft-2025-10k_item_1_b0205_c000",
+      "nvda-2025-10k_item_1_b0148_c000",
+      "msft-2026-10k_item_1_b0170_c000",
+      "nvda-2025-10k_item_1_b0137_c000",
+      "msft-2026-10k_item_1_b0168_c000",
+      "nvda-2025-10k_item_1_b0114_c000",
+      "msft-2025-10k_item_1_b0204_c000",
+      "nvda-2025-10k_item_1_b0150_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.013862099964171648,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_004",
+    "query": "In NVIDIA's FY2025 MD&A customer-concentration table, what percentage of revenue is attributed to Direct Customer A for the year ended January 26, 2025?",
+    "relevant_chunk_ids": [
+      "nvda-2025-10k_item_7_b0087_c000"
+    ],
+    "baseline_ids": [
+      "nvda-2025-10k_item_7_b0087_c000",
+      "nvda-2025-10k_item_7_b0072_c000",
+      "nvda-2026-10k_item_7_b0086_c000",
+      "nvda-2026-10k_item_7_b0071_c000",
+      "nvda-2026-10k_item_7_b0087_c000",
+      "nvda-2025-10k_item_1a_b0170_c000",
+      "nvda-2025-10k_item_7_b0084_c000",
+      "nvda-2026-10k_item_7_b0067_c000",
+      "msft-2026-10k_item_7_b0000_c000",
+      "msft-2025-10k_item_7_b0000_c000",
+      "nvda-2025-10k_item_7_b0035_c000",
+      "nvda-2025-10k_item_7_b0088_c000",
+      "nvda-2025-10k_item_7_b0092_c000",
+      "nvda-2026-10k_item_7_b0084_c000",
+      "nvda-2025-10k_item_7_b0070_c000",
+      "nvda-2025-10k_item_7_b0086_c000",
+      "nvda-2025-10k_item_7_b0058_c000",
+      "nvda-2025-10k_item_7_b0131_c000",
+      "goog-2024-10k_item_7_b0133_c000",
+      "nvda-2025-10k_item_7_b0089_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 1.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.017138300114311278,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_005",
+    "query": "Using Alphabet's FY2025 MD&A tax table, what were the effective tax rates in 2024 and 2025, and by how many percentage points did the rate change?",
+    "relevant_chunk_ids": [
+      "goog-2025-10k_item_7_b0212_c000"
+    ],
+    "baseline_ids": [
+      "goog-2025-10k_item_7_b0213_c000",
+      "msft-2025-10k_item_7_b0152_c000",
+      "goog-2024-10k_item_7_b0234_c000",
+      "msft-2026-10k_item_7_b0160_c000",
+      "nvda-2025-10k_item_7_b0113_c000",
+      "nvda-2026-10k_item_7_b0113_c000",
+      "goog-2025-10k_item_7_b0212_c000",
+      "goog-2024-10k_item_7_b0233_c000",
+      "goog-2024-10k_item_7_b0238_c000",
+      "goog-2025-10k_item_7_b0170_c000",
+      "goog-2025-10k_item_7_b0211_c000",
+      "goog-2025-10k_item_7_b0214_c000",
+      "goog-2025-10k_item_7_b0215_c000",
+      "goog-2024-10k_item_7_b0232_c000",
+      "goog-2024-10k_item_7_b0237_c000",
+      "nvda-2026-10k_item_7_b0112_c000",
+      "goog-2024-10k_item_7_b0301_c000",
+      "nvda-2025-10k_item_1a_b0253_c000",
+      "goog-2024-10k_item_7_b0324_c000",
+      "goog-2025-10k_item_7_b0124_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "hit_5": 0.0,
+        "rr_at_20": 0.14285714285714285,
+        "retrieval_seconds": 0.0165438000112772,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_006",
+    "query": "According to Alphabet's FY2024 MD&A repurchase table, how many Class C shares were repurchased and retired in 2024, and for what amount? State both units.",
+    "relevant_chunk_ids": [
+      "goog-2024-10k_item_7_b0285_c000",
+      "goog-2024-10k_item_7_b0286_c000"
+    ],
+    "baseline_ids": [
+      "goog-2024-10k_item_7_b0285_c000",
+      "goog-2024-10k_item_7_b0284_c000",
+      "goog-2024-10k_item_7_b0283_c000",
+      "goog-2025-10k_item_7_b0274_c000",
+      "goog-2025-10k_item_7_b0125_c000",
+      "goog-2024-10k_item_7_b0132_c000",
+      "goog-2024-10k_item_7_b0131_c000",
+      "goog-2025-10k_item_7_b0273_c000",
+      "msft-2025-10k_item_7_b0203_c000",
+      "goog-2024-10k_item_1a_b0148_c000",
+      "msft-2026-10k_item_7_b0213_c000",
+      "goog-2025-10k_item_7_b0278_c000",
+      "goog-2025-10k_item_1a_b0150_c000",
+      "goog-2024-10k_item_7_b0290_c000",
+      "goog-2024-10k_item_7_b0286_c000",
+      "nvda-2025-10k_item_7_b0131_c000",
+      "goog-2024-10k_item_7_b0282_c000",
+      "goog-2025-10k_item_7_b0272_c000",
+      "nvda-2026-10k_item_7_b0138_c000",
+      "goog-2024-10k_item_7_b0269_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.5,
+        "recall_3": 0.5,
+        "recall_5": 0.5,
+        "hit_5": 1.0,
+        "rr_at_20": 1.0,
+        "retrieval_seconds": 0.015023599960841238,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_007",
+    "query": "As of June 30, 2026, how many full-time employees did Microsoft report in its FY2026 Business section, and how were they split between the U.S. and international locations?",
+    "relevant_chunk_ids": [
+      "msft-2026-10k_item_1_b0126_c000"
+    ],
+    "baseline_ids": [
+      "msft-2025-10k_item_1_b0125_c000",
+      "msft-2026-10k_item_1_b0126_c000",
+      "msft-2025-10k_item_1_b0196_c000",
+      "msft-2026-10k_item_1_b0163_c000",
+      "msft-2026-10k_item_7_b0026_c000",
+      "nvda-2026-10k_item_1_b0126_c000",
+      "msft-2025-10k_item_7_b0032_c000",
+      "msft-2026-10k_item_7_b0000_c000",
+      "msft-2025-10k_item_1_b0216_c000",
+      "msft-2025-10k_item_7_b0025_c000",
+      "msft-2025-10k_item_7_b0000_c000",
+      "msft-2026-10k_item_7_b0040_c000",
+      "msft-2025-10k_item_7_b0152_c000",
+      "msft-2025-10k_item_7_b0183_c000",
+      "msft-2025-10k_item_7_b0040_c000",
+      "msft-2026-10k_item_7_b0183_c000",
+      "msft-2025-10k_item_1_b0039_c000",
+      "msft-2025-10k_item_7_b0167_c000",
+      "msft-2025-10k_item_1_b0132_c000",
+      "msft-2026-10k_item_7_b0213_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.5,
+        "retrieval_seconds": 0.01729610003530979,
+        "rerank_seconds": null
+      }
+    }
+  },
+  {
+    "query_id": "sec_test_008",
+    "query": "What consequences for user data and access to services does Alphabet's FY2025 Risk Factors section associate with security breaches and attacks?",
+    "relevant_chunk_ids": [
+      "goog-2025-10k_item_1a_b0082_c000"
+    ],
+    "baseline_ids": [
+      "goog-2025-10k_item_1a_b0090_c000",
+      "goog-2024-10k_item_1a_b0081_c000",
+      "goog-2025-10k_item_1a_b0082_c000",
+      "goog-2024-10k_item_1a_b0073_c000",
+      "goog-2025-10k_item_1a_b0094_c000",
+      "goog-2024-10k_item_1a_b0085_c000",
+      "msft-2025-10k_item_1a_b0066_c000",
+      "nvda-2025-10k_item_1a_b0016_c000",
+      "msft-2026-10k_item_1a_b0077_c000",
+      "goog-2025-10k_item_1a_b0072_c000",
+      "goog-2024-10k_item_1a_b0065_c000",
+      "goog-2024-10k_item_1a_b0074_c000",
+      "goog-2024-10k_item_1a_b0094_c001",
+      "goog-2025-10k_item_1a_b0083_c000",
+      "goog-2024-10k_item_1a_b0093_c000",
+      "nvda-2025-10k_item_1a_b0138_c000",
+      "goog-2025-10k_item_1a_b0100_c001",
+      "msft-2025-10k_item_1a_b0066_c001",
+      "nvda-2026-10k_item_1a_b0142_c000",
+      "goog-2025-10k_item_1a_b0099_c000"
+    ],
+    "reranked_ids": null,
+    "metrics": {
+      "Without Rerank": {
+        "recall_1": 0.0,
+        "recall_3": 1.0,
+        "recall_5": 1.0,
+        "hit_5": 1.0,
+        "rr_at_20": 0.3333333333333333,
+        "retrieval_seconds": 0.015113399946130812,
+        "rerank_seconds": null
+      }
+    }
+  }
+]

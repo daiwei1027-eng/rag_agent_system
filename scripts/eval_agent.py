@@ -181,7 +181,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--check-only", action="store_true", help="Validate inputs without loading models or creating a run.")
     parser.add_argument(
         "--run-dir", type=Path,
-        help="New output directory; defaults to a timestamped directory under data/evaluation/stage2.",
+        help="New output directory; defaults to data/evaluation/<dataset>/agent/<run_id>.",
     )
     args = parser.parse_args(argv)
     config = load_config(args.config)
@@ -197,7 +197,9 @@ def main(argv: list[str] | None = None) -> None:
         return
     if args.run_dir is None:
         run_id = datetime.now(timezone(timedelta(hours=8))).strftime("%Y%m%d-%H%M%S-%f")
-        args.run_dir = Path("data/evaluation/stage2") / f"{run_id}-agent-{benchmark['manifest']['version']}"
+        version = benchmark["manifest"]["version"]
+        dataset = "sec" if version.startswith("sec-") else "tinystories"
+        args.run_dir = Path("data/evaluation") / dataset / "agent" / f"{run_id}-agent-{version}"
     run_dir = resolve_project_path(args.run_dir)
     run_dir.mkdir(parents=True, exist_ok=False)
     agent, client, retriever, reranker=build_agent(config,rerank_enabled=config.reranker.enabled)

@@ -12,7 +12,7 @@
 - 旧 indexes/tinystories.faiss 与当前 data/tinystories.faiss 哈希完全一致。旧 chunks 为 list[str]，当前为 list[dict]，10417 条文本和顺序一致。
 - 读取正式 45 题、manifest、5 条 absence evidence 的字段与引用关系，以及阶段二评估协议。
 - 现有 models/context/metrics/pipeline/search_documents/reranker/CLI/config/prompt 相关检查：**27 passed**。首次沙箱运行在 pytest 临时目录遇到权限错误，获准在沙箱外重跑通过。
-- 单独执行一次接口诊断：真实的两向量内存 IndexFlatIP，加假 encoder/reranker/LLM，验证字符串 ID 在映射、检索、工具、Agent 和 RAG 中完整保留。没有加载 Qwen 或生成真实 v2 索引。结果：data/evaluation/stage2/migration-audit-20261013/contract_checks.json。
+- 单独执行一次接口诊断：真实的两向量内存 IndexFlatIP，加假 encoder/reranker/LLM，验证字符串 ID 在映射、检索、工具、Agent 和 RAG 中完整保留。没有加载 Qwen 或生成真实 v2 索引。结果：data/archive/evaluation/historical/stage2/migration-audit-20261013/contract_checks.json。
 
 这些证据证明部分接口能力，**不是尚不存在的完整 v2 数据集已经验收通过**。未执行全项目测试或新数据上的真实端到端实验。
 

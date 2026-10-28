@@ -100,7 +100,7 @@ def diagnose_case(case: dict, retriever, reranker) -> dict:
 
 
 def main() -> None:
-    base = project_root() / "data/evaluation/stage2"
+    base = project_root() / "data/archive/evaluation/historical/stage2"
     source_dir = base / SOURCE_RUN
     cases, saved_config = load_inputs(source_dir)
     original_case = next(
@@ -138,7 +138,7 @@ def main() -> None:
         batch_size=saved_config["Batch_size"],
     )
     run_id = datetime.now().astimezone().strftime("%Y%m%d-%H%M%S-%f")
-    output_dir = base / f"{run_id}-retrieval-diagnostic"
+    output_dir = project_root() / "data/local/diagnostics" / f"{run_id}-retrieval-diagnostic"
     output_dir.mkdir(parents=True, exist_ok=False)
     output_path = output_dir / "diagnostic.json"
     record = {

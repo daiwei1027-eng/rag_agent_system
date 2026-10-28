@@ -18,7 +18,7 @@
 
 关键资产：
 
-- 正式题集：`data/benchmark/tinystories_queries.jsonl`，45 条已复核题，40 条可回答、5 条故事范围内不可回答；版本与已知局限见 `data/benchmark/tinystories_benchmark_manifest.json`。旧 `data/evaluation/tinystories_queries_draft.jsonl` 不用于正式评分。
+- 正式题集：`data/benchmark/tinystories_queries.jsonl`，45 条已复核题，40 条可回答、5 条故事范围内不可回答；版本与已知局限见 `data/benchmark/tinystories_benchmark_manifest.json`。旧 `data/archive/evaluation/historical/root/tinystories_queries_draft.jsonl` 不用于正式评分。
 - 现有检索指标：`src/rag_agent_system/evaluation/metrics.py`；旧检索评估：`scripts/eval_retrieval.py`，目前硬编码绝对路径并读取草稿，需要整理后再用于新实验。
 - 旧 RAG 评估：`scripts/eval_rag.py`，只跑 5 题，输出目录也硬编码；可参考结果结构，但不能直接当阶段二 Agent 基线。
 - Agent 装配与保存记录：`scripts/run_agent.py`；Loop：`src/rag_agent_system/agents/loop.py`；模型适配器：`src/rag_agent_system/agents/llm_client.py`；工具包装：`src/rag_agent_system/tools/search_docments.py`（沿用当前文件拼写）。

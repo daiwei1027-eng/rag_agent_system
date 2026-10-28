@@ -119,7 +119,7 @@ Agent 搜索的预期路径是两组均召回 20，基线取前 5，对照重排
 
 ## 6. 独立输出与复现记录
 
-下一次实验创建 `data/evaluation/stage2/<run_id>/`，run_id 用 Asia/Shanghai 日期时间，如 `20261012-HHMMSS-v1`；目录存在即报错，重跑使用新 ID。不写入阶段一目录，不复用旧脚本固定输出位置。
+下一次实验创建 `data/archive/evaluation/historical/stage2/<run_id>/`，run_id 用 Asia/Shanghai 日期时间，如 `20261012-HHMMSS-v1`；目录存在即报错，重跑使用新 ID。不写入阶段一目录，不复用旧脚本固定输出位置。
 
 同一 run 保存：本协议与提示词快照、正式题集与 manifest 快照、absence_evidence、资产 hashes、配置与实际生效参数、运行环境与模型版本、预热与加载耗时、检索逐题排序及指标/排除记录、Agent 两组每题完整 AgentResult/工具 schemas/模型请求/observation/耗时、人工判定表与汇总。模型调用失败时也需保存发起但未获成功响应的请求，不能仅依靠 trace 中 assistant 条目重建。不要求保存模型原始 token 序列。
 

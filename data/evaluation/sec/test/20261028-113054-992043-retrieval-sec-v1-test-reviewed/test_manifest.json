@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "version": "sec-v1-test-reviewed",
+  "status": "reviewed_frozen",
+  "split": "test",
+  "question_count": 10,
+  "answerable_count": 8,
+  "unanswerable_count": 2,
+  "annotation_status_counts": {
+    "reviewed": 10
+  },
+  "dataset_sha256": "04c78df3ad520842262665f0f139791a64eaf1d512a54460bfe3fd945322f529",
+  "corpus_chunk_count": 3091,
+  "asset_binding": {
+    "chunks": "712199ed06dc4f0d171667165c5cba6beca8d3cdc25b29a3772b086eab98af67",
+    "faiss_index": "7e1bdbf23a5ef9c3ed9e25dd5247c0b4611682b50d49afd74c1d2fc5ca4bac3e",
+    "absence_evidence": "f6438e2d5dd34704f81d8f4cb1d81bc6ac988dca1917fb604879ce7080703149"
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_model_snapshot": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "model_files_sha256": {
+    "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+    "config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+    "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+    "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+    "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+    "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23"
+  },
+  "normalize_embeddings": true,
+  "index_build_manifest_sha256": "73c3135930baef629e28f075fc71887b006061404fbc53504e3728bf6f986ec4",
+  "source_scope": "Only extracted Item 1, Item 1A and Item 7 of the six reports; not full-report or external-world coverage.",
+  "review_policy": "Approved by explicit user confirmation. Frozen content; amendments require a new version. See review_record.json.",
+  "split_policy": "Dev for tuning; test reserved for final frozen evaluation. Same corpus, disjoint authored fact groups and disjoint positive source chunks. Not company/document-held-out generalization.",
+  "relevance_policy": "Source-derived, human-reviewed positives with exact-quote alternatives; alternative supporting chunks may remain incomplete. Unit/context groups may be jointly necessary.",
+  "evaluation_policy": "Current retrieval metrics use flat relevant IDs; complete multi-evidence support additionally requires every evidence group, not merely HitRate. Negative cases are excluded from Recall/MRR and assessed in answer/refusal evaluation.",
+  "generation_evaluated": false,
+  "retrieval_evaluated": false,
+  "language": "en",
+  "annotation_schema": "SEC company/report metadata, reference answer, exact evidence, evidence groups, constraints and reviewed status",
+  "frozen_date": "2026-10-22",
+  "review_record": {
+    "file": "review_record.json",
+    "sha256": "11c1adf0655e394cbdab6248820374bf82e8ed6c1f9d7eed7bb5f4320bb61b11"
+  }
+}

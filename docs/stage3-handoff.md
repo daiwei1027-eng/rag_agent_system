@@ -77,7 +77,7 @@ python scripts/eval_retrieval.py --config configs/chunking_v2.yaml --check-only
 python scripts/eval_agent.py --config configs/chunking_v2.yaml
 ```
 
-现有入口自动创建新的阶段二目录，也支持 --run-dir；阶段三运行应显式给新的 `data/evaluation/stage3/<时间戳-实验名>`。目录存在则不复用。上述 Agent 命令按当前 profile 运行无重排，不能不改开关就声称重跑了有重排组。
+现有入口自动创建新的阶段二目录，也支持 --run-dir；阶段三运行应显式给新的 `data/evaluation/tinystories/answer_replay/<时间戳-实验名>`。目录存在则不复用。上述 Agent 命令按当前 profile 运行无重排，不能不改开关就声称重跑了有重排组。
 
 如果需要有/无重排正式对照，各保存独立配置和独立运行目录，除开关外其他参数固定；不要反复手改 YAML 后仅靠记忆说明运行模式。离线环境只在本地模型缓存完备时设置，按实际执行情况记入新记录。
 
@@ -85,7 +85,7 @@ python scripts/eval_agent.py --config configs/chunking_v2.yaml
 
 ### 已冻结的检索与 Agent 结果
 
-旧切分正式检索基线位于 `data/evaluation/stage2/20261012-111210-861047-retrieval-v1/`。40 正例、同一份 top-20 候选：HitRate@5 无重排 27/40、有重排 38/40；MRR@20 为 0.584391 / 0.925000。q007、q038 的证据在候选 20 中缺失，重排不能补回。
+旧切分正式检索基线位于 `data/archive/evaluation/historical/stage2/20261012-111210-861047-retrieval-v1/`。40 正例、同一份 top-20 候选：HitRate@5 无重排 27/40、有重排 38/40；MRR@20 为 0.584391 / 0.925000。q007、q038 的证据在候选 20 中缺失，重排不能补回。
 
 最初 Agent v1 已确认：无重排严格通过 1/12、有重排 0/12。后续句末引用实验的全部 24 条评分也已确认：无重排严格通过 3/12、有重排 5/12，分别位于 `20261013-095427-474647-agent-improved_v1_citation)` 与 `20261013-095327-737486-agent-improved_v1_citation)`。相关目录有 manual_review.json。提示调整同时改变了部分实际查询，不能说是固定 observation 的纯回答实验。
 
@@ -93,7 +93,8 @@ python scripts/eval_agent.py --config configs/chunking_v2.yaml
 
 ### 最新新分段结果：事实已核验，终评待确认
 
-两个目录均位于 `data/evaluation/stage2/`：
+2026-10-28 整理后，新分段的两个运行目录位于 `data/evaluation/tinystories/agent/`，
+旧切分候选 50 对照目录位于 `data/archive/evaluation/historical/stage2/`：
 
 | 模式 | 新运行目录 | 旧切分候选 50 对照目录 |
 |---|---|---|
@@ -165,7 +166,7 @@ python scripts/eval_agent.py --config configs/chunking_v2.yaml
 
 2026-10-18 接续：用户已完成 scripts/replay_answers.py 的三个核心函数及 main，并通过固定 12 题的假客户端编排验收，包括 24 次 A/B 调用、调用前请求保存、逐次结果保存、模拟工具请求及异常，以及第 8 次调用中断后的已保存记录。当前逐题循环结构符合约定，无需改成先准备全部请求的两段循环。
 
-同日真实运行已完成，目录为 data/evaluation/stage3/20261018-103123-691887-answer-replay-v1。两组各 12/12 completed，父文件指纹与固定证据 A/B 变量核验通过；A 的 12 个答案也与父运行逐字一致。用户随后回复“003可以接受”，确认本次 B 组 q003 通过；包含此确认的当前初评 A/B 严格通过均为 8/12。q003/q042 改善，但 q007 错误拒答、q015 漏引用，q038 引用及 q045 重量幻觉未修复。其余 23 条仍待用户整组确认，未生成确认版 manual_review.json；当前无总体严格通过收益证据，建议不直接采用该后置指令。具体逐题依据见运行目录新增 review.md、review_draft.json、comparison_audit.json 及 [最新回放学习日志](C:/Users/admin/PycharmProjects/Deeplearning_Study/rag_agent_system/docs/learning-log/2026-10-14.md) 末节。
+同日真实运行已完成，目录为 data/evaluation/tinystories/answer_replay/20261018-103123-691887-answer-replay-v1。两组各 12/12 completed，父文件指纹与固定证据 A/B 变量核验通过；A 的 12 个答案也与父运行逐字一致。用户随后回复“003可以接受”，确认本次 B 组 q003 通过；包含此确认的当前初评 A/B 严格通过均为 8/12。q003/q042 改善，但 q007 错误拒答、q015 漏引用，q038 引用及 q045 重量幻觉未修复。其余 23 条仍待用户整组确认，未生成确认版 manual_review.json；当前无总体严格通过收益证据，建议不直接采用该后置指令。具体逐题依据见运行目录新增 review.md、review_draft.json、comparison_audit.json 及 [最新回放学习日志](C:/Users/admin/PycharmProjects/Deeplearning_Study/rag_agent_system/docs/learning-log/2026-10-14.md) 末节。
 
 ## 历史接续指令（已由文末最新状态取代）
 

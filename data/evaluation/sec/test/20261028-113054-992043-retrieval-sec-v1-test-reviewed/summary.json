@@ -1,0 +1,26 @@
+{
+  "scored_count": 8,
+  "excluded_count": 2,
+  "retrieval_mode": "hybrid",
+  "reranker_enabled": true,
+  "retriever_load_seconds": 6.448376900050789,
+  "reranker_load_seconds": 4.19007320003584,
+  "warmup_query_id": "sec_test_001",
+  "warmup_seconds": 0.2815499999560416,
+  "metrics": {
+    "Without Rerank": {
+      "recall_1": 0.3125,
+      "recall_3": 0.6875,
+      "recall_5": 0.6875,
+      "hit_5": 0.75,
+      "mrr_at_20": 0.5595238095238094
+    },
+    "With Rerank": {
+      "recall_1": 0.375,
+      "recall_3": 0.5,
+      "recall_5": 0.5625,
+      "hit_5": 0.625,
+      "mrr_at_20": 0.5074404761904762
+    }
+  }
+}

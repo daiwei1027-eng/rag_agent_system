@@ -24,7 +24,7 @@ def load_first_request(run_dir: Path, query_id: str) -> dict:
 
 
 def load_inputs() -> tuple[list[dict], dict]:
-    base = project_root() / "data/evaluation/stage2"
+    base = project_root() / "data/archive/evaluation/historical/stage2"
     runs = (
         ("v1", base / "20261012-160851-010726-agent-v1"),
         ("v3", base / "20261013-090905-274020-agent-v3"),
@@ -68,7 +68,7 @@ def main() -> None:
     from rag_agent_system.agents.llm_client import LocalLLMClient
 
     run_id = datetime.now().astimezone().strftime("%Y%m%d-%H%M%S-%f")
-    run_dir = project_root() / "data/evaluation/stage2" / f"{run_id}-tool-choice-diagnostic"
+    run_dir = project_root() / "data/local/diagnostics" / f"{run_id}-tool-choice-diagnostic"
     run_dir.mkdir(parents=True, exist_ok=False)
     record = {
         "created_at": datetime.now().astimezone().isoformat(),

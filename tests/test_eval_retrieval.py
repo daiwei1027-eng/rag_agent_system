@@ -2,6 +2,7 @@
 
 import csv
 import json
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -164,6 +165,34 @@ def test_check_only_does_not_construct_models_or_create_output(case, monkeypatch
     result = json.loads(capsys.readouterr().out)
     assert result["query_count"] == 3 and result["candidate_top_k"] == 20
     assert not calls and not case.output.exists()
+
+
+@pytest.mark.parametrize("version,split,parent", [
+    ("sec-v1-dev-reviewed", "dev", "sec/dev"),
+    ("sec-v1-test-reviewed", "test", "sec/test"),
+    ("synthetic-v1", None, "tinystories/retrieval"),
+])
+def test_default_output_follows_benchmark_dataset_and_split(case, monkeypatch, version, split, parent):
+    manifest = read_json(case.paths["manifest"])
+    manifest.update(version=version, split=split)
+    case.paths["manifest"].write_text(json.dumps(manifest), encoding="utf-8")
+    install_models(monkeypatch, case)
+    original_resolve = entry.resolve_project_path
+    selected = []
+
+    def redirect_output(path):
+        path = Path(path)
+        if path.parts[:2] == ("data", "evaluation"):
+            selected.append(path)
+            return case.output
+        return original_resolve(path)
+
+    monkeypatch.setattr(entry, "resolve_project_path", redirect_output)
+    assert entry.main(["--config", str(case.config)]) == 0
+    assert len(selected) == 1
+    assert selected[0].parent == Path("data/evaluation") / parent
+    assert f"-dense-retrieval-{version}" in selected[0].name
+    assert read_json(case.output / "run_status.json")["status"] == "complete"
 
 
 def test_all_unanswerable_rejected_before_outputs_or_models(case, monkeypatch):
